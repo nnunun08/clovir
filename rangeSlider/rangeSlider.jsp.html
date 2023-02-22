@@ -1,0 +1,86 @@
+
+
+
+<body>
+    <script src="./res/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="./res/css/rangeSlider/rangeStyle.css">
+    <script src="./res/js/rangeSlider.js"></script>
+
+<div id="sliderBox">
+    <div id="settingSliderBox">
+        <div>
+            <label for="sliderMax">최소값</label>
+            <input required type="text" value="0" id="sliderMin" class="sliderMax">
+        </div>
+        <div>
+            <label for="sliderMax">최대값</label>
+            <input required type="text" id="sliderMax" value="100" class="sliderMax">
+        </div>
+        <div>
+            <label for="sliderValue">기본값</label>
+            <input type="text" id="sliderValue" class="sliderValue">
+        </div>
+        <div>
+            <label for="sliderStep">증가값</label>
+            <input type="text" id="sliderStep" class="sliderStep">
+        </div>
+        <div>
+            <label for="threshold">임계치</label>
+            <input type="text" class="threshold" id="threshold">
+        </div>
+        <div>
+            <label for="greaterThanDefault">기본값보다 커야함</label>
+            <input type="checkbox" value="true" class="threshold" id="greaterThanDefault">
+        </div>
+        <div>
+            <label>[슬라이드바 색 지정]</label><br>
+            <label for="leftBarColor">기본색</label>
+            <input type="color" id="leftBarColor" class="leftBarColor">
+            <label for="rightBarColor" class="rightBarColorLabel" style="display: none;">임계치 초과색</label>
+            <input type="color" id="rightBarColor" class="rightBarColor" style="display: none;">
+        </div>
+
+    </div>
+    <hr>
+    <div id="btnGroup">
+        <button class="rangeSliderBtn" style="width: 100%">done</button>
+        <button onclick="alert(rangeSlider.getValue());return false">get current value</button>
+        <button onclick=" rangeSlider.setValue(30);return false">set value 30</button>
+        <div class="sliderPlace"></div>
+    </div>
+</div>
+
+<div class="range-slider" data-id="range1" id="bar_cssSetting" style="width:300px;--min:0; display: none;"></div>
+
+<script>
+
+    //임계값이 있을 시 생성
+    $(".threshold").on("change",function(){
+        $(".rightBarColorLabel").css("display","inline-block");
+        $(".rightBarColor").css("display","inline-block");
+    });
+    var rangeSlider;
+    //rangeSlider 생성_common.js
+    $(".rangeSliderBtn").on("click",function(){
+        $(".range-slider").css('display', 'block');
+
+        var maxData = $("#sliderMax").val();
+        var stepData = $(".sliderStep").val();
+        var valueData = $(".sliderValue").val();
+
+        var id = $(".range-slider").attr("id");
+
+
+
+        var leftBarColor = $(".leftBarColor").val();
+        var rightBarColor = $(".rightBarColor").val();
+        var option={   max: maxData,min:$("#sliderMin").val(),step:stepData,default:valueData,
+            threshold:$(".threshold").val(),
+            greaterThanDefault: $("#greaterThanDefault").val(),
+            leftBarColor:leftBarColor,rightBarColor:rightBarColor,allowNoLimit:true}
+        rangeSlider = new RangeSlider(id,option);
+
+
+    });
+</script>
+</body>
