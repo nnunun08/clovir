@@ -19036,7 +19036,8 @@ ag-grid-aurelia {
 		<link rel="stylesheet" href="./ClovirSM_files/menu(1).css">
 		<link rel="stylesheet" href="./ClovirSM_files/dashboard.css">
 		<link rel="stylesheet" href="./ClovirSM_files/aggrid_ncsoft.css">
-    <link rel="stylesheet" href="./ClovirSM_files/css/eboke.css">
+    <!-- evoke CSS 추가 -->
+    <link rel="stylesheet" href="./ClovirSM_files/css/evoke.css">
 		
 
 <script type="text/x-template" id="modal-template">
@@ -19165,28 +19166,35 @@ ag-grid-aurelia {
 
 
 
-
-<div class="topArea" style="background: #FAFAFA;Width:100%; height: 99px;">
-	<div style="height: 20px;">
-		<img src="./ClovirSM_files/line1.png" style="position: absolute;width: 100%;height: 5px;left: 0px;top: 0px;">
+<!-- evoke : inline style 제거 -->
+<div class="topArea">
+  <!-- evoke : img 제거, .topLine 클래쓰 추가-->
+  <div class="topLine">
+		<!-- <img src="./ClovirSM_files/line1.png" style="position: absolute;width: 100%;height: 5px;left: 0px;top: 0px;">
 		<img src="./ClovirSM_files/line2.png" style="position: absolute;width: 100%;height: 5px;left: 0px;top: 5px;">
-		<img src="./ClovirSM_files/line3.png" style="position: absolute;width: 100%;height: 5px;left: 0px;top: 10px;">
+		<img src="./ClovirSM_files/line3.png" style="position: absolute;width: 100%;height: 5px;left: 0px;top: 10px;"> -->
 	</div>
-	<div id="topArea" style="top: 10px; margin: auto; width: 1440px;">
+  <!-- evoke : inline style 제거 -->
+	<div id="topArea">
 		<div class="topLogo" onclick="topLogo()">
-      <!-- eboke 로고 이미지 변경 -->
+      <!-- evoke : 로고 이미지 변경 -->
 
-			<!-- <img src="./ClovirSM_files/nc.png" height="30px;">
-			<img src="./ClovirSM_files/LOGO.png" height="30px;"> -->
+			<!-- 
+        <img src="./ClovirSM_files/nc.png" height="30px;">
+			  <img src="./ClovirSM_files/LOGO.png" height="30px;"> 
+      -->
         <img class="logo" src="./ClovirSM_files/img/logo_ncspace.svg" alt="logo">
 
 		</div>
-		<div id="userInfo" class="userInfo" style="display:inline-block; top: 10px;">
+    <!-- evoke : top inline style 제거 -->
+		<div id="userInfo" class="userInfo" style="display:inline-block;">
 			<div class="userNameInfo">
 				<span class="team">[시스템운영팀]</span>&nbsp;
 				<a onclick="userInfo();" data-toggle="modal" class="user_name userNameBlock" style="cursor:pointer;">포탈관리자&nbsp;</a>
-				<!-- eboke : 클래쓰 추가-->
-				<img class="userProfile" src="./ClovirSM_files/user.png" height="38px;">
+				<!-- evoke 
+          : .userProfile 추가 
+        -->
+				<img class="userProfile" src="./ClovirSM_files/user.svg">
 
 			</div>
 			<div class="userInfoDetail" id="userInfoBtn">

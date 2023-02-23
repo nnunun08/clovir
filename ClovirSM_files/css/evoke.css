@@ -1,0 +1,78 @@
+@charset "UTF-8";
+html {
+  background-color: #FAFAFA;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.topArea {
+  background-color: #fff;
+  height: auto;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.08);
+}
+.topArea .topLine {
+  height: 10px;
+  background-color: #00BFB3;
+  border-bottom: 2px solid #009D93;
+  box-sizing: border-box;
+}
+
+#topArea {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1440px;
+  height: 72px;
+}
+#topArea .topLogo {
+  position: relative;
+  top: unset;
+  left: unset;
+}
+#topArea #userInfo {
+  position: static;
+  padding-right: 52px;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  float: initial;
+  line-height: 1;
+  top: unset;
+  width: auto;
+  height: auto;
+}
+#topArea #userInfo .userNameInfo {
+  line-height: 20px;
+  text-align: right;
+  top: unset;
+}
+#topArea #userInfo .userNameInfo::after {
+  content: "님";
+  display: inline;
+  font-family: inherit;
+  color: #4A4A4A;
+}
+#topArea #userInfo .team {
+  color: #4A4A4A;
+}
+#topArea #userInfo .user_name {
+  color: #000;
+  font-weight: 700;
+}
+#topArea #userInfo .userProfile {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  top: -12px;
+  right: -52px;
+}/*# sourceMappingURL=evoke.css.map */
