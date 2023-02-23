@@ -10,26 +10,6 @@
   </style>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <title>ClovirSM</title>
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30745,7 +30725,8 @@
                     </div>
                   </div>
 
-                  <div>
+                  <!-- evoke : .topIconRight 클래쓰 추가 -->
+                  <div class="topIconRight">
                     <div class="row_flex">
                       <div data-id="MY" class="table_inner_icon">
                         <div class="userinfoName">내 서버</div>
@@ -30898,14 +30879,17 @@
               <div id="searchArea">
                 <div class="search-box-btn">
                   <fm-input id="keyword_input" class="keyword" name="keyword" placeholder="   검색"></fm-input>
-                  <fm-sbutton cmd="search" onclick="vmSearch()" style="float:right;"><img
-                      src="./ClovirSM_files/icon_search.png"></fm-sbutton>
+                  <fm-sbutton cmd="search" onclick="vmSearch()" style="float:right;">
+                    <!-- evoke : img 변경 -->
+                    <img src="./ClovirSM_files/img/icon_16_dw.svg">
+                  </fm-sbutton>
                 </div>
               </div>
               <div>
                 <fm-popup-button popupid="filter_popup" popup="/home_v2/popup/filter_popup.jsp?callback=onAfterModify"
-                  cmd="update" class="btn contentsBtn etc" id="filter" onclick="">Filter<img
-                    src="./ClovirSM_files/sliders.svg" id="filterPopup" class="bi-plus-circle-fill">
+                  cmd="update" class="btn contentsBtn etc" id="filter" onclick="">Filter
+                  <!-- evoke : img 변경 -->
+                  <img src="./ClovirSM_files/img/icon_16_setting.svg" id="filterPopup" class="bi-plus-circle-fill">
                 </fm-popup-button>
               </div>
               <div style="font-size: 14px;">
@@ -30922,16 +30906,20 @@
             </div>
           </div>
 
-          <div id="input_area" class="fullGrid" style="height: 340px;">
-            <div class="table_title layout name" style="width: 95%;"></div>
+          <!-- evoke : inline style 제거 -->
+          <div id="input_area" class="fullGrid">
+            <!-- evoke : table_title layout name 삭제 -->
+            <!-- <div class="table_title layout name" style="width: 95%;"></div> -->
+
             <div class="layout background mid">
               <div id="mainTable" class="ag-theme-fresh" style="height: 490px;">
                 <div class="ag-bl ag-bl-normal ag-layout-normal ag-scrolls ag-ltr" id="borderLayout_eRootPanel">
                   <div class="ag-bl-center-row ag-bl-normal-center-row" ref="centerRow" style="height: 465px;">
-                    <div class="ag-bl-center ag-bl-normal-center" ref="center" style="margin-left: 0px; width: 1293px;">
+                    <!-- evoke : inline style 제거 -->
+                    <div class="ag-bl-center ag-bl-normal-center" ref="center">
                       <div class="ag-bl ag-bl-full-height" id="borderLayout_eGridPanel">
-                        <div class="ag-bl-center ag-bl-full-height-center" ref="center"
-                          style="margin-left: 0px; width: 1293px;">
+                        <!-- evoke : inline style 제거 -->
+                        <div class="ag-bl-center ag-bl-full-height-center" ref="center">
                           <div class="ag-root ag-font-style ag-hacked-scroll" role="grid">
                             <div class="ag-header ag-pivot-off" role="row" style="height: 40px;">
                               <div class="ag-pinned-left-header" role="presentation" style="display: none; width: 0px;">
