@@ -8,6 +8,7 @@ body {
     font-size: 14px;
 }
 .topArea {
+    position: relative;
     background-color: #fff;;
     height: auto;
     box-shadow: 0 1px 1px 0 rgba(0,0,0,0.08);
@@ -73,7 +74,56 @@ body {
         }
     }
 }
+#content {
+    padding: 0;
+}
+.content-body {
+    margin: 0;
+    width: 100%;
+    min-width: unset;
+}
+.menu-layout-3 {
+    background: transparent;
+    .main {
+        display: block;
+        margin: 0 auto;
+        background-color: transparent;
+        width: auto;
+    }    
+}
 
-
-
-
+#header_detail {
+    .panel-body {
+        padding: 24px 40px;
+    }
+}
+#topIcon {
+    .table_inner_icon.selected {
+        background: #FFFFFF;
+        border: 1px solid #009D93;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 16px;
+        color: #009D93;
+        width: 140px;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 56px;
+        > div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+        .userinfoName {
+            margin: 0;
+            line-height: 24px;
+            padding-top: 4px;
+        }
+        #createServer_icon {
+            filter: unset;
+        }
+    }
+    
+}
