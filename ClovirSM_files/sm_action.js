@@ -4,6 +4,11 @@
  */
 var SMAction = function()
 {
+    this.searchTags = function (svcCd, svcId, callback) {
+        post('/api/tag/selectTagObjectList/' + svcId + '/' + svcCd, null, function (data) {
+            if(callback) callback(data);
+        });
+    }
     // svcIds : string array , tags : string array
     this.addTagsByMultiSvcId = function (svcCd, svcIds, tags, callback) {
         post('/api/tag/multiSaveTag/'+svcCd, {svcIds:svcIds, tags:tags}, callback);
@@ -14,6 +19,14 @@ var SMAction = function()
     }
     this.getQuota = function(notExistAdd, callback){
         post('/api/quota/getTeamByUserId?NotExistAdd=' + (notExistAdd?"Y":"N"),{}, callback);
+    }
+    this.savePurpose=function( purpose,category, callback){
+        var obj = new Object();
+        obj.ID = purpose;
+        if(category) obj.CATEGORY_ID = category;
+        obj.KUBUN = "P";
+        obj.USE_YN = "Y";
+        post("/api/category/map/savePurpose", obj, callback);
     }
     this.doPowerAction = function(vmId, action, callback)
     {
@@ -55,6 +68,9 @@ var SMAction = function()
         }else{
             alert('Unknown OS');
         }
+    }
+    this.shareVmUser = function (vmId, callback){
+        post('/api/shareVmUser/detailShareVmUser/'+vmId , {VM_ID: vmId}, callback);
     }
 }
 var smAction = new SMAction();

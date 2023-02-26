@@ -576,6 +576,7 @@ Vue.component('fm-popup-button', {
 		  });
 		 var _param = eval(this.param);
 		 var checked = false;
+		 console.log(this.param , _param);
 		 eval('checked = ' + this.popupid + '_click(this, _param, this.callback)');
 		 if(checked){
 			 var new_popup = getPopup(this.id);

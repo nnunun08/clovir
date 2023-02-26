@@ -1168,11 +1168,11 @@ $(function () {
             jqXHR.processError = true;
          }
          catch(e) {
-            if (!jqXHR.responseText || jqXHR.responseText.indexOf("<!DOCTYPE") >= 0) {
-               // alert(msg_jsp_error);
-               jqXHR.processError = true;
-            }
-
+            // evoke : 로컬 작업을 위한 임시 주석
+            //    if (!jqXHR.responseText || jqXHR.responseText.indexOf("<!DOCTYPE") >= 0) {
+            //       alert(msg_jsp_error);
+            //       jqXHR.processError = true;
+            //    }
          }
          if(jqXHR.status==701)
          {

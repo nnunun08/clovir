@@ -1,0 +1,206 @@
+$number-of-options: 5;
+.rangeSlider {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	.rangeInput {
+		width: 56px;
+		height: 36px;
+		// display: flex;
+		// justify-content: center;
+		// align-items: center;
+		outline: none;
+		text-align: center;
+		border: 1px solid #009D93;
+		border-radius: 4px;
+		color: #009D93;
+		font-weight: 700;
+		font-size: 14px;
+		margin-left: 8px;
+		&::-webkit-inner-spin-button {
+			appearance: none;
+			-moz-appearance: none;
+			-webkit-appearance: none;
+		}
+	}
+}
+form {
+	width: auto;
+	.debt-amount-slider {
+		display: flex;
+		flex-direction: row;
+		align-content: stretch;
+		position: relative;
+		width: 100%;
+		height: 50px;
+		user-select: none;
+		&::before {
+			content: " ";
+			position: absolute;
+			height: 1px;
+			width: 100%;
+			width: calc(100% - 50px);
+			// width: calc(100% * (#{$number-of-options - 1} / #{$number-of-options}));
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background: #DDD;
+		}
+		input, label {
+			box-sizing: border-box;
+			flex: 1;
+			user-select: none;
+			cursor: pointer;
+		}
+		input:disabled + label::after {
+			background: url(../ClovirSM_files/img/ic_range_dis.svg) center/cover no-repeat;
+			border:0;
+		}
+		label {
+			display: inline-block;
+			position: relative;
+			width: 41px;
+			height: 100%;
+			user-select: none;
+			&::before {
+				content: attr(data-debt-amount);
+				position: absolute;
+				left: 50%;
+				transform: translate(-50%, 45px);
+				font-size: 12px;
+				font-weight: 400;
+				white-space: nowrap;
+			}
+			&::after {
+				content: " ";
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				width: 16px;
+				height: 16px;
+				border: 1px solid #DDDDDD;
+				background: #fff;
+				border-radius: 50%;
+				pointer-events: none;
+				user-select: none;
+				z-index: 1;
+				cursor: pointer;
+				box-sizing: border-box;
+			}
+			&:hover::after {
+				transform: translate(-50%, -50%);
+			}
+		}
+		input {
+			display: none;
+			&:checked {
+				+ label::before {
+					color: #009D93;
+				}
+				+ label::after {
+					border-width: 0px;
+					transform: translate(-50%, -50%);
+					background-color: #97D8D4;
+				}
+				~ .debt-amount-pos {
+					opacity: 1;
+				}
+				@for $i from 1 through $number-of-options {
+					&:nth-child(#{$i * 2 - 1}) ~ .debt-amount-pos {
+						left: #{($i * 20%) - 10%};
+					}
+				}
+			}
+		}
+		.debt-amount-pos {
+			display: block;
+			position: absolute;
+			top: 50%;
+			width: 10px;
+			height: 10px;
+			background: #25B5AC;
+			border-radius: 50%;
+			// transition: all 0.15s ease-in-out;
+			transform: translate(-50%, -50%);
+			opacity: 0;
+			z-index: 2;
+		}
+	}
+	&:valid {
+		.debt-amount-slider {
+			input {
+				+ label::before {
+					transform: translate(-50%, 45px);
+					transition: all 0.15s linear;
+				}
+				&:checked + label::before {
+					transform: translate(-50%, 45px);
+				}
+			}
+		}
+	}
+	& + button {
+		display: block;
+		position: relative;
+		margin: 56px auto 0;
+		padding: 10px 20px;
+		appearance: none;
+		transition: all 0.15s ease-in-out;
+		font-family: inherit;
+		font-size: 24px;
+		font-weight: 600;
+		background: #fff;
+		border: 2px solid #000;
+		border-radius: 8px;
+		outline: 0;
+		user-select: none;
+		cursor: pointer;
+		&:hover {
+			// transform: scale(1.1);
+			background: #000;
+			color: #fff;
+			// &:active {
+			// 	transform: scale(0.9);
+			// }
+		}
+		&:focus {
+			background: #4caf50;
+			border-color: #4caf50;
+			color: #fff;
+			pointer-events: none;
+			// &::before {
+			// 	animation:  1s linear infinite;
+			// }
+		}
+		&::before {
+			display: inline-block;
+			width: 0;
+			opacity: 0;
+			content: "\f3f4";
+			font-family: "Font Awesome 5 Pro";
+			font-weight: 900;
+			margin-right: 0;
+			transform: rotate(0deg);
+		}
+	}
+	&:invalid + button {
+		pointer-events: none;
+		opacity: 0.25;
+	}
+}
+// @keyframes  {
+// 	from {
+// 		transform: rotate(0deg);
+// 		width: 24px;
+// 		opacity: 1;
+// 		margin-right: 12px;
+// 	}
+// 	to {
+// 		transform: rotate(360deg);
+// 		width: 24px;
+// 		opacity: 1;
+// 		margin-right: 12px;
+// 	}
+// }
