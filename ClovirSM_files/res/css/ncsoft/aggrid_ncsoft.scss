@@ -49,14 +49,34 @@
 .ag-theme-fresh .ag-cell-no-focus {
     border-right: none;
     padding-top: 0;
-    font-size: 13px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    /* line-height: 3.13; */
+    font-size: 12px;
+	line-height: 17px;
+	color: #000000;
     letter-spacing: normal;
     text-align: center;
-    color: #3c404a;
+	a {
+		color: inherit;
+	}
+	&[col-id="NC_VM_SHARE"] {
+		.take {
+			text-indent: -9999px;
+			display: block;
+			width: 6px;
+			height: 6px;
+			border-radius: 6px;
+			background: #FF6A13;
+		}
+	}
+	&[col-id="OPTIMIZE_STATUS"] {
+		.take {
+			text-indent: -9999px;
+			display: block;
+			width: 6px;
+			height: 6px;
+			border-radius: 6px;
+			background: #00A3E0;
+		}
+	}
 }
 .ag-theme-fresh .ag-header-cell-resize::after {
 	height: 45px !important;
@@ -79,8 +99,8 @@
 	align-items: center;
 }
 .ag-theme-fresh .ag-row {
-    border-bottom-width: thin !important;
-    border-bottom-color: #eeeeee !important;
+    border-bottom-width: 1px !important;
+    border-bottom-color: #ddd !important;
 }
 .ag-theme-fresh .ag-row-selected {
     background-color: #dddddd !important;
