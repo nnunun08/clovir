@@ -264,7 +264,7 @@
     height: 48px;
     border: 0px;
     background-color: rgba(255,255,255,0);
-    background-image: url(../../img/btn_logout.png);
+    background-image: url(/res/img/ncsoft/btn_logout.png);
 }
 .logout_img:hover {
     background-image: url("./res/img/btn_logout_hover.png");
@@ -581,14 +581,14 @@ a.tree-toggle {
     position: relative;
 }
 .menu-btn{
-	background-image: url(../../img/hynix/menu.png); 
+	background-image: url(/res/img/ncsoft/hynix/menu.png); 
 	background-color: #757984;
 }
 .req-btn{
-	background-image: url(../../img/hynix/payment.png); 
+	background-image: url(/res/img/ncsoft/hynix/payment.png); 
 }
 .qna-btn {
-    background-image: url(../../img/hynix/qa.png);
+    background-image: url(/res/img/ncsoft/hynix/qa.png);
 }
 .qna-btn .qa{
 	width: 29px;
@@ -655,7 +655,7 @@ a.tree-toggle {
 	width: 32px;
     height: 32px;
     border-radius: 14px;
-    background-image: url(../../img/icon_logout.png) !important;
+    background-image: url(/res/img/ncsoft/icon_logout.png) !important;
     display: inline-block;
     position: relative;
     top: 15px;
@@ -720,7 +720,7 @@ a.tree-toggle {
     color: #a4a7a9;
 }
 .breadcrumb:before {
-    content: url(../../img/hynix/home.png);
+    content: url(/res/img/ncsoft/hynix/home.png);
     position: relative;
     top: 6px;
     left: -7px;
@@ -1068,7 +1068,7 @@ a.tree-toggle {
     padding-right: 9px;
 }
 .taskClose{
-    background-image: url(../../img/hynix/rect3.png);
+    background-image: url(/res/img/ncsoft/hynix/rect3.png);
     width: 50px;
     height: 50px;
     float: right;
@@ -1110,7 +1110,7 @@ a.tree-toggle{
     border-radius: 15px;
     background-color: #3a4148;
     cursor: pointer;
-    background-image: url(../../img/hynix/newHynix/menuIcon/shape-561.png);
+    background-image: url(/res/img/ncsoft/hynix/newHynix/menuIcon/shape-561.png);
     background-repeat: no-repeat;
     background-position-x: 9px;
     background-position-y: 6px;
@@ -1122,9 +1122,7 @@ a.tree-toggle{
     z-index: 1000;
 }
 #topArea {
-
     margin: 0 auto;
-
     position: relative;
 }
 
@@ -1132,26 +1130,141 @@ a.tree-toggle{
     display: block  ;
 }
 
-.left_hide {
-    width: 28px;
-    height: 28px;
-    background-image: url(../../img/hynix/hide.png);
-    position: absolute;
-    right: 0px;
-    top: 0px;
+@mixin leftMenuToggle {
+    width: 24px;
+    height: 40px;
+    background-image: url(/res/img/ncsoft/ic_leftMenu_toggle.svg);
     cursor: pointer;
 }
-
-.left_show {
-    width: 28px;
-    height: 28px;
+.left_hide {
+    @include leftMenuToggle();
     position: absolute;
-    display: inline-block;
-    left: 0px;
-    z-index: 500;
-    top: 170px;
-    background-image: url(../../img/hynix/hide.png);
+    top: 93px;
+    right: -24px;
 }
+.left_show {
+    @include leftMenuToggle();
+    position: absolute;
+    top: 93px;
+    left: 0;
+    transform: rotate(180deg);
+    z-index: 500;
+}
+
+
+#left_menu {
+    width: 252px;
+    height: 100%;
+    display: inline-block;
+    position: relative;
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+    .sub_menu {
+        padding: 10px;
+        &.selected {
+            color: #0B4D57;
+            a {
+                color: white;
+            }
+        }
+    }
+    .title {
+        width: 100%;
+        height: 95px;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 29px;
+        padding: 34px 0 0 40px;
+        border-bottom: 1px solid #DDDDDD;
+    }
+}
+
+
+#left_menu2 {
+    .child {
+        color: #3c404a;
+        font-weight: 900;
+        cursor: pointer;
+        &:after {
+            content: "";
+            position: absolute;
+            left: 40px;
+            width: 16px;
+            height: 16px;
+            background: url(/res/img/ncsoft/icon_16_dw.svg) center/cover no-repeat;
+            transform: rotate(-90deg);
+        }
+        &.selected {
+            color: #0B4D57;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 20px;
+            &:after {
+                background: url(/res/img/ncsoft/ic_leftMenu_arr01.svg) center/cover no-repeat;
+                transform: rotate(0);
+            }
+        }
+    }
+    > .sub_menu {
+        padding: 20px 10px 20px 60px !important;
+        border-bottom: 1px solid #ddd;
+        border-top: 1px solid #ddd;
+        margin-top: -1px;
+    }
+    .sub_menu {
+        list-style-type: none;
+        padding: 6px;
+        background-color: #fff;
+        width: 100%;
+        padding-left: 60px;
+        position: relative;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: #000000;
+        a {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 17px;
+            color: #686868;
+        }
+    }
+} 
+
+
+#left_menu3 {
+    margin-top: -10px;
+    background-color: #fff;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #ddd;
+    .sub_menu.selected {
+        background-color: #ffffff !important;
+    }
+    .sub_menu.selected a {
+        color: #009D93 !important;
+    }
+    .sub_menu a {
+        color: #a4a7a9 !important;
+    }
+    > .sub_menu {
+        border: none;
+    }
+}
+
+
+.left_menu3 {
+    display: none;
+
+    .sub_menu {
+        background: url(/res/img/ncsoft/ic_leftMenu_arr02.svg) left 40px center/12px no-repeat;
+        &.selected {
+            background-image: url(/res/img/ncsoft/ic_leftMenu_arr02_sel.svg);
+        }
+    }
+}
+
+
+
 .allMenu {
     width: 1250px;
     min-height: 470px;
@@ -1175,7 +1288,7 @@ a.tree-toggle{
     padding: 15px;
 }
 .allMenuHeader .close:before {
-    content: url(../../img/hynix/rect1.png);
+    content: url(/res/img/ncsoft/hynix/rect1.png);
 }
 .close {
     opacity: 1;
@@ -1231,7 +1344,6 @@ a.tree-toggle{
 .carousel-caption div{
 	text-align: left;
 }
-
 
 
 #topIcon {
@@ -1376,13 +1488,13 @@ a.tree-toggle{
                         color: #053941 !important;
                         font-weight: 500;
                         .caret {
-                            background: url(../../img/icon_16_dw_green.svg) center/cover no-repeat;   
+                            background: url(/res/img/ncsoft/icon_16_dw_green.svg) center/cover no-repeat;   
                         }
                     }
                     .caret {
                         width: 16px;
                         height: 16px;
-                        background: url(../../img/icon_16_dw.svg) center/cover no-repeat;   
+                        background: url(/res/img/ncsoft/icon_16_dw.svg) center/cover no-repeat;   
                         border: 0;
                     }
                 }
@@ -1409,13 +1521,13 @@ a.tree-toggle{
                             transform: translateY(-50%) rotate(-90deg);
                             width: 16px;
                             height: 16px;
-                            background: url(../../img/icon_16_dw.svg) center/cover no-repeat;
+                            background: url(/res/img/ncsoft/icon_16_dw.svg) center/cover no-repeat;
                         }
                         &.red {
                             background: transparent;
                             &::before {
                                 transform: translateY(-50%) rotate(0);
-                                background:url(../../img/icon_16_dw_red.svg) center/cover no-repeat;
+                                background:url(/res/img/ncsoft/icon_16_dw_red.svg) center/cover no-repeat;
                             }
                             a {
                                 color: #C5003E !important;
@@ -1474,7 +1586,7 @@ a.tree-toggle{
                 padding-right: 20px;
                 width: auto;
                 color: #2C2C2C;
-                background: url(../../img/icon_16_dw.svg) center right/16px no-repeat;
+                background: url(/res/img/ncsoft/icon_16_dw.svg) center right/16px no-repeat;
                 -webkit-appearance: none; 
                 -moz-appearance: none;
                 appearance: none;
@@ -1541,3 +1653,8 @@ a.tree-toggle{
 }
 
 
+.admin-content {
+    #ribbon {
+        background-color: transparent;
+    }
+}
