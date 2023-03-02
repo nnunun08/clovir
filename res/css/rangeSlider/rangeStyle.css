@@ -14,7 +14,7 @@
   color: #009D93;
   font-weight: 700;
   font-size: 14px;
-  margin-left: 8px;
+  margin-left: 20px;
 }
 .rangeSlider .rangeInput::-webkit-inner-spin-button {
   appearance: none;
@@ -30,8 +30,10 @@ form .debt-amount-slider {
   flex-direction: row;
   align-content: stretch;
   position: relative;
-  width: 100%;
+  width: auto;
   height: 50px;
+  margin-top: -26px;
+  margin-left: -5.5px;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -58,7 +60,7 @@ form .debt-amount-slider input, form .debt-amount-slider label {
   cursor: pointer;
 }
 form .debt-amount-slider input:disabled + label::after {
-  background: url(../ClovirSM_files/img/ic_range_dis.svg) center/cover no-repeat;
+  background: url(/res/img/ncsoft/ic_range_dis.svg) center/cover no-repeat;
   border: 0;
 }
 form .debt-amount-slider label {
@@ -107,12 +109,13 @@ form .debt-amount-slider input {
   display: none;
 }
 form .debt-amount-slider input:checked + label::before {
-  color: #009D93;
+  color: #25B5AC;
 }
 form .debt-amount-slider input:checked + label::after {
   border-width: 0px;
+  border: 3px solid #97D8D4;
   transform: translate(-50%, -50%);
-  background-color: #97D8D4;
+  background-color: #25B5AC;
 }
 form .debt-amount-slider input:checked ~ .debt-amount-pos {
   opacity: 1;
@@ -131,18 +134,6 @@ form .debt-amount-slider input:checked:nth-child(7) ~ .debt-amount-pos {
 }
 form .debt-amount-slider input:checked:nth-child(9) ~ .debt-amount-pos {
   left: 90%;
-}
-form .debt-amount-slider .debt-amount-pos {
-  display: block;
-  position: absolute;
-  top: 50%;
-  width: 10px;
-  height: 10px;
-  background: #25B5AC;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  z-index: 2;
 }
 form:valid .debt-amount-slider input + label::before {
   transform: translate(-50%, 45px);

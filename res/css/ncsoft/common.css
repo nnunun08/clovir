@@ -1378,28 +1378,6 @@ marquee {
   cursor: pointer;
 }
 
-.header-title {
-  font-weight: bold;
-  font-size: 22px;
-  margin-left: 20px;
-}
-
-.modal-header {
-  border-bottom: none;
-}
-
-.modal-header .close {
-  margin-top: -17px;
-  font-size: 48px;
-  font-weight: 100;
-  opacity: 0.4;
-}
-
-.modal-header .close:before {
-  content: "×";
-  color: black;
-}
-
 .menuNewCunt {
   font-size: 12px;
   display: none;
@@ -2551,19 +2529,16 @@ v .center > div > .panel_value {
 }
 
 .modal-header {
-  border-bottom: none;
-  background: #0C4DA2;
+  height: 98px;
+  padding: 33px 0 0 40px;
   margin-left: 0px;
-  height: 50px;
-  color: white;
+  border-bottom: 1px solid #EEEEEE;
 }
-
-.header-title {
-  font-weight: 900;
-  font-size: 16px;
-  margin-left: 0px !important;
-  position: relative;
-  top: 0px;
+.modal-header .header-title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 35px;
+  color: #000000;
 }
 
 .container-fluid {
@@ -3723,14 +3698,6 @@ v .center > div > .panel_value {
   cursor: pointer;
 }
 
-.modal-header .close {
-  font-size: 48px;
-  font-weight: 100;
-  opacity: 1;
-  height: 50px;
-  width: 50px;
-}
-
 .popupBtn.next {
   background-color: #757984 !important;
 }
@@ -4056,8 +4023,17 @@ v .center > div > .panel_value {
   padding: 4px;
 }
 
-.modal-header .close:before {
-  content: url(/res/img/ncsoft/hynix/rect1.png);
+.modal-header {
+  position: relative;
+}
+.modal-header .close {
+  position: absolute;
+  top: 26px;
+  right: 31px;
+  opacity: 1;
+  height: 50px;
+  width: 50px;
+  background: url(/res/img/ncsoft/ic_modalClose.svg) center/16px no-repeat;
 }
 
 #osItem .contentsItem {

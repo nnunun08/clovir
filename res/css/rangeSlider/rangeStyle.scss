@@ -7,9 +7,6 @@ $number-of-options: 5;
 	.rangeInput {
 		width: 56px;
 		height: 36px;
-		// display: flex;
-		// justify-content: center;
-		// align-items: center;
 		outline: none;
 		text-align: center;
 		border: 1px solid #009D93;
@@ -17,7 +14,7 @@ $number-of-options: 5;
 		color: #009D93;
 		font-weight: 700;
 		font-size: 14px;
-		margin-left: 8px;
+		margin-left: 20px;
 		&::-webkit-inner-spin-button {
 			appearance: none;
 			-moz-appearance: none;
@@ -32,8 +29,10 @@ form {
 		flex-direction: row;
 		align-content: stretch;
 		position: relative;
-		width: 100%;
+		width: auto;
 		height: 50px;
+		margin-top: -26px;
+		margin-left: -5.5px;
 		user-select: none;
 		&::before {
 			content: " ";
@@ -54,7 +53,7 @@ form {
 			cursor: pointer;
 		}
 		input:disabled + label::after {
-			background: url(../ClovirSM_files/img/ic_range_dis.svg) center/cover no-repeat;
+			background: url(/res/img/ncsoft/ic_range_dis.svg) center/cover no-repeat;
 			border:0;
 		}
 		label {
@@ -97,12 +96,13 @@ form {
 			display: none;
 			&:checked {
 				+ label::before {
-					color: #009D93;
+					color: #25B5AC;
 				}
 				+ label::after {
 					border-width: 0px;
+					border: 3px solid #97D8D4;
 					transform: translate(-50%, -50%);
-					background-color: #97D8D4;
+					background-color: #25B5AC;
 				}
 				~ .debt-amount-pos {
 					opacity: 1;
@@ -114,19 +114,19 @@ form {
 				}
 			}
 		}
-		.debt-amount-pos {
-			display: block;
-			position: absolute;
-			top: 50%;
-			width: 10px;
-			height: 10px;
-			background: #25B5AC;
-			border-radius: 50%;
-			// transition: all 0.15s ease-in-out;
-			transform: translate(-50%, -50%);
-			opacity: 0;
-			z-index: 2;
-		}
+		// .debt-amount-pos {
+		// 	display: block;
+		// 	position: absolute;
+		// 	top: 50%;
+		// 	width: 10px;
+		// 	height: 10px;
+		// 	background: #25B5AC;
+		// 	border-radius: 50%;
+		// 	// transition: all 0.15s ease-in-out;
+		// 	transform: translate(-50%, -50%);
+		// 	opacity: 0;
+		// 	z-index: 2;
+		// }
 	}
 	&:valid {
 		.debt-amount-slider {
