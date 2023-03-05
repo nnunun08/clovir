@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/res/css/jquery-ui.css">
+    <link rel="stylesheet" href="/res/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/res/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/res/css/jstree.style.min.css">
+    <link rel="stylesheet" href="/res/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="/res/css/ncsoft/common.css">
+    <link rel="stylesheet" href="/res/css/ncsoft/menu.css">
+    <link rel="stylesheet" href="/res/css/ncsoft/dashboard.css">
+    <link rel="stylesheet" href="/res/css/ncsoft/aggrid_ncsoft.css">
+
+    <link rel="stylesheet" href="/res/css/select2.min.css" type="text/css">
+    <script type="text/javascript" src="/res/js/select2.js"></script>
+</head>
+
+<body class="modal-open">
+
+
+    <div id="popup_area" class="popup_area">
+
+        <div id="newVra_popup" role="dialog" class="modal fade popup_dialog in" style="display: block;">
+            <div class="modal-dialog ui-draggable">
+                <div class="modal-content  container-fluid">
+                    <div class="modal-header ui-draggable-handle"><button type="button" onclick="processScrollBar()"
+                            data-dismiss="modal" class="close"></button> <span id="newVra_popup_title"
+                            class="header-title">신규 요청 </span></div>
+                    <div class="modal-body">
+                        <link href="/res/css/rangeSlider/rangeStyle.css" type="text/css" rel="stylesheet">
+                        <script src="/res/js/rangeSlider.js" type="text/JavaScript"></script>
+                        <link type="text/css" rel="stylesheet" href="/home_v2/newVra/newVra.css">
+                        <form id="newVra_popup_form" action="none">
+                            <div class="panel-body">
+                                <div class="appTitle"></div>
+                                <div class="wizard_step_list">
+                                    <ul class="list-group">
+                                        <li id="newVra_popup_step_1" class="list-group-item selected">
+                                            <div class="number">1</div> 카탈로그 선택
+                                        </li>
+                                        <li id="newVra_popup_step_2" class="list-group-item">
+                                            <div class="number">2</div> 기본정보 입력
+                                        </li>
+                                        <li id="newVra_popup_step_3" class="list-group-item">
+                                            <div class="number">3</div> 정보 입력
+                                        </li>
+                                        <li id="newVra_popup_step_4" class="list-group-item">
+                                            <div class="number">4</div> 정보 확인
+                                        </li>
+                                        <li id="newVra_popup_step_5" class="list-group-item">
+                                            <div class="number">5</div> 완료
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="wizard_step_contents">
+                                    <!-- step_content_1 -->
+                                    <div id="newVra_popup_step_content_1" class="wizard_step_content" style="display: none;">
+                                        <div class="catalog_list">
+                                            <div id="catalog_1efbf1f2-1633-34a7-9e25-f1f604db9a91" class="catalog">
+                                                <div class="name">서버명 변경</div>
+                                                <div class="desc"></div>
+                                            </div>
+                                            <div id="catalog_be521c8c-c1de-3bc0-b977-ba61dc6c05a9" class="catalog">
+                                                <div class="name">계정추가</div>
+                                                <div class="desc"></div>
+                                            </div>
+                                            <div id="catalog_e774864e-9546-46a6-8117-fd59796737ed" class="catalog">
+                                                <div class="name">multi-disk-syk</div>
+                                                <div class="desc"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- step_content_2 -->
+                                    <div id="newVra_popup_step_content_2" class="wizard_step_content" style="display: none;">
+                                        <div>
+                                            <!---->
+                                            <div class="popup_wizard_content">
+                                                <div class="col col-sm-12">
+                                                    <div required="required"><label for="S_REQ_TITLE"
+                                                            class="control-label grid-title value-title">요청명</label>
+                                                        <input name="REQ_TITLE" id="S_REQ_TITLE"
+                                                            class="form-control input hastitle"></div>
+                                                </div>
+                                                <!---->
+                                                <div id="S_PURPOSE_DIV" class="col col-sm-12">
+                                                    <div required="required"><label for="_purpose"
+                                                            class="control-label grid-title value-title">용도</label>
+                                                        <select name="S_PURPOSE" id="_purpose"
+                                                            onchange="onChangePurpose()"
+                                                            class="form-control input hastitle select2-hidden-accessible"
+                                                            tabindex="-1" aria-hidden="true">
+                                                            <option value=""></option>
+                                                            <option value=""></option>
+                                                            <option value="aaaaaaaaaaa">aaaaaaaaaaa</option>
+                                                            <option value="admin">ADMIN</option>
+                                                            <option value="ap">AP</option>
+                                                            <option value="app">APP</option>
+                                                            <option value="ba">BA</option>
+                                                            <option value="bac">BAC</option>
+                                                            <option value="bak">BAK</option>
+                                                            <option value="batch">BATCH</option>
+                                                            <option value="dev">DEV</option>
+                                                            <option value="etl">ETL</option>
+                                                            <option value="purpo">PURPO</option>
+                                                            <option value="qsa">QSA</option>
+                                                            <option value="qwe">QWE</option>
+                                                            <option value="test">TEST</option>
+                                                            <option value="we">WE</option>
+                                                            <option value="ws">WS</option>
+                                                            <option value="wsw">WSW</option>
+                                                            <option value="web">WEB</option>
+                                                            <option value="was">WAS</option>
+                                                            <option value="db">DB</option>
+                                                        </select><span
+                                                            class="select2 select2-container select2-container--default"
+                                                            dir="ltr" style="width: auto;"><span class="selection"><span
+                                                                    class="select2-selection select2-selection--single"
+                                                                    role="combobox" aria-haspopup="true"
+                                                                    aria-expanded="false" tabindex="0"
+                                                                    aria-labelledby="select2-_purpose-container"><span
+                                                                        class="select2-selection__rendered"
+                                                                        id="select2-_purpose-container"
+                                                                        title=""></span><span
+                                                                        class="select2-selection__arrow"
+                                                                        role="presentation"><b
+                                                                            role="presentation"></b></span></span></span><span
+                                                                class="dropdown-wrapper"
+                                                                aria-hidden="true"></span></span></div>
+                                                    <!---->
+                                                </div>
+                                                <div class="col col-sm-12">
+                                                    <div id="_p_kubun_div" required="required"
+                                                        select_style="width: calc(100% - 150px);"><label for="_p_kubun"
+                                                            class="control-label grid-title value-title">구분</label>
+                                                        <label class="checkbox-inline"><input type="radio"
+                                                                name="P_KUBUN_radio" value="dev">개발 </label><label
+                                                            class="checkbox-inline"><input type="radio"
+                                                                name="P_KUBUN_radio" value="liv">라이브 </label><label
+                                                            class="checkbox-inline"><input type="radio"
+                                                                name="P_KUBUN_radio" value="stg">스테이징 </label><label
+                                                            class="checkbox-inline"><input type="radio"
+                                                                name="P_KUBUN_radio" value="tst">테스트 </label> <input
+                                                            type="hidden" name="P_KUBUN" id="_p_kubun" value="dev">
+                                                    </div>
+                                                </div>
+                                                <!---->
+                                                <!---->
+                                                <div class="col col-sm-12">
+                                                    <div><label for="S_CMT" class="control-label grid-title value-title"
+                                                            style="height: 150px;">설명 </label>
+                                                        <div id="S_CMT" contenteditable="true" class="hastitle editor">
+                                                            1.서버 용도<br><br>2.서비스 목적<br><br>3.관련업무<br><br>4.기타</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- step_content_3 -->
+                                    <div id="newVra_popup_step_content_3" class="wizard_step_content" style="display: block;">
+                                        <div>
+                                            <!-- evoke : div.subStepList 삭제 -->
+                                            <!-- <div class="subStepList">
+                                                <div id="subStepTitle_2" class="subStepTitle selected">
+                                                    General
+                                                </div>
+                                                <div></div>
+                                            </div> -->
+                                            <!---->
+                                            <div class="subStepContent">
+                                                <div id="step2" data-step-name="General" class="step" style="">
+                                                    <div class="col col-sm-12 input_vm_name-area">
+                                                        <div id="input_vm_name-option"><label for="input_vm_name" class="control-label grid-title value-title stepLabel ">input_vm_name</label>
+                                                            <!-- evoke : input에 placeholder, style 추가 -->
+                                                            <input name="input_vm_name" id="input_vm_name" value="" class="form-control input hastitle stepInput" style="width:260px" placeholder="입력">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col col-sm-12 input_NewHostname-area">
+                                                        <div id="input_NewHostname-option">
+                                                            <label for="input_NewHostname" class="control-label grid-title value-title stepLabel ">input_NewHostname</label>
+                                                            <!-- evoke : input에 placeholder, style 추가 -->
+                                                            <input name="input_NewHostname" id="input_NewHostname" value="" class="form-control input hastitle stepInput" style="width:260px" placeholder="입력">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="newVra_popup_step_content_4" class="wizard_step_content" style="display: none;">
+                                        <div class="stepSummary">
+                                            <div class="info">
+                                                <div class="ok-icon"></div>
+                                                <div class="title">
+                                                    신청한 내용을 확인해주세요.
+                                                </div>
+                                                <div class="desc">
+                                                    다음을 클릭하시면 신청이 완료됩니다.
+                                                </div>
+                                            </div>
+                                            <div class="summary-content">
+                                                <div class="number">1</div>
+                                                <div class="title">카탈로그</div>
+                                                <div class="info">
+                                                    <div class="col col-sm-12">
+                                                        <div class="fm-output"><label
+                                                                class="control-label grid-title value-title">카탈로그</label>
+                                                            <div name="CATALOG_NM" class="output  hastitle">서버명 변경</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="number">2</div>
+                                                <div class="title">기본정보</div>
+                                                <div class="info">
+                                                    <div class="col col-sm-12">
+                                                        <div class="fm-output"><label
+                                                                class="control-label grid-title value-title">요청명</label>
+                                                            <div name="REQ_TITLE" class="output  hastitle">1</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col col-sm-12">
+                                                        <div class="fm-output"><label
+                                                                class="control-label grid-title value-title">용도</label>
+                                                            <div name="S_PURPOSE" class="output  hastitle">admin</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col col-sm-12">
+                                                        <div class="fm-output"><label
+                                                                class="control-label grid-title value-title">구분</label>
+                                                            <div name="P_KUBUN" class="output  hastitle">dev</div>
+                                                        </div>
+                                                    </div>
+                                                    <!---->
+                                                    <!---->
+                                                </div>
+                                                <!---->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="newVra_popup_step_content_5" class="wizard_step_content"
+                                        style="display: none;">
+                                        <div class="done-icon"></div>
+                                        <div class="done-msg">
+                                            <!---->
+                                            <div>
+                                                관리자 승인 후 배포됩니다. 승인이 완료되면 메일이 발송됩니다.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wizard_buttons"><input type="button" value="이전" class="btn popupBtn prev"
+                                        style="display: none;"> <input type="button" value="다음"
+                                        class="btn popupBtn next"> <input type="button" value="완료"
+                                        class="btn popupBtn finish" style="display: none;"> <input type="button"
+                                        value="닫기" onclick="$('#newVra_popup').modal('hide');return false"
+                                        class="btn popupBtn close" style="display: none;">
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="modal-backdrop fade in"></div>
+
+
+</body>
+
+</html>

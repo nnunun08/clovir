@@ -1,0 +1,185 @@
+.rangeSlider {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.rangeSlider .rangeInput {
+  width: 56px;
+  height: 36px;
+  outline: none;
+  text-align: center;
+  border: 1px solid #009D93;
+  border-radius: 4px;
+  color: #009D93;
+  font-weight: 700;
+  font-size: 14px;
+  margin-left: 20px;
+}
+.rangeSlider .rangeInput::-webkit-inner-spin-button {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+form {
+  width: auto;
+}
+form .debt-amount-slider {
+  display: flex;
+  flex-direction: row;
+  align-content: stretch;
+  position: relative;
+  width: auto;
+  height: 50px;
+  margin-top: -26px;
+  margin-left: -5.5px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+form .debt-amount-slider::before {
+  content: " ";
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  width: calc(100% - 50px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #DDD;
+}
+form .debt-amount-slider input, form .debt-amount-slider label {
+  box-sizing: border-box;
+  flex: 1;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+form .debt-amount-slider input:disabled + label::after {
+  background: url(/res/img/ncsoft/ic_range_dis.svg) center/cover no-repeat;
+  border: 0;
+}
+form .debt-amount-slider label {
+  display: inline-block;
+  position: relative;
+  width: 41px;
+  height: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+form .debt-amount-slider label::before {
+  content: attr(data-debt-amount);
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 45px);
+  font-size: 12px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+form .debt-amount-slider label::after {
+  content: " ";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  border: 1px solid #DDDDDD;
+  background: #fff;
+  border-radius: 50%;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  z-index: 1;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+form .debt-amount-slider label:hover::after {
+  transform: translate(-50%, -50%);
+}
+form .debt-amount-slider input {
+  display: none;
+}
+form .debt-amount-slider input:checked + label::before {
+  color: #25B5AC;
+}
+form .debt-amount-slider input:checked + label::after {
+  border-width: 0px;
+  border: 3px solid #97D8D4;
+  transform: translate(-50%, -50%);
+  background-color: #25B5AC;
+}
+form .debt-amount-slider input:checked ~ .debt-amount-pos {
+  opacity: 1;
+}
+form .debt-amount-slider input:checked:nth-child(1) ~ .debt-amount-pos {
+  left: 10%;
+}
+form .debt-amount-slider input:checked:nth-child(3) ~ .debt-amount-pos {
+  left: 30%;
+}
+form .debt-amount-slider input:checked:nth-child(5) ~ .debt-amount-pos {
+  left: 50%;
+}
+form .debt-amount-slider input:checked:nth-child(7) ~ .debt-amount-pos {
+  left: 70%;
+}
+form .debt-amount-slider input:checked:nth-child(9) ~ .debt-amount-pos {
+  left: 90%;
+}
+form:valid .debt-amount-slider input + label::before {
+  transform: translate(-50%, 45px);
+  transition: all 0.15s linear;
+}
+form:valid .debt-amount-slider input:checked + label::before {
+  transform: translate(-50%, 45px);
+}
+form + button {
+  display: block;
+  position: relative;
+  margin: 56px auto 0;
+  padding: 10px 20px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  transition: all 0.15s ease-in-out;
+  font-family: inherit;
+  font-size: 24px;
+  font-weight: 600;
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 8px;
+  outline: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+form + button:hover {
+  background: #000;
+  color: #fff;
+}
+form + button:focus {
+  background: #4caf50;
+  border-color: #4caf50;
+  color: #fff;
+  pointer-events: none;
+}
+form + button::before {
+  display: inline-block;
+  width: 0;
+  opacity: 0;
+  content: "\f3f4";
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 900;
+  margin-right: 0;
+  transform: rotate(0deg);
+}
+form:invalid + button {
+  pointer-events: none;
+  opacity: 0.25;
+}/*# sourceMappingURL=rangeStyle.css.map */

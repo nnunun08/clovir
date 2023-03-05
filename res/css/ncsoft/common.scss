@@ -698,11 +698,18 @@ marquee
     color: white;
 }
 
-.popup_area .input, .popup_area .value-title, .popup_area  .output, .popup_area  .input-group, .popup_area  .input-select .select {
+.popup_area .input, 
+.popup_area .value-title, 
+.popup_area .output, .popup_area  
+.input-group, 
+.popup_area .input-select .select {
     float: none;
     vertical-align: middle;
     display: inline-block;
     margin: 0;
+}
+.popup_area .input::placeholder {
+    color: #ccc;
 }
 
 .popup_area .value-title {
@@ -5318,7 +5325,7 @@ v
 }
 
 .rightBtn > div, .leftBtn > div {
-    display: inline-block !important;
+    display: inline-block;
     padding-top: 7px;
 }
 
