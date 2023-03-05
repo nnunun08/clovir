@@ -3847,7 +3847,7 @@ v
 }
 
 .form-control {
-    box-shadow: none;
+    box-shadow: none !important;
     border-radius: 0px;
     border: 1px solid #b5b5b5;
 }
@@ -6223,3 +6223,28 @@ v
 //
 
 
+.checkBox {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: right;
+    color: #000000;
+    input[type="checkbox"] {
+        display: none;
+    }
+    .checkIcon {
+        display: block;
+        width: 16px;
+        height: 16px;
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        border-radius: 2px;
+    }
+    input:checked + .checkIcon {
+        background-color: #25B5AC;
+        border: 3px solid #97D8D4;
+    }
+}

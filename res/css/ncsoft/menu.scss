@@ -1604,42 +1604,44 @@ a.tree-toggle{
     width: auto;
     padding: 0;
     margin-right: 20px;
-    .search-box-btn {
-        width: 226px;
-        background: #FFFFFF;
-        border: 1px solid #DDDDDD;
-        border-radius: 4px;
-        height: 40px;
-        padding: 0 0 0 12px;
-        position: relative;
-        .keyword {
-            height: 100%;
-            width: 100%;
-            margin-right: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            input {
-                font-weight: 400;
-                font-size: 14px;
-                line-height: 19px;
-                &::placeholder {
-                    color: #ccc;
-                }
+}
+
+.search-box-btn {
+    width: 226px;
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    height: 40px;
+    padding: 0 0 0 12px;
+    position: relative;
+    .keyword {
+        height: 100%;
+        width: 100%;
+        margin-right: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        input {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 19px;
+            outline: none;
+            &::placeholder {
+                color: #ccc;
             }
         }
-        .btn {
-            background-color: transparent !important;
-            width: 0;
-            height: 0;
-            padding: 0;
-        }
-        img {
-            position: absolute;
-            right: 8px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
+    }
+    .btn {
+        background-color: transparent !important;
+        width: 0;
+        height: 0;
+        padding: 0;
+    }
+    img {
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        transform: translateY(-50%);
     }
 }
 

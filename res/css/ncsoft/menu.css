@@ -1658,7 +1658,8 @@ a.tree-toggle {
   padding: 0;
   margin-right: 20px;
 }
-#searchArea .search-box-btn {
+
+.search-box-btn {
   width: 226px;
   background: #FFFFFF;
   border: 1px solid #DDDDDD;
@@ -1667,7 +1668,7 @@ a.tree-toggle {
   padding: 0 0 0 12px;
   position: relative;
 }
-#searchArea .search-box-btn .keyword {
+.search-box-btn .keyword {
   height: 100%;
   width: 100%;
   margin-right: 0;
@@ -1675,27 +1676,28 @@ a.tree-toggle {
   display: flex;
   align-items: center;
 }
-#searchArea .search-box-btn .keyword input {
+.search-box-btn .keyword input {
   font-weight: 400;
   font-size: 14px;
   line-height: 19px;
+  outline: none;
 }
-#searchArea .search-box-btn .keyword input::-moz-placeholder {
+.search-box-btn .keyword input::-moz-placeholder {
   color: #ccc;
 }
-#searchArea .search-box-btn .keyword input:-ms-input-placeholder {
+.search-box-btn .keyword input:-ms-input-placeholder {
   color: #ccc;
 }
-#searchArea .search-box-btn .keyword input::placeholder {
+.search-box-btn .keyword input::placeholder {
   color: #ccc;
 }
-#searchArea .search-box-btn .btn {
+.search-box-btn .btn {
   background-color: transparent !important;
   width: 0;
   height: 0;
   padding: 0;
 }
-#searchArea .search-box-btn img {
+.search-box-btn img {
   position: absolute;
   right: 8px;
   top: 50%;

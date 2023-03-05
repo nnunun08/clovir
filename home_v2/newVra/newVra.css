@@ -7,7 +7,8 @@
   padding: 0;
 }
 #newVra_popup .modal-body {
-  height: 643px;
+  min-height: 643px;
+  height: auto;
 }
 #newVra_popup .list-group-item {
   border: 0;
@@ -63,8 +64,11 @@
 #newVra_popup .wizard_step_contents .select2-container {
   width: calc(100% - 155px);
 }
-#newVra_popup .wizard_step_content > .col:nth-of-type(1) {
+#newVra_popup .wizard_step_content .col {
   border-top: 1px solid #4A4A4A;
+}
+#newVra_popup .wizard_step_content .col + .col {
+  border-top: 0;
 }
 #newVra_popup .wizard_step_content .col > div {
   display: flex;
@@ -103,7 +107,7 @@
 }
 #newVra_popup .wizard_step_content .col > div .form-control {
   height: 40px;
-  background: #FFFFFF;
+  background: transparent;
   border: 1px solid #DDDDDD;
   border-radius: 4px;
 }
@@ -179,18 +183,6 @@
   line-height: 20px;
   color: #4A4A4A;
 }
-#newVra_popup .subStepList .subStepTitle {
-  border: #DDDDDD 1px solid;
-  width: 100px;
-  padding: 5px;
-  border-radius: 24px;
-  text-align: center;
-  float: left;
-}
-#newVra_popup .subStepList .subStepTitle.selected {
-  color: white;
-  background-color: #006979;
-}
 #newVra_popup .wizard_buttons {
   margin-left: 216px;
   display: flex;
@@ -259,4 +251,163 @@
 }
 #newVra_popup .checkbox-inline + .checkbox-inline {
   margin-left: 45px !important;
+}
+#newVra_popup .topInfo .checkbox-inline + .checkbox-inline {
+  margin-left: 15px !important;
+}
+
+.tagWrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 8px;
+}
+.tagWrap .tagItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 24px;
+  padding: 0 8px;
+  border: 1px solid #EEEEEE;
+  border-radius: 4px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  text-align: center;
+  color: #4A4A4A;
+}
+.tagWrap .tagItem .tagRemove {
+  text-indent: -9999px;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  background: url(/res/img/ncsoft/icon_16_close.svg) center/cover no-repeat;
+}
+
+.insertCheck {
+  display: inline-flex;
+  align-items: center;
+}
+.insertCheck .checkBox {
+  margin: 0;
+  margin-left: 28px;
+  margin-right: 34px;
+}
+.insertCheck .btn {
+  margin-left: 8px;
+  background: #009D93;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 47px;
+  height: 36px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 17px;
+  color: #FFFFFF !important;
+}
+
+.topInfo {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 36px;
+  margin-bottom: 20px;
+}
+.topInfo .subStepList {
+  display: flex;
+  align-items: center;
+}
+.topInfo .subStepList .subStepTitle {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+  position: relative;
+  border: 1px solid #DDDDDD;
+  background-color: #fff;
+  border-right: 0;
+  border-radius: 4px 0 0 4px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  text-align: center;
+  color: #4A4A4A;
+  width: 182px;
+  box-sizing: border-box;
+  margin-left: -4px;
+}
+.topInfo .subStepList .subStepTitle::after {
+  content: "";
+  position: absolute;
+  right: -10px;
+  top: -1px;
+  width: 11px;
+  height: 36px;
+  background: url(/res/img/ncsoft/bg_tab_df.svg) center/cover no-repeat;
+}
+.topInfo .subStepList .subStepTitle.selected {
+  color: #006979;
+  background-color: #EEF9F7;
+  border-color: #97D8D4;
+}
+.topInfo .subStepList .subStepTitle.selected::after {
+  background-image: url(/res/img/ncsoft/bg_tab_ac.svg);
+}
+.topInfo .subStepList .subStepTitle:nth-child(1) {
+  z-index: 3;
+  margin-left: 0;
+}
+.topInfo .subStepList .subStepTitle:nth-child(2) {
+  z-index: 2;
+}
+.topInfo .subStepList .subStepTitle:nth-child(3) {
+  z-index: 1;
+}
+.topInfo .subStepList .subStepTitle:last-child {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.topInfo .subStepList .subStepTitle:last-child::after {
+  display: none;
+}
+.topInfo .subStepList .subStepTitle:last-child.selected {
+  border-color: #97D8D4;
+}
+.topInfo .checkRight {
+  flex: 1 0 auto;
+  text-align: right;
+  margin-bottom: 3px;
+}
+.topInfo .checkbox-inline:has(input:checked)::after {
+  background-image: url(/res/img/ncsoft/ic_range_dis.svg) !important;
+}
+
+.quarterNum {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  color: #4A4A4A;
+  margin-bottom: 16px;
+}
+.quarterNum .tit {
+  padding-right: 12px;
+  margin-right: 12px;
+  position: relative;
+}
+.quarterNum .tit::after {
+  content: "";
+  width: 1px;
+  height: 11px;
+  background-color: #ddd;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.quarterNum .value {
+  color: #006979;
 }/*# sourceMappingURL=newVra.css.map */
