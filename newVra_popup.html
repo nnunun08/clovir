@@ -29,10 +29,9 @@
         <div id="newVra_popup" role="dialog" class="modal fade popup_dialog in" style="display: block;">
             <div class="modal-dialog ui-draggable">
                 <div class="modal-content  container-fluid">
-                    <div class="modal-header ui-draggable-handle">
-                        <button type="button" onclick="processScrollBar()" data-dismiss="modal" class="close"></button>
-                        <span id="newVra_popup_title" class="header-title">신규 요청 </span>
-                    </div>
+                    <div class="modal-header ui-draggable-handle"><button type="button" onclick="processScrollBar()"
+                            data-dismiss="modal" class="close"></button> <span id="newVra_popup_title"
+                            class="header-title">신규 요청 </span></div>
                     <div class="modal-body">
                         <link href="/res/css/rangeSlider/rangeStyle.css" type="text/css" rel="stylesheet">
                         <script src="/res/js/rangeSlider.js" type="text/JavaScript"></script>
@@ -43,33 +42,30 @@
                                 <div class="wizard_step_list">
                                     <ul class="list-group">
                                         <li id="newVra_popup_step_1" class="list-group-item selected">
-                                            <div class="number">1</div> 
-                                            카탈로그 선택
+                                            <div class="number">1</div> 카탈로그 선택
                                         </li>
                                         <li id="newVra_popup_step_2" class="list-group-item">
-                                            <div class="number">2</div>
-                                            기본정보 입력
+                                            <div class="number">2</div> 기본정보 입력
                                         </li>
                                         <li id="newVra_popup_step_3" class="list-group-item">
-                                            <div class="number">3</div>
-                                            상세정보 입력
+                                            <div class="number">3</div> 정보 입력
                                         </li>
                                         <li id="newVra_popup_step_4" class="list-group-item">
-                                            <div class="number">4</div>
-                                            확인
+                                            <div class="number">4</div> 정보 확인
                                         </li>
                                         <li id="newVra_popup_step_5" class="list-group-item">
-                                            <div class="number">5</div>
-                                            완료
+                                            <div class="number">5</div> 완료
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="wizard_step_contents">
-                                    <div id="newVra_popup_step_content_1" class="wizard_step_content" style="display: none;">
+                                    <!-- step_content_1 -->
+                                    <div id="newVra_popup_step_content_1" class="wizard_step_content" style="display: block;">
                                         <div class="catalog_list">
                                             <div id="catalog_1efbf1f2-1633-34a7-9e25-f1f604db9a91" class="catalog">
                                                 <div class="name">서버명 변경</div>
-                                                <div class="desc"></div>
+                                                <!-- evoke : .desc 텍스트 추가 -->
+                                                <div class="desc">해당 카탈로그 설명</div>
                                             </div>
                                             <div id="catalog_be521c8c-c1de-3bc0-b977-ba61dc6c05a9" class="catalog">
                                                 <div class="name">계정추가</div>
@@ -79,209 +75,327 @@
                                                 <div class="name">multi-disk-syk</div>
                                                 <div class="desc"></div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div id="newVra_popup_step_content_2" class="wizard_step_content">
-                                        <button type="button" id="taskPurposeMapping_button" class="btn btn-primary fm-popup-button update" style="display: none;">정보 변경</button>
-                                        <div class="col col-sm-12">
-                                            <div required="required">
-                                                <label for="S_REQ_TITLE" class="control-label grid-title value-title">요청명</label> 
-                                                <!-- evoke : readonly 추가 -->
-                                                <input name="REQ_TITLE" id="S_REQ_TITLE" class="form-control input hastitle" readonly>
-                                            </div>
-                                        </div>
-                                        <!---->
-                                        <div id="S_PURPOSE_DIV" class="col col-sm-12">
-                                            <div required="required">
-                                                <label for="_purpose" class="control-label grid-title value-title">용도</label> 
-                                                <select name="S_PURPOSE" id="_purpose" onchange="onChangePurpose()" class="form-control input hastitle select2-hidden-accessible" tabindex="-1" aria-hidden="true">
-                                                    <option value=""></option>
-                                                    <option value="aaaaaaaaaaa">aaaaaaaaaaa</option>
-                                                    <option value="admin">ADMIN</option>
-                                                    <option value="ap">AP</option>
-                                                    <option value="app">APP</option>
-                                                    <option value="ba">BA</option>
-                                                    <option value="bac">BAC</option>
-                                                    <option value="bak">BAK</option>
-                                                    <option value="batch">BATCH</option>
-                                                    <option value="dev">DEV</option>
-                                                    <option value="etl">ETL</option>
-                                                    <option value="purpo">PURPO</option>
-                                                    <option value="qsa">QSA</option>
-                                                    <option value="qwe">QWE</option>
-                                                    <option value="test">TEST</option>
-                                                    <option value="we">WE</option>
-                                                    <option value="ws">WS</option>
-                                                    <option value="wsw">WSW</option>
-                                                    <option value="web">WEB</option>
-                                                    <option value="was">WAS</option>
-                                                    <option value="db">DB</option>
-                                                </select>
-                                                <span class="select2 select2-container select2-container--default" dir="ltr" style="width: auto;">
-                                                    <span class="selection">
-                                                        <span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-_purpose-container">
-                                                            <span class="select2-selection__rendered" id="select2-_purpose-container" title=""></span>
-                                                            <span class="select2-selection__arrow" role="presentation">
-                                                                <b role="presentation"></b>
-                                                            </span>
-                                                            </span>
-                                                        </span>
-                                                    <span class="dropdown-wrapper" aria-hidden="true"></span>
-                                                </span>
-                                            </div>
-                                            <div class="input-group">
-                                                <input type="text" name="NEW_PURPOSE" id="NEW_PURPOSE" placeholder="" class="form-control">
-                                                <div>
-                                                    <button onclick="newPurpose();return false" class="btn btn-default">
-                                                        추가
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col col-sm-12">
-                                            <div id="_p_kubun_div" required="required" select_style="width: calc(100% - 150px);">
-                                                <label for="_p_kubun" class="control-label grid-title value-title">구분</label>
-                                                <label class="checkbox-inline">
-                                                    <input type="radio" name="P_KUBUN_radio" value="dev">개발 
-                                                </label>
-                                                <label class="checkbox-inline">
-                                                    <input type="radio" name="P_KUBUN_radio" value="liv">라이브 </label>
-                                                    <label class="checkbox-inline">
-                                                        <input type="radio" name="P_KUBUN_radio" value="stg">
-                                                        스테이징 
-                                                    </label>
-                                                    <label class="checkbox-inline">
-                                                        <input type="radio" name="P_KUBUN_radio" value="tst">
-                                                        테스트 
-                                                    </label>
-                                                <input type="hidden" name="P_KUBUN" id="_p_kubun" value="dev">
-                                            </div>
-                                        </div>
-                                        <div class="createInfo col col-sm-12">
-                                            <div required="required">
-                                                <label for="S_USE_MM" title="사용기간(개월)" class="control-label grid-title value-title">사용기간(개월)</label>
 
-                                                <!-- evoke : rangeSlider 컴포넌트 교체 -->
-                                                <div id="" class="rangeSlider">
-                                                    <form action="/p/quote.php" method="GET">
-                                                        <div class="debt-amount-slider">
-                                                            <input type="radio" name="debt-amount" id="1" value="1" required="">
-                                                            <label for="1" data-debt-amount="3"></label>
-                                                            <input type="radio" name="debt-amount" id="2" value="2" required="">
-                                                            <label for="2" data-debt-amount="6"></label>
-                                                            <input type="radio" name="debt-amount" id="3" value="3" required="">
-                                                            <label for="3" data-debt-amount="9"></label>
-                                                            <input type="radio" name="debt-amount" id="4" value="4" required="">
-                                                            <label for="4" data-debt-amount="12"></label>
-                                                            <input type="radio" name="debt-amount" id="5" value="5" required="">
-                                                            <label for="5" data-debt-amount="24"></label>
-                                                            <input type="radio" name="debt-amount" id="6" value="6" required="">
-                                                            <label for="6" data-debt-amount="36"></label>
-                                                            <input type="radio" name="debt-amount" id="7" value="7" required="" disabled="">
-                                                            <label for="7" data-debt-amount="Unlimit"></label>
-                                                            <!-- evoke : .debt-amout-pos 삭제 -->
-                                                            <!-- <div class="debt-amount-pos"></div> -->
-                                                        </div>
-                                                    </form>
-                                                    <input type="number" class="rangeInput">
-                                                </div>
-                                                <!-- <div data-id="S_USE_MM" id="S_USE_MM_div" class="input hastitle range-slider" style="--min:0; --step:1; --value:0; --text-value:0; --threshold:24; --fill-color:linear-gradient(to right,blue NaN%, lightgray 0%); --primary-color:lightgray;">
-                                                    <input id="S_USE_MM" name="S_USE_MM" min="0" type="range" step="1" threshold="24" class="range" value="0" style="text-indent: -10000px; --primary-color:lightgray; --fill-color:linear-gradient(to right,blue NaN%, lightgray 0%);">
-                                                    <output class="bubble"></output>
-                                                    <div class="threshold" style="--left:NaN%;--text-threshold:&quot;24&quot;"></div>
-                                                    <div class="range-slider__progress"></div>
-                                                </div> -->
+                                            <!-- evoke : 요소 추가시 아래 div.catalog 형태로 추가되면 됩니다  -->
+                                            <div id="" class="catalog">
+                                                <div class="name">name</div>
+                                                <div class="desc">desc</div>
                                             </div>
+                                            <div id="" class="catalog">
+                                                <div class="name">name</div>
+                                                <div class="desc">desc</div>
+                                            </div>
+
                                         </div>
-                                        <!---->
-                                        <div class="col col-sm-12">
-                                            <div>
-                                                <!-- evoke : style="height: 150px" inline style 삭제 -->
-                                                <label for="S_CMT" class="control-label grid-title value-title">설명 </label>
-                                                <div id="S_CMT" contenteditable="true" class="hastitle editor">
-                                                    1.서버 용도
-                                                    <br><br>
-                                                    2.서비스 목적
-                                                    <br><br>
-                                                    3.관련업무
-                                                    <br><br>
-                                                    4.기타
+                                    </div>
+
+                                    <!-- step_content_2 -->
+                                    <div id="newVra_popup_step_content_2" class="wizard_step_content" style="display: block;">
+                                        <div>
+                                            <!---->
+                                            <div class="popup_wizard_content">
+                                                <div class="col col-sm-12">
+                                                    <div required="required"><label for="S_REQ_TITLE"
+                                                            class="control-label grid-title value-title">요청명</label>
+                                                        <input name="REQ_TITLE" id="S_REQ_TITLE"
+                                                            class="form-control input hastitle"></div>
+                                                </div>
+                                                <!---->
+                                                <div id="S_PURPOSE_DIV" class="col col-sm-12">
+                                                    <div required="required">
+                                                        <label for="_purpose" class="control-label grid-title value-title">용도</label>
+                                                        <select name="S_PURPOSE" id="_purpose"
+                                                            onchange="onChangePurpose()"
+                                                            class="form-control input hastitle select2-hidden-accessible"
+                                                            tabindex="-1" aria-hidden="true">
+                                                            <option value=""></option>
+                                                            <option value=""></option>
+                                                            <option value="aaaaaaaaaaa">aaaaaaaaaaa</option>
+                                                            <option value="admin">ADMIN</option>
+                                                            <option value="ap">AP</option>
+                                                            <option value="app">APP</option>
+                                                            <option value="ba">BA</option>
+                                                            <option value="bac">BAC</option>
+                                                            <option value="bak">BAK</option>
+                                                            <option value="batch">BATCH</option>
+                                                            <option value="dev">DEV</option>
+                                                            <option value="etl">ETL</option>
+                                                            <option value="purpo">PURPO</option>
+                                                            <option value="qsa">QSA</option>
+                                                            <option value="qwe">QWE</option>
+                                                            <option value="test">TEST</option>
+                                                            <option value="we">WE</option>
+                                                            <option value="ws">WS</option>
+                                                            <option value="wsw">WSW</option>
+                                                            <option value="web">WEB</option>
+                                                            <option value="was">WAS</option>
+                                                            <option value="db">DB</option>
+                                                        </select>
+                                                        <span class="select2 select2-container select2-container--default" dir="ltr" style="width: auto;">
+                                                            <span class="selection">
+                                                                <span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-_purpose-container">
+                                                                    <span class="select2-selection__rendered"id="select2-_purpose-container"title=""></span>
+                                                                    <span class="select2-selection__arrow"role="presentation"><b role="presentation"></b></span>
+                                                                </span>
+                                                            </span>
+                                                            <span class="dropdown-wrapper" aria-hidden="true"></span>
+                                                        </span>
+
+                                                        <!-- evoke : 추가 컴포넌트 추가 -->
+                                                        <div class="insertCheck">
+                                                            <label for="checkBox1" class="checkBox">
+                                                                <input id="checkBox1" type="checkbox">
+                                                                <span class="checkIcon"></span>
+                                                                추가
+                                                            </label>
+                                                            <input class="form-control" style="width:153px;">
+                                                            <button type="button" class="btn">추가</button>
+                                                        </div>
+
+                                                    </div>
+                                                    <!---->
+                                                </div>
+                                                <div class="col col-sm-12">
+                                                    <div id="_p_kubun_div" required="required"
+                                                        select_style="width: calc(100% - 150px);"><label for="_p_kubun"
+                                                            class="control-label grid-title value-title">구분</label>
+                                                        <label class="checkbox-inline"><input type="radio"
+                                                                name="P_KUBUN_radio" value="dev">개발 </label><label
+                                                            class="checkbox-inline"><input type="radio"
+                                                                name="P_KUBUN_radio" value="liv">라이브 </label><label
+                                                            class="checkbox-inline"><input type="radio"
+                                                                name="P_KUBUN_radio" value="stg">스테이징 </label><label
+                                                            class="checkbox-inline"><input type="radio"
+                                                                name="P_KUBUN_radio" value="tst">테스트 </label> <input
+                                                            type="hidden" name="P_KUBUN" id="_p_kubun" value="dev">
+                                                    </div>
+                                                </div>
+                                                <!---->
+                                                <!---->
+                                                <div class="col col-sm-12">
+                                                    <div>
+                                                        <!-- evoke : inlineStyle 제거 -->
+                                                        <label for="S_CMT" class="control-label grid-title value-title">설명 </label>
+                                                        <!-- evoke : inlineStyle 추가. width:100% -->
+                                                        <div id="S_CMT" contenteditable="true" class="editor" style="width: 100%;">
+                                                            1.서버 용도<br><br>2.서비스 목적<br><br>3.관련업무<br><br>4.기타</div>
+                                                    </div>
+                                                </div>
+
+                                                 <!-- evoke : range 컴포넌트 추가 -->
+                                                 <div class="col">
+                                                    <div>
+                                                        <label for="" class="control-label grid-title value-title">사용기간</label>
+                                                        <div>
+                                                            <div class="rangeSlider">
+                                                                <form action="/p/quote.php" method="GET">
+                                                                    <div class="debt-amount-slider">
+                                                                        <input type="radio" name="debt-amount" id="1" value="3" required><label for="1" data-debt-amount="3"></label>
+                                                                        <input type="radio" name="debt-amount" id="2" value="6" required checked><label for="2" data-debt-amount="6"></label>
+                                                                        <input type="radio" name="debt-amount" id="3" value="9" required><label for="3" data-debt-amount="9"></label>
+                                                                        <input type="radio" name="debt-amount" id="4" value="12" required><label for="4" data-debt-amount="12"></label>
+                                                                        <input type="radio" name="debt-amount" id="5" value="24" required><label for="5" data-debt-amount="24"></label>
+                                                                        <input type="radio" name="debt-amount" id="6" value="36" required><label for="6" data-debt-amount="36"></label>
+                                                                        <input type="radio" name="debt-amount" id="7" value="Unlimit" required disabled><label for="7" data-debt-amount="Unlimit"></label>
+                                                                        <div class="debt-amount-pos"></div>
+                                                                    </div>
+                                                                </form>
+                                                                <input type="number" class="rangeInput" value="6">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- evoke : 검색 컴포넌트 추가 -->
+                                                <div class="col">
+                                                    <div>
+                                                        <label for="" class="control-label grid-title">TAG</label>
+                                                        <div>
+                                                            <div>
+                                                                <div class="search-box-btn" style="width: 260px;">
+                                                                    <div class="keyword">
+                                                                        <input placeholder="태그 입력">
+                                                                    </div>
+                                                                    <button type="button" class="btn">
+                                                                        <img src="/res/img/ncsoft/icon_20_search.svg">
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="tagWrap">
+                                                                <span class="tagItem">리니지팀 홍길동<i class="tagRemove">X</i></span>
+                                                                <span class="tagItem">마케티팅팀 제니<i class="tagRemove">X</i></span>
+                                                                <span class="tagItem">리니지팀 홍길동<i class="tagRemove">X</i></span>
+                                                                <span class="tagItem">마케티 제니<i class="tagRemove">X</i></span>
+                                                                <span class="tagItem">리니지팀 홍길동<i class="tagRemove">X</i></span>
+                                                                <span class="tagItem">마케티팅팀 제니<i class="tagRemove">X</i></span>
+                                                                <span class="tagItem">리니지팀<i class="tagRemove">X</i></span>
+                                                                <span class="tagItem">마케티팅팀 제니<i class="tagRemove">X</i></span>
+                                                                <span class="tagItem">리니지팀 홍길동<i class="tagRemove">X</i></span>
+                                                                <span class="tagItem">마케티팅팀 제니<i class="tagRemove">X</i></span>
+                                                                <span class="tagItem">리니지팀 홍길동<i class="tagRemove">X</i></span>
+                                                                <span class="tagItem">마케티<i class="tagRemove">X</i></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="newVra_popup_step_content_3" class="wizard_step_content" style="display: none;">
-                                        <div class="subStepList">
-                                            <div>
-                                                0
-                                                <!---->
+
+                                    <!-- step_content_3 -->
+                                    <div id="newVra_popup_step_content_3" class="wizard_step_content" style="display: block;">
+                                        <div>
+                                            <!-- evoke : .topInfo 추가 -->
+                                            <div class="topInfo">
+                                                <div class="subStepList">
+                                                    <div id="subStepTitle_1" class="subStepTitle selected">자원구성</div>
+                                                    <div id="subStepTitle_2" class="subStepTitle">어플리케이션 구성 2</div>
+                                                    <div id="subStepTitle_3" class="subStepTitle">어플리케이션 구성 1</div>
+                                                </div>
+                                                <!-- evoke : style="pointer-events: none;" 라디오 클릭 이벤트를 방지 -->
+                                                <div class="checkRight">
+                                                    <label class="checkbox-inline"><input type="radio" value="신청가능" name="radio1" style="pointer-events: none;">신청가능</label>
+                                                    <label class="checkbox-inline"><input type="radio" value="승인 필요" name="radio1" style="pointer-events: none;" checked>승인 필요</label>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="subStepContent">
+
+                                                <div id="step1" data-step-name="자원구성" class="step" style="display: block;">
+                                                    <div class="col">
+                                                        <div required="required">
+                                                            <label class="control-label grid-title value-title">OS</label>
+                                                            <label class="checkbox-inline"><input type="radio" name="os" value="Window">Window</label>
+                                                            <label class="checkbox-inline"><input type="radio" name="os" value="RHEL7.9">RHEL7.9</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div required="required">
+                                                            <label class="control-label grid-title value-title">Core</label>
+                                                            <!-- evoke : rangeSlider 컴포넌트 -->
+                                                            <div class="rangeSlider" style="width:405px">
+                                                                <div class="debt-amount-slider">
+                                                                    <input type="radio" name="debt-amount" id="01" value="3" required=""><label for="01" data-debt-amount="3"></label>
+                                                                    <input type="radio" name="debt-amount" id="02" value="6" required="" checked><label for="02" data-debt-amount="6"></label>
+                                                                    <input type="radio" name="debt-amount" id="03" value="9" required=""><label for="03" data-debt-amount="9"></label>
+                                                                    <input type="radio" name="debt-amount" id="04" value="12" required=""><label for="04" data-debt-amount="12"></label>
+                                                                    <input type="radio" name="debt-amount" id="05" value="1,000" required="" disabled=""><label for="05" data-debt-amount="1,000"></label>
+                                                                    <input type="radio" name="debt-amount" id="06" value="1,500" required="" disabled=""><label for="06" data-debt-amount="1,500"></label>
+                                                                    <input type="radio" name="debt-amount" id="07" value="2,000" required="" disabled=""><label for="07" data-debt-amount="2,000"></label>
+                                                                    <div class="debt-amount-pos"></div>
+                                                                </div>
+                                                                <input type="number" class="rangeInput" value="6">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div>
+                                                            <label class="control-label">로컬계정ID</label>
+                                                            <input name="input_vm_name" value="" placeholder="입력" class="form-control" style="width:260px" placeholder="입력">
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
+
+                                                <div id="step2" data-step-name="어플리케이션 구성 2" class="step" style="display: none;">
+                                                    <div class="quarterNum">
+                                                        <div class="tit">설정쿼터/ 잔여쿼터</div>
+                                                        <div class="value">
+                                                            <span>000</span>/&nbsp;<span>1,000</span>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    <div class="col input_vm_name-area">
+                                                        <div id="input_vm_name-option"><label for="input_vm_name" class="control-label grid-title value-title stepLabel ">input_vm_name</label>
+                                                            <input name="input_vm_name" id="input_vm_name" value="" class="form-control input hastitle stepInput" style="width:260px" placeholder="입력">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col input_NewHostname-area">
+                                                        <div id="input_NewHostname-option">
+                                                            <label for="input_NewHostname" class="control-label grid-title value-title stepLabel ">input_NewHostname</label>
+                                                            <!-- evoke : input에 placeholder, style 추가 -->
+                                                            <input name="input_NewHostname" id="input_NewHostname" value="" class="form-control input hastitle stepInput" style="width:260px" placeholder="입력">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
                                             </div>
                                         </div>
-                                        <div class="subStepContent"></div>
                                     </div>
                                     <div id="newVra_popup_step_content_4" class="wizard_step_content" style="display: none;">
                                         <div class="stepSummary">
-                                            <div class="main">
-                                                <div class="col col-sm-6">
-                                                    <div class="fm-output">
-                                                        <label class="control-label grid-title value-title">카탈로그</label>
-                                                        <div name="CATALOG_NM" class="output  hastitle"></div>
-                                                    </div>
+                                            <div class="info">
+                                                <div class="ok-icon"></div>
+                                                <div class="title">
+                                                    신청한 내용을 확인해주세요.
                                                 </div>
-                                                <div class="col col-sm-6">
-                                                    <div class="fm-output">
-                                                        <label class="control-label grid-title value-title">제목</label>
-                                                        <div name="REQ_TITLE" class="output  hastitle"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="col col-sm-6">
-                                                    <div class="fm-output">
-                                                        <label class="control-label grid-title value-title">용도</label>
-                                                        <div name="S_PURPOSE" class="output  hastitle"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="col col-sm-6">
-                                                    <div class="fm-output">
-                                                        <label class="control-label grid-title value-title">사용기간(개월)</label>
-                                                        <div name="USE_MM" class="output  hastitle">0</div>
-                                                    </div>
+                                                <div class="desc">
+                                                    다음을 클릭하시면 신청이 완료됩니다.
                                                 </div>
                                             </div>
-                                            <div class="subTitle">VM</div>
-                                            <table class="sub" style="width: 100%;">
-                                                <tbody>
-                                                    <tr>
-                                                        <th>VM 명명 규칙</th>
-                                                        <th>OS</th>
-                                                        <th>SW</th>
-                                                        <th>사양</th>
-                                                        <th>추가디스크(GB)</th>
-                                                        <th>개수</th>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                                            <div class="summary-content">
+                                                <div class="number">1</div>
+                                                <div class="title">카탈로그</div>
+                                                <div class="info">
+                                                    <div class="col col-sm-12">
+                                                        <div class="fm-output"><label
+                                                                class="control-label grid-title value-title">카탈로그</label>
+                                                            <div name="CATALOG_NM" class="output  hastitle">서버명 변경</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="number">2</div>
+                                                <div class="title">기본정보</div>
+                                                <div class="info">
+                                                    <div class="col col-sm-12">
+                                                        <div class="fm-output"><label
+                                                                class="control-label grid-title value-title">요청명</label>
+                                                            <div name="REQ_TITLE" class="output  hastitle">1</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col col-sm-12">
+                                                        <div class="fm-output"><label
+                                                                class="control-label grid-title value-title">용도</label>
+                                                            <div name="S_PURPOSE" class="output  hastitle">admin</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col col-sm-12">
+                                                        <div class="fm-output"><label
+                                                                class="control-label grid-title value-title">구분</label>
+                                                            <div name="P_KUBUN" class="output  hastitle">dev</div>
+                                                        </div>
+                                                    </div>
+                                                    <!---->
+                                                    <!---->
+                                                </div>
+                                                <!---->
+                                            </div>
                                         </div>
                                     </div>
-                                    <div id="newVra_popup_step_content_5" class="wizard_step_content" style="display: none;">
-                                        <!---->
-                                        <div>
-                                            승인 요청되었습니다.
+                                    <div id="newVra_popup_step_content_5" class="wizard_step_content"
+                                        style="display: none;">
+                                        <div class="done-icon"></div>
+                                        <div class="done-msg">
+                                            <!---->
+                                            <div>
+                                                관리자 승인 후 배포됩니다. 승인이 완료되면 메일이 발송됩니다.
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="wizard_buttons">
-                                    <!-- evoke : 닫기 버튼을 최 좌측으로 이동, 닫기 => 취소로 value 변경 -->
-                                    <input type="button" value="취소" onclick="$('#newVra_popup').modal('hide');return false" class="btn popupBtn close">
-                                    <input type="button" value="이전" class="btn popupBtn prev"> 
-                                    <input type="button" value="다음" class="btn popupBtn next"> 
-                                    <!-- evoke : 완료 => 확인으로 value 변경 -->
-                                    <input type="button" value="확인" class="btn popupBtn finish"> 
+                                <div class="wizard_buttons"><input type="button" value="이전" class="btn popupBtn prev"
+                                        style="display: none;"> <input type="button" value="다음"
+                                        class="btn popupBtn next"> <input type="button" value="완료"
+                                        class="btn popupBtn finish" style="display: none;"> <input type="button"
+                                        value="닫기" onclick="$('#newVra_popup').modal('hide');return false"
+                                        class="btn popupBtn close" style="display: none;">
+
                                 </div>
                             </div>
                         </form>
                     </div>
-                    <!-- evoke : .modal-footer 삭제 -->
-                    <!-- <div class="modal-footer"></div> -->
+                    <div class="modal-footer"></div>
                 </div>
             </div>
         </div>
