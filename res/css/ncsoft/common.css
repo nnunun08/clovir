@@ -390,7 +390,6 @@ marquee {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
@@ -697,10 +696,6 @@ marquee {
 }
 
 .popup_area .input::-moz-placeholder {
-  color: #ccc;
-}
-
-.popup_area .input:-ms-input-placeholder {
   color: #ccc;
 }
 
@@ -5440,7 +5435,6 @@ v .center > div > .panel_value {
 
 .ag-row .ag-cell {
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
@@ -6069,9 +6063,6 @@ v .center > div > .panel_value {
   color: #4A4A4A;
 }
 .modal-body .select2-container--default .select2-search--inline .select2-search__field::-moz-placeholder {
-  color: #CCCCCC;
-}
-.modal-body .select2-container--default .select2-search--inline .select2-search__field:-ms-input-placeholder {
   color: #CCCCCC;
 }
 .modal-body .select2-container--default .select2-search--inline .select2-search__field::placeholder {
