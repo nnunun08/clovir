@@ -39,6 +39,33 @@
   top: unset;
   left: unset;
 }
+#topArea #valueBox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1 0 auto;
+  justify-content: flex-end;
+  margin-right: 40px;
+}
+#topArea #valueBox .divider {
+  text-indent: -9999px;
+  width: 1px;
+  height: 10px;
+  background-color: #ddd;
+}
+#topArea #valueBox .value.quotaInfo .unit {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  color: #4A4A4A;
+}
+#topArea #valueBox .value.quotaInfo .unitValue {
+  margin-left: 8px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 17px;
+  color: #009D93;
+}
 #topArea #userInfo {
   position: static;
   display: flex !important;
@@ -1587,20 +1614,28 @@ a.tree-toggle {
   height: 16px;
   background: url(/res/img/ncsoft/icon_16_dw.svg) center/cover no-repeat;
 }
-#mainForm #header_detail .leftBtn .btn-group .dropdown-menu li.red {
-  background: transparent;
+#mainForm #header_detail .leftBtn .btn-group .dropdown-menu li + li {
+  margin-top: 8px;
 }
-#mainForm #header_detail .leftBtn .btn-group .dropdown-menu li.red::before {
+#mainForm #header_detail .leftBtn .btn-group .dropdown-menu li:hover a {
+  color: #C5003E !important;
+}
+#mainForm #header_detail .leftBtn .btn-group .dropdown-menu li:hover::before {
   transform: translateY(-50%) rotate(0);
   background: url(/res/img/ncsoft/icon_16_dw_red.svg) center/cover no-repeat;
-}
-#mainForm #header_detail .leftBtn .btn-group .dropdown-menu li.red a {
-  color: #C5003E !important;
 }
 #mainForm #header_detail .leftBtn .btn-group .dropdown-menu li a {
   border: 0;
   padding: 0;
   color: #4A4A4A !important;
+  text-align: left;
+  background-color: transparent;
+  border: 0 !important;
+  height: auto;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  cursor: pointer;
 }
 #mainForm #header_detail .rightBtn {
   display: flex;
@@ -1683,6 +1718,9 @@ a.tree-toggle {
   outline: none;
 }
 .search-box-btn .keyword input::-moz-placeholder {
+  color: #ccc;
+}
+.search-box-btn .keyword input:-ms-input-placeholder {
   color: #ccc;
 }
 .search-box-btn .keyword input::placeholder {

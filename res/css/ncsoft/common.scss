@@ -5442,6 +5442,7 @@ v
 #mainTable {
     height: 300px;
     width: 100%;
+    overflow: hidden;
 }
 
 .pagingDiv {
@@ -5479,20 +5480,18 @@ v
     flex-direction: row;
     align-items: center;
     padding: 0px;
-    gap: 10px;
+    gap: 20px;
     width: 100%;
     height: 24px;
     justify-content: center;
+    margin-top: 34px;
 }
 
 .pageDiv {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-}
-
-.paginationFrame > .pageDiv > .page:hover, .pagination-move1:hover, .pagination-move2:hover {
-    background: #EEEEEE;
+    gap: 10px;
 }
 
 .paginationFrame > .pageDiv >.active {
@@ -5501,7 +5500,8 @@ v
 }
 
 .paginationFrame > .pageDiv > .page {
-    width: 20px;
+    width: auto;
+    padding: 0 5px;
     height: 24px;
     font-family: 'Noto Sans KR';
     font-style: normal;
@@ -5522,6 +5522,16 @@ v
     width: 48px;
     height: 20px;
     text-align: center;
+    &.nextMove {
+        .pagination-move1 {
+            background: url(/res/img/ncsoft/ic_pagination-move2.svg) center/cover no-repeat;
+            transform:rotate(180deg);
+        }
+        .pagination-move2 {
+            background: url(/res/img/ncsoft/ic_pagination-move1.svg) center/cover no-repeat;
+            transform:rotate(180deg);
+        }
+    }
 }
 
 .pagination-move1 {
@@ -5531,6 +5541,8 @@ v
     order: 1;
     flex-grow: 0;
     cursor:pointer;
+    text-indent: -9999px;
+    background: url(/res/img/ncsoft/ic_pagination-move1.svg) center/cover no-repeat;
 }
 
 .pagination-move2 {
@@ -5540,6 +5552,8 @@ v
     order: 0;
     flex-grow: 0;
     cursor:pointer;
+    text-indent: -9999px;
+    background: url(/res/img/ncsoft/ic_pagination-move2.svg) center/cover no-repeat;
 }
 
 /*userMonitor_header*/

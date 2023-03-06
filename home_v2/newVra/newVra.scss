@@ -62,7 +62,6 @@ $leftSize : 216px;
     .wizard_step_contents {
         padding: 32px 40px 40px 34px;
         margin-left: $leftSize;
-        overflow: auto;
         .select2-container {
             width: calc(100% - 155px) ;
         }
@@ -75,14 +74,22 @@ $leftSize : 216px;
         .col + .col {
             border-top: 0;
         }
-        .col > div {
+        .col:not(.col-dual) {
+            width: 100%;
+        }
+        .col-dual {
+            width: 50%;
+            border-top: 0 !important;
+        }
+        .col > div, 
+        .col .rowDiv {
             display: flex;
             border-bottom: 1px solid #ddd;
             align-items: center;
             padding: 15px 0;
             position: relative;
             padding-left: $thWidth + 20px;
-            .value-title:after {
+            &[required] .control-label:after {
                 content: '';
                 border-radius: 2px;
                 width: 4px;
@@ -108,6 +115,10 @@ $leftSize : 216px;
                 line-height: 17px;
                 text-align: center;
                 color: #000000;
+                padding: 16px 0;
+            }
+            .control-lable-top {
+                align-items: flex-start;
             }
             .form-control {
                 height: 40px;
@@ -192,6 +203,7 @@ $leftSize : 216px;
         justify-content: center;
         align-items: center;
         gap: 8px;
+        padding: 40px 0;
     }
     .popupBtn {
         height: 56px;
@@ -423,3 +435,169 @@ $leftSize : 216px;
 }
 
 
+
+
+.appliSelectWrap {
+    display: flex;
+    gap: 43px;
+    .appliSelect {
+        outline: none;
+        cursor: pointer;
+        width: auto;
+        min-height: unset;
+        padding: 0;
+        padding-right: 20px;
+        border: 0;
+        background: url(/res/img/ncsoft/icon_16_dw.svg) right center/16px no-repeat;
+        -webkit-appearance: none; 
+        -moz-appearance: none;
+        appearance: none;
+        &::-ms-expand {
+        display: none;
+        }
+   
+    }
+}
+.appliItemWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    .appliItem {
+        min-width: 220px;
+        width: auto;
+        position: relative;
+        height: 36px;
+        padding: 0 30px 0 12px;
+        display: flex;
+        align-items: center;
+        text-align: left;
+        border: 1px solid #EEEEEE;
+        border-radius: 4px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 17px;
+        color: #4A4A4A;
+        .delete {
+            position: absolute;
+            top: 50%;
+            right: 8px;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            background: url(/res/img/ncsoft/ic_x_delete.svg) center no-repeat;
+            cursor: pointer;
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+    }
+    .appliItem:first-child {
+        margin-top: 13px;
+    }
+}
+
+.stepSummary {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 8px;
+    .info {
+        position: relative;
+        padding-left: 80px;
+        margin: 0 auto;
+        margin-bottom: 40px;
+        .ok-icon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 60px;
+            height: 60px;
+            background: url(/res/img/ncsoft/ic_60_ok.svg) center/cover no-repeat;
+        }
+        .title {
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 29px;
+            color: #009D93;
+            margin-bottom: 8px;
+        }
+        .desc {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            color: #4A4A4A;
+        }
+    }
+    .summary-content {
+        .number {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 24px;
+            height: 24px;
+            background-color: #4A4A4A;
+            border-radius: 24px;
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 17px;
+            text-align: center;
+            color: #FFFFFF;
+            margin-bottom: 16px;
+        }
+        .title {
+            display: inline;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 20px;
+            text-align: left;
+            color: #000000;
+        }
+        .info {
+            padding-left: 0;
+        }
+        .col {
+            text-align: center;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 17px;
+            color: #000000;
+            .rowDiv {
+                padding-left: 160px !important;
+                .control-label {
+                    width: 160px !important;
+                }
+            }
+            .hastitle {
+                width: 100%;
+                padding: 0;
+            }
+        }
+    }
+}
+.info:has(.col-dual) {
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid #4A4A4A;
+}
+#newVra_popup_step_content_5 {
+    margin-left: $leftSize;
+    text-align: center;
+    .done-icon {
+        margin: 0 auto;
+        margin-top: 28px;
+        width: 128px;
+        height: 128px;
+        background: url(/res/img/ncsoft/ic_128_done.svg) center/cover no-repeat;
+        filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.08));
+    }
+    .done-msg {
+        margin: 0 auto;
+        margin-top: 28px;
+        width: 60%;
+        margin-bottom: 40px;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 41px;
+        color: #009D93;
+    }
+}

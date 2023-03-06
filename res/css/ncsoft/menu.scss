@@ -40,6 +40,35 @@
         top: unset;
         left: unset;
     }
+    #valueBox {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex: 1 0 auto;
+        justify-content: flex-end;
+        margin-right: 40px;
+        .divider {
+            text-indent: -9999px;
+            width: 1px;
+            height: 10px;
+            background-color: #ddd;
+        }
+        .value.quotaInfo {
+            .unit {
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 17px;
+                color: #4A4A4A;
+            }
+            .unitValue {
+                margin-left: 8px;
+                font-weight: 700;
+                font-size: 12px;
+                line-height: 17px;
+                color: #009D93;
+            }
+        }
+    }
 
     #userInfo {
         position: static;
@@ -1523,14 +1552,16 @@ a.tree-toggle{
                             height: 16px;
                             background: url(/res/img/ncsoft/icon_16_dw.svg) center/cover no-repeat;
                         }
-                        &.red {
-                            background: transparent;
+                        & + li {
+                            margin-top: 8px;
+                        }
+                        &:hover {
+                            a {
+                                color : #C5003E !important;
+                            }
                             &::before {
                                 transform: translateY(-50%) rotate(0);
                                 background:url(/res/img/ncsoft/icon_16_dw_red.svg) center/cover no-repeat;
-                            }
-                            a {
-                                color: #C5003E !important;
                             }
                         }
                     }
@@ -1538,6 +1569,14 @@ a.tree-toggle{
                         border: 0;
                         padding: 0;
                         color: #4A4A4A !important;
+                        text-align: left;
+                        background-color: transparent;
+                        border: 0 !important;
+                        height: auto;
+                        font-weight: 400;
+                        font-size: 12px;
+                        line-height: 17px;
+                        cursor: pointer;
                     }
                 }
 

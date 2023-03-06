@@ -54,6 +54,9 @@
 	color: #000000;
     letter-spacing: normal;
     text-align: center;
+	// &:has(.ag-selection-checkbox) {
+	// 	justify-content: center;
+	// }
 	a {
 		color: inherit;
 	}
