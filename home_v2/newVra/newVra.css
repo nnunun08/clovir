@@ -59,6 +59,8 @@
 #newVra_popup .wizard_step_contents {
   padding: 32px 40px 40px 34px;
   margin-left: 216px;
+  display: flex;
+  flex-direction: column;
 }
 #newVra_popup .wizard_step_contents .select2-container {
   width: calc(100% - 155px);
@@ -76,8 +78,7 @@
   width: 50%;
   border-top: 0 !important;
 }
-#newVra_popup .wizard_step_content .col > div,
-#newVra_popup .wizard_step_content .col .rowDiv {
+#newVra_popup .wizard_step_content .col > div {
   display: flex;
   border-bottom: 1px solid #ddd;
   align-items: center;
@@ -85,8 +86,7 @@
   position: relative;
   padding-left: 140px;
 }
-#newVra_popup .wizard_step_content .col > div[required] .control-label:after,
-#newVra_popup .wizard_step_content .col .rowDiv[required] .control-label:after {
+#newVra_popup .wizard_step_content .col > div[required] .control-label:after {
   content: "";
   border-radius: 2px;
   width: 4px;
@@ -95,8 +95,7 @@
   margin-bottom: 13px;
   margin-left: 2px;
 }
-#newVra_popup .wizard_step_content .col > div .control-label,
-#newVra_popup .wizard_step_content .col .rowDiv .control-label {
+#newVra_popup .wizard_step_content .col > div .control-label {
   position: absolute;
   top: 0;
   left: 0;
@@ -115,24 +114,21 @@
   color: #000000;
   padding: 16px 0;
 }
-#newVra_popup .wizard_step_content .col > div .control-lable-top,
-#newVra_popup .wizard_step_content .col .rowDiv .control-lable-top {
+#newVra_popup .wizard_step_content .col > div .control-lable-top {
   align-items: flex-start;
 }
-#newVra_popup .wizard_step_content .col > div .form-control,
-#newVra_popup .wizard_step_content .col .rowDiv .form-control {
+#newVra_popup .wizard_step_content .col > div .form-control {
   height: 40px;
   background: transparent;
   border: 1px solid #DDDDDD;
   border-radius: 4px;
 }
-#newVra_popup .wizard_step_content .col > div .form-control:-moz-read-only, #newVra_popup .wizard_step_content .col .rowDiv .form-control:-moz-read-only {
+#newVra_popup .wizard_step_content .col > div .form-control:-moz-read-only {
   border-color: #eee;
   background-color: #FAFAFA;
   color: #4A4A4A;
 }
-#newVra_popup .wizard_step_content .col > div .form-control:read-only,
-#newVra_popup .wizard_step_content .col .rowDiv .form-control:read-only {
+#newVra_popup .wizard_step_content .col > div .form-control:read-only {
   border-color: #eee;
   background-color: #FAFAFA;
   color: #4A4A4A;
@@ -205,7 +201,7 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
-  padding: 40px 0;
+  padding: 0;
 }
 #newVra_popup .popupBtn {
   height: 56px;
@@ -554,10 +550,10 @@
   line-height: 17px;
   color: #000000;
 }
-.stepSummary .summary-content .col .rowDiv {
+.stepSummary .summary-content .col > div {
   padding-left: 160px !important;
 }
-.stepSummary .summary-content .col .rowDiv .control-label {
+.stepSummary .summary-content .col > div .control-label {
   width: 160px !important;
 }
 .stepSummary .summary-content .col .hastitle {
@@ -572,7 +568,6 @@
 }
 
 #newVra_popup_step_content_5 {
-  margin-left: 216px;
   text-align: center;
 }
 #newVra_popup_step_content_5 .done-icon {

@@ -12,16 +12,16 @@
     <link rel="stylesheet" href="/res/css/font-awesome.min.css">
     <link rel="stylesheet" href="/res/css/jstree.style.min.css">
     <link rel="stylesheet" href="/res/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="/res/css/select2.min.css" type="text/css">
     <link rel="stylesheet" href="/res/css/ncsoft/common.css">
     <link rel="stylesheet" href="/res/css/ncsoft/menu.css">
     <link rel="stylesheet" href="/res/css/ncsoft/dashboard.css">
     <link rel="stylesheet" href="/res/css/ncsoft/aggrid_ncsoft.css">
 
-    <link rel="stylesheet" href="/res/css/select2.min.css" type="text/css">
     <script type="text/javascript" src="/res/js/select2.js"></script>
 </head>
 
-<body class="modal-open">
+<body class="menu-layout-3 modal-open">
 
 
     <div id="popup_area" class="popup_area">
@@ -115,6 +115,73 @@
                                                     </div>
                                                 </div>
 
+                                                <div class="createInfo col col-sm-12">
+                                                    <div required="required">
+                                                        <label for="S_USE_MM" title="사용기간(개월)" class="control-label grid-title value-title">사용기간(개월)</label>
+                                                        <div data-id="S_USE_MM" id="S_USE_MM_div" class="input hastitle range-radio">
+                                                        <div class="range-list">
+                                                            <input type="radio" name="S_USE_MM_div_radio" id="S_USE_MM_div_radio_0" value="1">
+                                                            <label for="S_USE_MM_div_radio_0"data-title="1"></label>
+                                                            <input type="radio" name="S_USE_MM_div_radio"id="S_USE_MM_div_radio_1" value="3">
+                                                            <label for="S_USE_MM_div_radio_1"data-title="3"></label>
+                                                            <input type="radio" name="S_USE_MM_div_radio"id="S_USE_MM_div_radio_2" value="6">
+                                                            <label for="S_USE_MM_div_radio_2"data-title="6"></label>
+                                                            <input type="radio" name="S_USE_MM_div_radio"id="S_USE_MM_div_radio_3" value="9">
+                                                            <label for="S_USE_MM_div_radio_3"data-title="9"></label>
+                                                            <input type="radio" name="S_USE_MM_div_radio"id="S_USE_MM_div_radio_4" value="12">
+                                                            <label for="S_USE_MM_div_radio_4"data-title="12"></label>
+                                                            <input type="radio" name="S_USE_MM_div_radio"id="S_USE_MM_div_radio_5" value="24" class="threshold">
+                                                            <label for="S_USE_MM_div_radio_5" data-title="24">
+                                                        </label>
+                                                        <input type="radio" name="S_USE_MM_div_radio" id="S_USE_MM_div_radio_6" value="36" class="threshold"><label for="S_USE_MM_div_radio_6" data-title="36"></label>
+                                                    </div>
+                                                    <input type="number" class="rangeInput" readonly="readonly" id="S_USE_MM">
+                                                      </div>
+                                                    </div>
+                                                  </div>
+
+                                                <div id="S_PURPOSE_DIV" class="col col-sm-12">
+                                                    <div required="required">
+                                                        <label for="_purpose" class="control-label grid-title value-title">용도</label>
+                                                        <select name="S_PURPOSE" id="_purpose"
+                                                            onchange="onChangePurpose()"
+                                                            class="form-control input hastitle select2-hidden-accessible"
+                                                            tabindex="-1" aria-hidden="true">
+                                                            <option value=""></option>
+                                                            <option value=""></option>
+                                                            <option value="aaaaaaaaaaa">aaaaaaaaaaa</option>
+                                                            <option value="admin">ADMIN</option>
+                                                            <option value="ap">AP</option>
+                                                            <option value="app">APP</option>
+                                                            <option value="ba">BA</option>
+                                                            <option value="bac">BAC</option>
+                                                            <option value="bak">BAK</option>
+                                                            <option value="batch">BATCH</option>
+                                                            <option value="dev">DEV</option>
+                                                            <option value="etl">ETL</option>
+                                                            <option value="purpo">PURPO</option>
+                                                            <option value="qsa">QSA</option>
+                                                            <option value="qwe">QWE</option>
+                                                            <option value="test">TEST</option>
+                                                            <option value="we">WE</option>
+                                                            <option value="ws">WS</option>
+                                                            <option value="wsw">WSW</option>
+                                                            <option value="web">WEB</option>
+                                                            <option value="was">WAS</option>
+                                                            <option value="db">DB</option>
+                                                        </select>
+                                                        <span class="select2 select2-container select2-container--default"dir="ltr" style="width: calc(100% - 150px);">
+                                                            <span class="selection">
+                                                                <span class="select2-selection select2-selection--single"role="combobox" aria-haspopup="true"aria-expanded="false" tabindex="0"aria-labelledby="select2-_purpose-container">
+                                                                    <span class="select2-selection__rendered"id="select2-_purpose-container"title=""></span>
+                                                                    <span class="select2-selection__arrow"role="presentation"><b role="presentation"></b></span>
+                                                                </span>
+                                                            </span>
+                                                            <span class="dropdown-wrapper"aria-hidden="true"></span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+
                                                 <div id="S_PURPOSE_DIV" class="col">
                                                     <div class="rowDiv" required="required">
                                                         <label for="_purpose" class="control-label">용도</label>
@@ -196,30 +263,6 @@
                                                     </div>
                                                 </div>
 
-                                                 <!-- evoke : range 컴포넌트 추가 -->
-                                                 <div class="col">
-                                                    <div class="rowDiv">
-                                                        <label for="" class="control-label">사용기간</label>
-                                                        <div>
-                                                            <div class="rangeSlider">
-                                                                <form action="/p/quote.php" method="GET">
-                                                                    <div class="debt-amount-slider">
-                                                                        <input type="radio" name="debt-amount" id="1" value="3" required><label for="1" data-debt-amount="3"></label>
-                                                                        <input type="radio" name="debt-amount" id="2" value="6" required checked><label for="2" data-debt-amount="6"></label>
-                                                                        <input type="radio" name="debt-amount" id="3" value="9" required><label for="3" data-debt-amount="9"></label>
-                                                                        <input type="radio" name="debt-amount" id="4" value="12" required><label for="4" data-debt-amount="12"></label>
-                                                                        <input type="radio" name="debt-amount" id="5" value="24" required><label for="5" data-debt-amount="24"></label>
-                                                                        <input type="radio" name="debt-amount" id="6" value="36" required><label for="6" data-debt-amount="36"></label>
-                                                                        <input type="radio" name="debt-amount" id="7" value="Unlimit" required disabled><label for="7" data-debt-amount="Unlimit"></label>
-                                                                        <!-- evoke : .debt-amount-pos 가 기능상 필요한 요소인가요? 스타일 부분에선 아무런 기능을 안하는 요소라 삭제합니다. -->
-                                                                        <!-- <div class="debt-amount-pos"></div> -->
-                                                                    </div>
-                                                                </form>
-                                                                <input type="number" class="rangeInput" value="6">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
 
                                                 <!-- evoke : 검색 컴포넌트 추가 -->
                                                 <div class="col">
@@ -289,28 +332,31 @@
                                                         </div>
                                                     </div>
 
-                                                    <!-- evoke : rangeSlider 우측에 여백이 필요한 경우는 아래 .rageSlider 처럼 inline Style 넣어주세요. style="width:~~~px" -->
-                                                    <div class="col">
-                                                        <div class="rowDiv" required="required">
-                                                            <!-- evoke : label에 .grid-title과 .value-title은 기능상 필요한건가요? 스타일에선 불필요해서 전체 제거했습니다. .control-label은 필요합니다. -->
-                                                            <label class="control-label">Core</label>
-                                                            <!-- evoke : rangeSlider 컴포넌트 -->
-                                                            <div class="rangeSlider" style="width:405px">
-                                                                <div class="debt-amount-slider">
-                                                                    <input type="radio" name="debt-amount" id="01" value="3" required=""><label for="01" data-debt-amount="3"></label>
-                                                                    <input type="radio" name="debt-amount" id="02" value="6" required="" checked><label for="02" data-debt-amount="6"></label>
-                                                                    <input type="radio" name="debt-amount" id="03" value="9" required=""><label for="03" data-debt-amount="9"></label>
-                                                                    <input type="radio" name="debt-amount" id="04" value="12" required=""><label for="04" data-debt-amount="12"></label>
-                                                                    <input type="radio" name="debt-amount" id="05" value="1,000" required="" disabled=""><label for="05" data-debt-amount="1,000"></label>
-                                                                    <input type="radio" name="debt-amount" id="06" value="1,500" required="" disabled=""><label for="06" data-debt-amount="1,500"></label>
-                                                                    <input type="radio" name="debt-amount" id="07" value="2,000" required="" disabled=""><label for="07" data-debt-amount="2,000"></label>
-                                                                    <!-- evoke : .debt-amount-pos 가 기능상 필요한 요소인가요? 스타일 부분에선 아무런 기능을 안하는 요소라 삭제합니다. -->
-                                                                    <!-- <div class="debt-amount-pos"></div> -->
-                                                                </div>
-                                                                <input type="number" class="rangeInput" value="6">
+                                                    <!-- range 컴포넌트 -->
+                                                    <div class="col col-sm-12">
+                                                        <div required="required">
+                                                            <label title="사용기간(개월)" class="control-label">Core</label>
+                                                            <!-- evoke : rangeSlider 우측에 여백이 필요한 경우는 아래 .rageSlider 처럼 inline Style !important 로 넣어주세요. style="width:343px !important" -->
+                                                            <div class="input hastitle range-radio" style="width:343px !important">
+                                                            <div class="range-list">
+                                                                <input type="radio" name="S_USE_MM_div_radio" id="S_USE_MM_div_radio_0" value="1">
+                                                                <label for="S_USE_MM_div_radio_0"data-title="1"></label>
+                                                                <input type="radio" name="S_USE_MM_div_radio"id="S_USE_MM_div_radio_1" value="3">
+                                                                <label for="S_USE_MM_div_radio_1"data-title="3"></label>
+                                                                <input type="radio" name="S_USE_MM_div_radio"id="S_USE_MM_div_radio_2" value="6">
+                                                                <label for="S_USE_MM_div_radio_2"data-title="6"></label>
+                                                                <input type="radio" name="S_USE_MM_div_radio"id="S_USE_MM_div_radio_4" value="12">
+                                                                <label for="S_USE_MM_div_radio_4"data-title="12"></label>
+                                                                <input type="radio" name="S_USE_MM_div_radio"id="S_USE_MM_div_radio_5" value="24" class="threshold">
+                                                                <label for="S_USE_MM_div_radio_5" data-title="24"></label>
+                                                                <input type="radio" name="S_USE_MM_div_radio" id="S_USE_MM_div_radio_6" value="36" class="threshold">
+                                                                <label for="S_USE_MM_div_radio_6" data-title="36"></label>
                                                             </div>
+                                                        <input type="number" class="rangeInput" readonly="readonly">
+                                                          </div>
                                                         </div>
-                                                    </div>
+                                                      </div>
+
                                                     <div class="col">
                                                         <div class="rowDiv" required="required">
                                                             <label class="control-label">로컬계정ID</label>
@@ -464,16 +510,19 @@
                                                 <!---->
                                             </div>
                                         </div>
-                                    </div>
-                                    <div id="newVra_popup_step_content_5" class="wizard_step_content">
-                                        <div class="done-icon"></div>
-                                        <div class="done-msg">
-                                            <!---->
-                                            <div>
-                                                관리자 승인 후 배포됩니다. 승인이 완료되면 메일이 발송됩니다.
+
+                                        <div id="newVra_popup_step_content_5" class="wizard_step_content" style="">
+                                            <div class="done-icon"></div>
+                                            <div class="done-msg">    
+                                                <div>
+                                                배포요청이 완료되었습니다. 배포가 완료되면 메일이 발송됩니다.
+                                                </div>
                                             </div>
                                         </div>
+
                                     </div>
+                                    
+
                                 </div>
                                 <div class="wizard_buttons">
                                     <input type="button" value="이전" class="btn popupBtn prev"> 
