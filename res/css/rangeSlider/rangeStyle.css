@@ -347,7 +347,8 @@ label[dir=rtl] .range-slider {
   width: 100%;
   position: relative;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
+  width: 100% !important;
 }
 
 .range-radio .rangeInput, .range-slider-container .rangeInput {
@@ -891,10 +892,7 @@ label[dir=rtl] .range-slider {
 }
 
 .range-radio .rangeInput {
-  position: absolute;
-  right: -62px;
-  top: 50%;
-  transform: translateY(-50%);
+  position: static;
 }
 
 .range-radio .rangeInput::-webkit-inner-spin-button, .range-slider-container .rangeInput::-webkit-inner-spin-button {

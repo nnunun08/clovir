@@ -397,6 +397,12 @@
   background-image: url(/res/img/ncsoft/ic_range_dis.svg) !important;
 }
 
+.quarterWrap {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
 .quarterNum {
   display: flex;
   align-items: center;
@@ -404,7 +410,6 @@
   font-size: 12px;
   line-height: 17px;
   color: #4A4A4A;
-  margin-bottom: 16px;
 }
 .quarterNum .tit {
   padding-right: 12px;

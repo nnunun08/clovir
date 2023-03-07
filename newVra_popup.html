@@ -314,6 +314,15 @@
                                                     <div id="subStepTitle_3" class="subStepTitle">어플리케이션 구성 1</div>
                                                 </div>
                                                 <!-- evoke : style="pointer-events: none;" 라디오 클릭 이벤트를 방지 -->
+                                            </div>
+
+                                            <div class="quarterWrap">
+                                                <div class="quarterNum">
+                                                    <div class="tit">설정쿼터/ 잔여쿼터</div>
+                                                    <div class="value">
+                                                        <span>000</span>/&nbsp;<span>1,000</span>
+                                                    </div>
+                                                </div>
                                                 <div class="checkRight">
                                                     <label class="checkbox-inline"><input type="radio" value="신청가능" name="radio1" style="pointer-events: none;">신청가능</label>
                                                     <label class="checkbox-inline"><input type="radio" value="승인 필요" name="radio1" style="pointer-events: none;" checked>승인 필요</label>
@@ -337,7 +346,7 @@
                                                         <div required="required">
                                                             <label title="사용기간(개월)" class="control-label">Core</label>
                                                             <!-- evoke : rangeSlider 우측에 여백이 필요한 경우는 아래 .rageSlider 처럼 inline Style !important 로 넣어주세요. style="width:343px !important" -->
-                                                            <div class="input hastitle range-radio" style="width:343px !important">
+                                                            <div class="input hastitle range-radio">
                                                             <div class="range-list">
                                                                 <input type="radio" name="S_USE_MM_div_radio" id="S_USE_MM_div_radio_0" value="1">
                                                                 <label for="S_USE_MM_div_radio_0"data-title="1"></label>
@@ -372,13 +381,15 @@
                                                 <!-- evoke : step 구분. 실 소스 반영시 해당 div는 삭제해주세요 -->
 
                                                 <div id="step2" data-step-name="어플리케이션 구성 2" class="step">
-                                                    <div class="quarterNum">
-                                                        <div class="tit">설정쿼터/ 잔여쿼터</div>
-                                                        <div class="value">
-                                                            <span>000</span>/&nbsp;<span>1,000</span>
+                                                    <div class="quarterWrap">
+                                                        <div class="quarterNum">
+                                                            <div class="tit">설정쿼터/ 잔여쿼터</div>
+                                                            <div class="value">
+                                                                <span>000</span>/&nbsp;<span>1,000</span>
+                                                            </div>
                                                         </div>
-                                                        
                                                     </div>
+
                                                     <div class="col">
                                                         <div class="rowDiv" required="required">
                                                             <label class="control-label control-lable-top">어플레케이션 선택</label>
