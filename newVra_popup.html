@@ -105,8 +105,8 @@
                                             </div>
 
                                             <div class="popup_wizard_content">
-                                                <!-- evoke : .col-sm-12 불필요 모두 삭제 -->
-                                                <div class="col">
+                                                <!-- evoke : 첫번째행 .col 에는 .colTop 추가 (상단 진한 블랙 border-top 스타일임) -->
+                                                <div class="col col-sm-12 colTop">
                                                     <!-- evoke : .col의 자식 div에 .rowDiv를 넣어주세요. (공통) -->
                                                     <!-- evoke : .required 여부에 따라 빨간점 .에 표시됩니다. -->
                                                     <div class="rowDiv" required="required">
@@ -182,7 +182,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div id="S_PURPOSE_DIV" class="col">
+                                                <div id="S_PURPOSE_DIV" class="col col-sm-12">
                                                     <div class="rowDiv" required="required">
                                                         <label for="_purpose" class="control-label">용도</label>
                                                         <select name="S_PURPOSE" id="_purpose"
@@ -237,7 +237,7 @@
                                                     </div>
                                                     <!---->
                                                 </div>
-                                                <div class="col">
+                                                <div class="col col-sm-12">
                                                     <div id="_p_kubun_div" required="required" select_style="width: calc(100% - 150px);" class="rowDiv">
                                                         <label for="_p_kubun" class="control-label">구분</label>
                                                         <label class="checkbox-inline"><input type="radio"
@@ -253,7 +253,7 @@
                                                 </div>
                                                 <!---->
                                                 <!---->
-                                                <div class="col">
+                                                <div class="col col-sm-12">
                                                     <div class="rowDiv">
                                                         <!-- evoke : inlineStyle 제거 -->
                                                         <label for="S_CMT" class="control-label">설명 </label>
@@ -265,7 +265,7 @@
 
 
                                                 <!-- evoke : 검색 컴포넌트 추가 -->
-                                                <div class="col">
+                                                <div class="col col-sm-12">
                                                     <div class="rowDiv">
                                                         <label class="control-label ">TAG</label>
                                                         <div>
@@ -333,7 +333,7 @@
                                             <div class="subStepContent">
 
                                                 <div id="step1" data-step-name="자원구성" class="step" style="display: block;">
-                                                    <div class="col">
+                                                    <div class="col col-sm-12 colTop">
                                                         <div class="rowDiv" required="required">
                                                             <label class="control-label">OS</label>
                                                             <label class="checkbox-inline"><input type="radio" name="os" value="Window">Window</label>
@@ -366,7 +366,7 @@
                                                         </div>
                                                       </div>
 
-                                                    <div class="col">
+                                                    <div class="col col-sm-12">
                                                         <div class="rowDiv" required="required">
                                                             <label class="control-label">로컬계정ID</label>
                                                             <input name="input_vm_name" value="" placeholder="입력" class="form-control" style="width:260px" placeholder="입력">
@@ -376,52 +376,192 @@
                                                 </div>
 
 
-                                                <!-- evoke : step 구분. 실 소스 반영시 해당 div는 삭제해주세요 -->
-                                                <div style="margin-top: 40px;"></div>
-                                                <!-- evoke : step 구분. 실 소스 반영시 해당 div는 삭제해주세요 -->
-
                                                 <div id="step2" data-step-name="어플리케이션 구성 2" class="step">
-                                                    <div class="quarterWrap">
-                                                        <div class="quarterNum">
-                                                            <div class="tit">설정쿼터/ 잔여쿼터</div>
-                                                            <div class="value">
-                                                                <span>000</span>/&nbsp;<span>1,000</span>
-                                                            </div>
+
+                                                    <div class="col col-sm-12 application  web_apps-area">
+                                                        <!-- evoke : .select2-selection__choice 생성에 따라 height를 조절해줘야 함. .select2-selection__choice 하나당 40px 추가 -->
+                                                        <div style="height: 192px; align-items: flex-start;">
+                                                            <!-- evoke : control-label에 control-label 추가 (label 텍스트 상단 고정) -->
+                                                            <label for="web_apps_1" class="control-label grid-title value-title stepLabel control-label-top">Application</label>
+                                                                <select data-type="array" purpose="all" name="web_apps" id="web_apps" multiple="" class="form-control input hastitle stepSelect select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                                                                    <optgroup label="app"></optgroup>
+                                                                    <optgroup label="N/A"></optgroup>
+                                                                    <optgroup label="web"></optgroup>
+                                                                    <optgroup label="db"></optgroup>
+                                                                    <option value="mariadb_10.6">mariadb_10.6</option>
+                                                                    <option value="tomcat_8.5">tomcat_8.5</option>
+                                                                    <option value="mysql_8.0.27">mysql_8.0.27</option>
+                                                                    <option value="openjdk_1.8.0">openjdk_1.8.0</option>
+                                                                    <option value="yona_1.10">yona_1.10</option>
+                                                                    <option value="nginx_1.20.2">nginx_1.20.2</option>
+                                                                </select>
+                                                                <span class="select2 select2-container select2-container--default select2-container--below" dir="ltr" style="width: 309.008px;">
+                                                                <span class="selection">
+                                                                    <span class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1">
+                                                                        <ul class="select2-selection__rendered ui-sortable">
+                                                                            <!-- evoke : .select2-selection__clear 삭제 -->
+                                                                            <!-- <span class="select2-selection__clear">×</span> -->
+                                                                            <li class="select2-selection__choice" title="nginx_1.20.2">
+                                                                                <span class="select2-selection__choice__remove" role="presentation">×</span>
+                                                                                nginx_1.20.2
+                                                                            </li>
+                                                                            <li class="select2-selection__choice"
+                                                                                title="openjdk_1.8.0">
+                                                                                <span
+                                                                                    class="select2-selection__choice__remove"
+                                                                                    role="presentation">×</span>
+                                                                                    openjdk_1.8.0
+                                                                            </li>
+                                                                            <li class="select2-selection__choice"
+                                                                                title="yona_1.10">
+                                                                                <span
+                                                                                    class="select2-selection__choice__remove"
+                                                                                    role="presentation">×</span>
+                                                                                    yona_1.10
+                                                                            </li>
+                                                                            <li class="select2-search select2-search--inline ui-sortable-handle">
+                                                                                <input class="select2-search__field"
+                                                                                    type="search" tabindex="0"
+                                                                                    autocomplete="off" autocorrect="off"
+                                                                                    autocapitalize="off"
+                                                                                    spellcheck="false" role="textbox"
+                                                                                    aria-autocomplete="list"
+                                                                                    placeholder=""
+                                                                                    style="width: 0.75em;">
+                                                                            </li>
+                                                                        </ul>
+                                                                    </span>
+                                                                </span>
+                                                                <span class="dropdown-wrapper" aria-hidden="true"></span>
+                                                            </span>
                                                         </div>
                                                     </div>
 
-                                                    <div class="col">
-                                                        <div class="rowDiv" required="required">
-                                                            <label class="control-label control-lable-top">어플레케이션 선택</label>
+                                                    <!-- evoke : 아래 부부은 html 수정이 필요합니다... 서버에 있는 구조로는 정리 불가 & 해당 컴포넌트에 대한 디자인 가이드 필요 -->
+                                                    <div class="col col-sm-12 web_disk-area">
+                                                        <div>
+                                                            <label for="web_disk_DATA_DISK_TYPE" class="control-label grid-title value-title stepLabel" id="disLabel" style="vertical-align: top;"> 추가디스크(GB)
+                                                                <button type="button" class="btn btn-primary btn update btn-new-disk" onclick="web_disk_newDisk()" title="btn_new">
+                                                                    <i class="fa fa-plus"></i>
+                                                                </button>
+                                                            </label>
                                                             <div>
-                                                                <div class="appliSelectWrap">
-                                                                    <select class="appliSelect" name="" id="">
-                                                                        <option value="WEB">WEB</option>
-                                                                        <option value="WEB">WEB</option>
-                                                                        <option value="WEB">WEB</option>
-                                                                    </select>
-                                                                    <select class="appliSelect" name="" id="">
-                                                                        <option value="WEB">nginx_1.20.2</option>
-                                                                        <option value="WEB">nginx_1.20.2</option>
-                                                                        <option value="WEB">nginx_1.20.2</option>
-                                                                    </select>
-                                                                </div>
-                                                                <div class="appliItemWrap">
-                                                                    <div class="appliItem">1. WEB - nginx_1.20.2<i class="delete"></i></div>
-                                                                    <div class="appliItem">2. APP - openjdk_1.8.0<i class="delete"></i></div>
-                                                                    <div class="appliItem">3. DB - tomcat_8.5<i class="delete"></i></div>
-                                                                </div>
+                                                                <div id="web_disk_DATA_DISK_SIZE_sel" class="input stepInput diskSelect range-radio"><div class="range-list"><input type="radio" name="web_disk_DATA_DISK_SIZE_sel_radio" id="web_disk_DATA_DISK_SIZE_sel_radio_0" value="100"><label for="web_disk_DATA_DISK_SIZE_sel_radio_0" data-title="100"></label><input type="radio" name="web_disk_DATA_DISK_SIZE_sel_radio" id="web_disk_DATA_DISK_SIZE_sel_radio_1" value="200"><label for="web_disk_DATA_DISK_SIZE_sel_radio_1" data-title="200"></label><input type="radio" name="web_disk_DATA_DISK_SIZE_sel_radio" id="web_disk_DATA_DISK_SIZE_sel_radio_2" value="300"><label for="web_disk_DATA_DISK_SIZE_sel_radio_2" data-title="300"></label><input type="radio" name="web_disk_DATA_DISK_SIZE_sel_radio" id="web_disk_DATA_DISK_SIZE_sel_radio_3" value="400"><label for="web_disk_DATA_DISK_SIZE_sel_radio_3" data-title="400"></label><input type="radio" name="web_disk_DATA_DISK_SIZE_sel_radio" id="web_disk_DATA_DISK_SIZE_sel_radio_4" value="500"><label for="web_disk_DATA_DISK_SIZE_sel_radio_4" data-title="500"></label><input type="radio" name="web_disk_DATA_DISK_SIZE_sel_radio" id="web_disk_DATA_DISK_SIZE_sel_radio_5" value="1000" class="threshold"><label for="web_disk_DATA_DISK_SIZE_sel_radio_5" data-title="1000"></label><input type="radio" name="web_disk_DATA_DISK_SIZE_sel_radio" id="web_disk_DATA_DISK_SIZE_sel_radio_6" value="1500" class="threshold"><label for="web_disk_DATA_DISK_SIZE_sel_radio_6" data-title="1500"></label><input type="radio" name="web_disk_DATA_DISK_SIZE_sel_radio" id="web_disk_DATA_DISK_SIZE_sel_radio_7" value="2000" class="threshold"><label for="web_disk_DATA_DISK_SIZE_sel_radio_7" data-title="2000"></label></div><input type="number" class="rangeInput" readonly="readonly" id="web_disk_DATA_DISK_SIZE_sel_range"></div>
+                                                                <div id="web_disk_DATA_DISK_SIZE_sel" class="input stepInput diskSelect range-radio"><div class="range-list"><input type="radio" name="web_disk_DATA_DISK_SIZE_sel_radio" id="web_disk_DATA_DISK_SIZE_sel_radio_0" value="100"><label for="web_disk_DATA_DISK_SIZE_sel_radio_0" data-title="100"></label><input type="radio" name="web_disk_DATA_DISK_SIZE_sel_radio" id="web_disk_DATA_DISK_SIZE_sel_radio_1" value="200"><label for="web_disk_DATA_DISK_SIZE_sel_radio_1" data-title="200"></label><input type="radio" name="web_disk_DATA_DISK_SIZE_sel_radio" id="web_disk_DATA_DISK_SIZE_sel_radio_2" value="300"><label for="web_disk_DATA_DISK_SIZE_sel_radio_2" data-title="300"></label><input type="radio" name="web_disk_DATA_DISK_SIZE_sel_radio" id="web_disk_DATA_DISK_SIZE_sel_radio_3" value="400"><label for="web_disk_DATA_DISK_SIZE_sel_radio_3" data-title="400"></label><input type="radio" name="web_disk_DATA_DISK_SIZE_sel_radio" id="web_disk_DATA_DISK_SIZE_sel_radio_4" value="500"><label for="web_disk_DATA_DISK_SIZE_sel_radio_4" data-title="500"></label><input type="radio" name="web_disk_DATA_DISK_SIZE_sel_radio" id="web_disk_DATA_DISK_SIZE_sel_radio_5" value="1000" class="threshold"><label for="web_disk_DATA_DISK_SIZE_sel_radio_5" data-title="1000"></label><input type="radio" name="web_disk_DATA_DISK_SIZE_sel_radio" id="web_disk_DATA_DISK_SIZE_sel_radio_6" value="1500" class="threshold"><label for="web_disk_DATA_DISK_SIZE_sel_radio_6" data-title="1500"></label><input type="radio" name="web_disk_DATA_DISK_SIZE_sel_radio" id="web_disk_DATA_DISK_SIZE_sel_radio_7" value="2000" class="threshold"><label for="web_disk_DATA_DISK_SIZE_sel_radio_7" data-title="2000"></label></div><input type="number" class="rangeInput" readonly="readonly" id="web_disk_DATA_DISK_SIZE_sel_range"></div>
+                                                                <div id="web_disk_DATA_DISK_SIZE_sel" class="input stepInput diskSelect range-radio"><div class="range-list"><input type="radio" name="web_disk_DATA_DISK_SIZE_sel_radio" id="web_disk_DATA_DISK_SIZE_sel_radio_0" value="100"><label for="web_disk_DATA_DISK_SIZE_sel_radio_0" data-title="100"></label><input type="radio" name="web_disk_DATA_DISK_SIZE_sel_radio" id="web_disk_DATA_DISK_SIZE_sel_radio_1" value="200"><label for="web_disk_DATA_DISK_SIZE_sel_radio_1" data-title="200"></label><input type="radio" name="web_disk_DATA_DISK_SIZE_sel_radio" id="web_disk_DATA_DISK_SIZE_sel_radio_2" value="300"><label for="web_disk_DATA_DISK_SIZE_sel_radio_2" data-title="300"></label><input type="radio" name="web_disk_DATA_DISK_SIZE_sel_radio" id="web_disk_DATA_DISK_SIZE_sel_radio_3" value="400"><label for="web_disk_DATA_DISK_SIZE_sel_radio_3" data-title="400"></label><input type="radio" name="web_disk_DATA_DISK_SIZE_sel_radio" id="web_disk_DATA_DISK_SIZE_sel_radio_4" value="500"><label for="web_disk_DATA_DISK_SIZE_sel_radio_4" data-title="500"></label><input type="radio" name="web_disk_DATA_DISK_SIZE_sel_radio" id="web_disk_DATA_DISK_SIZE_sel_radio_5" value="1000" class="threshold"><label for="web_disk_DATA_DISK_SIZE_sel_radio_5" data-title="1000"></label><input type="radio" name="web_disk_DATA_DISK_SIZE_sel_radio" id="web_disk_DATA_DISK_SIZE_sel_radio_6" value="1500" class="threshold"><label for="web_disk_DATA_DISK_SIZE_sel_radio_6" data-title="1500"></label><input type="radio" name="web_disk_DATA_DISK_SIZE_sel_radio" id="web_disk_DATA_DISK_SIZE_sel_radio_7" value="2000" class="threshold"><label for="web_disk_DATA_DISK_SIZE_sel_radio_7" data-title="2000"></label></div><input type="number" class="rangeInput" readonly="readonly" id="web_disk_DATA_DISK_SIZE_sel_range"></div>
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <script>
+                                                        var trHeight = 55;
+                                                    var p_web_disk={height : trHeight, linuxYN: 'Y'  }
+                                                    function set_web_disk(){
+                                                    
+                                                        var maxItems = newVra_popup_vue.page_data.all_inputs.web_disk.maxItems;
+                                                        if(newVra_popup_vue.page_data.all_inputs.web_disk.require){
+                                                            $(".web_disk-area>div:first").attr("required", "required")
+                                                        }
+                                                        if(maxItems==1){
+                                                            $(".web_disk-area .btn-new-disk").hide();
+                                                        }
+                                                        else{
+                                                            $(".web_disk-area .btn-new-disk").attr("maxItems",maxItems );
+                                                            $(".web_disk-area .btn-new-disk").show();
+                                                        }
+                                                    
+                                                        var json = newVra_popup_param.DATA_JSON;
+                                                        try{ 
+                                                            var arr1 = json["web_disk"];
+                                                            if(arr1){
+                                                                 
+                                                                for(var i=0; i<arr1.length; i++){
+                                                                    var arr2 = arr1[i].split("=");
+                                                                    if(i>1){
+                                                                         web_disk_newDisk( )
+                                                                    }
+                                                                    var trObj = $("#web_disk_data_disk_tbl tbody tr")[i];
+                                                                    $(trObj).find(".diskSelect").val(arr2[1])
+                                                                    $(trObj).find(".DATA_DISK_NAME").val(arr2[0])
+                                                                     
+                                                                }
+                                                            }
+                                                            
+                                                            if(yn==null){
+                                                                 p_web_disk.linuxYN = getLinuxYN(2-1)
+                                                            }
+                                                        }
+                                                        catch(e){}
+                                                    }
+                                                    set_web_disk();
+                                                    
+                                                    function web_disk_newDisk( ){
+                                                            var maxItems = $(".web_disk-area .btn-new-disk").attr("maxItems");
+                                                            var currentCnt = $("#web_disk_data_disk_tbl tbody tr").length;
+                                                            if(maxItems==currentCnt){
+                                                                alert(getMessage("최대 {0}개까지 입력하실 수 있습니다.", [maxItems]));
+                                                                return;
+                                                            }
+                                                            p_web_disk.height += trHeight;
+                                                            var tbl = $("#web_disk_data_disk_tbl tbody  ");
+                                                            var trObj = $("<tr>" +  $("#web_disk_data_disk_tbl tbody tr:first").html()  + "</tr>");
+                                                            $(".web_disk-area > div").css("height",p_web_disk.height);
+                                                            var div = trObj.find("div.diskSelect");
+                                                            div.attr("id", div.attr("id") + currentCnt)
+                                                    
+                                                    
+                                                            tbl.append(trObj);
+                                                            var option = newVra_popup_vue.page_data.allSpecMap[getKubunVal()].DISK
+                                                            new RangeSlider(div.attr("id"),option);
+                                                            trObj.find("td:last-child").append('<button type="button" class="btn btn-primary btn update" onclick="web_disk_delDisk(this)" title="btn_del"><i class="fa fa-minus"></i></button>');
+                                                            addQuotaListening()
+                                                            return trObj;
+                                                    
+                                                        }
+                                                    function web_disk_delDisk(obj){
+                                                            p_web_disk.height -= trHeight;
+                                                        $(".web_disk-area > div").css("height",p_web_disk.height);
+                                                            $(obj).parents("tr:first").remove();
+                                                             
+                                                        }
+                                                        $(document).ready(function(){
+                                                            if(getKubunVal()==null){
+                                                                $("#web_disk_DATA_DISK_SIZE_sel").remove();
+                                                            }
+                                                            else{
+                                                                $("#web_disk_DATA_DISK_SIZE_input").remove();
+                                                            }
+                                                        })
+                                                    function chk_web_disk(obj){
+                                                         p_web_disk.linuxYN = getLinuxYN(2)
+                                                          if(p_web_disk.linuxYN=='N')
+                                                          {
+                                                                 return chkWinDriver(obj.value);
+                                                         }
+                                                         return true;
+                                                    }	
+                                                    function get_web_disk(){
+                                                         var trs = $("#web_disk_data_disk_tbl tr");
+                                                         var result = [];
+                                                        
+                                                         for(var i=0; i < trs.length; i++){
+                                                             var size = $(trs[i]).find(".diskSelect input").val();
+                                                             if(!size || size=='' || size=='0') continue;
+                                                             result.push(   size);
+                                                         }
+                                                         return result;
+                                                    }
+                                                    
+                                                    </script>
 
-                                                    <div class="col input_vm_name-area">
+                                                
+
+                                                    <div class="col col-sm-12input_vm_name-area">
                                                         <div id="input_vm_name-option" class="rowDiv">
                                                             <label for="input_vm_name" class="control-label stepLabel ">input_vm_name</label>
                                                             <input name="input_vm_name" id="input_vm_name" value="" class="form-control input hastitle stepInput" style="width:260px" placeholder="입력">
                                                         </div>
                                                     </div>
-                                                    <div class="col input_NewHostname-area">
+                                                    <div class="col col-sm-12input_NewHostname-area">
                                                         <div id="input_NewHostname-option" class="rowDiv">
                                                             <label for="input_NewHostname" class="control-label stepLabel ">input_NewHostname</label>
                                                             <!-- evoke : input에 placeholder, style 추가 -->
@@ -453,7 +593,7 @@
                                                 <div class="number">1</div>
                                                 <div class="title">카탈로그</div>
                                                 <div class="info">
-                                                    <div class="col">
+                                                    <div class="col col-sm-12 colTop">
                                                         <div class="fm-output rowDiv">
                                                             <label class="control-label">카탈로그</label>
                                                             <div name="CATALOG_NM" class="output hastitle">서버명 변경</div>
@@ -463,19 +603,19 @@
                                                 <div class="number">2</div>
                                                 <div class="title">기본정보</div>
                                                 <div class="info">
-                                                    <div class="col">
+                                                    <div class="col col-sm-12 colTop">
                                                         <div class="fm-output rowDiv">
                                                             <label class="control-label">요청명</label>
                                                             <div name="REQ_TITLE" class="output hastitle">1</div>
                                                         </div>
                                                     </div>
-                                                    <div class="col">
+                                                    <div class="col col-sm-12">
                                                         <div class="fm-output rowDiv">
                                                             <label class="control-label">용도</label>
                                                             <div name="S_PURPOSE" class="output hastitle">admin</div>
                                                         </div>
                                                     </div>
-                                                    <div class="col">
+                                                    <div class="col col-sm-12">
                                                         <div class="fm-output rowDiv">
                                                             <label class="control-label">구분</label>
                                                             <div name="P_KUBUN" class="output hastitle">dev</div>
@@ -486,31 +626,31 @@
                                                 <div class="number">3</div>
                                                 <div class="title">정보입력</div>
                                                     <div class="info">
-                                                        <div class="col col-dual">
+                                                        <div class="col col-sm-6 colTop">
                                                             <div class="rowDiv">
                                                                 <label class="control-label">요청명</label>
                                                                 <div class="output hastitle">1</div>
                                                             </div>
                                                         </div>
-                                                        <div class="col col-dual">
+                                                        <div class="col col-sm-6 colTop">
                                                             <div class="rowDiv">
                                                                 <label class="control-label">용도</label>
                                                                 <div class="output hastitle">admin</div>
                                                             </div>
                                                         </div>
-                                                        <div class="col col-dual">
+                                                        <div class="col col-sm-6">
                                                             <div class="rowDiv">
                                                                 <label class="control-label">용도</label>
                                                                 <div class="output hastitle">admin</div>
                                                             </div>
                                                         </div>
-                                                        <div class="col col-dual">
+                                                        <div class="col col-sm-6">
                                                             <div class="rowDiv">
                                                                 <label class="control-label">용도</label>
                                                                 <div class="output hastitle">admin</div>
                                                             </div>
                                                         </div>
-                                                        <div class="col">
+                                                        <div class="col col-sm-6">
                                                             <div class="rowDiv">
                                                                 <label class="control-label">용도</label>
                                                                 <div class="output hastitle">admin</div>
@@ -546,6 +686,7 @@
                             </div>
                         </form>
                     </div>
+                    <!-- evoke : .modal-footer 삭제해 주세요 -->
                     <div class="modal-footer"></div>
                 </div>
             </div>

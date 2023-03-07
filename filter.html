@@ -26,49 +26,37 @@
 
     <div id="popup_area" class="popup_area">
 
-        <!-- evoke : 레이어팝업_상태변경 -->
+
         <div id="filter_popup" role="dialog" class="modal fade popup_dialog filter_popup in" name="filter_popup"
-            style="display: block; padding-left: 0px;">
+            style="display: block;">
             <div class="modal-dialog ui-draggable">
-                <!-- evoke : .modal-content 에서 팝업의 width를 inline 설정해주세요 -->
-                <div class="modal-content  container-fluid" style="width:532px">
-                    <!-- evoke : filter 팝업에서는 .modal-header 없음 -->
-                    <!-- <div class="modal-header ui-draggable-handle"><button type="button" onclick="processScrollBar()"data-dismiss="modal" class="close"></button> <span id="filter_popup_title"class="header-title">Filter</span></div> -->
+                <div class="modal-content  container-fluid" style="width: 532px;">
                     <div class="modal-body">
                         <form id="filter_popup_form" action="none" class="form-panel detail-panel formHeight">
                             <div>
                                 <div class="filterItem">
                                     <div><label>서버구분</label></div>
-                                    <div>
-                                        <input type="button" value="개발" data-value="P_KUBUN=dev"
-                                            class="btn btn-outline-info selected">
-                                        <input type="button" value="라이브" data-value="P_KUBUN=liv"
-                                            class="btn btn-outline-info">
-                                        <input type="button" value="스테이징" data-value="P_KUBUN=stg"
-                                            class="btn btn-outline-info">
-                                        <input type="button" value="테스트" data-value="P_KUBUN=tst"
-                                            class="btn btn-outline-info">
-                                    </div>
+                                    <div><input type="button" value="개발" data-value="P_KUBUN=dev"
+                                            class="btn btn-outline-info"><input type="button" value="라이브"
+                                            data-value="P_KUBUN=liv" class="btn btn-outline-info selected"><input
+                                            type="button" value="스테이징" data-value="P_KUBUN=stg"
+                                            class="btn btn-outline-info selected"><input type="button" value="테스트"
+                                            data-value="P_KUBUN=tst" class="btn btn-outline-info"></div>
                                 </div>
                                 <hr class="hrMargin">
-
                                 <div class="filterItem">
                                     <div><label>서버상태</label></div>
-                                    <div>
-                                        <input type="button" data-value="RUN_CD=R" value="ON"
-                                            class="btn btn-outline-info selected">
-                                        <input type="button" data-value="RUN_CD=S" value="OFF"
-                                            class="btn btn-outline-info">
-                                    </div>
+                                    <div><input type="button" data-value="RUN_CD=R" value="ON"
+                                            class="btn btn-outline-info"> <input type="button" data-value="RUN_CD=S"
+                                            value="OFF" class="btn btn-outline-info selected"></div>
                                 </div>
                                 <hr class="hrMargin">
-
                                 <div class="filterItem">
                                     <div><label>만료</label></div>
                                     <div><input type="button" data-value="EXPIRE_KUBUN=N" value="사용중"
-                                            class="btn btn-outline-info">
-                                        <input type="button" data-value="EXPIRE_KUBUN=-30" value="만료예정(D-30)"
-                                            class="btn btn-outline-info"> <input type="button"
+                                            class="btn btn-outline-info selected"> <input type="button"
+                                            data-value="EXPIRE_KUBUN=-30" value="만료예정(D-30)"
+                                            class="btn btn-outline-info selected"> <input type="button"
                                             data-value="EXPIRE_KUBUN=Y" value="만료(D+30)" class="btn btn-outline-info">
                                     </div>
                                 </div>
@@ -76,44 +64,43 @@
                                 <div class="filterItem">
                                     <div><label>공유</label></div>
                                     <div><input type="button" data-value="SHARE_YN=Y" value="공유중"
-                                            class="btn btn-outline-info">
-                                        <input type="button" data-value="SHARE_YN=N" value="미공유"
-                                            class="btn btn-outline-info"></div>
+                                            class="btn btn-outline-info"> <input type="button" data-value="SHARE_YN=N"
+                                            value="미공유" class="btn btn-outline-info selected"></div>
                                 </div>
                                 <hr class="hrMargin">
                                 <div class="filterItem">
                                     <div><label>최적화</label></div>
                                     <div><input type="button" data-value="OVERUNDER_KUBUN=CU" value="Core Up"
-                                            class="btn btn-outline-info"> <input type="button"
+                                            class="btn btn-outline-info selected"> <input type="button"
                                             data-value="OVERUNDER_KUBUN=CD" value="Core Down"
-                                            class="btn btn-outline-info"> <input type="button"
+                                            class="btn btn-outline-info selected"> <input type="button"
                                             data-value="OVERUNDER_KUBUN=MU" value="Memory Up"
-                                            class="btn btn-outline-info"> <input type="button"
+                                            class="btn btn-outline-info selected"> <input type="button"
                                             data-value="OVERUNDER_KUBUN=MD" value="Memory Down"
-                                            class="btn btn-outline-info"></div>
+                                            class="btn btn-outline-info selected"></div>
                                 </div>
                                 <hr class="hrMargin">
                                 <div>
                                     <div><label>사용자 &amp; Tag</label></div>
-                                    <div class="fm-select">
-                                        <!----> 
+                                    <div class="fm-select select2-search">
+                                        <!-- evoke : inline style 제거. style="width: 510px; --> 
                                         <select name="FILTER_KEYWORD" id="filter_popup_UserAndTag" class="form-control input select2-hidden-accessible" tabindex="-1" aria-hidden="true"></select>
-                                        <span class="select2 select2-container select2-container--default" dir="ltr" style="width:226px;">
-                                            <span class="selection">
-                                                <span class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1">
+                                        <!-- evoke : inline style 제거. style="width: 510px; --> 
+                                        <span class="select2 select2-container select2-container--default select2-container--below" dir="ltr">
+                                            <span class="selection"><span
+                                                    class="select2-selection select2-selection--multiple"
+                                                    role="combobox" aria-haspopup="true" aria-expanded="false"
+                                                    tabindex="-1">
                                                     <ul class="select2-selection__rendered">
-                                                        <li class="select2-search select2-search--inline">
-                                                            <!-- evoke : placeholder "검색"값 추가 -->
-                                                            <input class="select2-search__field" type="search" tabindex="0" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="textbox" aria-autocomplete="list" placeholder="검색">
-                                                        </li>
+                                                        <li class="select2-search select2-search--inline"><input
+                                                                class="select2-search__field" type="search" tabindex="0"
+                                                                autocomplete="off" autocorrect="off"
+                                                                autocapitalize="off" spellcheck="false" role="textbox"
+                                                                aria-autocomplete="list" placeholder=""
+                                                                style="width: 5.25em;"></li>
                                                     </ul>
-                                                    <!-- evoke : .select2-btn 돋보기 버튼 추가. 버튼 태그 아니어도 상관없음(div,a 등등 가능) -->
-                                                    <button class="select2-btn"></button>
-                                                </span>
-                                            </span>
-                                            <span class="dropdown-wrapper" aria-hidden="true"></span>
-                                        </span>
-                                    </div>
+                                                </span></span><span class="dropdown-wrapper"
+                                                aria-hidden="true"></span></span></div>
                                 </div>
                                 <hr class="hrMargin">
                             </div>
@@ -122,77 +109,60 @@
                     <div class="modal-footer"><span>
                             <div class="filterSelectedList">
                                 <div>
-                                    <div class="itemBox">
-                                        <span class="name">사용중</span> 
-                                        <a href="javascript:void(0)"><input type="hidden" value="EXPIRE_KUBUN=N">
-                                            <img src="/res/img/ncsoft/ic_filter_x.svg" class="bi-plus-circle-fill">
-                                        </a>
-                                    </div>
+                                    <div class="itemBox"><span class="name">Memory Down</span> <a
+                                            href="javascript:void(0)"><input type="hidden" value="OVERUNDER_KUBUN=MD">
+                                            <img src="/res/img/x.svg" class="bi-plus-circle-fill"></a></div>
                                 </div>
                                 <div>
-                                    <div class="itemBox">
-                                        <span class="name">개발</span> 
-                                        <a href="javascript:void(0)"><input type="hidden" value="P_KUBUN=dev"> 
-                                            <img src="/res/img/ncsoft/ic_filter_x.svg" class="bi-plus-circle-fill">
-                                        </a>
-                                    </div>
+                                    <div class="itemBox"><span class="name">Memory Up</span> <a
+                                            href="javascript:void(0)"><input type="hidden" value="OVERUNDER_KUBUN=MU">
+                                            <img src="/res/img/x.svg" class="bi-plus-circle-fill"></a></div>
                                 </div>
                                 <div>
-                                    <div class="itemBox">
-                                        <span class="name">개발</span> 
-                                        <a href="javascript:void(0)"><input type="hidden" value="P_KUBUN=dev"> 
-                                            <img src="/res/img/ncsoft/ic_filter_x.svg" class="bi-plus-circle-fill">
-                                        </a>
-                                    </div>
+                                    <div class="itemBox"><span class="name">Core Down</span> <a
+                                            href="javascript:void(0)"><input type="hidden" value="OVERUNDER_KUBUN=CD">
+                                            <img src="/res/img/x.svg" class="bi-plus-circle-fill"></a></div>
                                 </div>
                                 <div>
-                                    <div class="itemBox">
-                                        <span class="name">개발</span> 
-                                        <a href="javascript:void(0)"><input type="hidden" value="P_KUBUN=dev"> 
-                                            <img src="/res/img/ncsoft/ic_filter_x.svg" class="bi-plus-circle-fill">
-                                        </a>
-                                    </div>
+                                    <div class="itemBox"><span class="name">Core Up</span> <a
+                                            href="javascript:void(0)"><input type="hidden" value="OVERUNDER_KUBUN=CU">
+                                            <img src="/res/img/x.svg" class="bi-plus-circle-fill"></a></div>
                                 </div>
                                 <div>
-                                    <div class="itemBox">
-                                        <span class="name">개발</span> 
-                                        <a href="javascript:void(0)"><input type="hidden" value="P_KUBUN=dev"> 
-                                            <img src="/res/img/ncsoft/ic_filter_x.svg" class="bi-plus-circle-fill">
-                                        </a>
-                                    </div>
+                                    <div class="itemBox"><span class="name">미공유</span> <a
+                                            href="javascript:void(0)"><input type="hidden" value="SHARE_YN=N"> <img
+                                                src="/res/img/x.svg" class="bi-plus-circle-fill"></a></div>
                                 </div>
                                 <div>
-                                    <div class="itemBox">
-                                        <span class="name">개발</span> 
-                                        <a href="javascript:void(0)"><input type="hidden" value="P_KUBUN=dev"> 
-                                            <img src="/res/img/ncsoft/ic_filter_x.svg" class="bi-plus-circle-fill">
-                                        </a>
-                                    </div>
+                                    <div class="itemBox"><span class="name">만료예정(D-30)</span> <a
+                                            href="javascript:void(0)"><input type="hidden" value="EXPIRE_KUBUN=-30">
+                                            <img src="/res/img/x.svg" class="bi-plus-circle-fill"></a></div>
                                 </div>
                                 <div>
-                                    <div class="itemBox">
-                                        <span class="name">개발</span> 
-                                        <a href="javascript:void(0)"><input type="hidden" value="P_KUBUN=dev"> 
-                                            <img src="/res/img/ncsoft/ic_filter_x.svg" class="bi-plus-circle-fill">
-                                        </a>
-                                    </div>
+                                    <div class="itemBox"><span class="name">사용중</span> <a
+                                            href="javascript:void(0)"><input type="hidden" value="EXPIRE_KUBUN=N"> <img
+                                                src="/res/img/x.svg" class="bi-plus-circle-fill"></a></div>
                                 </div>
                                 <div>
-                                    <div class="itemBox">
-                                        <span class="name">리니지개발</span> 
-                                        <a href="javascript:void(0)"><input type="hidden" value="리니지개발"> 
-                                            <img src="/res/img/ncsoft/ic_filter_x.svg" class="bi-plus-circle-fill">
-                                        </a>
-                                    </div>
+                                    <div class="itemBox"><span class="name">OFF</span> <a
+                                            href="javascript:void(0)"><input type="hidden" value="RUN_CD=S"> <img
+                                                src="/res/img/x.svg" class="bi-plus-circle-fill"></a></div>
+                                </div>
+                                <div>
+                                    <div class="itemBox"><span class="name">라이브</span> <a
+                                            href="javascript:void(0)"><input type="hidden" value="P_KUBUN=liv"> <img
+                                                src="/res/img/x.svg" class="bi-plus-circle-fill"></a></div>
+                                </div>
+                                <div>
+                                    <div class="itemBox"><span class="name">스테이징</span> <a
+                                            href="javascript:void(0)"><input type="hidden" value="P_KUBUN=stg"> <img
+                                                src="/res/img/x.svg" class="bi-plus-circle-fill"></a></div>
                                 </div>
                             </div>
-                            <div class="filterFooter">
-                                <button class="btn popupBtn prev btn-info okBtn">적용</button>
-                                <button class="btn popupBtn prev btn-secondary cancelBtn">취소</button> 
-                                <button class="btn btn-dark resetBtn">초기화</button>
-                            </div>
-                        </span>
-                    </div>
+                            <div class="filterFooter"><button class="btn popupBtn prev btn-info okBtn  ">적용</button>
+                                <button class="btn popupBtn prev btn-secondary cancelBtn ">취소</button> <button
+                                    class="btn btn-dark resetBtn">초기화</button></div>
+                        </span></div>
                 </div>
             </div>
         </div>

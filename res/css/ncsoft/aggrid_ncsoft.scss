@@ -32,6 +32,7 @@
 	height: 48px !important;
 	background-image: none !important;
 	background: #f0f0f0 !important;
+	border-bottom: 1px solid #ddd;
 }
 .ag-cell {
 	 
@@ -89,7 +90,11 @@
 }
 .ag-theme-fresh .ag-header-cell {
 	background-color: #FAFAFA;
-	border-right: none;
+	// border-right: none;
+	border-right: 1px solid #ddd;
+}
+.ag-theme-fresh .ag-header-cell:last-of-type {
+	border-right: 0;
 }
 .ag-theme-fresh .ag-header-cell-label .ag-header-cell-text{
 	margin: auto;

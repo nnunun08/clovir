@@ -393,6 +393,7 @@ label[dir=rtl] .range-slider {
   content: attr(data-title);
   position: absolute;
   left: 50%;
+  top: -9px;
   transform: translate(-50%, 45px);
   font-size: 12px;
   font-weight: 400;

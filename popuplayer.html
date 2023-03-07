@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/res/css/jquery-ui.css">
+    <link rel="stylesheet" href="/res/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/res/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/res/css/jstree.style.min.css">
+    <link rel="stylesheet" href="/res/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="/res/css/ncsoft/common.css">
+    <link rel="stylesheet" href="/res/css/ncsoft/menu.css">
+    <link rel="stylesheet" href="/res/css/ncsoft/dashboard.css">
+    <link rel="stylesheet" href="/res/css/ncsoft/aggrid_ncsoft.css">
+
+    <link rel="stylesheet" href="/res/css/select2.min.css" type="text/css" >
+    <script type="text/javascript" src="/res/js/select2.js"></script>
+</head>
+
+<div id="content" class="container-fluid">
+    <div id="input_area">
+        <!-- evoke : .popup_layer 에 인라인스타일 제거 -->
+        <div class="popup_layer">
+            <div class="popup_layer_top"><span class="popup_layer_title">서버 상세정보</span> <button type="button"
+                    onclick="popupShowEvent('hide')" class="popup_layer_close">X</button></div>
+            <div class="popup_layer_tab">
+                <ul class="nav nav-tabs vmDetailTab">
+                    <li class="active"><a href="#tab1" data-toggle="tab" onclick="chgTab(1)">상세</a></li>
+                    <li><a href="#tab5" data-toggle="tab" onclick="chgTab(6)">이력</a></li>
+                    <li><a href="#tab4" data-toggle="tab" onclick="chgTab(4)">복원이력</a></li>
+                    <li><a href="#tab7" data-toggle="tab" onclick="chgTab(8)">사용률</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="tab1" class="form-panel detail-panel tab-pane active">
+                        <div class="form-panel panel panel-default detail-panel">
+                            <div class="panel-body"><input id="D_VM_ID" name="VM_ID" type="hidden" value="S1601256415555700">
+                                <div class="col col-sm-6 colTop">
+                                    <div class="fm-output"><label for="VM_NM"
+                                            class="control-label grid-title value-title">서버명</label>
+                                        <div id="VM_NM" name="VM_NM" class="output  hastitle">nc-testlin001</div>
+                                    </div>
+                                </div>
+                                <div class="col col-sm-6 colTop">
+                                    <div class="fm-output"><label for="TEAM_NM"
+                                            class="control-label grid-title value-title">팀(조직)</label>
+                                        <div id="TEAM_NM" name="TEAM_NM" class="output  hastitle">시스템운영팀</div>
+                                    </div>
+                                </div>
+                                <div class="col col-sm-6">
+                                    <div class="fm-output"><label for="RUN_CD_NM"
+                                            class="control-label grid-title value-title">서버 상태</label>
+                                        <div id="RUN_CD_NM" name="RUN_CD_NM" title="ON" class="output  hastitle">ON</div>
+                                    </div>
+                                </div>
+                                <div class="col col-sm-6">
+                                    <div class="fm-output"><label for="INS_ID_NM"
+                                            class="control-label grid-title value-title">담당자</label>
+                                        <div id="INS_ID_NM" name="INS_ID_NM" class="output  hastitle">포탈관리자</div>
+                                    </div>
+                                </div>
+                                <div class="col col-sm-6 resourceDiv">
+                                    <div class="fm-output"><label class="control-label grid-title value-title">사양</label>
+                                        <div id="CPU_Spec" name="CPU_SPEC" title="CPU" class="output hastitle">
+                                            Core : <span>2vCore</span></div>
+                                        <div id="MEM_Spec" name="MEM_SPEC" title="Memory" class="output hastitle">
+                                            Memory : <span>4GB</span></div>
+                                        <div id="DISK_Spec" name="DISK_SPEC" title="Disk" class="output hastitle">
+                                            Disk : <span>52GB</span></div>
+                                    </div>
+                                </div>
+                                <div class="col col-sm-6 resourceDiv">
+                                    <div class="fm-output"><label class="control-label grid-title value-title">리소스 최적화</label>
+                                        <div id="CPU_Optimization" name="CPU_SPEC" title="CPU" class="output hastitle">
+                                            <span></span></div>
+                                        <div id="MEM_Optimization" name="MEM_SPEC" title="Memory" class="output hastitle">
+                                            <span></span></div>
+                                            <!-- evoke : title => class -->
+                                        <div class="output hastitle"></div>
+                                    </div>
+                                </div>
+                                <div class="col col-sm-6">
+                                    <div class="fm-output"><label for="GUEST_NM"
+                                            class="control-label grid-title value-title">OS명</label>
+                                        <div id="GUEST_NM" name="GUEST_NM" class="output  hastitle">Ubuntu Linux (64-bit)</div>
+                                    </div>
+                                </div>
+                                <div class="col col-sm-6">
+                                    <div class="fm-output"><label for="INS_TMS"
+                                            class="control-label grid-title value-title">생성일시</label>
+                                        <div id="INS_TMS" name="INS_TMS" title="2023-03-07 02:11:26" class="output  hastitle">
+                                            2023-03-07 02:11:26</div>
+                                    </div>
+                                </div>
+                                <div class="col col-sm-6">
+                                    <div class="fm-output"><label for="PRIVATE_IP"
+                                            class="control-label grid-title value-title">IP</label>
+                                        <div id="PRIVATE_IP" name="PRIVATE_IP" class="output  hastitle"></div>
+                                    </div>
+                                </div>
+                                <div class="col col-sm-6">
+                                    <div class="fm-output"><label for="USE_MM"
+                                            class="control-label grid-title value-title">사용기간(개월)</label>
+                                        <div id="USE_MM" name="USE_MM" title="6개월 / 만료일:2023-09-06 17:11:26"
+                                            class="output  hastitle">6개월 / 만료일:2023-09-06 17:11:26</div>
+                                    </div>
+                                </div>
+                                <div class="col col-sm-6">
+                                    <div class="fm-output"><label for="SPEC_DD_FEE"
+                                            class="control-label grid-title value-title">사용쿼터</label>
+                                        <div id="SPEC_DD_FEE" name="SPEC_DD_FEE" title="0원" class="output  hastitle">0원</div>
+                                    </div>
+                                </div>
+                                <div class="col col-sm-6">
+                                    <div class="fm-output"><label for="connectBtn"
+                                            class="control-label grid-title value-title">연결</label>
+                                        <div id="connectBtn" title="연결" class="output hastitle">
+                                            <div class="consoleDiv"
+                                                onclick="smAction.openConsole(&quot;S1601256415555700&quot;)">Console</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-sm-12">
+                                    <div class="fm-output"><label for="SHARE_VM_USER_LIST"
+                                            class="control-label grid-title value-title">공유여부</label>
+                                        <div id="SHARE_VM_USER_LIST" name="" class="output  hastitle">
+                                            <span class="state">공유중</span>
+                                            <span>리사 (리지니개발2팀) ㅣ 유제나 (서버운영팀) ㅣ강한나 (마케팅팀)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-sm-12">
+                                    <div class="fm-output"><label for="TAGS"
+                                            class="control-label grid-title value-title">TAG</label>
+                                        <div id="TAGS" name="TAGS" class="output  hastitle"></div>
+                                    </div>
+                                </div>
+                                <!---->
+                                <div class="col col-sm-12 detailCMTDiv">
+                                    <div class="fm-output"><label for="CMT"
+                                            class="control-label grid-title value-title">설명</label>
+                                        <div class="output hastitle"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab4" class="form-panel detail-panel tab-pane">
+                        <div class="fullGrid">
+                            <div class="table_title">
+                                <div class="btn_group"><button type="button" title="엑셀다운로드" onclick="exportExcel_restore()"
+                                        class="icon excelBtn"></button> <button type="button" title="새로고침"
+                                        onclick="restoreSearch(restoreReq.VM_ID)" class="icon reloadBtn"></button>
+                                    &nbsp;&nbsp;
+                                    <button type="button" id="restore_detail_popup_button"
+                                        class="btn btn-primary fm-popup-button btn contentsBtn etc"
+                                        disabled="disabled">복원요청상세</button></div>
+                            </div>
+        
+                            <div id="restoreTable" class="ag-theme-fresh">
+                                <div class="ag-bl ag-bl-full-height ag-layout-normal ag-scrolls ag-ltr"
+                                    id="borderLayout_eRootPanel">
+                                    <div class="ag-bl-center ag-bl-full-height-center" ref="center">
+                                        <div class="ag-bl ag-bl-full-height" id="borderLayout_eGridPanel">
+                                            <div class="ag-bl-center ag-bl-full-height-center" ref="center">
+                                                <div class="ag-root ag-font-style ag-hacked-scroll" role="grid">
+                                                    <div class="ag-header ag-pivot-off" role="row" style="height: 40px;">
+                                                        <div class="ag-pinned-left-header" role="presentation"
+                                                            style="display: none; width: 0px;">
+                                                            <div class="ag-header-row" role="presentation"
+                                                                style="top: 0px; height: 40px; width: 0px;"></div>
+                                                        </div>
+                                                        <div class="ag-pinned-right-header" role="presentation"
+                                                            style="display: none; width: 0px;">
+                                                            <div class="ag-header-row" role="presentation"
+                                                                style="top: 0px; height: 40px; width: 0px;"></div>
+                                                        </div>
+                                                        <div class="ag-header-viewport" role="presentation"
+                                                            style="margin-left: 0px; margin-right: 0px;">
+                                                            <div class="ag-header-container" role="presentation">
+                                                                <div class="ag-header-row" role="presentation"
+                                                                    style="top: 0px; height: 40px; width: 660px;">
+                                                                    <div class="ag-header-cell" role="presentation"
+                                                                        col-id="ROWNUM" style="width: 60px; left: 0px;">
+                                                                        <div ref="eResize" class="ag-header-cell-resize"
+                                                                            role="presentation"></div>
+                                                                        <!--AG-CHECKBOX--><span
+                                                                            class="ag-header-select-all ag-hidden"
+                                                                            role="presentation" ref="cbSelectAll"> <span
+                                                                                class="ag-checkbox-checked ag-hidden"
+                                                                                role="presentation"><span
+                                                                                    class="ag-icon ag-icon-checkbox-checked"></span></span>
+                                                                            <span class="ag-checkbox-unchecked"
+                                                                                role="presentation"><span
+                                                                                    class="ag-icon ag-icon-checkbox-unchecked"></span></span>
+                                                                            <span class="ag-checkbox-indeterminate ag-hidden"
+                                                                                role="presentation"><span
+                                                                                    class="ag-icon ag-icon-checkbox-indeterminate"></span></span>
+                                                                            <span class="ag-checkbox-label"
+                                                                                role="presentation"></span></span>
+                                                                        <div class="ag-cell-label-container"
+                                                                            role="presentation">
+                                                                            <div ref="eLabel" class="ag-header-cell-label"
+                                                                                role="presentation"> <span ref="eText"
+                                                                                    class="ag-header-cell-text"
+                                                                                    role="columnheader">No</span> <span
+                                                                                    ref="eFilter"
+                                                                                    class="ag-header-icon ag-filter-icon ag-hidden"
+                                                                                    aria-hidden="true"><span
+                                                                                        class="ag-icon ag-icon-filter"></span></span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ag-header-overlay" role="presentation"
+                                                            style="height: 40px; top: 0px;"></div>
+                                                    </div>
+                                                    <div class="ag-floating-top" role="presentation"
+                                                        style="top: 40px; height: 0px;">
+                                                        <div class="ag-pinned-left-floating-top" role="presentation"
+                                                            style="width: 0px;"></div>
+                                                        <div class="ag-pinned-right-floating-top" role="presentation"
+                                                            style="width: 0px;"></div>
+                                                        <div class="ag-floating-top-viewport" role="presentation">
+                                                            <div class="ag-floating-top-container" role="presentation"
+                                                                style="width: 660px;"></div>
+                                                        </div>
+                                                        <div class="ag-floating-top-full-width-container ag-hidden"
+                                                            role="presentation"></div>
+                                                    </div>
+                                                    <div class="ag-floating-bottom" role="presentation"
+                                                        style="height: 0px; top: -1px;">
+                                                        <div class="ag-pinned-left-floating-bottom" role="presentation"
+                                                            style="width: 0px;"></div>
+                                                        <div class="ag-pinned-right-floating-bottom" role="presentation"
+                                                            style="width: 0px;"></div>
+                                                        <div class="ag-floating-bottom-viewport" role="presentation">
+                                                            <div class="ag-floating-bottom-container" role="presentation"
+                                                                style="width: 660px;"></div>
+                                                        </div>
+                                                        <div class="ag-floating-bottom-full-width-container ag-hidden"
+                                                            role="presentation"></div>
+                                                    </div>
+                                                    <div class="ag-body ag-row-no-animation" role="presentation"
+                                                        style="top: 40px;">
+                                                        <div class="ag-pinned-left-cols-viewport" role="presentation"
+                                                            style="display: none; width: 0px;">
+                                                            <div class="ag-pinned-left-cols-container" role="presentation"
+                                                                style="height: 200px; top: 0px; width: 0px;">
+                                                                <div role="row" row-index="0" row-id="0" comp-id="1871"
+                                                                    class="ag-row ag-row-no-focus ag-row-even ag-row-level-0"
+                                                                    style="height: 40px; transform: translateY(0px);  "></div>
+                                                                <div role="row" row-index="1" row-id="1" comp-id="1873"
+                                                                    class="ag-row ag-row-no-focus ag-row-odd ag-row-level-0"
+                                                                    style="height: 40px; transform: translateY(40px);  "></div>
+                                                                <div role="row" row-index="2" row-id="2" comp-id="1875"
+                                                                    class="ag-row ag-row-no-focus ag-row-even ag-row-level-0"
+                                                                    style="height: 40px; transform: translateY(80px);  "></div>
+                                                                <div role="row" row-index="3" row-id="3" comp-id="1877"
+                                                                    class="ag-row ag-row-no-focus ag-row-odd ag-row-level-0"
+                                                                    style="height: 40px; transform: translateY(120px);  "></div>
+                                                                <div role="row" row-index="4" row-id="4" comp-id="1879"
+                                                                    class="ag-row ag-row-no-focus ag-row-even ag-row-level-0"
+                                                                    style="height: 40px; transform: translateY(160px);  "></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ag-pinned-right-cols-viewport" role="presentation"
+                                                            style="display: none; width: 0px;">
+                                                            <div class="ag-pinned-right-cols-container" role="presentation"
+                                                                style="height: 200px; width: 0px;">
+                                                                <div role="row" row-index="0" row-id="0" comp-id="1871"
+                                                                    class="ag-row ag-row-no-focus ag-row-even ag-row-level-0"
+                                                                    style="height: 40px; transform: translateY(0px);  "></div>
+                                                                <div role="row" row-index="1" row-id="1" comp-id="1873"
+                                                                    class="ag-row ag-row-no-focus ag-row-odd ag-row-level-0"
+                                                                    style="height: 40px; transform: translateY(40px);  "></div>
+                                                                <div role="row" row-index="2" row-id="2" comp-id="1875"
+                                                                    class="ag-row ag-row-no-focus ag-row-even ag-row-level-0"
+                                                                    style="height: 40px; transform: translateY(80px);  "></div>
+                                                                <div role="row" row-index="3" row-id="3" comp-id="1877"
+                                                                    class="ag-row ag-row-no-focus ag-row-odd ag-row-level-0"
+                                                                    style="height: 40px; transform: translateY(120px);  "></div>
+                                                                <div role="row" row-index="4" row-id="4" comp-id="1879"
+                                                                    class="ag-row ag-row-no-focus ag-row-even ag-row-level-0"
+                                                                    style="height: 40px; transform: translateY(160px);  "></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ag-body-viewport-wrapper" role="presentation"
+                                                            style="margin-left: 0px; margin-right: 0px;">
+                                                            <div class="ag-body-viewport" role="presentation"
+                                                                style="overflow-y: auto;">
+                                                                <div class="ag-body-container" role="presentation"
+                                                                    style="height: 200px; top: 0px; width: 660px;">
+                                                                    <div role="row" row-index="0" row-id="0" comp-id="1871"
+                                                                        class="ag-row ag-row-no-focus ag-row-even ag-row-level-0"
+                                                                        style="height: 40px; transform: translateY(0px);  ">
+                                                                        <div tabindex="-1" role="gridcell" comp-id="1872"
+                                                                            col-id="ROWNUM"
+                                                                            class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value"
+                                                                            style="width: 60px; left: 0px; ">1</div>
+                                                                    </div>
+                                                                    <div role="row" row-index="1" row-id="1" comp-id="1873"
+                                                                        class="ag-row ag-row-no-focus ag-row-odd ag-row-level-0"
+                                                                        style="height: 40px; transform: translateY(40px);  ">
+                                                                        <div tabindex="-1" role="gridcell" comp-id="1874"
+                                                                            col-id="ROWNUM"
+                                                                            class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value"
+                                                                            style="width: 60px; left: 0px; ">2</div>
+                                                                    </div>
+                                                                    <div role="row" row-index="2" row-id="2" comp-id="1875"
+                                                                        class="ag-row ag-row-no-focus ag-row-even ag-row-level-0"
+                                                                        style="height: 40px; transform: translateY(80px);  ">
+                                                                        <div tabindex="-1" role="gridcell" comp-id="1876"
+                                                                            col-id="ROWNUM"
+                                                                            class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value"
+                                                                            style="width: 60px; left: 0px; ">3</div>
+                                                                    </div>
+                                                                    <div role="row" row-index="3" row-id="3" comp-id="1877"
+                                                                        class="ag-row ag-row-no-focus ag-row-odd ag-row-level-0"
+                                                                        style="height: 40px; transform: translateY(120px);  ">
+                                                                        <div tabindex="-1" role="gridcell" comp-id="1878"
+                                                                            col-id="ROWNUM"
+                                                                            class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value"
+                                                                            style="width: 60px; left: 0px; ">4</div>
+                                                                    </div>
+                                                                    <div role="row" row-index="4" row-id="4" comp-id="1879"
+                                                                        class="ag-row ag-row-no-focus ag-row-even ag-row-level-0"
+                                                                        style="height: 40px; transform: translateY(160px);  ">
+                                                                        <div tabindex="-1" role="gridcell" comp-id="1880"
+                                                                            col-id="ROWNUM"
+                                                                            class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value"
+                                                                            style="width: 60px; left: 0px; ">5</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ag-full-width-viewport ag-hidden" role="presentation">
+                                                            <div class="ag-full-width-container" role="presentation"
+                                                                style="height: 200px; top: 0px;"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="ag-bl-overlay" ref="overlay" style="display: none;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="ag-bl-overlay" ref="overlay" style="display: none;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab5" class="form-panel detail-panel tab-pane">
+                        <div class="fullGrid">
+                            <div class="table_title">
+                                <div class="btn_group"><button type="button" title="엑셀다운로드" onclick="exportExcelHistory()"
+                                        class="icon excelBtn"></button></div>
+                            </div>
+                            <div id="historyTable" class="ag-theme-fresh">
+                                <div class="ag-bl ag-bl-full-height ag-layout-normal ag-scrolls ag-ltr"
+                                    id="borderLayout_eRootPanel">
+                                    <div class="ag-bl-center ag-bl-full-height-center" ref="center">
+                                        <div class="ag-bl ag-bl-full-height" id="borderLayout_eGridPanel">
+                                            <div class="ag-bl-center ag-bl-full-height-center" ref="center">
+                                                <div class="ag-root ag-font-style ag-hacked-scroll" role="grid">
+                                                    <div class="ag-header ag-pivot-off" role="row" style="height: 40px;">
+                                                        <div class="ag-pinned-left-header" role="presentation"
+                                                            style="display: none; width: 0px;">
+                                                            <div class="ag-header-row" role="presentation"
+                                                                style="top: 0px; height: 40px; width: 0px;"></div>
+                                                        </div>
+                                                        <div class="ag-pinned-right-header" role="presentation"
+                                                            style="display: none; width: 0px;">
+                                                            <div class="ag-header-row" role="presentation"
+                                                                style="top: 0px; height: 40px; width: 0px;"></div>
+                                                        </div>
+                                                        <div class="ag-header-viewport" role="presentation"
+                                                            style="margin-left: 0px; margin-right: 0px;">
+                                                            <div class="ag-header-container" role="presentation">
+                                                                <div class="ag-header-row" role="presentation"
+                                                                    style="top: 0px; height: 40px; width: 700px;">
+                                                                    <div class="ag-header-cell" role="presentation"
+                                                                        col-id="ROWNUM" style="width: 60px; left: 0px;">
+                                                                        <div ref="eResize" class="ag-header-cell-resize"
+                                                                            role="presentation"></div>
+                                                                        <!--AG-CHECKBOX--><span
+                                                                            class="ag-header-select-all ag-hidden"
+                                                                            role="presentation" ref="cbSelectAll"> <span
+                                                                                class="ag-checkbox-checked ag-hidden"
+                                                                                role="presentation"><span
+                                                                                    class="ag-icon ag-icon-checkbox-checked"></span></span>
+                                                                            <span class="ag-checkbox-unchecked"
+                                                                                role="presentation"><span
+                                                                                    class="ag-icon ag-icon-checkbox-unchecked"></span></span>
+                                                                            <span class="ag-checkbox-indeterminate ag-hidden"
+                                                                                role="presentation"><span
+                                                                                    class="ag-icon ag-icon-checkbox-indeterminate"></span></span>
+                                                                            <span class="ag-checkbox-label"
+                                                                                role="presentation"></span></span>
+                                                                        <div class="ag-cell-label-container"
+                                                                            role="presentation">
+                                                                            <div ref="eLabel" class="ag-header-cell-label"
+                                                                                role="presentation"> <span ref="eText"
+                                                                                    class="ag-header-cell-text"
+                                                                                    role="columnheader">No</span> <span
+                                                                                    ref="eFilter"
+                                                                                    class="ag-header-icon ag-filter-icon ag-hidden"
+                                                                                    aria-hidden="true"><span
+                                                                                        class="ag-icon ag-icon-filter"></span></span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ag-header-overlay" role="presentation"
+                                                            style="height: 40px; top: 0px;"></div>
+                                                    </div>
+                                                    <div class="ag-floating-top" role="presentation"
+                                                        style="top: 40px; height: 0px;">
+                                                        <div class="ag-pinned-left-floating-top" role="presentation"
+                                                            style="width: 0px;"></div>
+                                                        <div class="ag-pinned-right-floating-top" role="presentation"
+                                                            style="width: 0px;"></div>
+                                                        <div class="ag-floating-top-viewport" role="presentation">
+                                                            <div class="ag-floating-top-container" role="presentation"
+                                                                style="width: 700px;"></div>
+                                                        </div>
+                                                        <div class="ag-floating-top-full-width-container ag-hidden"
+                                                            role="presentation"></div>
+                                                    </div>
+                                                    <div class="ag-floating-bottom" role="presentation"
+                                                        style="height: 0px; top: -1px;">
+                                                        <div class="ag-pinned-left-floating-bottom" role="presentation"
+                                                            style="width: 0px;"></div>
+                                                        <div class="ag-pinned-right-floating-bottom" role="presentation"
+                                                            style="width: 0px;"></div>
+                                                        <div class="ag-floating-bottom-viewport" role="presentation">
+                                                            <div class="ag-floating-bottom-container" role="presentation"
+                                                                style="width: 700px;"></div>
+                                                        </div>
+                                                        <div class="ag-floating-bottom-full-width-container ag-hidden"
+                                                            role="presentation"></div>
+                                                    </div>
+                                                    <div class="ag-body ag-row-no-animation" role="presentation"
+                                                        style="top: 40px;">
+                                                        <div class="ag-pinned-left-cols-viewport" role="presentation"
+                                                            style="display: none; width: 0px;">
+                                                            <div class="ag-pinned-left-cols-container" role="presentation"
+                                                                style="height: 40px; top: 0px; width: 0px;">
+                                                                <div role="row" row-index="0" row-id="0" comp-id="1881"
+                                                                    class="ag-row ag-row-no-focus ag-row-even ag-row-level-0"
+                                                                    style="height: 40px; transform: translateY(0px);  "></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ag-pinned-right-cols-viewport" role="presentation"
+                                                            style="display: none; width: 0px;">
+                                                            <div class="ag-pinned-right-cols-container" role="presentation"
+                                                                style="height: 40px; width: 0px;">
+                                                                <div role="row" row-index="0" row-id="0" comp-id="1881"
+                                                                    class="ag-row ag-row-no-focus ag-row-even ag-row-level-0"
+                                                                    style="height: 40px; transform: translateY(0px);  "></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ag-body-viewport-wrapper" role="presentation"
+                                                            style="margin-left: 0px; margin-right: 0px;">
+                                                            <div class="ag-body-viewport" role="presentation"
+                                                                style="overflow-y: auto;">
+                                                                <div class="ag-body-container" role="presentation"
+                                                                    style="height: 40px; top: 0px; width: 700px;">
+                                                                    <div role="row" row-index="0" row-id="0" comp-id="1881"
+                                                                        class="ag-row ag-row-no-focus ag-row-even ag-row-level-0"
+                                                                        style="height: 40px; transform: translateY(0px);  ">
+                                                                        <div tabindex="-1" role="gridcell" comp-id="1882"
+                                                                            col-id="ROWNUM"
+                                                                            class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value"
+                                                                            style="width: 60px; left: 0px; ">1</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ag-full-width-viewport ag-hidden" role="presentation">
+                                                            <div class="ag-full-width-container" role="presentation"
+                                                                style="height: 40px; top: 0px;"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="ag-bl-overlay" ref="overlay" style="display: none;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="ag-bl-overlay" ref="overlay" style="display: none;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab7" class="form-panel detail-panel tab-pane" style="">
+                        <div class="form-panel panel panel-default detail-panel vm_usage_tab">
+                            <div class="panel-body">
+                                <div id="vm_usage_bar" data-highcharts-chart="0" style="overflow: hidden;">
+                                    <div id="highcharts-dvofefo-0" dir="ltr" class="highcharts-container "
+                                        style="position: relative; overflow: hidden; width: 1104px; height: 400px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                                        <svg version="1.1" class="highcharts-root"
+                                            style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;"
+                                            xmlns="http://www.w3.org/2000/svg" width="1104" height="400" viewBox="0 0 1104 400">
+                                            <desc>Created with Highcharts 8.0.0</desc>
+                                            <defs>
+                                                <clipPath id="highcharts-dvofefo-1-">
+                                                    <rect x="0" y="0" width="1041" height="354" fill="none"></rect>
+                                                </clipPath>
+                                            </defs>
+                                            <rect fill="#ffffff" class="highcharts-background" x="0" y="0" width="1104"
+                                                height="400" rx="0" ry="0"></rect>
+                                            <rect fill="none" class="highcharts-plot-background" x="53" y="10" width="1041"
+                                                height="354"></rect>
+                                            <g class="highcharts-pane-group" data-z-index="0"></g>
+                                            <g class="highcharts-grid highcharts-xaxis-grid" data-z-index="1">
+                                                <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                                    d="M 399.5 10 L 399.5 364" opacity="1"></path>
+                                                <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                                    d="M 746.5 10 L 746.5 364" opacity="1"></path>
+                                                <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                                    d="M 1093.5 10 L 1093.5 364" opacity="1"></path>
+                                                <path fill="none" data-z-index="1" class="highcharts-grid-line"
+                                                    d="M 52.5 10 L 52.5 364" opacity="1"></path>
+                                            </g>
+                                            <g class="highcharts-grid highcharts-yaxis-grid" data-z-index="1">
+                                                <path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1"
+                                                    class="highcharts-grid-line" d="M 53 364.5 L 1094 364.5" opacity="1"></path>
+                                                <path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1"
+                                                    class="highcharts-grid-line" d="M 53 293.5 L 1094 293.5" opacity="1"></path>
+                                                <path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1"
+                                                    class="highcharts-grid-line" d="M 53 222.5 L 1094 222.5" opacity="1"></path>
+                                                <path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1"
+                                                    class="highcharts-grid-line" d="M 53 152.5 L 1094 152.5" opacity="1"></path>
+                                                <path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1"
+                                                    class="highcharts-grid-line" d="M 53 81.5 L 1094 81.5" opacity="1"></path>
+                                                <path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1"
+                                                    class="highcharts-grid-line" d="M 53 9.5 L 1094 9.5" opacity="1"></path>
+                                            </g>
+                                            <rect fill="none" class="highcharts-plot-border" data-z-index="1" x="53" y="10"
+                                                width="1041" height="354"></rect>
+                                            <g class="highcharts-axis highcharts-xaxis" data-z-index="2">
+                                                <path fill="none" class="highcharts-axis-line" stroke="#ccd6eb" stroke-width="1"
+                                                    data-z-index="7" d="M 53 364.5 L 1094 364.5"></path>
+                                            </g>
+                                            <g class="highcharts-axis highcharts-yaxis" data-z-index="2">
+                                                <path fill="none" class="highcharts-axis-line" data-z-index="7"
+                                                    d="M 53 10 L 53 364"></path>
+                                            </g>
+                                            <g class="highcharts-series-group" data-z-index="3">
+                                                <g data-z-index="0.1"
+                                                    class="highcharts-series highcharts-series-0 highcharts-column-series highcharts-color-0 highcharts-tracker"
+                                                    transform="translate(53,10) scale(1 1)"
+                                                    clip-path="url(#highcharts-dvofefo-1-)">
+                                                    <rect x="89.5" y="352.5" width="167" height="2" fill="#AEE5BE"
+                                                        stroke="#ffffff" stroke-width="1" opacity="1"
+                                                        class="highcharts-point highcharts-color-0"></rect>
+                                                    <rect x="436.5" y="333.5" width="167" height="21" fill="#CED0FE"
+                                                        stroke="#ffffff" stroke-width="1" opacity="1"
+                                                        class="highcharts-point highcharts-color-0"></rect>
+                                                    <rect x="783.5" y="299.5" width="167" height="55" fill="#A1DDFF"
+                                                        stroke="#ffffff" stroke-width="1" opacity="1"
+                                                        class="highcharts-point highcharts-color-0"></rect>
+                                                </g>
+                                                <g data-z-index="0.1"
+                                                    class="highcharts-markers highcharts-series-0 highcharts-column-series highcharts-color-0"
+                                                    transform="translate(53,10) scale(1 1)" clip-path="none"></g>
+                                            </g><text x="10" class="highcharts-title" data-z-index="4"
+                                                style="color:#333333;font-size:18px;fill:#333333;" y="24"></text><text x="552"
+                                                text-anchor="middle" class="highcharts-subtitle" data-z-index="4"
+                                                style="color:#666666;fill:#666666;" y="24"></text><text x="10"
+                                                text-anchor="start" class="highcharts-caption" data-z-index="4"
+                                                style="color:#666666;fill:#666666;" y="397"></text>
+                                            <g data-z-index="6"
+                                                class="highcharts-data-labels highcharts-series-0 highcharts-column-series highcharts-color-0 highcharts-tracker"
+                                                transform="translate(53,10) scale(1 1)" opacity="1">
+                                                <g class="highcharts-label highcharts-data-label highcharts-data-label-color-0"
+                                                    data-z-index="1" transform="translate(155,306)"><text x="5" data-z-index="1"
+                                                        style="font-size:11px;font-weight:bold;color:#000000;fill:#000000;"
+                                                        y="16">
+                                                        <tspan x="5" y="16" class="highcharts-text-outline" fill="#FFFFFF"
+                                                            stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round"
+                                                            style="">0.5%</tspan>
+                                                        <tspan x="5" y="16">0.5%</tspan>
+                                                    </text></g>
+                                                <g class="highcharts-label highcharts-data-label highcharts-data-label-color-0"
+                                                    data-z-index="1" transform="translate(508,306)"><text x="5" data-z-index="1"
+                                                        style="font-size:11px;font-weight:bold;color:#000000;fill:#000000;"
+                                                        y="16">
+                                                        <tspan x="5" y="16" class="highcharts-text-outline" fill="#FFFFFF"
+                                                            stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round">6%
+                                                        </tspan>
+                                                        <tspan x="5" y="16">6%</tspan>
+                                                    </text></g>
+                                                <g class="highcharts-label highcharts-data-label highcharts-data-label-color-0"
+                                                    data-z-index="1" transform="translate(845,307)"><text x="5" data-z-index="1"
+                                                        style="font-size:11px;font-weight:bold;color:#000000;fill:#000000;"
+                                                        y="16">
+                                                        <tspan x="5" y="16" class="highcharts-text-outline" fill="#FFFFFF"
+                                                            stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round"
+                                                            style="">15.4%</tspan>
+                                                        <tspan x="5" y="16">15.4%</tspan>
+                                                    </text></g>
+                                            </g>
+                                            <g class="highcharts-axis-labels highcharts-xaxis-labels" data-z-index="7"><text
+                                                    x="226.5" style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                                    text-anchor="middle" transform="translate(0,0)" y="383"
+                                                    opacity="1">Core</text><text x="573.5"
+                                                    style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                                    text-anchor="middle" transform="translate(0,0)" y="383"
+                                                    opacity="1">Memory</text><text x="920.5"
+                                                    style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                                    text-anchor="middle" transform="translate(0,0)" y="383"
+                                                    opacity="1">Disk</text></g>
+                                            <g class="highcharts-axis-labels highcharts-yaxis-labels" data-z-index="7"><text
+                                                    x="38" style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                                    text-anchor="end" transform="translate(0,0)" y="369"
+                                                    opacity="1">0%</text><text x="38"
+                                                    style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                                    text-anchor="end" transform="translate(0,0)" y="298"
+                                                    opacity="1">20%</text><text x="38"
+                                                    style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                                    text-anchor="end" transform="translate(0,0)" y="227"
+                                                    opacity="1">40%</text><text x="38"
+                                                    style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                                    text-anchor="end" transform="translate(0,0)" y="156"
+                                                    opacity="1">60%</text><text x="38"
+                                                    style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                                    text-anchor="end" transform="translate(0,0)" y="85"
+                                                    opacity="1">80%</text><text x="38"
+                                                    style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
+                                                    text-anchor="end" transform="translate(0,0)" y="15" opacity="1">100%</text>
+                                            </g>
+                                        </svg></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</html>
