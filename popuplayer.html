@@ -23,7 +23,7 @@
 
 <div id="content" class="container-fluid">
     <div id="input_area">
-        <!-- evoke : .popup_layer 에 인라인스타일 제거 -->
+        <!-- evoke : .popup_layer fadeIn 인터렉션 CSS로 제어합니다. 인라인 스타일 margin-left와 width 스타일 제거해주세요 -->
         <div class="popup_layer">
             <div class="popup_layer_top"><span class="popup_layer_title">서버 상세정보</span> <button type="button"
                     onclick="popupShowEvent('hide')" class="popup_layer_close">X</button></div>
@@ -35,7 +35,7 @@
                     <li><a href="#tab7" data-toggle="tab" onclick="chgTab(8)">사용률</a></li>
                 </ul>
                 <div class="tab-content">
-                    <div id="tab1" class="form-panel detail-panel tab-pane active">
+                    <div id="tab1" class="form-panel detail-panel tab-pane">
                         <div class="form-panel panel panel-default detail-panel">
                             <div class="panel-body"><input id="D_VM_ID" name="VM_ID" type="hidden" value="S1601256415555700">
                                 <div class="col col-sm-6 colTop">
@@ -127,8 +127,8 @@
                                     <div class="fm-output"><label for="SHARE_VM_USER_LIST"
                                             class="control-label grid-title value-title">공유여부</label>
                                         <div id="SHARE_VM_USER_LIST" name="" class="output  hastitle">
-                                            <span class="state">공유중</span>
-                                            <span>리사 (리지니개발2팀) ㅣ 유제나 (서버운영팀) ㅣ강한나 (마케팅팀)</span>
+                                            <span class="shareVMPrefix">공유중</span>
+                                            <span class="shareVMContent">리사 (리지니개발2팀) ㅣ 유제나 (서버운영팀) ㅣ강한나 (마케팅팀)</span>
                                         </div>
                                     </div>
                                 </div>
@@ -142,22 +142,21 @@
                                 <div class="col col-sm-12 detailCMTDiv">
                                     <div class="fm-output"><label for="CMT"
                                             class="control-label grid-title value-title">설명</label>
-                                        <div class="output hastitle"></div>
+                                            <div class="output hastitle">1.서버 용도<br><br>2.서비스 목적<br><br>3.관련업무<br><br>4.기타<br></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div id="tab4" class="form-panel detail-panel tab-pane">
+                    <div id="tab4" class="form-panel detail-panel tab-pane  active">
                         <div class="fullGrid">
                             <div class="table_title">
-                                <div class="btn_group"><button type="button" title="엑셀다운로드" onclick="exportExcel_restore()"
-                                        class="icon excelBtn"></button> <button type="button" title="새로고침"
-                                        onclick="restoreSearch(restoreReq.VM_ID)" class="icon reloadBtn"></button>
-                                    &nbsp;&nbsp;
-                                    <button type="button" id="restore_detail_popup_button"
-                                        class="btn btn-primary fm-popup-button btn contentsBtn etc"
-                                        disabled="disabled">복원요청상세</button></div>
+                                <!-- evoke : 버튼 CVN 추가 -->
+                                <div class="btn_group">
+                                    <button type="button" title="엑셀다운로드" onclick="exportExcel_restore()"class="icon excelBtn">CVN</button> 
+                                    <button type="button" title="새로고침"onclick="restoreSearch(restoreReq.VM_ID)" class="icon reloadBtn"></button>
+                                    <button type="button" id="restore_detail_popup_button" class="btn btn-primary fm-popup-button btn contentsBtn etc" disabled="disabled">복원요청상세</button>
+                                </div>
                             </div>
         
                             <div id="restoreTable" class="ag-theme-fresh">
@@ -498,145 +497,11 @@
                             </div>
                         </div>
                     </div>
-                    <div id="tab7" class="form-panel detail-panel tab-pane" style="">
+                    <div id="tab7" class="form-panel detail-panel tab-pane">
                         <div class="form-panel panel panel-default detail-panel vm_usage_tab">
                             <div class="panel-body">
                                 <div id="vm_usage_bar" data-highcharts-chart="0" style="overflow: hidden;">
-                                    <div id="highcharts-dvofefo-0" dir="ltr" class="highcharts-container "
-                                        style="position: relative; overflow: hidden; width: 1104px; height: 400px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
-                                        <svg version="1.1" class="highcharts-root"
-                                            style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;"
-                                            xmlns="http://www.w3.org/2000/svg" width="1104" height="400" viewBox="0 0 1104 400">
-                                            <desc>Created with Highcharts 8.0.0</desc>
-                                            <defs>
-                                                <clipPath id="highcharts-dvofefo-1-">
-                                                    <rect x="0" y="0" width="1041" height="354" fill="none"></rect>
-                                                </clipPath>
-                                            </defs>
-                                            <rect fill="#ffffff" class="highcharts-background" x="0" y="0" width="1104"
-                                                height="400" rx="0" ry="0"></rect>
-                                            <rect fill="none" class="highcharts-plot-background" x="53" y="10" width="1041"
-                                                height="354"></rect>
-                                            <g class="highcharts-pane-group" data-z-index="0"></g>
-                                            <g class="highcharts-grid highcharts-xaxis-grid" data-z-index="1">
-                                                <path fill="none" data-z-index="1" class="highcharts-grid-line"
-                                                    d="M 399.5 10 L 399.5 364" opacity="1"></path>
-                                                <path fill="none" data-z-index="1" class="highcharts-grid-line"
-                                                    d="M 746.5 10 L 746.5 364" opacity="1"></path>
-                                                <path fill="none" data-z-index="1" class="highcharts-grid-line"
-                                                    d="M 1093.5 10 L 1093.5 364" opacity="1"></path>
-                                                <path fill="none" data-z-index="1" class="highcharts-grid-line"
-                                                    d="M 52.5 10 L 52.5 364" opacity="1"></path>
-                                            </g>
-                                            <g class="highcharts-grid highcharts-yaxis-grid" data-z-index="1">
-                                                <path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1"
-                                                    class="highcharts-grid-line" d="M 53 364.5 L 1094 364.5" opacity="1"></path>
-                                                <path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1"
-                                                    class="highcharts-grid-line" d="M 53 293.5 L 1094 293.5" opacity="1"></path>
-                                                <path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1"
-                                                    class="highcharts-grid-line" d="M 53 222.5 L 1094 222.5" opacity="1"></path>
-                                                <path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1"
-                                                    class="highcharts-grid-line" d="M 53 152.5 L 1094 152.5" opacity="1"></path>
-                                                <path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1"
-                                                    class="highcharts-grid-line" d="M 53 81.5 L 1094 81.5" opacity="1"></path>
-                                                <path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1"
-                                                    class="highcharts-grid-line" d="M 53 9.5 L 1094 9.5" opacity="1"></path>
-                                            </g>
-                                            <rect fill="none" class="highcharts-plot-border" data-z-index="1" x="53" y="10"
-                                                width="1041" height="354"></rect>
-                                            <g class="highcharts-axis highcharts-xaxis" data-z-index="2">
-                                                <path fill="none" class="highcharts-axis-line" stroke="#ccd6eb" stroke-width="1"
-                                                    data-z-index="7" d="M 53 364.5 L 1094 364.5"></path>
-                                            </g>
-                                            <g class="highcharts-axis highcharts-yaxis" data-z-index="2">
-                                                <path fill="none" class="highcharts-axis-line" data-z-index="7"
-                                                    d="M 53 10 L 53 364"></path>
-                                            </g>
-                                            <g class="highcharts-series-group" data-z-index="3">
-                                                <g data-z-index="0.1"
-                                                    class="highcharts-series highcharts-series-0 highcharts-column-series highcharts-color-0 highcharts-tracker"
-                                                    transform="translate(53,10) scale(1 1)"
-                                                    clip-path="url(#highcharts-dvofefo-1-)">
-                                                    <rect x="89.5" y="352.5" width="167" height="2" fill="#AEE5BE"
-                                                        stroke="#ffffff" stroke-width="1" opacity="1"
-                                                        class="highcharts-point highcharts-color-0"></rect>
-                                                    <rect x="436.5" y="333.5" width="167" height="21" fill="#CED0FE"
-                                                        stroke="#ffffff" stroke-width="1" opacity="1"
-                                                        class="highcharts-point highcharts-color-0"></rect>
-                                                    <rect x="783.5" y="299.5" width="167" height="55" fill="#A1DDFF"
-                                                        stroke="#ffffff" stroke-width="1" opacity="1"
-                                                        class="highcharts-point highcharts-color-0"></rect>
-                                                </g>
-                                                <g data-z-index="0.1"
-                                                    class="highcharts-markers highcharts-series-0 highcharts-column-series highcharts-color-0"
-                                                    transform="translate(53,10) scale(1 1)" clip-path="none"></g>
-                                            </g><text x="10" class="highcharts-title" data-z-index="4"
-                                                style="color:#333333;font-size:18px;fill:#333333;" y="24"></text><text x="552"
-                                                text-anchor="middle" class="highcharts-subtitle" data-z-index="4"
-                                                style="color:#666666;fill:#666666;" y="24"></text><text x="10"
-                                                text-anchor="start" class="highcharts-caption" data-z-index="4"
-                                                style="color:#666666;fill:#666666;" y="397"></text>
-                                            <g data-z-index="6"
-                                                class="highcharts-data-labels highcharts-series-0 highcharts-column-series highcharts-color-0 highcharts-tracker"
-                                                transform="translate(53,10) scale(1 1)" opacity="1">
-                                                <g class="highcharts-label highcharts-data-label highcharts-data-label-color-0"
-                                                    data-z-index="1" transform="translate(155,306)"><text x="5" data-z-index="1"
-                                                        style="font-size:11px;font-weight:bold;color:#000000;fill:#000000;"
-                                                        y="16">
-                                                        <tspan x="5" y="16" class="highcharts-text-outline" fill="#FFFFFF"
-                                                            stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round"
-                                                            style="">0.5%</tspan>
-                                                        <tspan x="5" y="16">0.5%</tspan>
-                                                    </text></g>
-                                                <g class="highcharts-label highcharts-data-label highcharts-data-label-color-0"
-                                                    data-z-index="1" transform="translate(508,306)"><text x="5" data-z-index="1"
-                                                        style="font-size:11px;font-weight:bold;color:#000000;fill:#000000;"
-                                                        y="16">
-                                                        <tspan x="5" y="16" class="highcharts-text-outline" fill="#FFFFFF"
-                                                            stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round">6%
-                                                        </tspan>
-                                                        <tspan x="5" y="16">6%</tspan>
-                                                    </text></g>
-                                                <g class="highcharts-label highcharts-data-label highcharts-data-label-color-0"
-                                                    data-z-index="1" transform="translate(845,307)"><text x="5" data-z-index="1"
-                                                        style="font-size:11px;font-weight:bold;color:#000000;fill:#000000;"
-                                                        y="16">
-                                                        <tspan x="5" y="16" class="highcharts-text-outline" fill="#FFFFFF"
-                                                            stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round"
-                                                            style="">15.4%</tspan>
-                                                        <tspan x="5" y="16">15.4%</tspan>
-                                                    </text></g>
-                                            </g>
-                                            <g class="highcharts-axis-labels highcharts-xaxis-labels" data-z-index="7"><text
-                                                    x="226.5" style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
-                                                    text-anchor="middle" transform="translate(0,0)" y="383"
-                                                    opacity="1">Core</text><text x="573.5"
-                                                    style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
-                                                    text-anchor="middle" transform="translate(0,0)" y="383"
-                                                    opacity="1">Memory</text><text x="920.5"
-                                                    style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
-                                                    text-anchor="middle" transform="translate(0,0)" y="383"
-                                                    opacity="1">Disk</text></g>
-                                            <g class="highcharts-axis-labels highcharts-yaxis-labels" data-z-index="7"><text
-                                                    x="38" style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
-                                                    text-anchor="end" transform="translate(0,0)" y="369"
-                                                    opacity="1">0%</text><text x="38"
-                                                    style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
-                                                    text-anchor="end" transform="translate(0,0)" y="298"
-                                                    opacity="1">20%</text><text x="38"
-                                                    style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
-                                                    text-anchor="end" transform="translate(0,0)" y="227"
-                                                    opacity="1">40%</text><text x="38"
-                                                    style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
-                                                    text-anchor="end" transform="translate(0,0)" y="156"
-                                                    opacity="1">60%</text><text x="38"
-                                                    style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
-                                                    text-anchor="end" transform="translate(0,0)" y="85"
-                                                    opacity="1">80%</text><text x="38"
-                                                    style="color:#666666;cursor:default;font-size:11px;fill:#666666;"
-                                                    text-anchor="end" transform="translate(0,0)" y="15" opacity="1">100%</text>
-                                            </g>
-                                        </svg></div>
+                                    <div id="highcharts-tbgpfga-0" dir="ltr" class="highcharts-container " style="position: relative; overflow: hidden; width: 1030px; height: 400px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><svg version="1.1" class="highcharts-root" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="1030" height="400" viewBox="0 0 1030 400"><desc>Created with Highcharts 8.0.0</desc><defs><clipPath id="highcharts-tbgpfga-1-"><rect x="0" y="0" width="967" height="354" fill="none"></rect></clipPath></defs><rect fill="#ffffff" class="highcharts-background" x="0" y="0" width="1030" height="400" rx="0" ry="0"></rect><rect fill="none" class="highcharts-plot-background" x="53" y="10" width="967" height="354"></rect><g class="highcharts-pane-group" data-z-index="0"></g><g class="highcharts-grid highcharts-xaxis-grid" data-z-index="1"><path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 374.5 10 L 374.5 364" opacity="1"></path><path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 697.5 10 L 697.5 364" opacity="1"></path><path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 1019.5 10 L 1019.5 364" opacity="1"></path><path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 52.5 10 L 52.5 364" opacity="1"></path></g><g class="highcharts-grid highcharts-yaxis-grid" data-z-index="1"><path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1" class="highcharts-grid-line" d="M 53 364.5 L 1020 364.5" opacity="1"></path><path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1" class="highcharts-grid-line" d="M 53 293.5 L 1020 293.5" opacity="1"></path><path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1" class="highcharts-grid-line" d="M 53 222.5 L 1020 222.5" opacity="1"></path><path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1" class="highcharts-grid-line" d="M 53 152.5 L 1020 152.5" opacity="1"></path><path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1" class="highcharts-grid-line" d="M 53 81.5 L 1020 81.5" opacity="1"></path><path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1" class="highcharts-grid-line" d="M 53 9.5 L 1020 9.5" opacity="1"></path></g><rect fill="none" class="highcharts-plot-border" data-z-index="1" x="53" y="10" width="967" height="354"></rect><g class="highcharts-axis highcharts-xaxis" data-z-index="2"><path fill="none" class="highcharts-axis-line" stroke="#ccd6eb" stroke-width="1" data-z-index="7" d="M 53 364.5 L 1020 364.5"></path></g><g class="highcharts-axis highcharts-yaxis" data-z-index="2"><path fill="none" class="highcharts-axis-line" data-z-index="7" d="M 53 10 L 53 364"></path></g><g class="highcharts-series-group" data-z-index="3"><g data-z-index="0.1" class="highcharts-series highcharts-series-0 highcharts-column-series highcharts-color-0 highcharts-tracker" transform="translate(53,10) scale(1 1)" clip-path="url(#highcharts-tbgpfga-1-)"><rect x="83.5" y="352.5" width="155" height="2" fill="#AEE5BE" stroke="#ffffff" stroke-width="1" opacity="1" class="highcharts-point highcharts-color-0"></rect><rect x="405.5" y="336.5" width="155" height="18" fill="rgb(206,208,254)" stroke="#ffffff" stroke-width="1" opacity="1" class="highcharts-point highcharts-color-0"></rect><rect x="727.5" y="319.5" width="155" height="35" fill="#A1DDFF" stroke="#ffffff" stroke-width="1" opacity="1" class="highcharts-point highcharts-color-0"></rect></g><g data-z-index="0.1" class="highcharts-markers highcharts-series-0 highcharts-column-series highcharts-color-0" transform="translate(53,10) scale(1 1)" clip-path="none"></g></g><text x="10" class="highcharts-title" data-z-index="4" style="color:#333333;font-size:18px;fill:#333333;" y="24"></text><text x="515" text-anchor="middle" class="highcharts-subtitle" data-z-index="4" style="color:#666666;fill:#666666;" y="24"></text><text x="10" text-anchor="start" class="highcharts-caption" data-z-index="4" style="color:#666666;fill:#666666;" y="397"></text><g data-z-index="6" class="highcharts-data-labels highcharts-series-0 highcharts-column-series highcharts-color-0 highcharts-tracker" transform="translate(53,10) scale(1 1)" opacity="1"><g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" transform="translate(143,306)"><text x="5" data-z-index="1" style="font-size:11px;font-weight:bold;color:#000000;fill:#000000;" y="16"><tspan x="5" y="16" class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round" style="">0.5%</tspan><tspan x="5" y="16">0.5%</tspan></text></g><g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" transform="translate(471,306)"><text x="5" data-z-index="1" style="font-size:11px;font-weight:bold;color:#000000;fill:#000000;" y="16"><tspan x="5" y="16" class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round">5%</tspan><tspan x="5" y="16">5%</tspan></text></g><g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" transform="translate(789,327)"><text x="5" data-z-index="1" style="font-size:11px;font-weight:bold;color:#000000;fill:#000000;" y="16"><tspan x="5" y="16" class="highcharts-text-outline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2px" stroke-linejoin="round">10%</tspan><tspan x="5" y="16">10%</tspan></text></g></g><g class="highcharts-axis-labels highcharts-xaxis-labels" data-z-index="7"><text x="214.16666666666336" style="color:#666666;cursor:default;font-size:11px;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">Core</text><text x="536.5000000000034" style="color:#666666;cursor:default;font-size:11px;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">Memory</text><text x="858.8333333333334" style="color:#666666;cursor:default;font-size:11px;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">Disk</text></g><g class="highcharts-axis-labels highcharts-yaxis-labels" data-z-index="7"><text x="38" style="color:#666666;cursor:default;font-size:11px;fill:#666666;" text-anchor="end" transform="translate(0,0)" y="369" opacity="1">0%</text><text x="38" style="color:#666666;cursor:default;font-size:11px;fill:#666666;" text-anchor="end" transform="translate(0,0)" y="298" opacity="1">20%</text><text x="38" style="color:#666666;cursor:default;font-size:11px;fill:#666666;" text-anchor="end" transform="translate(0,0)" y="227" opacity="1">40%</text><text x="38" style="color:#666666;cursor:default;font-size:11px;fill:#666666;" text-anchor="end" transform="translate(0,0)" y="156" opacity="1">60%</text><text x="38" style="color:#666666;cursor:default;font-size:11px;fill:#666666;" text-anchor="end" transform="translate(0,0)" y="85" opacity="1">80%</text><text x="38" style="color:#666666;cursor:default;font-size:11px;fill:#666666;" text-anchor="end" transform="translate(0,0)" y="15" opacity="1">100%</text></g><g class="highcharts-label highcharts-tooltip highcharts-color-0" style="pointer-events:none;white-space:nowrap;" data-z-index="8" transform="translate(510,-9999)" opacity="0" visibility="visible"><path fill="none" class="highcharts-label-box highcharts-tooltip-box highcharts-shadow" d="M 3.5 0.5 L 52.5 0.5 C 55.5 0.5 55.5 0.5 55.5 3.5 L 55.5 40.5 C 55.5 43.5 55.5 43.5 52.5 43.5 L 32.5 43.5 26.5 49.5 20.5 43.5 3.5 43.5 C 0.5 43.5 0.5 43.5 0.5 40.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" stroke="#000000" stroke-opacity="0.049999999999999996" stroke-width="5" transform="translate(1, 1)"></path><path fill="none" class="highcharts-label-box highcharts-tooltip-box highcharts-shadow" d="M 3.5 0.5 L 52.5 0.5 C 55.5 0.5 55.5 0.5 55.5 3.5 L 55.5 40.5 C 55.5 43.5 55.5 43.5 52.5 43.5 L 32.5 43.5 26.5 49.5 20.5 43.5 3.5 43.5 C 0.5 43.5 0.5 43.5 0.5 40.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" stroke="#000000" stroke-opacity="0.09999999999999999" stroke-width="3" transform="translate(1, 1)"></path><path fill="none" class="highcharts-label-box highcharts-tooltip-box highcharts-shadow" d="M 3.5 0.5 L 52.5 0.5 C 55.5 0.5 55.5 0.5 55.5 3.5 L 55.5 40.5 C 55.5 43.5 55.5 43.5 52.5 43.5 L 32.5 43.5 26.5 49.5 20.5 43.5 3.5 43.5 C 0.5 43.5 0.5 43.5 0.5 40.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" stroke="#000000" stroke-opacity="0.15" stroke-width="1" transform="translate(1, 1)"></path><path fill="rgba(247,247,247,0.85)" class="highcharts-label-box highcharts-tooltip-box" d="M 3.5 0.5 L 52.5 0.5 C 55.5 0.5 55.5 0.5 55.5 3.5 L 55.5 40.5 C 55.5 43.5 55.5 43.5 52.5 43.5 L 32.5 43.5 26.5 49.5 20.5 43.5 3.5 43.5 C 0.5 43.5 0.5 43.5 0.5 40.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" stroke="#CED0FE" stroke-width="1"></path><text x="8" data-z-index="1" style="font-size:12px;color:#333333;cursor:default;fill:#333333;" y="20"><tspan style="font-size: 10px">Memory</tspan><tspan style="font-weight:bold" x="8" dy="15">5%</tspan></text></g></svg></div>
                                 </div>
                             </div>
                         </div>

@@ -2640,7 +2640,11 @@ v
                 background:none!important;
                 padding: 0 !important;
                 margin-top: 0 !important;
-                height: auto;   
+                height: 100%;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
             &.active {
                 box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.12);
@@ -3563,7 +3567,7 @@ v
     width: auto;
     text-align: left !important;
     padding-top: 5px;
-    background: #edeef3;
+    background: #fafafa;
     padding-left: 10px !important;
 }
 
@@ -5266,26 +5270,26 @@ v
     left: -12px;
 }
 
-.popup_layer.tabHide {
-    left:100%;
-    height: 0;
-    overflow: hidden;
-}
+
 
 .popup_layer {
     position: absolute;
     top: 50%;
     left: 0;
     right: 0;
-    margin: 0 auto;
+    margin: 0 auto !important;
     transform: translateY(-50%);
     min-height: 703px;
     height: auto;
-    width: 720px;
+    width: 720px !important;
     background: #FFFFFF;
     box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.08);
     border-radius: 12px;
     z-index: 200;
+    transition: 0.2s;
+    &.tabHide {
+        left:100%;
+    }
 }
 
 .popup_layer_top {
@@ -6367,24 +6371,34 @@ v
     .col {
         height: auto;
     }
+    .fm-output {
+        position: relative;
+        width: 100%;
+    }
+    $thWidth: 100px;
     .value-title {
+        position: absolute;
+        top: 0;
+        left: 0;
         padding: 0 !important;
         font-weight: 400;
         font-size: 12px;
         line-height: 17px;
         text-align: center;
         color: #2C2C2C;
+        box-sizing: border-box;
+        border-bottom: 1px solid #ddd;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100px;
+        width: $thWidth;
         min-width: unset;
-        box-sizing: border-box;
-        border-bottom: 1px solid #ddd;
         min-height: 48px;
+        height: 100%;
     }
     .output {
-        width: calc(100% - 100px);
+        width: calc(100% - $thWidth);
+        padding-left: $thWidth;
         text-align: center;
         display: flex;
         align-items: center;
@@ -6396,7 +6410,9 @@ v
         color: #4A4A4A;
         border: 0;
         border-bottom: 1px solid #ddd;
-        height: 48px;
+        min-height: 48px;
+        height: auto;
+        flex: 1 0 auto;
     }
     .resourceDiv .fm-output {
         position: relative;
@@ -6410,6 +6426,7 @@ v
         .output {
             flex: 1 0 auto;
             width: 100%;
+            padding-left: 3px;
         }
     }
     .consoleDiv {
@@ -6419,12 +6436,12 @@ v
         color: #00A3E0;
     }
     #SHARE_VM_USER_LIST {
-        .state {
+        .shareVMPrefix {
             color: #FF6A13;
             margin-right: 8px;
             font-weight: 700;
         }
-        span {
+        .shareVMContent {
             color: #686868;
         }
     }
@@ -6433,6 +6450,44 @@ v
     .tab-content {
         padding: 0 40px 72px;
         margin-bottom: 0;
+    }
+    .table_title {
+        margin: 0;
+        height: auto;
+        line-height: unset;
+        .btn_group {
+            float: none;
+            display: flex;
+            gap:4px;
+            align-items: center;
+            margin: 15px 0;
+            .icon {
+                float:none;
+                position: relative;
+                top:unset;
+                left:unset;
+                right:unset;
+                bottom:unset;
+                width: auto;
+                height: 28px;
+                background: #FAFAFA !important;
+                border: 1px solid #EEEEEE !important;
+                border-radius: 4px !important;
+                box-sizing: border-box;
+                position: relative;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                padding: 0 32px 0 12px !important;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 17px;
+                color: #2C2C2C;
+                &.excelBtn {
+                    background: #FAFAFA url(/res/img/ncsoft/ic_cvn.svg) right 12px center no-repeat !important;
+                }
+            }
+        }
     }
 }
 .detail-panel {
@@ -6448,3 +6503,25 @@ v
         }
     }
 } 
+#vm_usage_bar {
+
+}
+.highcharts-container {
+    width: 516px !important;
+    height: 282px !important;
+    margin: 0 auto;
+    margin-top: 36px;
+    svg {
+        .highcharts-point:nth-child(1) {fill: #AEE5BE;}
+        .highcharts-point:nth-child(2) {fill: #CED0FE;}
+        .highcharts-point:nth-child(3) {fill: #A1DDFF;}
+        .highcharts-text-outline {stroke: transparent;}
+        .highcharts-axis-labels,
+        .highcharts-label {
+            text {
+                font-weight: 400 !important;
+                font-size: 12px !important;
+            }
+        }
+    }
+}

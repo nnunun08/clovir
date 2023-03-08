@@ -844,7 +844,8 @@ a.tree-toggle {
     height: 100%;
     min-height: 805px;
     margin: 0;
-    width: 100%;
+    width: 100vw;
+    overflow: hidden;
     min-width: unset;
 }
  .logout {
@@ -1200,7 +1201,7 @@ a.tree-toggle{
 	height: 80px;
     width: 100%;
     background-color: white;
-    z-index: 1000;
+    z-index: 1;
 }
 #topArea {
     margin: 0 auto;

@@ -390,7 +390,6 @@ marquee {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
@@ -697,10 +696,6 @@ marquee {
 }
 
 .popup_area .input::-moz-placeholder {
-  color: #ccc;
-}
-
-.popup_area .input:-ms-input-placeholder {
   color: #ccc;
 }
 
@@ -2721,7 +2716,11 @@ v .center > div > .panel_value {
   background: none !important;
   padding: 0 !important;
   margin-top: 0 !important;
-  height: auto;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #content .nav-tabs > li.active {
   box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.12);
@@ -3626,7 +3625,7 @@ v .center > div > .panel_value {
   width: auto;
   text-align: left !important;
   padding-top: 5px;
-  background: #edeef3;
+  background: #fafafa;
   padding-left: 10px !important;
 }
 
@@ -5296,26 +5295,24 @@ v .center > div > .panel_value {
   left: -12px;
 }
 
-.popup_layer.tabHide {
-  left: 100%;
-  height: 0;
-  overflow: hidden;
-}
-
 .popup_layer {
   position: absolute;
   top: 50%;
   left: 0;
   right: 0;
-  margin: 0 auto;
+  margin: 0 auto !important;
   transform: translateY(-50%);
   min-height: 703px;
   height: auto;
-  width: 720px;
+  width: 720px !important;
   background: #FFFFFF;
   box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.08);
   border-radius: 12px;
   z-index: 200;
+  transition: 0.2s;
+}
+.popup_layer.tabHide {
+  left: 100%;
 }
 
 .popup_layer_top {
@@ -6130,9 +6127,6 @@ v .center > div > .panel_value {
 .modal-body .select2-container--default .select2-search--inline .select2-search__field::-moz-placeholder {
   color: #CCCCCC;
 }
-.modal-body .select2-container--default .select2-search--inline .select2-search__field:-ms-input-placeholder {
-  color: #CCCCCC;
-}
 .modal-body .select2-container--default .select2-search--inline .select2-search__field::placeholder {
   color: #CCCCCC;
 }
@@ -6382,24 +6376,33 @@ v .center > div > .panel_value {
 #input_area .col {
   height: auto;
 }
+#input_area .fm-output {
+  position: relative;
+  width: 100%;
+}
 #input_area .value-title {
+  position: absolute;
+  top: 0;
+  left: 0;
   padding: 0 !important;
   font-weight: 400;
   font-size: 12px;
   line-height: 17px;
   text-align: center;
   color: #2C2C2C;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ddd;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100px;
   min-width: unset;
-  box-sizing: border-box;
-  border-bottom: 1px solid #ddd;
   min-height: 48px;
+  height: 100%;
 }
 #input_area .output {
   width: calc(100% - 100px);
+  padding-left: 100px;
   text-align: center;
   display: flex;
   align-items: center;
@@ -6411,7 +6414,9 @@ v .center > div > .panel_value {
   color: #4A4A4A;
   border: 0;
   border-bottom: 1px solid #ddd;
-  height: 48px;
+  min-height: 48px;
+  height: auto;
+  flex: 1 0 auto;
 }
 #input_area .resourceDiv .fm-output {
   position: relative;
@@ -6426,6 +6431,7 @@ v .center > div > .panel_value {
 #input_area .resourceDiv .fm-output .output {
   flex: 1 0 auto;
   width: 100%;
+  padding-left: 3px;
 }
 #input_area .consoleDiv {
   margin: 0;
@@ -6433,18 +6439,56 @@ v .center > div > .panel_value {
 #input_area #RUN_CD_NM {
   color: #00A3E0;
 }
-#input_area #SHARE_VM_USER_LIST .state {
+#input_area #SHARE_VM_USER_LIST .shareVMPrefix {
   color: #FF6A13;
   margin-right: 8px;
   font-weight: 700;
 }
-#input_area #SHARE_VM_USER_LIST span {
+#input_area #SHARE_VM_USER_LIST .shareVMContent {
   color: #686868;
 }
 
 .popup_layer .tab-content {
   padding: 0 40px 72px;
   margin-bottom: 0;
+}
+.popup_layer .table_title {
+  margin: 0;
+  height: auto;
+  line-height: unset;
+}
+.popup_layer .table_title .btn_group {
+  float: none;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  margin: 15px 0;
+}
+.popup_layer .table_title .btn_group .icon {
+  float: none;
+  position: relative;
+  top: unset;
+  left: unset;
+  right: unset;
+  bottom: unset;
+  width: auto;
+  height: 28px;
+  background: #FAFAFA !important;
+  border: 1px solid #EEEEEE !important;
+  border-radius: 4px !important;
+  box-sizing: border-box;
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 32px 0 12px !important;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  color: #2C2C2C;
+}
+.popup_layer .table_title .btn_group .icon.excelBtn {
+  background: #FAFAFA url(/res/img/ncsoft/ic_cvn.svg) right 12px center no-repeat !important;
 }
 
 .detail-panel {
@@ -6457,4 +6501,28 @@ v .center > div > .panel_value {
 .detail-panel .panel-body .col > .fm-output {
   display: flex;
   align-items: flex-start;
+}
+
+.highcharts-container {
+  width: 516px !important;
+  height: 282px !important;
+  margin: 0 auto;
+  margin-top: 36px;
+}
+.highcharts-container svg .highcharts-point:nth-child(1) {
+  fill: #AEE5BE;
+}
+.highcharts-container svg .highcharts-point:nth-child(2) {
+  fill: #CED0FE;
+}
+.highcharts-container svg .highcharts-point:nth-child(3) {
+  fill: #A1DDFF;
+}
+.highcharts-container svg .highcharts-text-outline {
+  stroke: transparent;
+}
+.highcharts-container svg .highcharts-axis-labels text,
+.highcharts-container svg .highcharts-label text {
+  font-weight: 400 !important;
+  font-size: 12px !important;
 }/*# sourceMappingURL=common.css.map */

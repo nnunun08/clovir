@@ -209,10 +209,11 @@
   padding: 29px 24px;
 }
 #newVra_popup .catalog_list .catalog.selected {
-  background-color: #25B5AC;
+  background-color: #E5F3F2;
+  border: 1px solid #97D8D4;
 }
 #newVra_popup .catalog_list .catalog .name {
-  color: #009D93;
+  color: #006979;
   font-weight: 700;
   font-size: 18px;
   line-height: 26px;
