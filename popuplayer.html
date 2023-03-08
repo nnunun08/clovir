@@ -151,12 +151,12 @@
                     <div id="tab4" class="form-panel detail-panel tab-pane  active">
                         <div class="fullGrid">
                             <div class="table_title">
-                                <!-- evoke : 버튼 CVN 추가 -->
-                                <div class="btn_group">
-                                    <button type="button" title="엑셀다운로드" onclick="exportExcel_restore()"class="icon excelBtn">CVN</button> 
+                                <!-- evoke : 테이블 하단으로 이동 -->
+                                <!-- <div class="btn_group">
+                                    <button type="button" title="엑셀다운로드" onclick="exportExcel_restore()"class="icon excelBtn"></button> 
                                     <button type="button" title="새로고침"onclick="restoreSearch(restoreReq.VM_ID)" class="icon reloadBtn"></button>
                                     <button type="button" id="restore_detail_popup_button" class="btn btn-primary fm-popup-button btn contentsBtn etc" disabled="disabled">복원요청상세</button>
-                                </div>
+                                </div> -->
                             </div>
         
                             <div id="restoreTable" class="ag-theme-fresh">
@@ -349,6 +349,46 @@
                                         </div>
                                     </div>
                                     <div class="ag-bl-overlay" ref="overlay" style="display: none;"></div>
+                                </div>
+                            </div>
+
+                            <!-- evoke : .ag-theme-fresh 밑에 .btn_group 배치 -->
+                            <div class="btn_group">
+                                <button type="button" title="엑셀다운로드" onclick="exportExcel_restore()"class="icon excelBtn"></button> 
+                                <!-- evoke : 디자인에 없는 버튼 삭제 -->
+                                <!-- <button type="button" title="새로고침"onclick="restoreSearch(restoreReq.VM_ID)" class="icon reloadBtn"></button> -->
+                                <!-- <button type="button" id="restore_detail_popup_button" class="btn btn-primary fm-popup-button btn contentsBtn etc" disabled="disabled">복원요청상세</button> -->
+                            </div>
+
+                            <!-- evoke : .btn_group 밑에 .paginationFrame 배치 -->
+                            <div id="" class="paginationFrame">
+                                <div class="pagination-moveFrame prevMove">
+                                    <div class="pagination-move2"
+                                        onclick="goToFirstPage(&quot;mainTablePagination&quot;)" title="처음"
+                                        style="pointer-events: auto;">&lt;&lt;</div>
+                                    <div class="pagination-move1"
+                                        onclick="goToPrevTensPage(&quot;mainTablePagination&quot;)" title="이전"
+                                        style="pointer-events: auto;">&lt;</div>
+                                </div>
+                                <div class="pageDiv">
+                                    <div class="page active"
+                                        onclick="pageClickEvent(this,&quot;mainTablePagination&quot;)">1</div>
+                                    <div class="page" onclick="pageClickEvent(this,&quot;mainTablePagination&quot;)">2
+                                    </div>
+                                    <div class="page" onclick="pageClickEvent(this,&quot;mainTablePagination&quot;)">3
+                                    </div>
+                                    <div class="page" onclick="pageClickEvent(this,&quot;mainTablePagination&quot;)">4
+                                    </div>
+                                    <div class="page" onclick="pageClickEvent(this,&quot;mainTablePagination&quot;)">5
+                                    </div>
+                                </div>
+                                <div class="pagination-moveFrame nextMove">
+                                    <div class="pagination-move2"
+                                        onclick="goToNextTensPage(&quot;mainTablePagination&quot;)" title="다음"
+                                        style="pointer-events: auto;">&gt;</div>
+                                    <div class="pagination-move1"
+                                        onclick="goToLastPage(&quot;mainTablePagination&quot;)" title="끝"
+                                        style="pointer-events: auto;">&gt;&gt;</div>
                                 </div>
                             </div>
                         </div>

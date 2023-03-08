@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/res/css/jquery-ui.css">
+    <link rel="stylesheet" href="/res/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/res/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/res/css/jstree.style.min.css">
+    <link rel="stylesheet" href="/res/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="/res/css/ncsoft/common.css">
+    <link rel="stylesheet" href="/res/css/ncsoft/menu.css">
+    <link rel="stylesheet" href="/res/css/ncsoft/dashboard.css">
+    <link rel="stylesheet" href="/res/css/ncsoft/aggrid_ncsoft.css">
+
+    <link rel="stylesheet" href="/res/css/select2.min.css" type="text/css" >
+    <script type="text/javascript" src="/res/js/select2.js"></script>
+</head>
+
+<div id="popup_area" class="popup_area">
+    <div id="vmExpire_popup" role="dialog" class="modal fade popup_dialog in" style="display: block;">
+        <div class="modal-dialog ui-draggable">
+            <div class="modal-content  container-fluid">
+                <div class="modal-header ui-draggable-handle"><button type="button" onclick="processScrollBar()"
+                        data-dismiss="modal" class="close"></button> <span id="vmExpire_popup_title"
+                        class="header-title">기간연장</span></div>
+                <div class="modal-body">
+                    <link href="/res/css/editor.css" type="text/css" rel="stylesheet">
+                    <div class="form-panel detail-panel">
+                        <form id="vmExpire_popup_form" action="none">
+                            <div id="panel-body" class="panel-body">
+                                <div class="col col-sm-6"><span class="span_label">공유대상 서버</span>
+                                    <div id="vmExpire_popupTable" class="ag-theme-fresh">
+                                        <div class="ag-bl ag-bl-full-height ag-layout-normal ag-scrolls ag-ltr"
+                                            id="borderLayout_eRootPanel">
+                                            <div class="ag-bl-center ag-bl-full-height-center" ref="center"
+                                                style="margin-left: 0px; width: 558px;">
+                                                <div class="ag-bl ag-bl-full-height" id="borderLayout_eGridPanel">
+                                                    <div class="ag-bl-center ag-bl-full-height-center" ref="center"
+                                                        style="margin-left: 0px; width: 558px;">
+                                                        <div class="ag-root ag-font-style ag-hacked-scroll" role="grid">
+                                                            <div class="ag-header ag-pivot-off" role="row"
+                                                                style="height: 40px;">
+                                                                <div class="ag-pinned-left-header" role="presentation"
+                                                                    style="display: none; width: 0px;">
+                                                                    <div class="ag-header-row" role="presentation"
+                                                                        style="top: 0px; height: 40px; width: 0px;">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="ag-pinned-right-header" role="presentation"
+                                                                    style="display: none; width: 0px;">
+                                                                    <div class="ag-header-row" role="presentation"
+                                                                        style="top: 0px; height: 40px; width: 0px;">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="ag-header-viewport" role="presentation"
+                                                                    style="margin-left: 0px; margin-right: 0px;">
+                                                                    <div class="ag-header-container"
+                                                                        role="presentation">
+                                                                        <div class="ag-header-row" role="presentation"
+                                                                            style="top: 0px; height: 40px; width: 558px;">
+                                                                            <div class="ag-header-cell"
+                                                                                role="presentation" col-id="ROWNUM"
+                                                                                style="width: 60px; left: 0px;">
+                                                                                <div ref="eResize"
+                                                                                    class="ag-header-cell-resize"
+                                                                                    role="presentation"></div>
+                                                                                <!--AG-CHECKBOX--><span
+                                                                                    class="ag-header-select-all ag-hidden"
+                                                                                    role="presentation"
+                                                                                    ref="cbSelectAll"> <span
+                                                                                        class="ag-checkbox-checked ag-hidden"
+                                                                                        role="presentation"><span
+                                                                                            class="ag-icon ag-icon-checkbox-checked"></span></span>
+                                                                                    <span class="ag-checkbox-unchecked"
+                                                                                        role="presentation"><span
+                                                                                            class="ag-icon ag-icon-checkbox-unchecked"></span></span>
+                                                                                    <span
+                                                                                        class="ag-checkbox-indeterminate ag-hidden"
+                                                                                        role="presentation"><span
+                                                                                            class="ag-icon ag-icon-checkbox-indeterminate"></span></span>
+                                                                                    <span class="ag-checkbox-label"
+                                                                                        role="presentation"></span></span>
+                                                                                <div class="ag-cell-label-container"
+                                                                                    role="presentation">
+                                                                                    <div ref="eLabel"
+                                                                                        class="ag-header-cell-label"
+                                                                                        role="presentation"> <span
+                                                                                            ref="eText"
+                                                                                            class="ag-header-cell-text"
+                                                                                            role="columnheader">No</span>
+                                                                                        <span ref="eFilter"
+                                                                                            class="ag-header-icon ag-filter-icon ag-hidden"
+                                                                                            aria-hidden="true"><span
+                                                                                                class="ag-icon ag-icon-filter"></span></span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="ag-header-cell ag-header-cell-sortable"
+                                                                                role="presentation" col-id="P_KUBUN_NM"
+                                                                                style="width: 42px; left: 60px;">
+                                                                                <div ref="eResize"
+                                                                                    class="ag-header-cell-resize"
+                                                                                    role="presentation"></div>
+                                                                                <!--AG-CHECKBOX--><span
+                                                                                    class="ag-header-select-all ag-hidden"
+                                                                                    role="presentation"
+                                                                                    ref="cbSelectAll"> <span
+                                                                                        class="ag-checkbox-checked ag-hidden"
+                                                                                        role="presentation"><span
+                                                                                            class="ag-icon ag-icon-checkbox-checked"></span></span>
+                                                                                    <span class="ag-checkbox-unchecked"
+                                                                                        role="presentation"><span
+                                                                                            class="ag-icon ag-icon-checkbox-unchecked"></span></span>
+                                                                                    <span
+                                                                                        class="ag-checkbox-indeterminate ag-hidden"
+                                                                                        role="presentation"><span
+                                                                                            class="ag-icon ag-icon-checkbox-indeterminate"></span></span>
+                                                                                    <span class="ag-checkbox-label"
+                                                                                        role="presentation"></span></span>
+                                                                                <div class="ag-cell-label-container ag-header-cell-sorted-none"
+                                                                                    role="presentation">
+                                                                                    <div ref="eLabel"
+                                                                                        class="ag-header-cell-label"
+                                                                                        role="presentation"> <span
+                                                                                            ref="eText"
+                                                                                            class="ag-header-cell-text"
+                                                                                            role="columnheader">구분</span>
+                                                                                        <span ref="eFilter"
+                                                                                            class="ag-header-icon ag-filter-icon ag-hidden"
+                                                                                            aria-hidden="true"><span
+                                                                                                class="ag-icon ag-icon-filter"></span></span>
+                                                                                        <span ref="eSortOrder"
+                                                                                            class="ag-header-icon ag-sort-order ag-hidden"
+                                                                                            aria-hidden="true"></span>
+                                                                                        <span ref="eSortAsc"
+                                                                                            class="ag-header-icon ag-sort-ascending-icon ag-hidden"
+                                                                                            aria-hidden="true"><span
+                                                                                                class="ag-icon ag-icon-asc"></span></span>
+                                                                                        <span ref="eSortDesc"
+                                                                                            class="ag-header-icon ag-sort-descending-icon ag-hidden"
+                                                                                            aria-hidden="true"><span
+                                                                                                class="ag-icon ag-icon-desc"></span></span>
+                                                                                        <span ref="eSortNone"
+                                                                                            class="ag-header-icon ag-sort-none-icon ag-hidden"
+                                                                                            aria-hidden="true"><span
+                                                                                                class="ag-icon ag-icon-none"></span></span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="ag-header-cell ag-header-cell-sortable"
+                                                                                role="presentation" col-id="VM_NM"
+                                                                                style="width: 43px; left: 102px;">
+                                                                                <div ref="eResize"
+                                                                                    class="ag-header-cell-resize"
+                                                                                    role="presentation"></div>
+                                                                                <!--AG-CHECKBOX--><span
+                                                                                    class="ag-header-select-all ag-hidden"
+                                                                                    role="presentation"
+                                                                                    ref="cbSelectAll"> <span
+                                                                                        class="ag-checkbox-checked ag-hidden"
+                                                                                        role="presentation"><span
+                                                                                            class="ag-icon ag-icon-checkbox-checked"></span></span>
+                                                                                    <span class="ag-checkbox-unchecked"
+                                                                                        role="presentation"><span
+                                                                                            class="ag-icon ag-icon-checkbox-unchecked"></span></span>
+                                                                                    <span
+                                                                                        class="ag-checkbox-indeterminate ag-hidden"
+                                                                                        role="presentation"><span
+                                                                                            class="ag-icon ag-icon-checkbox-indeterminate"></span></span>
+                                                                                    <span class="ag-checkbox-label"
+                                                                                        role="presentation"></span></span>
+                                                                                <div class="ag-cell-label-container ag-header-cell-sorted-none"
+                                                                                    role="presentation">
+                                                                                    <div ref="eLabel"
+                                                                                        class="ag-header-cell-label"
+                                                                                        role="presentation"> <span
+                                                                                            ref="eText"
+                                                                                            class="ag-header-cell-text"
+                                                                                            role="columnheader">서버명</span>
+                                                                                        <span ref="eFilter"
+                                                                                            class="ag-header-icon ag-filter-icon ag-hidden"
+                                                                                            aria-hidden="true"><span
+                                                                                                class="ag-icon ag-icon-filter"></span></span>
+                                                                                        <span ref="eSortOrder"
+                                                                                            class="ag-header-icon ag-sort-order ag-hidden"
+                                                                                            aria-hidden="true"></span>
+                                                                                        <span ref="eSortAsc"
+                                                                                            class="ag-header-icon ag-sort-ascending-icon ag-hidden"
+                                                                                            aria-hidden="true"><span
+                                                                                                class="ag-icon ag-icon-asc"></span></span>
+                                                                                        <span ref="eSortDesc"
+                                                                                            class="ag-header-icon ag-sort-descending-icon ag-hidden"
+                                                                                            aria-hidden="true"><span
+                                                                                                class="ag-icon ag-icon-desc"></span></span>
+                                                                                        <span ref="eSortNone"
+                                                                                            class="ag-header-icon ag-sort-none-icon ag-hidden"
+                                                                                            aria-hidden="true"><span
+                                                                                                class="ag-icon ag-icon-none"></span></span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="ag-header-cell ag-header-cell-sortable"
+                                                                                role="presentation" col-id="CPU_CNT"
+                                                                                style="width: 80px; left: 145px;">
+                                                                                <div ref="eResize"
+                                                                                    class="ag-header-cell-resize"
+                                                                                    role="presentation"></div>
+                                                                                <!--AG-CHECKBOX--><span
+                                                                                    class="ag-header-select-all ag-hidden"
+                                                                                    role="presentation"
+                                                                                    ref="cbSelectAll"> <span
+                                                                                        class="ag-checkbox-checked ag-hidden"
+                                                                                        role="presentation"><span
+                                                                                            class="ag-icon ag-icon-checkbox-checked"></span></span>
+                                                                                    <span class="ag-checkbox-unchecked"
+                                                                                        role="presentation"><span
+                                                                                            class="ag-icon ag-icon-checkbox-unchecked"></span></span>
+                                                                                    <span
+                                                                                        class="ag-checkbox-indeterminate ag-hidden"
+                                                                                        role="presentation"><span
+                                                                                            class="ag-icon ag-icon-checkbox-indeterminate"></span></span>
+                                                                                    <span class="ag-checkbox-label"
+                                                                                        role="presentation"></span></span>
+                                                                                <div class="ag-cell-label-container ag-header-cell-sorted-none"
+                                                                                    role="presentation">
+                                                                                    <div ref="eLabel"
+                                                                                        class="ag-header-cell-label"
+                                                                                        role="presentation"> <span
+                                                                                            ref="eText"
+                                                                                            class="ag-header-cell-text"
+                                                                                            role="columnheader">Core</span>
+                                                                                        <span ref="eFilter"
+                                                                                            class="ag-header-icon ag-filter-icon ag-hidden"
+                                                                                            aria-hidden="true"><span
+                                                                                                class="ag-icon ag-icon-filter"></span></span>
+                                                                                        <span ref="eSortOrder"
+                                                                                            class="ag-header-icon ag-sort-order ag-hidden"
+                                                                                            aria-hidden="true"></span>
+                                                                                        <span ref="eSortAsc"
+                                                                                            class="ag-header-icon ag-sort-ascending-icon ag-hidden"
+                                                                                            aria-hidden="true"><span
+                                                                                                class="ag-icon ag-icon-asc"></span></span>
+                                                                                        <span ref="eSortDesc"
+                                                                                            class="ag-header-icon ag-sort-descending-icon ag-hidden"
+                                                                                            aria-hidden="true"><span
+                                                                                                class="ag-icon ag-icon-desc"></span></span>
+                                                                                        <span ref="eSortNone"
+                                                                                            class="ag-header-icon ag-sort-none-icon ag-hidden"
+                                                                                            aria-hidden="true"><span
+                                                                                                class="ag-icon ag-icon-none"></span></span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="ag-header-cell ag-header-cell-sortable"
+                                                                                role="presentation" col-id="RAM_SIZE"
+                                                                                style="width: 100px; left: 225px;">
+                                                                                <div ref="eResize"
+                                                                                    class="ag-header-cell-resize"
+                                                                                    role="presentation"></div>
+                                                                                <!--AG-CHECKBOX--><span
+                                                                                    class="ag-header-select-all ag-hidden"
+                                                                                    role="presentation"
+                                                                                    ref="cbSelectAll"> <span
+                                                                                        class="ag-checkbox-checked ag-hidden"
+                                                                                        role="presentation"><span
+                                                                                            class="ag-icon ag-icon-checkbox-checked"></span></span>
+                                                                                    <span class="ag-checkbox-unchecked"
+                                                                                        role="presentation"><span
+                                                                                            class="ag-icon ag-icon-checkbox-unchecked"></span></span>
+                                                                                    <span
+                                                                                        class="ag-checkbox-indeterminate ag-hidden"
+                                                                                        role="presentation"><span
+                                                                                            class="ag-icon ag-icon-checkbox-indeterminate"></span></span>
+                                                                                    <span class="ag-checkbox-label"
+                                                                                        role="presentation"></span></span>
+                                                                                <div class="ag-cell-label-container ag-header-cell-sorted-none"
+                                                                                    role="presentation">
+                                                                                    <div ref="eLabel"
+                                                                                        class="ag-header-cell-label"
+                                                                                        role="presentation"> <span
+                                                                                            ref="eText"
+                                                                                            class="ag-header-cell-text"
+                                                                                            role="columnheader">Memory</span>
+                                                                                        <span ref="eFilter"
+                                                                                            class="ag-header-icon ag-filter-icon ag-hidden"
+                                                                                            aria-hidden="true"><span
+                                                                                                class="ag-icon ag-icon-filter"></span></span>
+                                                                                        <span ref="eSortOrder"
+                                                                                            class="ag-header-icon ag-sort-order ag-hidden"
+                                                                                            aria-hidden="true"></span>
+                                                                                        <span ref="eSortAsc"
+                                                                                            class="ag-header-icon ag-sort-ascending-icon ag-hidden"
+                                                                                            aria-hidden="true"><span
+                                                                                                class="ag-icon ag-icon-asc"></span></span>
+                                                                                        <span ref="eSortDesc"
+                                                                                            class="ag-header-icon ag-sort-descending-icon ag-hidden"
+                                                                                            aria-hidden="true"><span
+                                                                                                class="ag-icon ag-icon-desc"></span></span>
+                                                                                        <span ref="eSortNone"
+                                                                                            class="ag-header-icon ag-sort-none-icon ag-hidden"
+                                                                                            aria-hidden="true"><span
+                                                                                                class="ag-icon ag-icon-none"></span></span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="ag-header-cell ag-header-cell-sortable"
+                                                                                role="presentation" col-id="DISK_SIZE"
+                                                                                style="width: 80px; left: 325px;">
+                                                                                <div ref="eResize"
+                                                                                    class="ag-header-cell-resize"
+                                                                                    role="presentation"></div>
+                                                                                <!--AG-CHECKBOX--><span
+                                                                                    class="ag-header-select-all ag-hidden"
+                                                                                    role="presentation"
+                                                                                    ref="cbSelectAll"> <span
+                                                                                        class="ag-checkbox-checked ag-hidden"
+                                                                                        role="presentation"><span
+                                                                                            class="ag-icon ag-icon-checkbox-checked"></span></span>
+                                                                                    <span class="ag-checkbox-unchecked"
+                                                                                        role="presentation"><span
+                                                                                            class="ag-icon ag-icon-checkbox-unchecked"></span></span>
+                                                                                    <span
+                                                                                        class="ag-checkbox-indeterminate ag-hidden"
+                                                                                        role="presentation"><span
+                                                                                            class="ag-icon ag-icon-checkbox-indeterminate"></span></span>
+                                                                                    <span class="ag-checkbox-label"
+                                                                                        role="presentation"></span></span>
+                                                                                <div class="ag-cell-label-container ag-header-cell-sorted-none"
+                                                                                    role="presentation">
+                                                                                    <div ref="eLabel"
+                                                                                        class="ag-header-cell-label"
+                                                                                        role="presentation"> <span
+                                                                                            ref="eText"
+                                                                                            class="ag-header-cell-text"
+                                                                                            role="columnheader">Disk</span>
+                                                                                        <span ref="eFilter"
+                                                                                            class="ag-header-icon ag-filter-icon ag-hidden"
+                                                                                            aria-hidden="true"><span
+                                                                                                class="ag-icon ag-icon-filter"></span></span>
+                                                                                        <span ref="eSortOrder"
+                                                                                            class="ag-header-icon ag-sort-order ag-hidden"
+                                                                                            aria-hidden="true"></span>
+                                                                                        <span ref="eSortAsc"
+                                                                                            class="ag-header-icon ag-sort-ascending-icon ag-hidden"
+                                                                                            aria-hidden="true"><span
+                                                                                                class="ag-icon ag-icon-asc"></span></span>
+                                                                                        <span ref="eSortDesc"
+                                                                                            class="ag-header-icon ag-sort-descending-icon ag-hidden"
+                                                                                            aria-hidden="true"><span
+                                                                                                class="ag-icon ag-icon-desc"></span></span>
+                                                                                        <span ref="eSortNone"
+                                                                                            class="ag-header-icon ag-sort-none-icon ag-hidden"
+                                                                                            aria-hidden="true"><span
+                                                                                                class="ag-icon ag-icon-none"></span></span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="ag-header-cell ag-header-cell-sortable"
+                                                                                role="presentation" col-id="EXPIRE_DT"
+                                                                                style="width: 110px; left: 405px;">
+                                                                                <div ref="eResize"
+                                                                                    class="ag-header-cell-resize"
+                                                                                    role="presentation"></div>
+                                                                                <!--AG-CHECKBOX--><span
+                                                                                    class="ag-header-select-all ag-hidden"
+                                                                                    role="presentation"
+                                                                                    ref="cbSelectAll"> <span
+                                                                                        class="ag-checkbox-checked ag-hidden"
+                                                                                        role="presentation"><span
+                                                                                            class="ag-icon ag-icon-checkbox-checked"></span></span>
+                                                                                    <span class="ag-checkbox-unchecked"
+                                                                                        role="presentation"><span
+                                                                                            class="ag-icon ag-icon-checkbox-unchecked"></span></span>
+                                                                                    <span
+                                                                                        class="ag-checkbox-indeterminate ag-hidden"
+                                                                                        role="presentation"><span
+                                                                                            class="ag-icon ag-icon-checkbox-indeterminate"></span></span>
+                                                                                    <span class="ag-checkbox-label"
+                                                                                        role="presentation"></span></span>
+                                                                                <div class="ag-cell-label-container ag-header-cell-sorted-none"
+                                                                                    role="presentation">
+                                                                                    <div ref="eLabel"
+                                                                                        class="ag-header-cell-label"
+                                                                                        role="presentation"> <span
+                                                                                            ref="eText"
+                                                                                            class="ag-header-cell-text"
+                                                                                            role="columnheader">만료일시</span>
+                                                                                        <span ref="eFilter"
+                                                                                            class="ag-header-icon ag-filter-icon ag-hidden"
+                                                                                            aria-hidden="true"><span
+                                                                                                class="ag-icon ag-icon-filter"></span></span>
+                                                                                        <span ref="eSortOrder"
+                                                                                            class="ag-header-icon ag-sort-order ag-hidden"
+                                                                                            aria-hidden="true"></span>
+                                                                                        <span ref="eSortAsc"
+                                                                                            class="ag-header-icon ag-sort-ascending-icon ag-hidden"
+                                                                                            aria-hidden="true"><span
+                                                                                                class="ag-icon ag-icon-asc"></span></span>
+                                                                                        <span ref="eSortDesc"
+                                                                                            class="ag-header-icon ag-sort-descending-icon ag-hidden"
+                                                                                            aria-hidden="true"><span
+                                                                                                class="ag-icon ag-icon-desc"></span></span>
+                                                                                        <span ref="eSortNone"
+                                                                                            class="ag-header-icon ag-sort-none-icon ag-hidden"
+                                                                                            aria-hidden="true"><span
+                                                                                                class="ag-icon ag-icon-none"></span></span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="ag-header-cell ag-header-cell-sortable"
+                                                                                role="presentation" col-id="result"
+                                                                                style="width: 43px; left: 515px;">
+                                                                                <div ref="eResize"
+                                                                                    class="ag-header-cell-resize"
+                                                                                    role="presentation"></div>
+                                                                                <!--AG-CHECKBOX--><span
+                                                                                    class="ag-header-select-all ag-hidden"
+                                                                                    role="presentation"
+                                                                                    ref="cbSelectAll"> <span
+                                                                                        class="ag-checkbox-checked ag-hidden"
+                                                                                        role="presentation"><span
+                                                                                            class="ag-icon ag-icon-checkbox-checked"></span></span>
+                                                                                    <span class="ag-checkbox-unchecked"
+                                                                                        role="presentation"><span
+                                                                                            class="ag-icon ag-icon-checkbox-unchecked"></span></span>
+                                                                                    <span
+                                                                                        class="ag-checkbox-indeterminate ag-hidden"
+                                                                                        role="presentation"><span
+                                                                                            class="ag-icon ag-icon-checkbox-indeterminate"></span></span>
+                                                                                    <span class="ag-checkbox-label"
+                                                                                        role="presentation"></span></span>
+                                                                                <div class="ag-cell-label-container ag-header-cell-sorted-none"
+                                                                                    role="presentation">
+                                                                                    <div ref="eLabel"
+                                                                                        class="ag-header-cell-label"
+                                                                                        role="presentation"> <span
+                                                                                            ref="eText"
+                                                                                            class="ag-header-cell-text"
+                                                                                            role="columnheader">결과</span>
+                                                                                        <span ref="eFilter"
+                                                                                            class="ag-header-icon ag-filter-icon ag-hidden"
+                                                                                            aria-hidden="true"><span
+                                                                                                class="ag-icon ag-icon-filter"></span></span>
+                                                                                        <span ref="eSortOrder"
+                                                                                            class="ag-header-icon ag-sort-order ag-hidden"
+                                                                                            aria-hidden="true"></span>
+                                                                                        <span ref="eSortAsc"
+                                                                                            class="ag-header-icon ag-sort-ascending-icon ag-hidden"
+                                                                                            aria-hidden="true"><span
+                                                                                                class="ag-icon ag-icon-asc"></span></span>
+                                                                                        <span ref="eSortDesc"
+                                                                                            class="ag-header-icon ag-sort-descending-icon ag-hidden"
+                                                                                            aria-hidden="true"><span
+                                                                                                class="ag-icon ag-icon-desc"></span></span>
+                                                                                        <span ref="eSortNone"
+                                                                                            class="ag-header-icon ag-sort-none-icon ag-hidden"
+                                                                                            aria-hidden="true"><span
+                                                                                                class="ag-icon ag-icon-none"></span></span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="ag-header-overlay" role="presentation"
+                                                                    style="height: 40px; top: 0px;"></div>
+                                                            </div>
+                                                            <div class="ag-floating-top" role="presentation"
+                                                                style="top: 40px; height: 0px;">
+                                                                <div class="ag-pinned-left-floating-top"
+                                                                    role="presentation" style="width: 0px;"></div>
+                                                                <div class="ag-pinned-right-floating-top"
+                                                                    role="presentation" style="width: 0px;"></div>
+                                                                <div class="ag-floating-top-viewport"
+                                                                    role="presentation">
+                                                                    <div class="ag-floating-top-container"
+                                                                        role="presentation" style="width: 558px;"></div>
+                                                                </div>
+                                                                <div class="ag-floating-top-full-width-container ag-hidden"
+                                                                    role="presentation"></div>
+                                                            </div>
+                                                            <div class="ag-floating-bottom" role="presentation"
+                                                                style="height: 0px; top: 41px;">
+                                                                <div class="ag-pinned-left-floating-bottom"
+                                                                    role="presentation" style="width: 0px;"></div>
+                                                                <div class="ag-pinned-right-floating-bottom"
+                                                                    role="presentation" style="width: 0px;"></div>
+                                                                <div class="ag-floating-bottom-viewport"
+                                                                    role="presentation">
+                                                                    <div class="ag-floating-bottom-container"
+                                                                        role="presentation" style="width: 558px;"></div>
+                                                                </div>
+                                                                <div class="ag-floating-bottom-full-width-container ag-hidden"
+                                                                    role="presentation"></div>
+                                                            </div>
+                                                            <div class="ag-body ag-row-no-animation" role="presentation"
+                                                                style="top: 40px; height: 1px;">
+                                                                <div class="ag-pinned-left-cols-viewport"
+                                                                    role="presentation"
+                                                                    style="display: none; width: 0px; height: 1px;">
+                                                                    <div class="ag-pinned-left-cols-container"
+                                                                        role="presentation"
+                                                                        style="height: 40px; top: 0px; width: 0px;">
+                                                                        <div role="row" row-index="0" row-id="0"
+                                                                            comp-id="500"
+                                                                            class="ag-row ag-row-no-focus ag-row-even ag-row-level-0"
+                                                                            style="height: 40px; transform: translateY(0px);  ">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="ag-pinned-right-cols-viewport"
+                                                                    role="presentation"
+                                                                    style="display: none; width: 0px; height: 1px;">
+                                                                    <div class="ag-pinned-right-cols-container"
+                                                                        role="presentation"
+                                                                        style="height: 40px; width: 0px;">
+                                                                        <div role="row" row-index="0" row-id="0"
+                                                                            comp-id="500"
+                                                                            class="ag-row ag-row-no-focus ag-row-even ag-row-level-0"
+                                                                            style="height: 40px; transform: translateY(0px);  ">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="ag-body-viewport-wrapper"
+                                                                    role="presentation"
+                                                                    style="margin-left: 0px; margin-right: 0px;">
+                                                                    <div class="ag-body-viewport" role="presentation"
+                                                                        style="overflow-y: auto;">
+                                                                        <div class="ag-body-container"
+                                                                            role="presentation"
+                                                                            style="height: 40px; top: 0px; width: 558px;">
+                                                                            <div role="row" row-index="0" row-id="0"
+                                                                                comp-id="500"
+                                                                                class="ag-row ag-row-no-focus ag-row-even ag-row-level-0"
+                                                                                style="height: 40px; transform: translateY(0px);  ">
+                                                                                <div tabindex="-1" role="gridcell"
+                                                                                    comp-id="523" col-id="P_KUBUN_NM"
+                                                                                    class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value"
+                                                                                    style="width: 42px; left: 60px; ">
+                                                                                    라이브</div>
+                                                                                <div tabindex="-1" role="gridcell"
+                                                                                    comp-id="524" col-id="VM_NM"
+                                                                                    class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value"
+                                                                                    style="width: 43px; left: 102px; ">
+                                                                                    SYSapdev04</div>
+                                                                                <div tabindex="-1" role="gridcell"
+                                                                                    comp-id="525" col-id="CPU_CNT"
+                                                                                    class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value"
+                                                                                    style="width: 80px; left: 145px; ">2
+                                                                                </div>
+                                                                                <div tabindex="-1" role="gridcell"
+                                                                                    comp-id="526" col-id="RAM_SIZE"
+                                                                                    class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value"
+                                                                                    style="width: 100px; left: 225px; ">
+                                                                                    4</div>
+                                                                                <div tabindex="-1" role="gridcell"
+                                                                                    comp-id="527" col-id="DISK_SIZE"
+                                                                                    class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value"
+                                                                                    style="width: 80px; left: 325px; ">
+                                                                                    100</div>
+                                                                                <div tabindex="-1" role="gridcell"
+                                                                                    comp-id="528" col-id="EXPIRE_DT"
+                                                                                    class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value"
+                                                                                    style="width: 110px; left: 405px; ">
+                                                                                    <span>2023-05-03</span></div>
+                                                                                <div tabindex="-1" role="gridcell"
+                                                                                    comp-id="529" col-id="result"
+                                                                                    class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value"
+                                                                                    style="width: 43px; left: 515px; ">
+                                                                                </div>
+                                                                                <div tabindex="-1" role="gridcell"
+                                                                                    comp-id="501" col-id="ROWNUM"
+                                                                                    class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value"
+                                                                                    style="width: 60px; left: 0px; ">1
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="ag-full-width-viewport ag-hidden"
+                                                                    role="presentation"
+                                                                    style="border-right: 0px solid transparent;">
+                                                                    <div class="ag-full-width-container"
+                                                                        role="presentation"
+                                                                        style="height: 40px; top: 0px;"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ag-bl-overlay" ref="overlay" style="display: none;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="ag-bl-overlay" ref="overlay" style="display: none;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-sm-6" style="height: 500px;"><span class="span_label">연장 할 기간
+                                        선택</span>
+                                    <div class="fm-output" required="required"><label
+                                            for="vmExpire_popup_ADD_USE_MM_div"
+                                            class="control-label grid-title value-title">사용기간(개월)</label>
+                                        <div id="vmExpire_popup_ADD_USE_MM_div" data-id="vmExpire_popup_ADD_USE_MM"
+                                            class="output  hastitle" style="display: inline-block;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer"><span><input type="button" value="요청" onclick="vmExpire_popup_save()"
+                            class="btn popupBtn finish"> <button type="button" id="cancelBtn" onclick="closeBtn()"
+                            class="btn popupBtn finish">닫기</button></span></div>
+            </div>
+        </div>
+    </div>
+</div>
+</html>

@@ -137,7 +137,8 @@ textarea {
   height: 100%;
 }
 
-.detail-panel .panel-body .col > div > label, .detail-panel .panel-body .col > table label {
+.detail-panel .panel-body .col > div > label,
+.detail-panel .panel-body .col > table label {
   min-height: 37px;
   line-height: 37px;
   width: auto;
@@ -169,12 +170,12 @@ textarea {
 /*detail-panel end*/
 .btn, btn-primary {
   background: white;
-  color: #2e276c !important;
+  color: #2e276c;
 }
 
 .btn.btn-primary.search, .searchBtn {
-  background-color: #e27066 !important;
-  color: #ffffff !important;
+  background-color: #e27066;
+  color: #ffffff;
   border-radius: 0;
 }
 
@@ -390,6 +391,7 @@ marquee {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
 }
 
@@ -696,6 +698,10 @@ marquee {
 }
 
 .popup_area .input::-moz-placeholder {
+  color: #ccc;
+}
+
+.popup_area .input:-ms-input-placeholder {
   color: #ccc;
 }
 
@@ -2584,18 +2590,39 @@ v .center > div > .panel_value {
 }
 
 .detail-panel .panel-body .col {
-  height: 43px;
+  min-height: 43px;
 }
 .detail-panel .panel-body .col.colTop {
   border-top: 1px solid #4A4A4A;
 }
 
-.detail-panel .panel-body .col > div > label, .detail-panel .panel-body .col > table label {
+.detail-panel .panel-body .col > div > label,
+.detail-panel .panel-body .col > table label {
   min-height: 42px;
   text-align: left !important;
   padding-top: 6px;
   padding-left: 20px;
   background: #edeef3;
+}
+.detail-panel .panel-body .col > div > label.control-label,
+.detail-panel .panel-body .col > table label.control-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 120px;
+  min-width: unset;
+  background-color: #FAFAFA;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  text-align: center;
+  color: #2C2C2C;
+  padding: 16px 0;
 }
 
 #content {
@@ -4948,7 +4975,11 @@ v .center > div > .panel_value {
 }
 
 .modal-footer {
+  position: absolute;
   text-align: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .modal-dialog .detail-panel .panel-body .col {
@@ -5351,10 +5382,6 @@ v .center > div > .panel_value {
   height: auto;
 }
 
-.popup_layer > .popup_layer_tab > .tab-content > .tab-pane > .fullGrid > .ag-theme-fresh {
-  height: 565px;
-}
-
 .resourceDiv {
   height: 33% !important;
   text-align: center;
@@ -5466,7 +5493,11 @@ v .center > div > .panel_value {
 }
 
 .failBtn {
-  background: #C5003E;
+  background: #EB7A95;
+}
+
+.ingBtn {
+  background: #009D93;
 }
 
 .ag-row .ag-cell {
@@ -5508,10 +5539,6 @@ v .center > div > .panel_value {
 #filter {
   border-radius: 4px;
   margin-right: 0px;
-}
-
-#filterPopup {
-  margin-left: 5px;
 }
 
 #mainTable {
@@ -5919,25 +5946,43 @@ v .center > div > .panel_value {
 }
 
 .nc_popup_btn {
-  display: inline-block;
-  flex-direction: row;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 16px;
-  gap: 10px;
+  padding: 0 12px;
   width: 120px;
   height: 44px;
   background: #FFFFFF;
   border: 1px solid #DDDDDD;
   border-radius: 24px;
-  flex: none;
-  order: 1;
-  flex-grow: 0;
 }
-
 .nc_popup_btn.selected {
   background-color: #006979;
-  color: white !important;
+  color: #fff;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.detail-panel .panel-body #restoreStep1 .col {
+  border: 0 !important;
+  border-top: 1px solid #ddd !important;
+}
+.detail-panel .panel-body #restoreStep1 .col > div:not(.col, .ag-theme-fresh):only-child {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  align-items: center;
+  padding: 15px 0;
+  position: relative;
+  padding-left: 140px;
+  min-height: 73px;
+}
+
+.span_label {
+  display: block;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 29px;
+  color: #2C2C2C;
+  margin-bottom: 20px;
 }
 
 .keyword_searchBtn {
@@ -5965,12 +6010,6 @@ v .center > div > .panel_value {
   border: 1px solid #EEEEEE;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
   border-radius: 12px;
-}
-
-#inputBox {
-  margin-bottom: 3%;
-  display: inline-block;
-  width: 100%;
 }
 
 .table_title.layout.name {
@@ -6011,20 +6050,15 @@ v .center > div > .panel_value {
 
 /* create_restore_form_popup */
 #create_restore_form_popup > div {
-  width: 850px !important;
+  width: 1120PX !important;
 }
 
 #restoreStep1, #restoreStep2 {
   display: block;
-  margin-top: 4%;
 }
 
 .stepButtons {
-  margin-top: 10px;
-}
-
-.restoreButtons {
-  margin-top: 4%;
+  margin-bottom: 32px;
 }
 
 .btnMargin {
@@ -6054,11 +6088,13 @@ v .center > div > .panel_value {
 
 /* filter popup */
 .modal-content {
+  position: relative;
   overflow-y: initial !important;
   background: #FFFFFF;
   box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.08);
   border-radius: 12px;
   border: 0;
+  padding-bottom: 136px;
 }
 
 .modal-body {
@@ -6127,6 +6163,9 @@ v .center > div > .panel_value {
 .modal-body .select2-container--default .select2-search--inline .select2-search__field::-moz-placeholder {
   color: #CCCCCC;
 }
+.modal-body .select2-container--default .select2-search--inline .select2-search__field:-ms-input-placeholder {
+  color: #CCCCCC;
+}
 .modal-body .select2-container--default .select2-search--inline .select2-search__field::placeholder {
   color: #CCCCCC;
 }
@@ -6158,6 +6197,29 @@ v .center > div > .panel_value {
 .modal-footer {
   padding: 0 40px 40px;
   border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-footer .btn {
+  padding: 0 10px;
+  min-width: 200px;
+  height: 56px;
+  background-color: #eee !important;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 23px;
+  color: #2C2C2C !important;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 4px !important;
+}
+.modal-footer .btn.finish {
+  background-color: #009D93 !important;
+  color: #fff !important;
+  font-weight: 700;
 }
 
 .filterFooter {
@@ -6448,6 +6510,9 @@ v .center > div > .panel_value {
   color: #686868;
 }
 
+.popup_layer .paginationFrame {
+  margin-top: -27px;
+}
 .popup_layer .tab-content {
   padding: 0 40px 72px;
   margin-bottom: 0;
@@ -6457,21 +6522,21 @@ v .center > div > .panel_value {
   height: auto;
   line-height: unset;
 }
-.popup_layer .table_title .btn_group {
+.popup_layer .btn_group {
   float: none;
   display: flex;
   gap: 4px;
   align-items: center;
   margin: 15px 0;
 }
-.popup_layer .table_title .btn_group .icon {
+.popup_layer .btn_group .icon {
   float: none;
   position: relative;
   top: unset;
   left: unset;
   right: unset;
   bottom: unset;
-  width: auto;
+  width: 40px;
   height: 28px;
   background: #FAFAFA !important;
   border: 1px solid #EEEEEE !important;
@@ -6481,14 +6546,14 @@ v .center > div > .panel_value {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 0 32px 0 12px !important;
+  padding: 0 !important;
   font-weight: 400;
   font-size: 12px;
   line-height: 17px;
   color: #2C2C2C;
 }
-.popup_layer .table_title .btn_group .icon.excelBtn {
-  background: #FAFAFA url(/res/img/ncsoft/ic_cvn.svg) right 12px center no-repeat !important;
+.popup_layer .btn_group .icon.excelBtn {
+  background: #FAFAFA url(/res/img/ncsoft/ic_cvn.svg) center center no-repeat !important;
 }
 
 .detail-panel {
@@ -6525,4 +6590,36 @@ v .center > div > .panel_value {
 .highcharts-container svg .highcharts-label text {
   font-weight: 400 !important;
   font-size: 12px !important;
+}
+
+#create_restore_form_popup .modal-content {
+  min-height: 826px;
+}
+#create_restore_form_popup .modal-header {
+  border-bottom: 0;
+  height: auto;
+}
+#create_restore_form_popup .modal-header .modal-body {
+  padding-top: 40px;
+}
+
+#restoreStep1::after,
+#inputBox::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#inputBox > .col {
+  border: 0 !important;
+  border-top: 1px solid #ddd !important;
+}
+#inputBox > .col > div:not(.col, .ag-theme-fresh):only-child {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  align-items: center;
+  padding: 15px 0;
+  position: relative;
+  padding-left: 140px;
+  min-height: 73px;
 }/*# sourceMappingURL=common.css.map */

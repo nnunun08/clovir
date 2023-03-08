@@ -1703,25 +1703,27 @@ a.tree-toggle {
   right: unset;
   float: unset;
   min-width: unset;
-  background: #FAFAFA;
-  border: 1px solid #EEEEEE !important;
-  border-radius: 4px;
-  color: #2C2C2C !important;
-  font-size: 12px;
-  font-weight: 400;
-  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
+  width: 40px;
   height: 28px;
-  padding: 0 12px !important;
+  background: #FAFAFA;
   margin-right: 12px;
+  padding: 0 !important;
+  border: 1px solid #EEEEEE !important;
+  border-radius: 4px;
+  text-indent: -9999px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #2C2C2C !important;
 }
 #mainForm #header_detail .rightBtn #pageSelect {
   width: auto;
   float: unset;
 }
+#mainForm #header_detail .rightBtn .pagingChangeBox select,
 #mainForm #header_detail .rightBtn #paging_select {
   font-family: inherit;
   font-size: 12px;
@@ -1771,6 +1773,9 @@ a.tree-toggle {
   outline: none;
 }
 .search-box-btn .keyword input::-moz-placeholder {
+  color: #ccc;
+}
+.search-box-btn .keyword input:-ms-input-placeholder {
   color: #ccc;
 }
 .search-box-btn .keyword input::placeholder {

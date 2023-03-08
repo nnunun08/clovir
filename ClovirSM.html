@@ -25021,41 +25021,36 @@
 								</div>
 							</div>
 							<div class="rightBtn">
-								<div id="searchArea">
-									<div class="search-box-btn">
-										<!-- evoke : placeholder 빈공백 제거 -->
-										<div class="keyword">
-											<!---->
-											<input placeholder="검색" name="keyword" id="keyword_input" class="form-control input" data-siid="si_input_0">
-										</div>
-										<button type="button" onclick="vmSearch()" class="btn btn-primary floatRight">
-										<!-- evoke : 이미지 변경 -->
-										<img src="/res/img/ncsoft/icon_20_search.svg"></button>
-									</div>
-								</div>
-								<div>
-									<button type="button" id="filter" class="btn btn-primary fm-popup-button btn contentsBtn etc update" onclick="">
-									Filter <img src="/res/img/ncsoft/sliders.svg" id="filterPopup" class="bi-plus-circle-fill">
-									</button>
-								</div>
-								<!-- evoke : CSV 버튼 추가 -->
-								<div>
-									<button type="button" id="filter" onclick="exportExcel()" class="btn contentsBtn etc">
-									CSV <img src="/res/img/ncsoft/download.svg" id="filterPopup" class="bi-plus-circle-fill">
-									</button>
-								</div>
-								<div class="pagingChangeBox">
-									<div class="pagingDiv">
-										<select id="paging_select" name="pageSize" onchange="pagingChangeEvent(this, vmSearch)">
-											<option value="3">3개 보기</option>
-											<option value="10">10개 보기</option>
-											<option value="30">30개 보기</option>
-											<option value="50">50개 보기</option>
-											<option value="100">100개 보기</option>
-											<option value="ALL">ALL</option>
-										</select>
-									</div>
-								</div>
+							  <div id="searchArea">
+							    <div class="search-box-btn">
+							      <div class="keyword">
+                      <input placeholder="검색" name="keyword" id="keyword_input" class="form-control input">
+                    </div>
+                    <button type="button" onclick="vmSearch()" class="btn btn-primary floatRight"><img src="/res/img/ncsoft/icon_20_search.svg"></button>
+							    </div>
+							  </div>
+							  <div>
+                  <button type="button" id="filter" class="btn btn-primary fm-popup-button btn contentsBtn etc update" onclick="">
+                    <img src="/res/img/ncsoft/sliders.svg" id="filterPopup" class="bi-plus-circle-fill">
+                  </button>
+                </div>
+							  <div>
+                  <button type="button" id="filter" onclick="exportExcel()" class="btn contentsBtn etc">
+                    <!-- evoke : 이미지 변경 -->
+							      <img src="/res/img/ncsoft/ic_cvn.svg" id="filterPopup" class="bi-plus-circle-fill">
+                  </button>
+                </div>
+							  <div class="pagingChangeBox">
+							    <div class="pageSizeDiv">
+                    <select id="pageSize_select" name="pageSize" onchange="pagingChangeEvent(this, vmSearch)">
+							        <option value="10">10개 보기</option>
+							        <option value="30">30개 보기</option>
+							        <option value="50">50개 보기</option>
+							        <option value="100">100개 보기</option>
+							        <option value="ALL">ALL</option>
+							      </select>
+                  </div>
+							  </div>
 							</div>
 						</div>
             <!-- evoke : table_title layout name 빈 값인 경우 제거해주세요 -->
@@ -25352,9 +25347,7 @@
                                       </div>
                                       <div tabindex="-1" role="gridcell" comp-id="253" col-id="RUN_CD" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 80px; left: 232px; text-align: center;">
                                         <span>
-                                        <div class="statusBtn onBtn">
-                                          <span>ON</span>
-                                        </div>
+                                          <div class="statusBtn offBtn"><span>OFF</span></div>
                                         </span>
                                       </div>
                                       <div tabindex="-1" role="gridcell" comp-id="254" col-id="CPU_CNT" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 80px; left: 312px; ">
@@ -25521,8 +25514,8 @@
                                       </div>
                                       <div tabindex="-1" role="gridcell" comp-id="304" col-id="RUN_CD" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 80px; left: 232px; text-align: center;">
                                         <span>
-                                        <div class="statusBtn failBtn">
-                                          <span>FAIL</span>
+                                        <div class="statusBtn ingBtn">
+                                          <span>생성중</span>
                                         </div>
                                         </span>
                                       </div>
