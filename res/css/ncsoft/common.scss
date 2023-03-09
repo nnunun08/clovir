@@ -6590,7 +6590,7 @@ v
         }
     }
 }
-
+#vmExpire_popup,
 #create_restore_form_popup {
     .modal-content {
         min-height: 826px;
@@ -6602,7 +6602,223 @@ v
             padding-top: 40px;
         }
     }    
+    .modal-dialog .detail-panel .panel-body .col {
+        padding: 32px;
+    }
 }
+#vmExpire_popup {
+    .inputValue {
+        height: 40px;
+        padding: 0 16px;
+        background: #FFFFFF;
+        border: 1px solid #DDDDDD;
+        border-radius: 4px;
+        margin-right: 8px;
+        margin-top: 20px;
+    }
+    .desc {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        color: #7E7E7E;
+        margin: 0;
+        margin-top: 14px;
+        &.descList {
+            position: relative;
+            padding-left: 14px;
+            &::before {
+                content: '';
+                border-radius: 4px;
+                position: absolute;
+                background-color: #7E7E7E;
+                width: 6px;
+                height: 6px;
+                top:5px;
+                left:0;
+            }
+        }
+    }
+    .rowDiv + .rowDiv {
+        margin-top: -1px;
+    }
+    .rowDiv {
+        border: 1px solid #DDD;
+        border-left: 0;
+        border-right: 0;
+        display: flex;
+        .control-label {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80px;
+            flex: 0 0 80px;
+            background-color: #FAFAFA;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 17px;
+            text-align: center;
+            color: #2C2C2C;
+        }
+        .input {
+            flex: 1 0 auto;
+            padding: 19px;
+            .range-list {
+                margin-left: -12px;
+            }
+        }
+    }
+    .topInfo .span_label {
+        margin-bottom: 0px !important;
+    }
+    .checkbox-inline {
+        padding: 0;
+        padding-left: 22px;
+        position: relative;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 17px;
+        color: #4A4A4A;
+        input {
+            display: none;
+        }
+        &::after {
+            content: '';
+            width: 16px;
+            height: 16px;
+            border: 1px solid #ddd;
+            border-radius: 16px;
+            position: absolute;
+            left: 0;
+            top: 1px;
+        }
+        &:has(input:checked)::after {
+            background: url(/res/img/ncsoft/radio_selected.svg) center/cover no-repeat;
+            border: 0;
+        }
+        & + .checkbox-inline {
+            margin-left: 45px !important;
+        }
+    }
+    .topInfo .checkbox-inline + .checkbox-inline {
+        margin-left: 15px !important;
+    }
+    .topInfo {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        height: 36px;
+        margin-bottom: 20px;
+        .subStepList {
+            display: flex;
+            align-items: center;
+            .subStepTitle {
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                height: 36px;
+                position: relative;
+                border: 1px solid #DDDDDD;
+                background-color: #fff;
+                border-right: 0;
+                border-radius: 4px 0 0 4px;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 17px;
+                text-align: center;
+                color: #4A4A4A;
+                width: 182px;
+                box-sizing: border-box;
+                margin-left: -4px;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    right: -10px;
+                    top: -1px;
+                    width: 11px;
+                    height: 36px;
+                    background: url(/res/img/ncsoft/bg_tab_df.svg) center/cover no-repeat;
+                }
+                &.selected {
+                    color: #006979;
+                    background-color: #EEF9F7;
+                    border-color: #97D8D4;
+                    &::after {
+                        background-image: url(/res/img/ncsoft/bg_tab_ac.svg);
+                    }
+                }
+                &:nth-child(1) {
+                    z-index: 3;
+                    margin-left: 0;
+                }
+                &:nth-child(2) {
+                    z-index: 2;
+                }
+                &:nth-child(3) {
+                    z-index: 1;
+                }
+                &:last-child {
+                    border: 1px solid #ddd;
+                    border-radius: 4px;
+                    &::after {
+                        display: none;
+                    }
+                    &.selected {
+                        border-color: #97D8D4;
+                    }
+                }
+            }
+        }
+        .checkRight {
+            flex: 1 0 auto;
+            text-align: right;
+            margin-bottom: 3px;
+        }
+        .checkbox-inline:has(input:checked)::after {
+            background-image: url(/res/img/ncsoft/ic_range_dis.svg) !important;
+        }
+    }
+
+    .modal-content {
+        min-height: unset;
+    }
+    .modal-dialog {
+        min-width: 1060px;
+        .panel-body {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 12px;
+            &::before {
+                display: none;
+            }
+            .span_label {
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 23px;
+                color: #2C2C2C;
+                margin-bottom: 20px;
+            }
+            .arrowRight {
+                margin-top: 83px;
+            }
+            > .col {
+                background: #FFFFFF;
+                border: 1px solid #EEEEEE;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+                border-radius: 12px;
+                &:first-child {
+                    flex: 1 0 544px;
+                }
+                &:last-child {
+                    flex: 1 0 378px;
+                }
+            }
+        }
+        
+    }
+}
+
+
 
 // col Wrap
 #restoreStep1,
@@ -6617,3 +6833,4 @@ v
 #inputBox > {
     @include colDiv;
 }
+

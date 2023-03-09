@@ -391,7 +391,6 @@ marquee {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
@@ -698,10 +697,6 @@ marquee {
 }
 
 .popup_area .input::-moz-placeholder {
-  color: #ccc;
-}
-
-.popup_area .input:-ms-input-placeholder {
   color: #ccc;
 }
 
@@ -6163,9 +6158,6 @@ v .center > div > .panel_value {
 .modal-body .select2-container--default .select2-search--inline .select2-search__field::-moz-placeholder {
   color: #CCCCCC;
 }
-.modal-body .select2-container--default .select2-search--inline .select2-search__field:-ms-input-placeholder {
-  color: #CCCCCC;
-}
 .modal-body .select2-container--default .select2-search--inline .select2-search__field::placeholder {
   color: #CCCCCC;
 }
@@ -6592,15 +6584,230 @@ v .center > div > .panel_value {
   font-size: 12px !important;
 }
 
+#vmExpire_popup .modal-content,
 #create_restore_form_popup .modal-content {
   min-height: 826px;
 }
+#vmExpire_popup .modal-header,
 #create_restore_form_popup .modal-header {
   border-bottom: 0;
   height: auto;
 }
+#vmExpire_popup .modal-header .modal-body,
 #create_restore_form_popup .modal-header .modal-body {
   padding-top: 40px;
+}
+#vmExpire_popup .modal-dialog .detail-panel .panel-body .col,
+#create_restore_form_popup .modal-dialog .detail-panel .panel-body .col {
+  padding: 32px;
+}
+
+#vmExpire_popup .inputValue {
+  height: 40px;
+  padding: 0 16px;
+  background: #FFFFFF;
+  border: 1px solid #DDDDDD;
+  border-radius: 4px;
+  margin-right: 8px;
+  margin-top: 20px;
+}
+#vmExpire_popup .desc {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #7E7E7E;
+  margin: 0;
+  margin-top: 14px;
+}
+#vmExpire_popup .desc.descList {
+  position: relative;
+  padding-left: 14px;
+}
+#vmExpire_popup .desc.descList::before {
+  content: "";
+  border-radius: 4px;
+  position: absolute;
+  background-color: #7E7E7E;
+  width: 6px;
+  height: 6px;
+  top: 5px;
+  left: 0;
+}
+#vmExpire_popup .rowDiv + .rowDiv {
+  margin-top: -1px;
+}
+#vmExpire_popup .rowDiv {
+  border: 1px solid #DDD;
+  border-left: 0;
+  border-right: 0;
+  display: flex;
+}
+#vmExpire_popup .rowDiv .control-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  flex: 0 0 80px;
+  background-color: #FAFAFA;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  text-align: center;
+  color: #2C2C2C;
+}
+#vmExpire_popup .rowDiv .input {
+  flex: 1 0 auto;
+  padding: 19px;
+}
+#vmExpire_popup .rowDiv .input .range-list {
+  margin-left: -12px;
+}
+#vmExpire_popup .topInfo .span_label {
+  margin-bottom: 0px !important;
+}
+#vmExpire_popup .checkbox-inline {
+  padding: 0;
+  padding-left: 22px;
+  position: relative;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  color: #4A4A4A;
+}
+#vmExpire_popup .checkbox-inline input {
+  display: none;
+}
+#vmExpire_popup .checkbox-inline::after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  position: absolute;
+  left: 0;
+  top: 1px;
+}
+#vmExpire_popup .checkbox-inline:has(input:checked)::after {
+  background: url(/res/img/ncsoft/radio_selected.svg) center/cover no-repeat;
+  border: 0;
+}
+#vmExpire_popup .checkbox-inline + .checkbox-inline {
+  margin-left: 45px !important;
+}
+#vmExpire_popup .topInfo .checkbox-inline + .checkbox-inline {
+  margin-left: 15px !important;
+}
+#vmExpire_popup .topInfo {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 36px;
+  margin-bottom: 20px;
+}
+#vmExpire_popup .topInfo .subStepList {
+  display: flex;
+  align-items: center;
+}
+#vmExpire_popup .topInfo .subStepList .subStepTitle {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+  position: relative;
+  border: 1px solid #DDDDDD;
+  background-color: #fff;
+  border-right: 0;
+  border-radius: 4px 0 0 4px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  text-align: center;
+  color: #4A4A4A;
+  width: 182px;
+  box-sizing: border-box;
+  margin-left: -4px;
+}
+#vmExpire_popup .topInfo .subStepList .subStepTitle::after {
+  content: "";
+  position: absolute;
+  right: -10px;
+  top: -1px;
+  width: 11px;
+  height: 36px;
+  background: url(/res/img/ncsoft/bg_tab_df.svg) center/cover no-repeat;
+}
+#vmExpire_popup .topInfo .subStepList .subStepTitle.selected {
+  color: #006979;
+  background-color: #EEF9F7;
+  border-color: #97D8D4;
+}
+#vmExpire_popup .topInfo .subStepList .subStepTitle.selected::after {
+  background-image: url(/res/img/ncsoft/bg_tab_ac.svg);
+}
+#vmExpire_popup .topInfo .subStepList .subStepTitle:nth-child(1) {
+  z-index: 3;
+  margin-left: 0;
+}
+#vmExpire_popup .topInfo .subStepList .subStepTitle:nth-child(2) {
+  z-index: 2;
+}
+#vmExpire_popup .topInfo .subStepList .subStepTitle:nth-child(3) {
+  z-index: 1;
+}
+#vmExpire_popup .topInfo .subStepList .subStepTitle:last-child {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+#vmExpire_popup .topInfo .subStepList .subStepTitle:last-child::after {
+  display: none;
+}
+#vmExpire_popup .topInfo .subStepList .subStepTitle:last-child.selected {
+  border-color: #97D8D4;
+}
+#vmExpire_popup .topInfo .checkRight {
+  flex: 1 0 auto;
+  text-align: right;
+  margin-bottom: 3px;
+}
+#vmExpire_popup .topInfo .checkbox-inline:has(input:checked)::after {
+  background-image: url(/res/img/ncsoft/ic_range_dis.svg) !important;
+}
+#vmExpire_popup .modal-content {
+  min-height: unset;
+}
+#vmExpire_popup .modal-dialog {
+  min-width: 1060px;
+}
+#vmExpire_popup .modal-dialog .panel-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+#vmExpire_popup .modal-dialog .panel-body::before {
+  display: none;
+}
+#vmExpire_popup .modal-dialog .panel-body .span_label {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 23px;
+  color: #2C2C2C;
+  margin-bottom: 20px;
+}
+#vmExpire_popup .modal-dialog .panel-body .arrowRight {
+  margin-top: 83px;
+}
+#vmExpire_popup .modal-dialog .panel-body > .col {
+  background: #FFFFFF;
+  border: 1px solid #EEEEEE;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+}
+#vmExpire_popup .modal-dialog .panel-body > .col:first-child {
+  flex: 1 0 544px;
+}
+#vmExpire_popup .modal-dialog .panel-body > .col:last-child {
+  flex: 1 0 378px;
 }
 
 #restoreStep1::after,

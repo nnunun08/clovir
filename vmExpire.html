@@ -22,7 +22,7 @@
 </head>
 
 <div id="popup_area" class="popup_area">
-    <div id="vmExpire_popup" role="dialog" class="modal fade popup_dialog in" style="display: block;">
+    <div id="vmExpire_popup" role="dialog" class="modal fade popup_dialog in" style="display: block; overflow: auto;">
         <div class="modal-dialog ui-draggable">
             <div class="modal-content  container-fluid">
                 <div class="modal-header ui-draggable-handle"><button type="button" onclick="processScrollBar()"
@@ -33,7 +33,8 @@
                     <div class="form-panel detail-panel">
                         <form id="vmExpire_popup_form" action="none">
                             <div id="panel-body" class="panel-body">
-                                <div class="col col-sm-6"><span class="span_label">공유대상 서버</span>
+                                <div class="col col-sm-6" style="min-height:437px;">
+                                    <span class="span_label">공유대상 서버</span>
                                     <div id="vmExpire_popupTable" class="ag-theme-fresh">
                                         <div class="ag-bl ag-bl-full-height ag-layout-normal ag-scrolls ag-ltr"
                                             id="borderLayout_eRootPanel">
@@ -600,22 +601,84 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col col-sm-6" style="height: 500px;"><span class="span_label">연장 할 기간
-                                        선택</span>
-                                    <div class="fm-output" required="required"><label
-                                            for="vmExpire_popup_ADD_USE_MM_div"
-                                            class="control-label grid-title value-title">사용기간(개월)</label>
-                                        <div id="vmExpire_popup_ADD_USE_MM_div" data-id="vmExpire_popup_ADD_USE_MM"
-                                            class="output  hastitle" style="display: inline-block;"></div>
+
+                                <!-- evoke : .arrowRight 추가해주세요 -->
+                                <div class="arrowRight">
+                                    <img src="/res/img/ncsoft/ic_32_arrow_right.svg" alt="">
+                                </div>
+                                <!--  -->
+
+                                <div class="col col-sm-6">
+                                    <div>
+                                        <div class="topInfo">
+                                            <span class="span_label">연장 할 기간 선택</span>
+                                            <div class="checkRight">
+                                                <label class="checkbox-inline"><input type="radio" value="신청가능" name="radio1" style="pointer-events: none;">신청가능</label>
+                                                <label class="checkbox-inline"><input type="radio" value="승인 필요" name="radio1" style="pointer-events: none;" checked="">승인 필요</label>
+                                            </div>
+                                        </div>
+                                        <div class="rowDiv">
+                                            <!-- evoke : .control-label 있는 케이스 -->
+                                            <div class="control-label">
+                                                Value
+                                            </div>
+                                            <div class="input">
+                                                <div class="range-radio">
+                                                    <div class="range-list">
+                                                        <input type="radio" name="evokeSample" id="evokeSample_0" value="1">
+                                                        <label for="evokeSample_0" data-title="1"></label>
+                                                        <input type="radio" name="evokeSample" id="evokeSample_1" value="3">
+                                                        <label for="evokeSample_1" data-title="3"></label>
+                                                        <input type="radio" name="evokeSample" id="evokeSample_2" value="6">
+                                                        <label for="evokeSample_2" data-title="6"></label>
+                                                        <input type="radio" name="evokeSample" id="evokeSample_6" value="36" class="threshold">
+                                                        <label for="evokeSample_6" data-title="36"></label>
+                                                    </div>
+                                                    <!-- <input type="number" class="rangeInput" readonly="readonly" id="S_USE_MM"> -->
+                                                </div>
+                                                <link rel="stylesheet" href="/res/css/rangeSlider/rangeStyle.css">
+                                            </div>
+                                        </div>
+                                        <div class="rowDiv">
+                                            <!-- evoke : .control-label 없는 케이스 -->
+                                            <!-- <div class="control-label">
+                                                Value
+                                            </div> -->
+                                            <div class="input">
+                                                <div class="range-radio">
+                                                    <div class="range-list">
+                                                        <input type="radio" name="evokeSampleTwo" id="evokeSampleTwo_0" value="1">
+                                                        <label for="evokeSampleTwo_0" data-title="1"></label>
+                                                        <input type="radio" name="evokeSampleTwo" id="evokeSampleTwo_1" value="3">
+                                                        <label for="evokeSampleTwo_1" data-title="3"></label>
+                                                        <input type="radio" name="evokeSampleTwo" id="evokeSampleTwo_2" value="6">
+                                                        <label for="evokeSampleTwo_2" data-title="6"></label>
+                                                        <input type="radio" name="evokeSampleTwo" id="evokeSampleTwo_3" value="9">
+                                                        <label for="evokeSampleTwo_3" data-title="9"></label>
+                                                    </div>
+                                                    <!-- <input type="number" class="rangeInput" readonly="readonly" id="S_USE_MM"> -->
+                                                </div>
+                                                <link rel="stylesheet" href="/res/css/rangeSlider/rangeStyle.css">
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <input type="text" class="inputValue">
+                                            <span>개월</span>
+                                        </div>
+                                        <div>
+                                            <p class="desc descList">각 서버 만료일로부터 선택기간 만큼 일괄 연장됩니다.</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
-                <div class="modal-footer"><span><input type="button" value="요청" onclick="vmExpire_popup_save()"
-                            class="btn popupBtn finish"> <button type="button" id="cancelBtn" onclick="closeBtn()"
-                            class="btn popupBtn finish">닫기</button></span></div>
+                <div class="modal-footer"><span>
+                    <input type="button" value="요청" onclick="vmExpire_popup_save()" class="btn popupBtn finish">
+
+                    <!-- evoke : #cancelBtn에서 .finish 클래스 삭제 -->
+                    <button type="button" id="cancelBtn" onclick="closeBtn()"class="btn popupBtn">닫기</button></span></div>
             </div>
         </div>
     </div>
