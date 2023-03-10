@@ -6590,7 +6590,7 @@ v
         }
     }
 }
-#vmExpire_popup,
+.nc_popup_style,
 #create_restore_form_popup {
     .modal-content {
         min-height: 826px;
@@ -6834,3 +6834,35 @@ v
     @include colDiv;
 }
 
+
+.checkRight {
+    .checkbox-inline {
+        padding: 0;
+        padding-left: 22px;
+        position: relative;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 17px;
+        color: #4A4A4A;
+        input {
+            display: none;
+        }
+        &::after {
+            content: '';
+            width: 16px;
+            height: 16px;
+            border: 1px solid #ddd;
+            border-radius: 16px;
+            position: absolute;
+            left: 0;
+            top: 1px;
+        }
+        &:has(input:checked)::after {
+            background: url(/res/img/ncsoft/radio_selected.svg) center/cover no-repeat;
+            border: 0;
+        }
+        & + .checkbox-inline {
+            margin-left: 45px !important;
+        }
+    }
+}
