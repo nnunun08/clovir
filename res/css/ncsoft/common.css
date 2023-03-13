@@ -439,6 +439,7 @@ marquee {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
 }
 
@@ -745,6 +746,10 @@ marquee {
 }
 
 .popup_area .input::-moz-placeholder {
+  color: #ccc;
+}
+
+.popup_area .input:-ms-input-placeholder {
   color: #ccc;
 }
 
@@ -6208,6 +6213,9 @@ v .center > div > .panel_value {
 .modal-body .select2-container--default .select2-search--inline .select2-search__field::-moz-placeholder {
   color: #CCCCCC;
 }
+.modal-body .select2-container--default .select2-search--inline .select2-search__field:-ms-input-placeholder {
+  color: #CCCCCC;
+}
 .modal-body .select2-container--default .select2-search--inline .select2-search__field::placeholder {
   color: #CCCCCC;
 }
@@ -6281,6 +6289,10 @@ v .center > div > .panel_value {
 
 #filter_popup_form > div {
   text-align: left;
+}
+
+.filter_popup .modal-footer {
+  position: relative;
 }
 
 .filterSelectedList {
@@ -6559,17 +6571,23 @@ v .center > div > .panel_value {
   padding: 0 40px 72px;
   margin-bottom: 0;
 }
+.popup_layer .tab-pane {
+  position: relative;
+}
 .popup_layer .table_title {
   margin: 0;
   height: auto;
   line-height: unset;
 }
 .popup_layer .btn_group {
+  position: absolute;
+  top: -44px;
+  right: 0;
   float: none;
   display: flex;
+  justify-content: flex-end;
   gap: 4px;
   align-items: center;
-  margin: 15px 0;
 }
 .popup_layer .btn_group .icon {
   float: none;
@@ -6652,7 +6670,7 @@ v .center > div > .panel_value {
   padding: 32px;
 }
 
-#vmExpire_popup .inputValue {
+.popup_dialog .inputValue {
   height: 40px;
   padding: 0 16px;
   background: #FFFFFF;
@@ -6661,7 +6679,7 @@ v .center > div > .panel_value {
   margin-right: 8px;
   margin-top: 20px;
 }
-#vmExpire_popup .desc {
+.popup_dialog .desc {
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
@@ -6669,11 +6687,11 @@ v .center > div > .panel_value {
   margin: 0;
   margin-top: 14px;
 }
-#vmExpire_popup .desc.descList {
+.popup_dialog .desc.descList {
   position: relative;
   padding-left: 14px;
 }
-#vmExpire_popup .desc.descList::before {
+.popup_dialog .desc.descList::before {
   content: "";
   border-radius: 4px;
   position: absolute;
@@ -6683,16 +6701,16 @@ v .center > div > .panel_value {
   top: 5px;
   left: 0;
 }
-#vmExpire_popup .rowDiv + .rowDiv {
+.popup_dialog .rowDiv + .rowDiv {
   margin-top: -1px;
 }
-#vmExpire_popup .rowDiv {
+.popup_dialog .rowDiv {
   border: 1px solid #DDD;
   border-left: 0;
   border-right: 0;
   display: flex;
 }
-#vmExpire_popup .rowDiv .control-label {
+.popup_dialog .rowDiv .control-label {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6705,17 +6723,17 @@ v .center > div > .panel_value {
   text-align: center;
   color: #2C2C2C;
 }
-#vmExpire_popup .rowDiv .input {
+.popup_dialog .rowDiv .input {
   flex: 1 0 auto;
   padding: 19px;
 }
-#vmExpire_popup .rowDiv .input .range-list {
+.popup_dialog .rowDiv .input .range-list {
   margin-left: -12px;
 }
-#vmExpire_popup .topInfo .span_label {
+.popup_dialog .topInfo .span_label {
   margin-bottom: 0px !important;
 }
-#vmExpire_popup .checkbox-inline {
+.popup_dialog .checkbox-inline {
   padding: 0;
   padding-left: 22px;
   position: relative;
@@ -6724,10 +6742,10 @@ v .center > div > .panel_value {
   line-height: 17px;
   color: #4A4A4A;
 }
-#vmExpire_popup .checkbox-inline input {
+.popup_dialog .checkbox-inline input {
   display: none;
 }
-#vmExpire_popup .checkbox-inline::after {
+.popup_dialog .checkbox-inline::after {
   content: "";
   width: 16px;
   height: 16px;
@@ -6737,28 +6755,28 @@ v .center > div > .panel_value {
   left: 0;
   top: 1px;
 }
-#vmExpire_popup .checkbox-inline:has(input:checked)::after {
+.popup_dialog .checkbox-inline:has(input:checked)::after {
   background: url(/res/img/ncsoft/radio_selected.svg) center/cover no-repeat;
   border: 0;
 }
-#vmExpire_popup .checkbox-inline + .checkbox-inline {
+.popup_dialog .checkbox-inline + .checkbox-inline {
   margin-left: 45px !important;
 }
-#vmExpire_popup .topInfo .checkbox-inline + .checkbox-inline {
+.popup_dialog .topInfo .checkbox-inline + .checkbox-inline {
   margin-left: 15px !important;
 }
-#vmExpire_popup .topInfo {
+.popup_dialog .topInfo {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
   height: 36px;
   margin-bottom: 20px;
 }
-#vmExpire_popup .topInfo .subStepList {
+.popup_dialog .topInfo .subStepList {
   display: flex;
   align-items: center;
 }
-#vmExpire_popup .topInfo .subStepList .subStepTitle {
+.popup_dialog .topInfo .subStepList .subStepTitle {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -6777,7 +6795,7 @@ v .center > div > .panel_value {
   box-sizing: border-box;
   margin-left: -4px;
 }
-#vmExpire_popup .topInfo .subStepList .subStepTitle::after {
+.popup_dialog .topInfo .subStepList .subStepTitle::after {
   content: "";
   position: absolute;
   right: -10px;
@@ -6786,78 +6804,87 @@ v .center > div > .panel_value {
   height: 36px;
   background: url(/res/img/ncsoft/bg_tab_df.svg) center/cover no-repeat;
 }
-#vmExpire_popup .topInfo .subStepList .subStepTitle.selected {
+.popup_dialog .topInfo .subStepList .subStepTitle.selected {
   color: #006979;
   background-color: #EEF9F7;
   border-color: #97D8D4;
 }
-#vmExpire_popup .topInfo .subStepList .subStepTitle.selected::after {
+.popup_dialog .topInfo .subStepList .subStepTitle.selected::after {
   background-image: url(/res/img/ncsoft/bg_tab_ac.svg);
 }
-#vmExpire_popup .topInfo .subStepList .subStepTitle:nth-child(1) {
+.popup_dialog .topInfo .subStepList .subStepTitle:nth-child(1) {
   z-index: 3;
   margin-left: 0;
 }
-#vmExpire_popup .topInfo .subStepList .subStepTitle:nth-child(2) {
+.popup_dialog .topInfo .subStepList .subStepTitle:nth-child(2) {
   z-index: 2;
 }
-#vmExpire_popup .topInfo .subStepList .subStepTitle:nth-child(3) {
+.popup_dialog .topInfo .subStepList .subStepTitle:nth-child(3) {
   z-index: 1;
 }
-#vmExpire_popup .topInfo .subStepList .subStepTitle:last-child {
+.popup_dialog .topInfo .subStepList .subStepTitle:last-child {
   border: 1px solid #ddd;
   border-radius: 4px;
 }
-#vmExpire_popup .topInfo .subStepList .subStepTitle:last-child::after {
+.popup_dialog .topInfo .subStepList .subStepTitle:last-child::after {
   display: none;
 }
-#vmExpire_popup .topInfo .subStepList .subStepTitle:last-child.selected {
+.popup_dialog .topInfo .subStepList .subStepTitle:last-child.selected {
   border-color: #97D8D4;
 }
-#vmExpire_popup .topInfo .checkRight {
+.popup_dialog .topInfo .checkRight {
   flex: 1 0 auto;
   text-align: right;
-  margin-bottom: 3px;
 }
-#vmExpire_popup .topInfo .checkbox-inline:has(input:checked)::after {
+.popup_dialog .topInfo .checkbox-inline:has(input:checked)::after {
   background-image: url(/res/img/ncsoft/ic_range_dis.svg) !important;
 }
-#vmExpire_popup .modal-content {
+.popup_dialog .modal-content {
   min-height: unset;
 }
-#vmExpire_popup .modal-dialog {
-  min-width: 1060px;
+.popup_dialog .modal-dialog {
+  width: auto;
 }
-#vmExpire_popup .modal-dialog .panel-body {
+.popup_dialog .modal-dialog .panel-body {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 12px;
 }
-#vmExpire_popup .modal-dialog .panel-body::before {
+.popup_dialog .modal-dialog .panel-body::before {
   display: none;
 }
-#vmExpire_popup .modal-dialog .panel-body .span_label {
+.popup_dialog .modal-dialog .panel-body .span_label {
   font-weight: 500;
   font-size: 16px;
   line-height: 23px;
   color: #2C2C2C;
   margin-bottom: 20px;
 }
-#vmExpire_popup .modal-dialog .panel-body .arrowRight {
+.popup_dialog .modal-dialog .panel-body .arrowRight {
   margin-top: 83px;
 }
-#vmExpire_popup .modal-dialog .panel-body > .col {
+.popup_dialog .modal-dialog .panel-body > .col {
   background: #FFFFFF;
   border: 1px solid #EEEEEE;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
   border-radius: 12px;
 }
-#vmExpire_popup .modal-dialog .panel-body > .col:first-child {
+.popup_dialog .modal-dialog .panel-body > .col:first-child {
   flex: 1 0 544px;
 }
-#vmExpire_popup .modal-dialog .panel-body > .col:last-child {
+.popup_dialog .modal-dialog .panel-body > .col:last-child {
   flex: 1 0 378px;
+}
+.popup_dialog .modal-footer {
+  position: relative;
+  margin-top: 40px;
+}
+.popup_dialog .range-radio {
+  justify-content: space-between;
+}
+.popup_dialog .range-radio .rangeInput {
+  margin: 0;
 }
 
 #restoreStep1::after,
@@ -6929,4 +6956,47 @@ v .center > div > .panel_value {
 
 .alertMessage {
   margin-top: 1.5%;
+}
+
+.info:has(table) {
+  border-top: 1px solid #4A4A4A;
+}
+
+table {
+  border-collapse: collapse;
+  border: 0;
+}
+
+th,
+td {
+  padding: 15px 5px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+}
+
+th {
+  background-color: #FAFAFA;
+  border: 1px solid #ddd;
+  border-top: 0;
+  color: #2C2C2C;
+}
+th:first-child {
+  border-left: 0;
+}
+th:last-child {
+  border-right: 0;
+}
+
+td {
+  border: 0;
+  border-bottom: 1px solid #ddd;
+  color: #000000;
+}
+td:first-child {
+  border-left: 0;
+}
+td:last-child {
+  border-right: 0;
 }/*# sourceMappingURL=common.css.map */

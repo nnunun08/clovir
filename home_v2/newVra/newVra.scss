@@ -130,6 +130,7 @@ $leftSize : 216px;
         .col > div {
             display: flex;
             border-bottom: 1px solid #ddd;
+            border-top: 0;
             align-items: center;
             padding: 15px 0;
             position: relative;
@@ -608,3 +609,4 @@ $leftSize : 216px;
 .web_disk_data_disk_tbl td{
     padding-top: 10px;
 }
+

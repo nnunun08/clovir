@@ -108,6 +108,7 @@
 #newVra_popup .wizard_step_content .col > div {
   display: flex;
   border-bottom: 1px solid #ddd;
+  border-top: 0;
   align-items: center;
   padding: 15px 0;
   position: relative;
