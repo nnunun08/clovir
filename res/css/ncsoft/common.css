@@ -6892,7 +6892,7 @@ button.btn.btn-primary.searchBtn:before {
 .popup_dialog .modal-dialog {
   width: auto;
 }
-.popup_dialog .modal-dialog .panel-body {
+.popup_dialog .modal-dialog .panel-body:has(.arrowRight) {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -7052,6 +7052,10 @@ td:last-child {
 #newVra_popup .panel-body,
 #request_quota_popup .panel-body {
   display: block;
+}
+
+.panel-body::after {
+  display: none;
 }
 
 .adminChangeBox {

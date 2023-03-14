@@ -7230,13 +7230,13 @@ button.btn.btn-primary.searchBtn:before {
     .modal-dialog {
         // min-width: 1060px;
         width: auto;
-
-        .panel-body {
+        .panel-body:has(.arrowRight) {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             gap: 12px;
-
+        }
+        .panel-body {
             &::before {
                 display: none;
             }
@@ -7424,9 +7424,12 @@ button.btn.btn-primary.searchBtn:before {
     display: block;
 }
 
+.panel-body::after {
+    display: none;
+}
+
 .adminChangeBox {
     height: 310px;
-
     .select2-search span {
         width: 100% !important;
     }
