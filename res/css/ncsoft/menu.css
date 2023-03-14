@@ -1775,9 +1775,6 @@ a.tree-toggle {
 .search-box-btn .keyword input::-moz-placeholder {
   color: #ccc;
 }
-.search-box-btn .keyword input:-ms-input-placeholder {
-  color: #ccc;
-}
 .search-box-btn .keyword input::placeholder {
   color: #ccc;
 }

@@ -397,9 +397,6 @@
   text-align: right;
   margin-bottom: 3px;
 }
-.topInfo .checkbox-inline:has(input:checked)::after {
-  background-image: url(/res/img/ncsoft/ic_range_dis.svg) !important;
-}
 
 .appliSelectWrap {
   display: flex;
