@@ -423,9 +423,9 @@ $leftSize : 216px;
         text-align: right;
         margin-bottom: 3px;
     }
-    .checkbox-inline:has(input:checked)::after {
-        background-image: url(/res/img/ncsoft/ic_range_dis.svg) !important;
-    }
+    // .checkbox-inline:has(input:checked)::after {
+    //     background-image: url(/res/img/ncsoft/ic_range_dis.svg) !important;
+    // }
 }
 
 
