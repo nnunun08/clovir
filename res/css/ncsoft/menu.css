@@ -147,8 +147,7 @@
   width: 40px;
   height: 40px;
   overflow: hidden;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 #openDashboardEdit {
@@ -228,7 +227,8 @@
   line-height: 24px;
 }
 
-#ribbon .breadcrumb, #ribbon .breadcrumb a {
+#ribbon .breadcrumb,
+#ribbon .breadcrumb a {
   color: #777 !important;
   text-decoration: none !important;
 }
@@ -271,6 +271,10 @@
 }
 
 #menu-button.menu-button-rotate i {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
@@ -834,9 +838,6 @@ a.tree-toggle {
   line-height: 24px;
 }
 
-.menu-layout-3 {
-  background: transparent;
-}
 .menu-layout-3 .main {
   display: block;
   margin: 0 auto;
@@ -856,17 +857,6 @@ a.tree-toggle {
 #topbar .topbar-ci {
   width: 250px;
   height: 50px;
-}
-
-.content-body {
-  margin-top: 130px;
-  position: relative;
-  height: 100%;
-  min-height: 805px;
-  margin: 0;
-  width: 100vw;
-  overflow: hidden;
-  min-width: unset;
 }
 
 .logout {
@@ -923,12 +913,14 @@ a.tree-toggle {
   line-height: 53px;
 }
 
-.nav-side-menu ul .sub-menu li, .nav-side-menu li .sub-menu li {
+.nav-side-menu ul .sub-menu li,
+.nav-side-menu li .sub-menu li {
   line-height: 45px;
   background: #2e3339;
 }
 
-.nav-side-menu ul.active > .sub-menu > li.no-active, .nav-side-menu li.active > .sub-menu > li.no-active {
+.nav-side-menu ul.active > .sub-menu > li.no-active,
+.nav-side-menu li.active > .sub-menu > li.no-active {
   background: #2e3339;
 }
 
@@ -976,7 +968,8 @@ a.tree-toggle {
   background-color: #545c65;
 }
 
-.nav-side-menu ul.active > .sub-menu > li.leaf.active > a, .nav-side-menu li.active > .sub-menu > li.leaf.active > a {
+.nav-side-menu ul.active > .sub-menu > li.leaf.active > a,
+.nav-side-menu li.active > .sub-menu > li.leaf.active > a {
   background: #545c65;
   color: white;
 }
@@ -992,11 +985,13 @@ a.tree-toggle {
   font-weight: 500;
 }
 
-.nav-side-menu ul.active > .sub-menu > li.active > a, .nav-side-menu li.active > .sub-menu > li.active > a {
+.nav-side-menu ul.active > .sub-menu > li.active > a,
+.nav-side-menu li.active > .sub-menu > li.active > a {
   color: white;
 }
 
-.nav-side-menu a:focus, .nav-side-menu a:hover {
+.nav-side-menu a:focus,
+.nav-side-menu a:hover {
   color: white !important;
 }
 
@@ -1440,7 +1435,8 @@ a.tree-toggle {
   opacity: 1;
 }
 
-.close:focus, .close:hover {
+.close:focus,
+.close:hover {
   opacity: 1;
 }
 
@@ -1494,83 +1490,6 @@ a.tree-toggle {
 
 .carousel-caption div {
   text-align: left;
-}
-
-#topIcon {
-  background-color: #FAFAFA;
-  padding: 24px 40px;
-}
-#topIcon .table_inner_icon.selected > div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-#topIcon .table_inner_icon.selected .userinfoName {
-  font-size: 16px;
-  margin: 0;
-  line-height: 24px;
-}
-#topIcon .table_inner_icon.selected #createServer_icon {
-  filter: unset;
-}
-#topIcon .row_flex_left {
-  flex: 1 0 auto;
-  display: flex;
-  justify-content: space-between;
-}
-#topIcon .topIconRight {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: flex-end;
-}
-#topIcon .topIconRight .row_flex {
-  display: block;
-  margin-right: 0;
-  flex: 0 0 auto;
-}
-#topIcon .topIconRight .table_inner_icon {
-  flex-direction: row;
-  align-items: center;
-  width: auto;
-  gap: 0;
-  padding: 16px;
-  padding-right: 8px;
-  height: 56px;
-}
-#topIcon .topIconRight .table_inner_icon .userinfoName {
-  flex: 1 0 auto;
-  margin-bottom: 0;
-  margin-right: 12px;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-}
-#topIcon .topIconRight .table_inner_icon .userinfoName::after {
-  content: "";
-  width: 1px;
-  height: 13px;
-  background-color: #ddd;
-  margin-left: 12px;
-}
-#topIcon .topIconRight .table_inner_icon .userinfoName span:first-child {
-  margin-left: 4px;
-}
-#topIcon .topIconRight .table_inner_icon .userinfoPay {
-  display: flex;
-  align-items: center;
-}
-#topIcon .topIconRight .table_inner_icon .userinfoPay .unit {
-  font-size: 14px;
-  color: #4A4A4A;
-  margin-right: 8px;
-}
-#topIcon .topIconRight .table_inner_icon .userinfoPay .unitValue {
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 24px;
-  color: #006979;
-  margin-right: 8px;
 }
 
 #mainForm #header_detail {
@@ -1772,9 +1691,6 @@ a.tree-toggle {
   line-height: 19px;
   outline: none;
 }
-.search-box-btn .keyword input::-moz-placeholder {
-  color: #ccc;
-}
 .search-box-btn .keyword input::placeholder {
   color: #ccc;
 }
@@ -1793,10 +1709,6 @@ a.tree-toggle {
 
 #mainTable {
   width: 100%;
-}
-
-#content {
-  padding: 0;
 }
 
 .admin-content #ribbon {
