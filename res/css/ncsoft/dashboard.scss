@@ -1,0 +1,421 @@
+.selectDashboard > ul {
+		padding-top: 20px;
+}
+.selectDashboard{
+	display: inline-block;
+	position: fixed;
+	background: white;
+	width: 300px;
+	z-index: 999;
+	border: 1px solid;
+	right: 30px;
+	text-align: left;
+	text-overflow: ellipsis;
+   	white-space: nowrap;
+   	word-wrap: normal;
+       overflow: hidden;
+}
+.dashboardBtnArea > img {
+	width: 30px;
+	vertical-align: bottom;
+}
+.selectDashboard input[type="button"]{
+	background: none;
+	box-shadow: none;
+	border: none;
+}
+#team_area, .dc_area.hover {
+	position: absolute;
+	z-index: 99;
+	left: 15px;
+	top: 10px;
+}
+.dc_area {
+	max-width: 150px;
+   	margin-bottom: 10px;
+}
+#dashboardArea select, #dashboardArea option {
+	background: white;
+	font-size: 15px;
+	color: #908f8f !important;
+}
+.chart_area {
+	background: #f9f9f9;
+	box-shadow: 0 3px 4px #ddd;
+	position: relative;
+	transition: transform .2s ease-in-out;
+	-webkit-transition: -webkit-transform .2s ease-in-out;
+	-moz-transition: -moz-transform .2s ease-in-out;
+	-ms-transition: -ms-transform .2s ease-in-out;
+}
+.mainTitle{
+	height: 71px;
+ 	box-shadow: 0px 1px 0 0 rgba(0, 0, 0, 0.08);
+ 	background: white;
+}
+.mainTitle div{
+	padding: 15px;
+    font-size: 30px;
+}
+.noti_date {
+	font-size: 14px;
+	float: right;
+	color: #999999;
+	margin-right: 20px;
+}
+.circle-img {
+	margin-left: 5px;
+	/* position: absolute; */
+	vertical-align: middle;
+}
+.red {
+	background: red;
+}
+.chart_area > div > ul > li {
+	font-size: 16px;
+	height: 28px;
+	font-weight: 500;
+	list-style: none;
+}
+.red-text {
+	color : #e83c3c;
+}
+.yellow {
+	background: #fd9862;
+}
+.green {
+	background: #62ae91;
+}
+.vm_num {
+    color: black;
+    font-weight: bold;
+    padding-top: 2px;
+    border-radius: 50%;
+    margin-left: 3px;
+    width: 32px;
+    height: 32px;
+    font-size: 14px !important;
+    color: white;
+    /* padding: 5px; */
+    text-align: center;
+    padding-top: 5px;
+    display: inline-table;
+}
+
+#rsc_cnt_area .sm_panel_content
+{
+	margin-top: 20px;
+	text-align: center;
+	padding-left:15px;
+	padding-right:15px;
+}
+#req_cnt_area .sm_panel_content
+{
+	text-align: center;
+	margin: auto;
+	margin-top: 30px;
+	position : relative;
+	width: 460px;
+}
+.work_sm_val {
+	font-size: 30px;
+	font-weight: bold;
+	width: 40px;
+	display: inline-block;
+	text-align: center;
+}
+#ds_area {
+	background-color: #6489c2;
+}
+#vm_area {
+	background-color: #86b8eb;
+}
+#host_area {
+	background-color: #86d2eb;
+}
+#img_area {
+	background-color: #338ed9;
+}
+.sm_panel_title {
+	color: white;
+	float: left;
+	margin-left: 17px;
+	font-size: 12px;
+	font-weight: bold;
+
+}
+.panel_value {
+    /* margin: auto; */
+    float: right;
+    font-size: 22px;
+    /* width: 50px; */
+    color: white;
+    font-weight: bold;
+    margin-right: 10px;
+    /* margin-top: 10px; */
+}
+.sm_panel {
+	width: 165px;
+	display: inline-block;
+	margin-left: 5px;
+	border-radius: 10px;
+	margin-bottom: 7px;
+	text-align: center;
+	height: 133px;
+}
+.work_sm_title {
+	font-size: 17px;
+	font-weight: bold;
+	display: inline-block;
+	margin-left: 12px;
+	vertical-align: top;
+	cursor: pointer;
+}
+#req_cnt_area .req_cnt1
+{
+	display: inline-block;
+	position: absolute;
+    width: 165px;
+	color: white !important;
+	line-height: 30.5px;
+	text-align: left;
+}
+#req_cnt_area .req_cnt1 > a > span
+{
+	color: white !important;
+}
+.chart_area .panel-body
+{
+	background-color:white;
+	height: 348px;
+	overflow: hidden;
+}
+
+.panel-heading, .panel-heading > a, .dashboard_title {
+	font-size: 22px !important;
+	text-align: left;
+	padding-left: 10px;
+	padding-top: 5px;
+	color: #FFFFFF !important;
+	font-weight: 700;
+	padding-bottom: 5px;
+	background-color: rgb(71,78,105) !important;
+}
+
+.highcharts-title {
+	font-size: 18px !important;
+	text-align: left;
+	padding-left: 10px;
+	padding-top: 5px;
+	color: #333333 !important;
+	font-weight: 700;
+	padding-bottom: 5px;
+}
+.chart_area .chart
+{
+	height:350px
+}
+
+.panel-heading a
+{
+	color:#333;
+}
+.chart-width-subtitle
+{
+	margin-top:-20px; height:350px
+}
+
+
+#car_dept_stat_area {
+	text-align: center;
+	height: 805px;
+}
+#car_dept_stat_area #container {
+	text-align: center;
+	margin: auto;
+	display: inline-block;
+	position:relative;
+	margin-top: 10%;
+}
+#car_dept_stat_area > img {
+	position: absolute;
+	left: 15px;
+	width: calc(100% - 30px);
+	height: 100%;
+	z-index: 0;
+	margin-bottom: 150px;
+}
+#car_dept_stat_area #circle {
+	position: relative;
+}
+#car_dept_stat_area #circle > ul {
+	margin: none !important;
+}
+#car_dept_stat_area #circle > ul > li {
+	position: absolute;
+	list-style-type: none;
+	text-align: center;
+	color: #FFFFFF;
+}
+
+.delay {
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+#car_dept_stat_area #circle > ul > li > span {
+	display: inline-block;
+	margin-top: -10px;
+	width: 100%;
+	text-align: center;
+}
+
+#car_dept_stat_area #circle > ul > li > div {
+	width: 50px;
+	height: 50px;
+	list-style-type: none;
+	text-align: center;
+	display: block;
+	margin: auto;
+	border-radius: 50%;
+	background: rgba(225,225,225, 0.4);
+}
+
+#car_dept_stat_area #circle > ul > li > div > img {
+	width: 30px;
+	height: 30px;
+	margin-top: 9px;
+}
+
+#car_dept_stat_area #circle > ul > li.selected > div {
+	width: 80px;
+	height: 80px;
+}
+
+#car_dept_stat_area #circle > ul > li.selected > div > img {
+	width: 50px;
+	height: 50px;
+	margin-top: 13px;
+}
+
+#car_dept_stat_area .dashboard_title {
+	z-index: 1;
+	position: relative;
+}
+
+#car_dept_stat_area .center {
+	position:absolute;
+	top: 90px;
+	left: 90px;
+	width: 370px;
+	height: 320px;
+	background: rgba(19, 37, 65, 0.9);
+	box-shadow: 0px 18px 81px 0 rgba(0, 0, 0, 0.8);
+}
+
+#car_dept_stat_area .center .btn_area {
+	height: 30px;
+}
+
+#car_dept_stat_area .center .chart {
+	height: calc(100% - 30px);
+}
+
+#car_dept_stat_area .center .chart > div{
+	height: 49%;
+	width: 49%;
+	display: inline-block;
+}
+
+#car_dept_stat_area .center .btn_area > input {
+	height: 100%;
+	background: none;
+	border: none;
+	color: #FFFFFF;
+	font-weight: bold;
+	float: left;
+}
+
+#car_dept_stat_area .center .chart rect.highcharts-background {
+	fill: rgba(255,255,255,0) !important;
+}
+.req_img{
+	margin-left: 4px;
+}
+.textleft {
+    text-align: left;
+    color: #3c404a;
+    width: 100px !important;
+    max-width: 100px !important;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+/*
+car_dept_stat_area css end
+*/
+.stat_charts .chart {
+	margin: 5px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background: white;
+    height: 425px;
+}
+.chart_title {
+    font-size: 18px !important;
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 5px;
+    color: #333333 !important;
+    font-weight: 700;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.metric_num {
+    text-align: center;
+    font-size: 90px;
+    font-weight: bolder;
+    line-height: 1;
+    margin-top: 20px;
+    font-family: sans-serif;
+}
+
+.metric_text {
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.filterLabelSelect{
+    padding: 10px;
+}
+.apply_btn{
+    border-radius: 5px;
+    background-color: #006BB4;
+    border: 1px solid #006BB4 !important;
+    height: 40px;
+    font-weight: bolder;
+    color: #FFF;
+    width: 140px;
+    font-size: 16px;
+    margin-right: 30px;
+}
+.clear_btn{
+    color: #006bb4;
+    font-weight: bolder;
+    background-color: white;
+    border-color: white !important;
+    border: none;
+}
+.filter_btn{
+	margin-top: 10px;
+    font-size: 16px;
+}
+.reqDisplay.green{
+	background-color: #00AC4F;
+	border: 1px solid #00AC4F;
+	height: 100%;
+}

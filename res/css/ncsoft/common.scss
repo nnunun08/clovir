@@ -1,3 +1,25 @@
+@mixin breadcrumb {
+    .breadcrumb {
+            display: flex;
+        li {
+            display: inline-flex;
+            align-items: center;
+            font-size: 10px;
+            line-height: 14px;
+            text-align: right;
+            color: #4A4A4A;
+        }
+        li + li::before {
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background: url(/res/img/ncsoft/ic_breadcrumb_arr.svg) center/cover no-repeat;
+        }
+    }
+}
+@include breadcrumb;
+
 
 @mixin navTab {
     .nav-tabs {
@@ -5344,21 +5366,7 @@ button.btn.btn-primary.searchBtn:before {
     margin-top: -5px;
 }
 
-#firstMenu .sub_menu {
-    padding-left: 20px;
-    padding-right: 20px;
-    display: inline-block;
-    height: 50px;
-    padding-top: 15px;
-    text-align: center;
-    min-width: 120px;
-}
 
-#firstMenu .sub_menu a {
-    font-size: 14px;
-    color: white;
-    font-weight: bold;
-}
 
 .sub_menu.selected {
     background-color: #0C4DA2;
@@ -5366,24 +5374,12 @@ button.btn.btn-primary.searchBtn:before {
 
 
 
-.firstMenu {
-    width: 100%;
-    margin: 0 auto;
-    height: 50px;
-    position: absolute;
-    top: 80px;
-    background-color: #3c404a;
-    z-index: 900;
-    min-width: 1200px;
-}
 
 
 
-#topMenu {
-    width: 1280px;
-    margin: 0 auto;
-    position: relative;
-}
+
+
+
 
 .topLogo {
     display: inline-block;
@@ -5393,9 +5389,7 @@ button.btn.btn-primary.searchBtn:before {
     cursor: pointer;
 }
 
-#firstMenu {
-    display: inline-block;
-}
+
 
 .rightMenu {
     display: inline-block;
@@ -5647,6 +5641,17 @@ button.btn.btn-primary.searchBtn:before {
     align-items: center;
 }
 
+.ag-theme-fresh .ag-cell-focus {
+    border-right: none;
+    padding-top: 0 !important;
+    font-size: 12px;
+    color: #000000;
+    letter-spacing: normal;
+    text-align: center;
+    a {
+        color:inherit;
+    }
+}
 .ag-row .ag-cell>*,
 .ag-row .ag-cell>span {
     text-overflow: ellipsis;
@@ -5800,7 +5805,17 @@ button.btn.btn-primary.searchBtn:before {
     text-indent: -9999px;
     background: url(/res/img/ncsoft/ic_pagination-move2.svg) center/cover no-repeat;
 }
-
+.layout_flex {
+    .row_flex_left {
+        .table_inner_icon {
+            .value {
+                min-width: 27px;
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+}
 /*userMonitor_header*/
 .table_inner_icon {
     box-sizing: border-box;
@@ -6418,7 +6433,14 @@ button.btn.btn-primary.searchBtn:before {
 #filter_popup_form>div {
     text-align: left;
 }
-
+#filter_popup {
+    .modal-footer {
+        margin-top: 20px;
+        > span {
+            width: 100%;
+        }
+    }
+}
 .filter_popup {
     .modal-footer {
         position: relative;
@@ -6486,7 +6508,7 @@ button.btn.btn-primary.searchBtn:before {
 
     .resetBtn {
         background: url(/res/img/ncsoft/ic_filter_reset.svg) center 12.5px no-repeat;
-        padding-top: 28.5px;
+        padding-top: 28.5px !important;
         background-color: #F9FDFD !important;
         border: 1px solid #E2EFEF;
         min-width: unset;
@@ -6561,13 +6583,7 @@ button.btn.btn-primary.searchBtn:before {
     opacity: 1;
 }
 
-// 어드민 작업을 위한 임시 
-.admin-content {
-    width: calc(100% - 285px) !important;
-    float: right;
-}
 
-//
 
 
 .checkBox {
@@ -6674,7 +6690,10 @@ button.btn.btn-primary.searchBtn:before {
 
     .output {
         width: calc(100% - $thWidth);
-        padding-left: $thWidth;
+        padding-left: $thWidth + 4px;
+        padding-right: 4px;
+        padding-top: 4px;
+        padding-bottom: 4px;
         text-align: center;
         display: flex;
         align-items: center;
@@ -6689,6 +6708,13 @@ button.btn.btn-primary.searchBtn:before {
         min-height: 48px;
         height: auto;
         flex: 1 0 auto;
+        flex-wrap: wrap;
+        white-space: normal;
+
+        &.textLeft {
+            justify-content: flex-start;
+            text-align: left;
+        }
     }
 
     .resourceDiv .fm-output {
@@ -7132,12 +7158,11 @@ button.btn.btn-primary.searchBtn:before {
         position: relative;
         margin-top: 40px;
     }
-
     .range-radio {
         justify-content: space-between;
-
         .rangeInput {
             margin: 0;
+            margin-left: 20px;
         }
     }
 }
@@ -7405,12 +7430,14 @@ button.btn.btn-primary.searchBtn:before {
         .row_flex {
             margin-right: 0;
             display: block;
+            flex: 0 0 auto;
             .table_inner_icon {
                 border-radius:0;
                 border-left: 0;
             }
             &:first-child .table_inner_icon {
                 border-radius: 16px 0 0 16px;
+                border-left: 1px solid #eee;
             }
             &:last-child .table_inner_icon {
                 border-radius: 0 16px 16px 0;
@@ -7511,5 +7538,116 @@ button.btn.btn-primary.searchBtn:before {
                 }
             }
         }
+    }
+}
+
+
+#connectBtn {
+    gap: 4px;
+}
+
+.firstMenu {
+    flex: 1 0 auto;
+    margin-left: 104px;
+    #firstMenu {
+        display: inline-block;
+        .sub_menu {
+            display: inline-block;
+            margin-right: 32px;
+            &.selected {
+                background-color: transparent;
+                a {
+                    color: #006979;
+                }
+            }
+            a {
+                font-size: 20px;
+                font-weight: bold;
+                color: #2C2C2C;
+            }
+        }
+    } 
+    
+}
+
+
+.menu-layout-3 .main.admin-content {
+    padding-left: 33px;
+    padding-right:40px;
+    width: calc(100% - 252px);
+    float: right;
+    box-sizing: border-box;
+    #ribbon {
+        background-color: transparent;
+    }
+    .navi {
+        position: relative;
+        margin-top: 32px;
+        padding-bottom: 22px;
+        @include breadcrumb;
+        .breadcrumb {
+            position: absolute;
+            right: 0;
+            top: 12px;
+            margin: 0;
+            padding: 0;
+            background-color: transparent;
+        }
+        h4 {
+            margin-top: 0;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 29px;
+            color: #000000;
+            margin-bottom: 0;
+        }
+        h6 {
+            margin: 0;
+        }
+    }
+
+    #search_area {
+        margin-bottom: 55px;
+        .panel-body {
+            padding: 0;
+            border: 1px solid #eee;
+            position: relative;
+            &::after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+            // .col {
+            //     width: 100%;
+            //     margin: 0;
+            //     $lableWidth: 120px;
+            //     > div {
+            //         position: relative;
+            //         padding-left: $lableWidth + 4px;
+            //     }
+            //     .control-label {
+            //         position: absolute;
+            //         top: 0;
+            //         left: 0;
+            //         width: $lableWidth;
+            //         height: 55px;
+            //         background: #FAFAFA;
+            //         display: flex;
+            //         justify-content: center;
+            //         align-items: center;
+            //     }
+            // }
+            // .btn_group {
+            //     width: 214px;
+            //     position: absolute;
+            //     top: 0;
+            //     right: 0;
+            //     height: 100%;
+            // }
+        }
+    }
+
+    #mainForm #input_area {
+        padding: 0;
     }
 }

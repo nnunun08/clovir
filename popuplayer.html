@@ -41,7 +41,7 @@
             </li>
           </ul>
           <div class="tab-content">
-            <div id="tab1" class="form-panel detail-panel tab-pane">
+            <div id="tab1" class="form-panel detail-panel tab-pane active">
               <div class="form-panel panel panel-default detail-panel">
                 <div class="panel-body">
                   <input id="D_VM_ID" name="VM_ID" type="hidden" value="S1601256415555700">
@@ -150,7 +150,9 @@
                   <div class="col col-sm-12 detailCMTDiv">
                     <div class="fm-output">
                       <label for="CMT" class="control-label grid-title value-title">설명</label>
-                      <div class="output hastitle">1.서버 용도 <br>
+                      <!-- evoke : 텍스트 좌측정렬이 필요한경우 div.output에 아래와 같이 .textLeft 추가해 주세요 -->
+                      <div class="output hastitle textLeft">
+                        1.서버 용도 <br>
                         <br>2.서비스 목적 <br>
                         <br>3.관련업무 <br>
                         <br>4.기타 <br>
@@ -160,7 +162,7 @@
                 </div>
               </div>
             </div>
-            <div id="tab4" class="form-panel detail-panel tab-pane  active">
+            <div id="tab4" class="form-panel detail-panel tab-pane">
                 <div class="btn_group">
                     <button type="button" title="엑셀다운로드" onclick="exportExcel_restore()" class="icon excelBtn"></button>
                 </div>
