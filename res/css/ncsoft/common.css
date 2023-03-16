@@ -495,7 +495,6 @@ marquee {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
@@ -796,10 +795,6 @@ marquee {
 }
 
 .popup_area .input::-moz-placeholder {
-  color: #ccc;
-}
-
-.popup_area .input:-ms-input-placeholder {
   color: #ccc;
 }
 
@@ -5595,10 +5590,11 @@ button.btn.btn-primary.searchBtn:before {
   background: url(/res/img/ncsoft/ic_pagination-move2.svg) center/cover no-repeat;
 }
 
-.layout_flex .row_flex_left .table_inner_icon .value {
-  min-width: 27px;
+.layout_flex .table_inner_icon .value {
+  min-width: 37px;
   display: flex;
   justify-content: center;
+  justify-content: flex-end;
 }
 
 /*userMonitor_header*/
@@ -6085,9 +6081,6 @@ button.btn.btn-primary.searchBtn:before {
   color: #4A4A4A;
 }
 .modal-body .select2-container--default .select2-search--inline .select2-search__field::-moz-placeholder {
-  color: #CCCCCC;
-}
-.modal-body .select2-container--default .select2-search--inline .select2-search__field:-ms-input-placeholder {
   color: #CCCCCC;
 }
 .modal-body .select2-container--default .select2-search--inline .select2-search__field::placeholder {
@@ -7011,6 +7004,7 @@ td:last-child {
   background-color: #FAFAFA;
   padding: 24px 40px;
   justify-content: flex-start;
+  justify-content: space-between;
 }
 #topIcon .row_flex_left {
   flex: 0 0 auto;

@@ -5806,15 +5806,16 @@ button.btn.btn-primary.searchBtn:before {
     background: url(/res/img/ncsoft/ic_pagination-move2.svg) center/cover no-repeat;
 }
 .layout_flex {
-    .row_flex_left {
-        .table_inner_icon {
-            .value {
-                min-width: 27px;
-                display: flex;
-                justify-content: center;
-            }
+    .table_inner_icon {
+        .value {
+            min-width: 37px;
+            display: flex;
+            justify-content: center;
+            justify-content: flex-end;
         }
     }
+    // .row_flex_left {
+    // }
 }
 /*userMonitor_header*/
 .table_inner_icon {
@@ -6315,6 +6316,8 @@ button.btn.btn-primary.searchBtn:before {
     .select2-container {
         width: 100%;
     }
+
+
 
     .select2-container--default .select2-selection--multiple {
         background: #FFFFFF;
@@ -7405,6 +7408,7 @@ button.btn.btn-primary.searchBtn:before {
     background-color: #FAFAFA;
     padding: 24px 40px;
     justify-content: flex-start;
+    justify-content: space-between;
     // .table_inner_icon.selected {
     //     >div {
     //         display: flex;
