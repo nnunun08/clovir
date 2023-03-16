@@ -30917,7 +30917,9 @@ height: 8px;
           <!--	서버 목록 조회 -->
           <div id="search_area" class="search-panel panel panel-default">
             <div class="panel-body">
-              <div class="col col-sm" style="width: 100%;">
+
+              <!-- evoke : inlineStyle 제거-->
+              <div class="col col-sm-6">
                 <span id="DATE_TMS" name="DATE_TMS">
                   <!---->
                   <div class="col-sub">
@@ -31091,7 +31093,8 @@ height: 8px;
                   </span>
                 </span>
               </div>
-              <div class="col col-sm" style="width: 224px;">
+              <!-- evoke : inlineStyle 제거-->
+              <div class="col col-sm-6">
                 <div>
                   <label for="S_TEAM_NM" class="control-label input-group-title grid-title value-title" style="float: left;">팀(조직)</label>
                   <div class="input-group">
@@ -31105,19 +31108,19 @@ height: 8px;
                 </div>
                 <input type="hidden" name="S_TEAM_CD" id="S_TEAM_CD">
               </div>
-              <div class="col col-sm">
+              <div class="col col-sm-6">
                 <div>
                   <label for="S_LOGIN_ID" class="control-label grid-title value-title">사번</label>
                   <input name="LOGIN_ID" id="S_LOGIN_ID" class="form-control input hastitle">
                 </div>
               </div>
-              <div class="col col-sm">
+              <div class="col col-sm-6">
                 <div>
                   <label for="S_USER_NAME" class="control-label grid-title value-title">사용자명</label>
                   <input name="USER_NAME" id="S_USER_NAME" class="form-control input hastitle">
                 </div>
               </div>
-              <div class="col col-sm">
+              <div class="col col-sm-6">
                 <div class="fm-select">
                   <label for="S_USER_TYPE" title="권한" class="control-label grid-title value-title">권한</label>
                   <select name="USER_TYPE" id="S_USER_TYPE" class="form-control input hastitle">
@@ -31128,7 +31131,7 @@ height: 8px;
                   </select>
                 </div>
               </div>
-              <div class="col col-sm">
+              <div class="col col-sm-6">
                 <div class="fm-select">
                   <label for="S_USE_YN" title="사용여부" class="control-label grid-title value-title">사용여부</label>
                   <select name="USE_YN" id="S_USE_YN" class="form-control input hastitle">
@@ -31143,7 +31146,7 @@ height: 8px;
               <div id="popup-button-html"></div>
             </div>
           </div>
-          <div id="input_area" class="fullGrid" style="height: 340px;">
+          <div id="input_area" class="fullGrid">
             <div class="table_title"> 건수 : <span id="mainTable_total">7</span>
               <div class="btn_group">
                 <button type="button" title="엑셀다운로드" onclick="exportExcel()" id="excelBtn" class="icon excelBtn"></button>
