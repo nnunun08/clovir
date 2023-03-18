@@ -1,3 +1,37 @@
+.main .ag-theme-fresh .ag-row-selected {
+    background-color: #F9FDFD !important;
+}
+.btn.active,
+.btn:active {
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+
+@mixin fileTree {
+    #fileTree.jstree-default {
+        .jstree-node,
+        .jstree-icon {
+            background-image: none;
+        }
+        .jstree-themeicon {
+            background: url(/res/img/ncsoft/icon_20_folder.svg) center/20px no-repeat;
+        }
+        .jstree-hovered,
+        .jstree-clicked {
+            // box-shadow: inset 0 0 1px #97D8D4;
+            box-shadow: none;
+            border: 1px solid #97D8D4;
+            background: #F9FDFD !important;
+            color: #4A4A4A !important;
+        }
+    } 
+}
+@include fileTree;
+
+
 @mixin breadcrumb {
     .breadcrumb {
             display: flex;
@@ -578,7 +612,9 @@ marquee {
     //     clear: both;
     // }
 }
-
+.ag-theme-fresh .ag-header-row {
+    border-bottom: 1px solid #ddd !important;
+}
 .ag-theme-fresh .ag-header-cell-resize {
     z-index: 3 !important;
 }
@@ -2845,12 +2881,31 @@ v .center>div>.panel_value {
 }
 
 
-
-
-
-.select2-container--default .select2-selection--single {
-    border: 1px solid #DDDDDD;
+.select2-container .select2-selection--single {
+    min-height: 40px;
 }
+
+
+.select2-container--default {
+    .select2-selection--single {
+        border: 1px solid #DDD;
+        .select2-selection__arrow {
+            width: 16px;
+            height: 16px;
+            background: url(/res/img/ncsoft/icon_16_dw.svg) center/cover no-repeat;
+            top: 11px;
+            right: 11px;
+            b {
+                display: none;
+            }
+        }
+    }
+    &.select2-container--open {
+        .select2-selection__arrow {
+            transform: rotate(180deg);
+        }
+    }
+} 
 
 
 .panel-body .input-group-btn {
@@ -5189,9 +5244,6 @@ v .center>div>.panel_value {
 
 .btn-primary:active:focus,
 .btn:active:focus {
-    /*background-color: #00AC4F;*/
-    font-weight: bold;
-    color: #00AC4F !important;
     outline: none;
 }
 
@@ -6075,7 +6127,7 @@ v .center>div>.panel_value {
     flex-grow: 0;
 }
 
-.nc_popup_btn {
+.content-body .main .nc_popup_btn {
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -6085,10 +6137,14 @@ v .center>div>.panel_value {
     background: #FFFFFF;
     border: 1px solid #DDDDDD;
     border-radius: 24px;
+    color: #2C2C2C !important;
+    font-weight: 400;
+    box-shadow: none;
 
     &.selected {
         background-color: #006979;
-        color: #fff;
+        color: #fff !important;
+        font-weight: bold;
         box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.12);
     }
 }
@@ -6829,26 +6885,6 @@ v .center>div>.panel_value {
     }
 }
 
-.nc_popup_style,
-#create_restore_form_popup {
-    .modal-content {
-        min-height: 826px;
-    }
-
-    .modal-header {
-        border-bottom: 0;
-        height: auto;
-
-        .modal-body {
-            padding-top: 40px;
-        }
-    }
-
-    .modal-dialog .detail-panel .panel-body .col {
-        padding: 32px;
-    }
-}
-
 // #vmExpire_popup,
 .popup_dialog {
     .inputValue {
@@ -7269,9 +7305,9 @@ v .center>div>.panel_value {
     display: block;
 }
 
-.panel-body::after {
-    display: none;
-}
+// .panel-body::after {
+//     display: none;
+// }
 
 .adminChangeBox {
     height: 310px;
@@ -7720,6 +7756,108 @@ v .center>div>.panel_value {
                 background: url(/res/img/ncsoft/icon_20_search_w.svg) center/cover no-repeat;
             }
         }
+    }
+}
+
+
+
+.new-target-btn{
+    background: #009D93;
+    border-radius: 4px;
+    color: #FFFFFF;
+    padding: 8px !important;
+    &:hover, 
+    &:focus{
+        color: #FFFFFF;
+    }
+  }
+
+.nc_popup_style {
+    .modal-content {
+        min-height: 826px;
+    }
+    .modal-header {
+        border-bottom: 0;
+        height: auto;
+        .modal-body {
+            padding-top: 40px;
+        }
+    }
+    .modal-dialog .detail-panel .panel-body .col {
+        padding: 32px;
+    }
+}
+
+// 팝업 : 서버복원
+#create_restore_form_popup {
+    .modal-header {
+        border-bottom: 0;
+    }
+    .modal-content {
+        min-height: 826px;
+    }
+    .modal-body {
+        padding-top: 0;
+        padding-bottom: 136px;
+    }
+    .modal-footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+    .col:has(#PARTIAL_NEW_RESTORE_DATE_ID, #NEW_RESTORE_DATE_ID) {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+    #restoreStep1 {
+    }
+    #restoreStep2 {
+        #inputBox {
+            .col:has(#fileTree, #fileTable) {
+                border: 0 !important;
+                .treeTitleBox {
+                    height: 49px;
+                    border-top: 1px solid #4A4A4A;
+                    border-bottom: 1px solid #ddd;
+                    background-color: #FAFAFA;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 12px;
+                    line-height: 17px;
+                    text-align: center;
+                    color: #2C2C2C;
+                }
+                #fileTree {
+                    border-bottom: 1px solid #ddd;
+                }
+            }
+            #selectedTable,
+            #fileTable {
+                i.fa {
+                    display: none;
+                }    
+            }
+            .col:has(#fileTable) {
+                padding-left: 20px;
+            }
+            .col-sm-12:has([onclick="addSelected()"]) {
+                border-top: 0 !important;
+                padding: 20px;
+            }
+            .col-sm-12:has(#selectedTable) {
+                padding: 32px;
+                border: 1px solid #eee !important;
+                border-radius: 12px;
+            }
+        }
+
+    }
+
+    .select2-container {
+        width: 360px !important;
     }
 }
 
