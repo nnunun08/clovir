@@ -31093,7 +31093,7 @@ height: 8px;
                   </span>
                 </span>
               </div>
-              <!-- evoke : inlineStyle 제거-->
+              <!-- evoke : inlineStyle 제거 -->
               <div class="col col-sm-6">
                 <div>
                   <label for="S_TEAM_NM" class="control-label input-group-title grid-title value-title" style="float: left;">팀(조직)</label>
@@ -31149,12 +31149,33 @@ height: 8px;
           <div id="input_area" class="fullGrid">
             <div class="table_title"> 건수 : <span id="mainTable_total">7</span>
               <div class="btn_group">
-                <button type="button" title="엑셀다운로드" onclick="exportExcel()" id="excelBtn" class="icon excelBtn"></button>
-                <button type="button" onclick="userCollect()" class="btn btn-primary btn contentsBtn etc" style="top: 0px;">수집</button>
-                <button type="button" onclick="passwordReset()" class="btn btn-primary btn contentsBtn etc" disabled="disabled" style="top: 0px;">비밀번호 초기화</button>
-                <button type="button" onclick="insertUser()" class="btn btn-primary btn contentsBtn new" style="top: 0px;">신규</button>
-                <button type="button" onclick="deleteUser()" class="btn btn-primary btn contentsBtn del" disabled="disabled" style="top: 0px;">삭제</button>
-                <button type="button" onclick="saveUser()" class="btn btn-primary btn contentsBtn save" style="top: 0px;">저장</button>
+                <button type="button" class="btn contentsBtn btn-primary selected">서버상태/IP Sync</button>
+                <button type="button" class="btn contentsBtn btn-primary">서버상태/IP Sync</button>
+                <button type="button" class="btn contentsBtn">일반버튼</button>
+                <button type="button" class="btn contentsBtn">메일재발송</button>
+                <div class="btn-group">
+                  <button id="vm_action_button" type="button" data-toggle="dropdown" class="btn contentsBtn dropdown" aria-expanded="false">
+                    서버관리
+                    <span class="caret"></span>
+                  </button>
+                  <ul role="menu" class="dropdown-menu execBtn">
+                    <li style="display: none;">
+                      <a href="#" onclick="powerAction('powerOn',this);return false">Start</a>
+                    </li>
+                    <li style="">
+                      <a href="#" onclick="powerAction('powerOff',this);return false">Stop</a>
+                    </li>
+                    <li style="">
+                      <a href="#" onclick="powerAction('reboot',this);return false">재시작</a>
+                    </li>
+                    <li style="">
+                      <a href="#" onclick="powerAction('suspend',this);return false">일시중지</a>
+                    </li>
+                    <li style="">
+                      <a href="#" onclick="powerAction('shutdownGuest',this);return false">시스템종료(Shutdown)</a>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
             <div id="mainTable" class="ag-theme-fresh" style="height: 300px;">
@@ -31570,13 +31591,13 @@ height: 8px;
             <div class="form-panel detail-panel panel panel-default">
               <div class="panel-body">
                 <input id="USER_ID" name="USER_ID" type="hidden">
-                <div class="col col-sm-6">
+                <div class="col col-sm-6 colTop">
                   <div required="required">
                     <label for="LOGIN_ID" class="control-label grid-title value-title">사번</label>
                     <input maxlength="30" placeholder="영숫자 특수문자(_.) 30자이내" name="LOGIN_ID" id="LOGIN_ID" class="form-control input hastitle">
                   </div>
                 </div>
-                <div class="col col-sm-6">
+                <div class="col col-sm-6 colTop">
                   <div required="required">
                     <label for="USER_NAME" class="control-label grid-title value-title">사용자명</label>
                     <input maxlength="10" name="USER_NAME" id="USER_NAME" class="form-control input hastitle">
@@ -31630,7 +31651,8 @@ height: 8px;
                 <div class="col col-sm-6">
                   <div class="fm-output">
                     <label for="LAST_ACCESS_TMS" class="control-label grid-title value-title">마지막접속일시</label>
-                    <div id="LAST_ACCESS_TMS" name="LAST_ACCESS_TMS" class="output  hastitle"></div>
+                    <!-- evoke : .output 클래쓰 제거 -->
+                    <div id="LAST_ACCESS_TMS" name="LAST_ACCESS_TMS" class="hastitle"></div>
                   </div>
                 </div>
               </div>

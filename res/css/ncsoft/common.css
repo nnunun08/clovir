@@ -1,6 +1,24 @@
 @charset "UTF-8";
 @import url(nanumsquareround.css);
 @import url(nanumgothic.css);
+select {
+  font-family: inherit; /* 폰트 상속 */
+  background: url(../img/btn-drop-arrow.svg) no-repeat 98% 50%;
+  /* 네이티브 화살표를 커스텀 화살표로 대체 */
+  -webkit-appearance: none;
+  /* 네이티브 외형 감추기 */
+  -moz-appearance: none;
+  appearance: none;
+  background: url(/res/img/ncsoft/icon_16_dw.svg) center right 12px/16px no-repeat;
+}
+
+Select::-ms-expand {
+  display: none; /* 화살표 없애기 for IE10, 11*/
+}
+
+.main .ag-theme-fresh .ag-root {
+  border-bottom: 0;
+}
 .main .ag-theme-fresh .ag-row-selected {
   background-color: #F9FDFD !important;
 }
@@ -11,6 +29,57 @@
   outline: 0;
   -webkit-box-shadow: none;
   box-shadow: none;
+}
+
+.detail-panel {
+  height: auto !important;
+  margin-bottom: 0;
+}
+.detail-panel .panel-body .col {
+  border-bottom: 0;
+}
+.detail-panel .panel-body .col > .fm-output {
+  display: flex;
+  align-items: flex-start;
+}
+.detail-panel .panel-body .col div:has(.control-label) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 0;
+  padding-left: 160px;
+  position: relative;
+  border-bottom: 1px solid #ddd;
+  border-top: 0;
+  min-height: 48px;
+}
+.detail-panel .panel-body .col div:has(.control-label)[required] .control-label::after {
+  content: "";
+  border-radius: 2px;
+  width: 4px;
+  height: 4px;
+  background-color: #C5003E;
+  margin-bottom: 13px;
+  margin-left: 2px;
+}
+.detail-panel .panel-body .col div:has(.control-label) label.control-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  height: 100%;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  text-align: center;
+  color: #2C2C2C;
+  min-width: unset;
+  background-color: #FAFAFA;
+  padding: 0 4px;
+  border-bottom: 1px solid #ddd;
 }
 
 #fileTree.jstree-default .jstree-node,
@@ -441,13 +510,28 @@ select {
 }
 
 .table_title {
-  margin: 13px;
-  height: 25px;
-  line-height: 25px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  color: #2C2C2C;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 20px;
 }
-
+.table_title #mainTable_total {
+  color: #00A3E0;
+  font-weight: bold;
+  margin-left: 2px;
+}
 .table_title .btn_group {
-  float: right;
+  display: flex;
+  justify-content: flex-end;
+  flex: 1 0 auto;
+  gap: 8px;
+}
+.table_title .btn_group input {
+  font-size: 14px;
 }
 
 .checkbox-inline {
@@ -572,12 +656,6 @@ marquee {
 
 #search_value {
   width: 100%;
-}
-
-.table_title .btn {
-  padding: 1px 3px;
-  border: 1px solid silver;
-  /*background-color: #bde2e5;*/
 }
 
 .extra_html label {
@@ -1068,7 +1146,6 @@ marquee {
   border: solid 1px #6e84a3 !important;
   background-color: #6e84a3;
 }
-
 .newBtn:hover {
   background-color: #4c668b;
   font-weight: bold;
@@ -1095,23 +1172,6 @@ marquee {
   width: auto;
   height: 26px;
   border-radius: 4.1px;
-  border: solid 1px #525b69 !important;
-  background-color: #ffffff;
-}
-
-.exeBtnx {
-  width: auto;
-  height: 26px;
-  border-radius: 4.1px;
-  border: solid 1px #525b69 !important;
-  background-color: #ffffff;
-}
-
-.fm-popup-button.update {
-  width: auto;
-  height: 26px;
-  border-radius: 4.1px;
-  color: #2e276c !important;
   border: solid 1px #525b69 !important;
   background-color: #ffffff;
 }
@@ -3501,26 +3561,6 @@ v .center > div > .panel_value {
   float: right !important;
 }
 
-.icon.excelBtn {
-  width: 30px;
-  height: 30px;
-  border-radius: 20px;
-  border: solid 1px #808080 !important;
-  background-image: url(/res/img/ncsoft/hynix/newHynix/shape-1537.png) !important;
-  background-color: #ffffff;
-  background-repeat: no-repeat;
-  background-position: center left;
-  background-position-x: 6px;
-  padding-left: 22px;
-  font-size: 14px;
-  font-weight: bolder;
-  color: #42a7f2;
-  position: relative;
-  float: right;
-  right: 20px;
-  bottom: 8px;
-}
-
 .layout.postion {
   position: relative;
   float: none;
@@ -3655,45 +3695,6 @@ v .center > div > .panel_value {
   margin-top: 15px;
 }
 
-.fm-popup-button.update {
-  width: auto;
-  min-width: 100px;
-  height: 30px;
-  border-radius: 20px;
-  margin-right: 10px;
-  font-size: 14px;
-  font-weight: bolder;
-  float: right;
-  position: relative;
-  right: 20px;
-  padding-left: 10px;
-  top: -9px;
-  padding-right: 10px;
-}
-
-.contentsBtn {
-  width: auto;
-  min-width: 100px;
-  height: 30px;
-  border-radius: 20px;
-  border: solid 1px #00AC4F !important;
-  margin-right: 10px;
-  padding-left: 10px !important;
-  padding-right: 10px !important;
-  font-size: 14px;
-  font-weight: bolder;
-  float: right;
-  position: relative;
-  right: 19px;
-  top: -9px;
-  background-color: #ffffff;
-  background-repeat: no-repeat;
-  background-position: center left;
-  background-position-x: 17px;
-  background-size: 18px;
-  background-position-y: 9px;
-}
-
 .detailBtn {
   position: absolute;
   top: 6px;
@@ -3793,19 +3794,6 @@ v .center > div > .panel_value {
 /* 	color: #42a7f2 !important; */
 /*     background-image: url(/res/img/ncsoft/hynix/newHynix/shape-1400.png) !important; */
 /* } */
-.contentsBtn.save {
-  color: #ffffff !important;
-  border: solid 1px #00AC4F !important;
-  background-color: #00AC4F;
-  /*     background-image: url(/res/img/ncsoft/hynix/newHynix/shape-2245.png) !important; */
-}
-
-.contentsBtn.del {
-  color: #00AC4F !important;
-  border: 1px solid #00AC4F !important;
-  /*     background-image: url(/res/img/ncsoft/hynix/newHynix/shape-1694.png) !important; */
-}
-
 .tabBtnImg.start {
   color: #42a7f2 !important;
   /*     background-image: url(/res/img/ncsoft/hynix/newHynix/shape-511.png) !important; */
@@ -3819,32 +3807,6 @@ v .center > div > .panel_value {
 .tabBtnImg.change {
   color: #42a7f2 !important;
   /*     background-image: url(/res/img/ncsoft/hynix/newHynix/shape-1695.png) !important; */
-}
-
-.contentsBtn.new {
-  border: solid 1px #757984 !important;
-  color: #ffffff !important;
-  background-color: #757984;
-  /* border: 1px solid #757984 !important;
-  color: #757984 !important; */
-  /*     background-image: url(/res/img/ncsoft/hynix/newHynix/shape-2250.png) !important; */
-}
-
-.contentsBtn.etc {
-  width: auto;
-  min-width: 100px;
-  height: 30px;
-  border-radius: 20px;
-  margin-right: 10px;
-  font-size: 14px;
-  font-weight: bolder;
-  float: right;
-  position: relative;
-  right: 20px;
-  padding-left: 10px;
-  top: -9px;
-  padding-right: 10px;
-  border: solid 1px #525b69 !important;
 }
 
 .tabBtnImg.collection {
@@ -3893,23 +3855,6 @@ v .center > div > .panel_value {
 .newBtn:hover {
   background-color: #757984;
   font-weight: bold;
-}
-
-.icon {
-  position: relative;
-  border: solid 1px #808080 !important;
-  background-color: #ffffff;
-  border-radius: 50% !important;
-  margin: 0px !important;
-  width: 31px;
-  padding-top: 5px !important;
-  height: 31px;
-  top: -8px;
-  right: 23px;
-}
-
-.table_title .btn_group input {
-  font-size: 14px;
 }
 
 #vmChartArea .termArea {
@@ -5473,6 +5418,7 @@ v .center > div > .panel_value {
   height: 300px;
   width: 100%;
   overflow: hidden;
+  margin-bottom: 80px;
 }
 
 .pagingDiv {
@@ -5515,6 +5461,7 @@ v .center > div > .panel_value {
   height: 24px;
   justify-content: center;
   margin-top: 34px;
+  margin-top: 13px;
 }
 
 .pageDiv {
@@ -6488,16 +6435,55 @@ v .center > div > .panel_value {
   background: #FAFAFA url(/res/img/ncsoft/ic_cvn.svg) center center no-repeat !important;
 }
 
-.detail-panel {
+#input_area .detail-panel {
   height: auto !important;
   margin-bottom: 0;
 }
-.detail-panel .panel-body .col {
+#input_area .detail-panel .panel-body .col {
   border-bottom: 0;
 }
-.detail-panel .panel-body .col > .fm-output {
+#input_area .detail-panel .panel-body .col > .fm-output {
   display: flex;
   align-items: flex-start;
+}
+#input_area .detail-panel .panel-body .col div:has(.control-label) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 0;
+  padding-left: 160px;
+  position: relative;
+  border-bottom: 1px solid #ddd;
+  border-top: 0;
+  min-height: 48px;
+}
+#input_area .detail-panel .panel-body .col div:has(.control-label)[required] .control-label::after {
+  content: "";
+  border-radius: 2px;
+  width: 4px;
+  height: 4px;
+  background-color: #C5003E;
+  margin-bottom: 13px;
+  margin-left: 2px;
+}
+#input_area .detail-panel .panel-body .col div:has(.control-label) label.control-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  height: 100%;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  text-align: center;
+  color: #2C2C2C;
+  min-width: unset;
+  background-color: #FAFAFA;
+  padding: 0 4px;
+  border-bottom: 1px solid #ddd;
 }
 
 .highcharts-container {
@@ -6960,14 +6946,16 @@ td:last-child {
 .menu-layout-3 .form-control {
   width: 128px;
   min-width: 100px;
-  height: 26px;
+  height: auto;
   padding: 0px 2px;
   border: none;
   box-shadow: none;
-  border: 1px solid #b5b5b5;
-  border-radius: 0px;
-  font-weight: bold;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-weight: 400;
   margin-right: -1px;
+  color: #4A4A4A;
+  padding: 10px 12px;
 }
 
 .menu-layout-3 .select2-container .select2-selection--single {
@@ -7189,6 +7177,16 @@ td:last-child {
   display: block;
   clear: both;
 }
+.menu-layout-3 .main.admin-content #search_area .form-control {
+  margin-left: 16px;
+  flex: 1 0 auto;
+  padding: 0 16px;
+  min-height: 32px;
+  font-size: 12px;
+}
+.menu-layout-3 .main.admin-content #search_area select.form-control {
+  background: url(/res/img/ncsoft/ic_dropDown.svg) center right 12px/16px no-repeat;
+}
 .menu-layout-3 .main.admin-content #mainForm #input_area {
   padding: 0;
 }
@@ -7234,8 +7232,7 @@ td:last-child {
 .search-panel .panel-body .col > div > * {
   margin: 0;
 }
-.search-panel .panel-body .col > span .control-label,
-.search-panel .panel-body .col > div .control-label {
+.search-panel .panel-body .col .control-label {
   position: absolute;
   top: 0;
   left: 0;
@@ -7251,6 +7248,9 @@ td:last-child {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.search-panel .panel-body .col .col-sub {
+  position: static;
 }
 .search-panel .col.btn_group.nomargin {
   position: absolute;
@@ -7370,4 +7370,45 @@ td:last-child {
 }
 #create_restore_form_popup .select2-container {
   width: 360px !important;
+}
+
+#vmExpire_popup_form img[src*="Rectangle83.png"] {
+  width: 100%;
+}
+
+.contentsBtn {
+  width: auto;
+  height: 36px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin: 0;
+  color: #2C2C2C;
+  border: solid 1px #eee;
+}
+.contentsBtn.dropdown .caret {
+  border: 0;
+  box-sizing: border-box;
+  width: 16px;
+  height: 16px;
+  background: url(/res/img/ncsoft/ic_dropDown.svg) center/cover no-repeat;
+  margin-top: -4px;
+  margin-right: -4px;
+  margin-left: 4px;
+}
+.contentsBtn.btn-primary {
+  padding-left: 26px;
+  padding-right: 26px;
+  color: #0B4D57 !important;
+  background: #EEF9F7 !important;
+  border: 1px solid #E5F3F2 !important;
+}
+.contentsBtn.btn-primary.selected {
+  font-weight: 700;
+  color: #FFFFFF !important;
+  background: #009D93 !important;
+  border: 2px solid #25B5AC !important;
 }/*# sourceMappingURL=common.css.map */

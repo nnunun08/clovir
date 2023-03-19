@@ -1,5 +1,28 @@
-.main .ag-theme-fresh .ag-row-selected {
-    background-color: #F9FDFD !important;
+// reset 
+
+select {
+    font-family: inherit;  /* 폰트 상속 */
+    background: url(../img/btn-drop-arrow.svg) no-repeat 98% 50%;
+    /* 네이티브 화살표를 커스텀 화살표로 대체 */
+    -webkit-appearance: none; 
+    /* 네이티브 외형 감추기 */
+    -moz-appearance: none;
+    appearance: none;
+    background: url(/res/img/ncsoft/icon_16_dw.svg) center right 12px/16px no-repeat;
+}
+Select::-ms-expand {
+    display: none;/* 화살표 없애기 for IE10, 11*/
+}
+
+
+// ag-theme-fresh override
+.main {
+    .ag-theme-fresh .ag-root {
+        border-bottom: 0;
+    }
+    .ag-theme-fresh .ag-row-selected {
+        background-color: #F9FDFD !important;
+    }
 }
 .btn.active,
 .btn:active {
@@ -9,6 +32,70 @@
     box-shadow: none;
 }
 
+@mixin detailPanel {
+    .detail-panel {
+        height: auto !important;
+        margin-bottom: 0;
+    
+        .panel-body {
+            .col {
+                border-bottom: 0;
+            }
+    
+            .col>.fm-output {
+                display: flex;
+                align-items: flex-start;
+            }
+    
+            // 테이블 tr & td
+            .col div:has(.control-label) {
+                $controlLabel: 160px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 4px 0;
+                padding-left: $controlLabel;
+                position: relative;
+                border-bottom: 1px solid #ddd;
+                border-top: 0;
+                min-height: 48px;
+    
+                // required
+                &[required] .control-label::after {
+                    content: "";
+                    border-radius: 2px;
+                    width: 4px;
+                    height: 4px;
+                    background-color: #C5003E;
+                    margin-bottom: 13px;
+                    margin-left: 2px;
+                }
+    
+                // 테이블 th
+                label.control-label {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: $controlLabel;
+                    height: 100%;
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 17px;
+                    text-align: center;
+                    color: #2C2C2C;
+                    min-width: unset;
+                    background-color: #FAFAFA;
+                    padding: 0 4px;
+                    border-bottom: 1px solid #ddd;
+                }            
+            }
+        }
+    }
+}
+@include detailPanel;
 
 @mixin fileTree {
     #fileTree.jstree-default {
@@ -499,15 +586,32 @@ select {
     margin-top: 10px;
 }
 
+// 어드민 그리드 타이틀
 .table_title {
-    margin: 13px;
-    height: 25px;
-    line-height: 25px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 17px;
+    color: #2C2C2C;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+    #mainTable_total {
+        color: #00A3E0;
+        font-weight: bold;
+        margin-left: 2px;
+    }
+    .btn_group {
+        display: flex;
+        justify-content: flex-end;
+        flex: 1 0 auto;
+        gap: 8px;
+        input {
+            font-size: 14px;
+        }
+    }
 }
 
-.table_title .btn_group {
-    float: right;
-}
 
 .checkbox-inline {
     margin-left: 0px !important;
@@ -647,14 +751,6 @@ marquee {
     width: 100%;
 }
 
-
-
-.table_title .btn {
-    padding: 1px 3px;
-    border: 1px solid silver;
-    /*background-color: #bde2e5;*/
-
-}
 
 
 .extra_html label {
@@ -1159,12 +1255,13 @@ marquee {
     border-radius: 4px;
     border: solid 1px #6e84a3 !important;
     background-color: #6e84a3;
+    &:hover {
+        background-color: #4c668b;
+        font-weight: bold;
+    }
 }
 
-.newBtn:hover {
-    background-color: #4c668b;
-    font-weight: bold;
-}
+
 
 .delBtn {
     width: auto;
@@ -1191,22 +1288,14 @@ marquee {
     background-color: #ffffff;
 }
 
-.exeBtnx {
-    width: auto;
-    height: 26px;
-    border-radius: 4.1px;
-    border: solid 1px #525b69 !important;
-    background-color: #ffffff;
-}
-
-.fm-popup-button.update {
-    width: auto;
-    height: 26px;
-    border-radius: 4.1px;
-    color: #2e276c !important;
-    border: solid 1px #525b69 !important;
-    background-color: #ffffff;
-}
+// .fm-popup-button.update {
+//     width: auto;
+//     height: 26px;
+//     border-radius: 4.1px;
+//     color: #2e276c !important;
+//     border: solid 1px #525b69 !important;
+//     background-color: #ffffff;
+// }
 
 .col.btn_group.rt {
     float: right;
@@ -3667,25 +3756,25 @@ v .center>div>.panel_value {
     float: right !important;
 }
 
-.icon.excelBtn {
-    width: 30px;
-    height: 30px;
-    border-radius: 20px;
-    border: solid 1px #808080 !important;
-    background-image: url(/res/img/ncsoft/hynix/newHynix/shape-1537.png) !important;
-    background-color: #ffffff;
-    background-repeat: no-repeat;
-    background-position: center left;
-    background-position-x: 6px;
-    padding-left: 22px;
-    font-size: 14px;
-    font-weight: bolder;
-    color: #42a7f2;
-    position: relative;
-    float: right;
-    right: 20px;
-    bottom: 8px;
-}
+// .icon.excelBtn {
+//     width: 30px;
+//     height: 30px;
+//     border-radius: 20px;
+//     border: solid 1px #808080 !important;
+//     background-image: url(/res/img/ncsoft/hynix/newHynix/shape-1537.png) !important;
+//     background-color: #ffffff;
+//     background-repeat: no-repeat;
+//     background-position: center left;
+//     background-position-x: 6px;
+//     padding-left: 22px;
+//     font-size: 14px;
+//     font-weight: bolder;
+//     color: #42a7f2;
+//     position: relative;
+//     float: right;
+//     right: 20px;
+//     bottom: 8px;
+// }
 
 .layout.postion {
     position: relative;
@@ -3823,44 +3912,21 @@ v .center>div>.panel_value {
     margin-top: 15px;
 }
 
-.fm-popup-button.update {
-    width: auto;
-    min-width: 100px;
-    height: 30px;
-    border-radius: 20px;
-    margin-right: 10px;
-    font-size: 14px;
-    font-weight: bolder;
-    float: right;
-    position: relative;
-    right: 20px;
-    padding-left: 10px;
-    top: -9px;
-    padding-right: 10px;
-}
-
-.contentsBtn {
-    width: auto;
-    min-width: 100px;
-    height: 30px;
-    border-radius: 20px;
-    border: solid 1px #00AC4F !important;
-    margin-right: 10px;
-    padding-left: 10px !important;
-    padding-right: 10px !important;
-    font-size: 14px;
-    font-weight: bolder;
-    float: right;
-    position: relative;
-    right: 19px;
-    top: -9px;
-    background-color: #ffffff;
-    background-repeat: no-repeat;
-    background-position: center left;
-    background-position-x: 17px;
-    background-size: 18px;
-    background-position-y: 9px;
-}
+// .fm-popup-button.update {
+//     width: auto;
+//     min-width: 100px;
+//     height: 30px;
+//     border-radius: 20px;
+//     margin-right: 10px;
+//     font-size: 14px;
+//     font-weight: bolder;
+//     float: right;
+//     position: relative;
+//     right: 20px;
+//     padding-left: 10px;
+//     top: -9px;
+//     padding-right: 10px;
+// }
 
 .detailBtn {
     position: absolute;
@@ -3964,18 +4030,6 @@ v .center>div>.panel_value {
 /* 	color: #42a7f2 !important; */
 /*     background-image: url(/res/img/ncsoft/hynix/newHynix/shape-1400.png) !important; */
 /* } */
-.contentsBtn.save {
-    color: #ffffff !important;
-    border: solid 1px #00AC4F !important;
-    background-color: #00AC4F;
-    /*     background-image: url(/res/img/ncsoft/hynix/newHynix/shape-2245.png) !important; */
-}
-
-.contentsBtn.del {
-    color: #00AC4F !important;
-    border: 1px solid #00AC4F !important;
-    /*     background-image: url(/res/img/ncsoft/hynix/newHynix/shape-1694.png) !important; */
-}
 
 .tabBtnImg.start {
     color: #42a7f2 !important;
@@ -3992,31 +4046,6 @@ v .center>div>.panel_value {
     /*     background-image: url(/res/img/ncsoft/hynix/newHynix/shape-1695.png) !important; */
 }
 
-.contentsBtn.new {
-    border: solid 1px #757984 !important;
-    color: #ffffff !important;
-    background-color: #757984;
-    /* border: 1px solid #757984 !important;
-    color: #757984 !important; */
-    /*     background-image: url(/res/img/ncsoft/hynix/newHynix/shape-2250.png) !important; */
-}
-
-.contentsBtn.etc {
-    width: auto;
-    min-width: 100px;
-    height: 30px;
-    border-radius: 20px;
-    margin-right: 10px;
-    font-size: 14px;
-    font-weight: bolder;
-    float: right;
-    position: relative;
-    right: 20px;
-    padding-left: 10px;
-    top: -9px;
-    padding-right: 10px;
-    border: solid 1px #525b69 !important;
-}
 
 .tabBtnImg.collection {
     border: solid 1px #757984 !important;
@@ -4066,22 +4095,20 @@ v .center>div>.panel_value {
     font-weight: bold;
 }
 
-.icon {
-    position: relative;
-    border: solid 1px #808080 !important;
-    background-color: #ffffff;
-    border-radius: 50% !important;
-    margin: 0px !important;
-    width: 31px;
-    padding-top: 5px !important;
-    height: 31px;
-    top: -8px;
-    right: 23px;
-}
+// .icon {
+//     position: relative;
+//     border: solid 1px #808080 !important;
+//     background-color: #ffffff;
+//     border-radius: 50% !important;
+//     margin: 0px !important;
+//     width: 31px;
+//     padding-top: 5px !important;
+//     height: 31px;
+//     top: -8px;
+//     right: 23px;
+// }
 
-.table_title .btn_group input {
-    font-size: 14px;
-}
+
 
 #vmChartArea .termArea {
     float: right;
@@ -5702,6 +5729,7 @@ v .center>div>.panel_value {
     height: 300px;
     width: 100%;
     overflow: hidden;
+    margin-bottom: 80px;
 }
 
 .pagingDiv {
@@ -5744,6 +5772,7 @@ v .center>div>.panel_value {
     height: 24px;
     justify-content: center;
     margin-top: 34px;
+    margin-top: 13px;
 }
 
 .pageDiv {
@@ -6834,23 +6863,11 @@ v .center>div>.panel_value {
     }
 }
 
-.detail-panel {
-    height: auto !important;
-    margin-bottom: 0;
-
-    .panel-body {
-        .col {
-            border-bottom: 0;
-        }
-
-        .col>.fm-output {
-            display: flex;
-            align-items: flex-start;
-        }
-    }
+#input_area {
+    @include detailPanel;
 }
 
-#vm_usage_bar {}
+
 
 .highcharts-container {
     width: 516px !important;
@@ -7378,15 +7395,17 @@ v .center>div>.panel_value {
 .menu-layout-3 .form-control {
     width: 128px;
     min-width: 100px;
-    height: 26px;
+    height: auto;
     // height: 24px;
     padding: 0px 2px;
     border: none;
     box-shadow: none;
-    border: 1px solid #b5b5b5;
-    border-radius: 0px;
-    font-weight: bold;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-weight: 400;
     margin-right: -1px;
+    color: #4A4A4A;
+    padding: 10px 12px;
 }
 
 .menu-layout-3 .select2-container .select2-selection--single {
@@ -7650,7 +7669,20 @@ v .center>div>.panel_value {
             //     right: 0;
             //     height: 100%;
             // }
+
+
         }
+        .form-control {
+            margin-left: 16px;
+            flex: 1 0 auto;
+            padding: 0 16px;
+            min-height: 32px;
+            font-size: 12px;
+        }
+        select.form-control {
+            background: url(/res/img/ncsoft/ic_dropDown.svg) center right 12px/16px no-repeat;
+        }
+        
     }
 
     #mainForm #input_area {
@@ -7684,6 +7716,8 @@ v .center>div>.panel_value {
             margin: 0;
             padding: 0;
             $thWidth : 120px;
+            
+
             > span,
             > div {
                 display: flex;
@@ -7702,23 +7736,26 @@ v .center>div>.panel_value {
                 > * {
                     margin: 0;
                 }
-                .control-label  {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: $thWidth;
-                    background-color: #FAFAFA;
-                    height: 100%;
-                    font-weight: 400;
-                    font-size: 12px;
-                    line-height: 17px;
-                    text-align: center;
-                    color: #2C2C2C;
-                    margin: 0;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
+            }
+            .control-label  {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: $thWidth;
+                background-color: #FAFAFA;
+                height: 100%;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 17px;
+                text-align: center;
+                color: #2C2C2C;
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .col-sub {
+                position: static;
             }
         }
     }
@@ -7861,3 +7898,83 @@ v .center>div>.panel_value {
     }
 }
 
+
+
+#vmExpire_popup_form {
+    img[src*="Rectangle83.png"] {
+        width: 100%;
+    }
+}
+
+
+// .table_title .btn {
+//     padding: 1px 3px;
+//     border: 1px solid silver;
+//     /*background-color: #bde2e5;*/
+
+// }
+
+// 어드민 그리드 상단 버튼 
+.contentsBtn {
+    width: auto;
+    // min-width: 100px;
+    height: 36px;
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 17px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin: 0;
+    color: #2C2C2C;
+    border: solid 1px #eee;
+    &.dropdown {
+        .caret {
+            border: 0;
+            box-sizing: border-box;
+            width: 16px;
+            height: 16px;
+            background: url(/res/img/ncsoft/ic_dropDown.svg) center/cover no-repeat;
+            margin-top: -4px;
+            margin-right: -4px;
+            margin-left: 4px;
+        }
+    }
+    &.btn-primary {
+        padding-left: 26px;
+        padding-right: 26px;
+        color: #0B4D57 !important;
+        background: #EEF9F7 !important;
+        border: 1px solid #E5F3F2 !important;
+        &.selected {
+            font-weight: 700;
+            color: #FFFFFF !important;
+            background: #009D93 !important;
+            border: 2px solid #25B5AC !important;
+        }
+    }
+    &.new {
+        // border: solid 1px #757984 !important;
+        // color: #ffffff !important;
+        // background-color: #757984;
+        // border: 1px solid #757984 !important;
+        // color: #757984 !important;
+        // background-image: url(/res/img/ncsoft/hynix/newHynix/shape-2250.png) !important;
+    }
+    &.save {
+        // color: #ffffff !important;
+        // border: solid 1px #00AC4F !important;
+        // background-color: #00AC4F;
+        // background-image: url(/res/img/ncsoft/hynix/newHynix/shape-2245.png) !important;
+    }
+    &.del {
+        // color: #00AC4F !important;
+        // border: 1px solid #00AC4F !important;
+        // background-image: url(/res/img/ncsoft/hynix/newHynix/shape-1694.png) !important;
+    }
+    &#get_vm_form_popup_button {
+
+    }
+}
+    
+ 
