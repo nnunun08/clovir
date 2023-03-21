@@ -646,6 +646,21 @@
                                                         </div>
                                                     </div>
 
+                                                    <div class="col col-sm-12 count_vm-area">
+                                                        <div id="count_vm-option">
+                                                          <label for="count_vm" class="control-label grid-title value-title stepLabel ">서버 개수</label>
+    
+                                                          <!-- evoke : .range-slider-container width 조절 필요할 시 inline으로 처리 부탁드립니다. -->
+                                                          <div data-id="count_vm" value="1" id="count_vm_div" class="input hastitle stepSelect range-slider-container">
+                                                            <div class="range-slider" style="--max:10; --min:1; --step:1; --value:2; --text-value:&quot;2&quot;; --fill-color:#009D93; --primary-color:#64BCEA;">
+                                                              <input id="count_vm_div_range" name="count_vm_div_range" min="1" type="range" max="10" step="1" class="range" value="1" style="text-indent: -10000px; --primary-color:#64BCEA; --fill-color:#009D93;width: 100%;">
+                                                              <div class="range-slider__progress"></div>
+                                                            </div>
+                                                            <input type="number" class="rangeInput" readonly="readonly" id="count_vm">
+                                                          </div>
+                                                        </div>
+                                                      </div>
+
                                                     <div class="col col-sm-12input_vm_name-area">
                                                         <div id="input_vm_name-option" class="rowDiv">
                                                             <label for="input_vm_name" class="control-label stepLabel ">input_vm_name</label>

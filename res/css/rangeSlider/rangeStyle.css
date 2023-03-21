@@ -223,7 +223,6 @@
   position: absolute;
   left: 0;
   top: calc(50% - max(var(--track-height), var(--thumb-size)) / 2 + var(--ticks-gap) / 2 * var(--flip-y, -1));
-  cursor: -webkit-grab;
   cursor: grab;
   outline: none;
   background: none;
@@ -287,7 +286,6 @@
 
 .range-slider > input.range:active {
   --thumb-shadow: var(--thumb-shadow-active);
-  cursor: -webkit-grabbing;
   cursor: grabbing;
   z-index: 2;
 }
@@ -342,6 +340,7 @@ label[dir=rtl] .range-slider {
 
 .range-slider-container {
   position: relative;
+  width: 100%;
 }
 
 /* radio */
@@ -383,7 +382,6 @@ label[dir=rtl] .range-slider {
   height: 50px;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
@@ -404,7 +402,6 @@ label[dir=rtl] .range-slider {
   flex: 1;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   cursor: pointer;
 }
@@ -416,7 +413,6 @@ label[dir=rtl] .range-slider {
   height: 100%;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
@@ -445,7 +441,6 @@ label[dir=rtl] .range-slider {
   pointer-events: none;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   z-index: 1;
   cursor: pointer;
@@ -753,7 +748,6 @@ label[dir=rtl] .range-slider {
   position: absolute;
   left: 0;
   top: calc(50% - max(var(--track-height), var(--thumb-size)) / 2 + var(--ticks-gap) / 2 * var(--flip-y, -1));
-  cursor: -webkit-grab;
   cursor: grab;
   outline: none;
   background: none;
@@ -817,7 +811,6 @@ label[dir=rtl] .range-slider {
 
 .range-slider > input.range:active {
   --thumb-shadow: var(--thumb-shadow-active);
-  cursor: -webkit-grabbing;
   cursor: grabbing;
   z-index: 2;
 }
@@ -920,7 +913,6 @@ label[dir=rtl] .range-slider {
   height: 50px;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
@@ -941,7 +933,6 @@ label[dir=rtl] .range-slider {
   flex: 1;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   cursor: pointer;
 }
@@ -953,7 +944,6 @@ label[dir=rtl] .range-slider {
   height: 100%;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
@@ -981,7 +971,6 @@ label[dir=rtl] .range-slider {
   pointer-events: none;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   z-index: 1;
   cursor: pointer;

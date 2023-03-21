@@ -1510,7 +1510,7 @@ a.tree-toggle {
   border: 1px solid #DDDDDD;
   border-radius: 4px;
   height: 40px;
-  padding: 0 0 0 12px;
+  padding: 0;
   position: relative;
 }
 .search-box-btn .keyword {
@@ -1528,9 +1528,6 @@ a.tree-toggle {
   outline: none;
 }
 .search-box-btn .keyword input::-moz-placeholder {
-  color: #ccc;
-}
-.search-box-btn .keyword input:-ms-input-placeholder {
   color: #ccc;
 }
 .search-box-btn .keyword input::placeholder {
