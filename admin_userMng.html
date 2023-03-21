@@ -30368,7 +30368,8 @@ height: 8px;
       </div>
     </div>
   </div>
-  <div class="left_show displayNone" onclick="left_show();"></div>
+  <!-- evoke : .left_show 에 displayNone 제거 부탁드립니다.  -->
+  <div class="left_show" onclick="left_show();"></div>
   <div id="help" class="modal fade" role="dialog">
     <div class="modal-dialog ui-draggable" style="width:300px">
       <div class="modal-header ui-draggable-handle">
@@ -31149,6 +31150,7 @@ height: 8px;
           <div id="input_area" class="fullGrid">
             <div class="table_title"> 건수 : <span id="mainTable_total">7</span>
               <div class="btn_group">
+                <button type="button" title="엑셀다운로드" onclick="exportExcel()" id="excelBtn" class="icon excelBtn"></button>
                 <button type="button" class="btn contentsBtn btn-primary selected">서버상태/IP Sync</button>
                 <button type="button" class="btn contentsBtn btn-primary">서버상태/IP Sync</button>
                 <button type="button" class="btn contentsBtn">일반버튼</button>

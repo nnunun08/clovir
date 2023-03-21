@@ -38,6 +38,7 @@ Select::-ms-expand {
     outline: 0;
     -webkit-box-shadow: none;
     box-shadow: none;
+    
 }
 
 @mixin detailPanel {
@@ -637,6 +638,7 @@ select {
     .btn_group {
         display: flex;
         justify-content: flex-end;
+        align-items: center;
         flex: 1 0 auto;
         gap: 8px;
         input {
@@ -1252,17 +1254,11 @@ marquee {
 }
 
 .excelBtn {
-    width: 34px;
-    float: right;
-    height: 34px;
-    border: solid 1px #dddddd;
-    background-color: #f0f0f0;
-    border-radius: 50%;
-    background-image: url(/res/img/ncsoft/icon_excel_down.png) !important;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 16px;
-    margin-left: 5px;
+    width: 40px;
+    height: 28px;
+    border: solid 1px #eee;
+    border-radius: 4px;
+    background: #fafafa url(/res/img/ncsoft/ic_cvn.svg) center no-repeat;
 }
 
 .reloadBtn {
@@ -1728,15 +1724,14 @@ marquee {
     top: -1px;
 }
 
-.icon {
-    position: relative;
-    width: 34px;
-    border: solid 1px #dddddd !important;
-    background-color: #f0f0f0;
-    height: 34px;
-    border-radius: 50% !important;
-    margin: 0px !important;
-}
+// .icon {
+//     position: relative;
+//     width: 34px;
+//     border: solid 1px #dddddd !important;
+//     background-color: #f0f0f0;
+//     height: 34px;
+//     margin: 0px !important;
+// }
 
 .chg {
     color: blue;
@@ -3815,10 +3810,10 @@ v .center>div>.panel_value {
 }
 
 .table_title.layout {
-    background-color: #ffffff;
-    margin: 0px;
-    height: 60px;
-    border-bottom: 1px solid #d6d7d8;
+    // background-color: #ffffff;
+    // margin: 0px;
+    // height: 60px;
+    // border-bottom: 1px solid #d6d7d8;
 }
 
 .table_title.layout.top {
@@ -6783,7 +6778,7 @@ v .center>div>.panel_value {
         // min-height: 48px;
 
         &.textLeft {
-            justify-content: flex-start;
+            justify-content: flex-start !important;
             text-align: left;
         }
     }
@@ -6894,8 +6889,8 @@ v .center>div>.panel_value {
 
 
 .highcharts-container {
-    width: 516px !important;
-    height: 282px !important;
+    // width: 516px !important;
+    // height: 282px !important;
     margin: 0 auto;
     margin-top: 36px;
 
@@ -7649,12 +7644,16 @@ v .center>div>.panel_value {
 
 
 .menu-layout-3 .main.admin-content {
+    $GNBHeight : 82px;
+
     padding-left: 33px;
     padding-right:40px;
     width: calc(100% - 252px);
     float: right;
     box-sizing: border-box;
-    border-left: 1px solid #ddd;
+    height: calc(100vh - $GNBHeight);
+    overflow: auto;
+    // border-left: 1px solid #ddd;
     #ribbon {
         background-color: transparent;
     }
@@ -8060,4 +8059,8 @@ v .center>div>.panel_value {
             margin-top: -1px;
         }
     }
+}
+
+.nav-tabs.vmDetailTab {
+    padding: 0 0 24px;
 }

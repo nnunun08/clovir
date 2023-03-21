@@ -147,8 +147,7 @@
   width: 40px;
   height: 40px;
   overflow: hidden;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 #openDashboardEdit {
@@ -262,6 +261,10 @@
 }
 
 #menu-button.menu-button-rotate i {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
@@ -1526,9 +1529,7 @@ a.tree-toggle {
   font-size: 14px;
   line-height: 19px;
   outline: none;
-}
-.search-box-btn .keyword input::-moz-placeholder {
-  color: #ccc;
+  background-color: transparent;
 }
 .search-box-btn .keyword input::placeholder {
   color: #ccc;
@@ -1552,7 +1553,7 @@ a.tree-toggle {
 
 #left_menu {
   width: 253px;
-  height: 100%;
+  height: calc(100vh - 82px);
   display: inline-block;
   position: relative;
   background-color: #fff;
@@ -1562,11 +1563,8 @@ a.tree-toggle {
 #left_menu .sub_menu {
   padding: 10px;
 }
-#left_menu .sub_menu.selected {
-  color: #0B4D57;
-}
 #left_menu .sub_menu.selected a {
-  color: white;
+  color: #009D93;
 }
 #left_menu .title {
   width: 100%;
@@ -1592,16 +1590,6 @@ a.tree-toggle {
   background: url(/res/img/ncsoft/icon_16_dw.svg) center/cover no-repeat;
   transform: rotate(-90deg);
 }
-#left_menu2 .child.selected {
-  color: #0B4D57;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 20px;
-}
-#left_menu2 .child.selected:after {
-  background: url(/res/img/ncsoft/ic_leftMenu_arr01.svg) center/cover no-repeat;
-  transform: rotate(0);
-}
 #left_menu2 > .sub_menu {
   padding: 20px 10px 20px 60px !important;
   border-bottom: 1px solid #ddd;
@@ -1620,7 +1608,7 @@ a.tree-toggle {
   line-height: 20px;
   color: #000000;
 }
-#left_menu2 .sub_menu a {
+#left_menu2 #left_menu3 a {
   font-weight: 400;
   font-size: 12px;
   line-height: 17px;
@@ -1663,7 +1651,7 @@ a.tree-toggle {
   cursor: pointer;
   position: absolute;
   top: 93px;
-  right: -25px;
+  right: -24px;
 }
 
 .left_show {
