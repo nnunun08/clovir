@@ -171,11 +171,15 @@ $leftSize : 216px;
                 background: transparent;
                 border: 1px solid #DDDDDD;
                 border-radius: 4px;
-                &:read-only {
-                    border-color: #eee;
-                    background-color: #FAFAFA;
-                    color: #4A4A4A;
-                }
+                line-height: 1;
+                // &:read-only {
+                //     border-color: #eee;
+                //     background-color: #FAFAFA;
+                //     color: #4A4A4A;
+                // }
+            }
+            select.form-control {
+                background: url(../../res/img/ncsoft/icon_16_dw.svg) center right 12px/16px no-repeat;
             }
         }
         .diskSelect {
@@ -227,6 +231,7 @@ $leftSize : 216px;
             border: #25B5AC 1px solid;
             border-radius: 16px;
             padding: 29px 24px;
+            cursor: pointer;
             &.selected {
                 background-color: #E5F3F2;
                 border: 1px solid #97D8D4;

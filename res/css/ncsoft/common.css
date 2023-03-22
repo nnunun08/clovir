@@ -36,6 +36,7 @@ Select::-ms-expand {
 .btn:active {
   background-image: none;
   outline: 0;
+  -webkit-box-shadow: none;
   box-shadow: none;
 }
 
@@ -262,7 +263,6 @@ body {
 }
 
 .tilt {
-  vertical-align: top;
   width: 15px;
   text-align: center;
 }
@@ -505,8 +505,10 @@ div[required=required] label.value-title:after {
 
 .search-panel .input-group {
   display: inline-table;
-  width: 70%;
   /*margin-left: 10px;*/
+}
+.search-panel .input-group:has(.fa-search) {
+  width: auto;
 }
 
 .search-panel .input-group-title {
@@ -544,6 +546,62 @@ select {
   align-items: flex-end;
   margin-bottom: 20px;
 }
+.table_title.termArea dl {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 0;
+}
+.table_title.termArea dl dt {
+  padding: 0 !important;
+}
+.table_title.termArea dl td {
+  padding: 0;
+  border: 0;
+}
+.table_title.termArea dl .layoutPostion {
+  position: static;
+  top: unset;
+  left: unset;
+}
+.table_title.termArea dl .dateInput {
+  height: 36px !important;
+}
+.table_title.termArea dl select {
+  height: 36px;
+  width: auto;
+  font-weight: 400;
+  margin: 0;
+  padding: 0 14px 0 0;
+  text-align: right;
+  border: 0;
+  background-position: center right;
+}
+.table_title.termArea dl .reload {
+  display: flex;
+  width: 145px;
+  height: 36px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #EEEEEE;
+  border-radius: 4px;
+  padding: 0 !important;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  color: #2C2C2C;
+}
+.table_title.termArea dl .reload img {
+  margin-left: 8px;
+  width: 16px;
+  height: 16px;
+}
+.table_title.termArea dl .reload img[src*="start_icon.png"] {
+  background: url(/res/img/ncsoft/ic_vmPlay.svg) center/cover no-repeat;
+}
+.table_title.termArea dl .reload img[src*="stop_icon.png"] {
+  background: url(/res/img/ncsoft/ic_vmStop.svg) center/cover no-repeat;
+}
 .table_title #mainTable_total {
   color: #00A3E0;
   font-weight: bold;
@@ -558,6 +616,9 @@ select {
 }
 .table_title .btn_group input {
   font-size: 14px;
+}
+.table_title .btn_group .excelBtn {
+  height: 36px;
 }
 
 .checkbox-inline {
@@ -631,7 +692,9 @@ marquee {
 .noSelection {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
+  -khtml-user-select: none;
   -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
 }
 
@@ -670,6 +733,8 @@ marquee {
   border-radius: 4px;*/
   /*-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);*/
   /* 	box-shadow: inset 0 1px 1px rgba(0,0,0,.075); */
+  -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   display: inline-block;
   float: none;
@@ -809,6 +874,7 @@ marquee {
 #input_area .form-control,
 #input_area .output {
   width: calc(100% - 160px);
+  width: 100%;
   min-width: 80px;
   height: 100%;
   padding: 3px;
@@ -816,12 +882,14 @@ marquee {
 
 #input_area .input-group {
   width: calc(100% - 160px);
+  width: 100%;
 }
 
 #input_area .input-group .form-control.input,
 #input_area .input-group input {
   padding: 1.5px;
   width: calc(100% - 60px);
+  width: 100%;
 }
 
 #input_area .input-group .input-group-btn {
@@ -927,10 +995,6 @@ marquee {
   vertical-align: middle;
   display: inline-block;
   margin: 0;
-}
-
-.popup_area .input::-moz-placeholder {
-  color: #ccc;
 }
 
 .popup_area .input::placeholder {
@@ -2179,13 +2243,14 @@ marquee {
 }
 
 .search-panel .col-sub {
-  padding-right: 5px;
   position: relative;
   float: left;
 }
 
 .dateInput {
-  width: 90px !important;
+  min-width: 125px !important;
+  border-radius: 4px !important;
+  cursor: pointer;
 }
 
 select {
@@ -2198,8 +2263,7 @@ select {
 }
 
 .fileAttachViewArea ol {
-  -webkit-padding-start: 10px;
-          padding-inline-start: 10px;
+  padding-inline-start: 10px;
 }
 
 .modal-open .modal {
@@ -2732,7 +2796,9 @@ v .center > div > .panel_value {
 }
 
 .search-panel .input-group {
-  width: 65%;
+  display: block !important;
+  position: relative;
+  width: auto !important;
 }
 
 .input-group .search_inline {
@@ -2789,10 +2855,19 @@ v .center > div > .panel_value {
 }
 
 .input-group-addon.calendar-btn {
-  background: white;
   border: none;
-  border: 1px solid #d2d4d9 !important;
   border-radius: 0px;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 16px;
+  width: 16px;
+  background: url(/res/img/ncsoft/icon_16_calendar.svg) center/cover no-repeat;
+  cursor: pointer;
+}
+.input-group-addon.calendar-btn i {
+  opacity: 0;
 }
 
 #input_area .input-group .form-control.input,
@@ -3810,6 +3885,8 @@ v .center > div > .panel_value {
 #vmChartArea .termArea {
   float: right;
   padding-right: 0px;
+  padding-top: 12px;
+  margin-bottom: 0;
 }
 
 #vmChartArea dt {
@@ -3846,6 +3923,27 @@ v .center > div > .panel_value {
 .input-group-btn {
   padding-left: 5px;
   padding-right: 5px;
+}
+.input-group-btn:has(.fa-search) {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 12px;
+  width: 16px !important;
+  height: 16px !important;
+  background: url(/res/img/ncsoft/icon_20_search.svg) center/cover no-repeat;
+  z-index: 2;
+  border: 0 !important;
+  padding: 0;
+}
+.input-group-btn:has(.fa-search) .btn {
+  background-color: transparent;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+.input-group-btn:has(.fa-search) i {
+  opacity: 0;
 }
 
 .select_N {
@@ -4838,6 +4936,7 @@ v .center > div > .panel_value {
 #input_area .form-control,
 #input_area .output {
   width: calc(100% - 160px);
+  width: 100%;
   min-width: 80px;
   height: 100%;
   padding: 3px;
@@ -5375,10 +5474,6 @@ v .center > div > .panel_value {
   appearance: none;
 }
 
-#paging_select::-moz-selection {
-  border: none;
-}
-
 #paging_select::selection {
   border: none;
 }
@@ -5689,6 +5784,7 @@ v .center > div > .panel_value {
   opacity: 0.6;
   box-shadow: none;
   border-color: #6cc0e5;
+  -webkit-transition: all 0.12s, border-color 0.08s;
   transition: all 0.12s, border-color 0.08s;
 }
 
@@ -5704,6 +5800,8 @@ v .center > div > .panel_value {
   border-color: transparent #6cc0e5 #6cc0e5 transparent;
   border-top-color: transparent;
   border-left-color: transparent;
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
   transform: rotate(0deg);
 }
 
@@ -5959,9 +6057,6 @@ v .center > div > .panel_value {
   font-size: 14px;
   line-height: 19px;
   color: #4A4A4A;
-}
-.modal-body .select2-container--default .select2-search--inline .select2-search__field::-moz-placeholder {
-  color: #CCCCCC;
 }
 .modal-body .select2-container--default .select2-search--inline .select2-search__field::placeholder {
   color: #CCCCCC;
@@ -6526,8 +6621,9 @@ v .center > div > .panel_value {
   top: 1px;
 }
 .popup_dialog .checkbox-inline:has(input:checked)::after {
-  background: url(/res/img/ncsoft/radio_selected.svg) center/cover no-repeat;
   border: 0;
+  background: #25B5AC !important;
+  border: 3px solid #97D8D4 !important;
 }
 .popup_dialog .checkbox-inline + .checkbox-inline {
   margin-left: 45px !important;
@@ -6917,6 +7013,17 @@ td:last-child {
   color: #4A4A4A;
   padding: 10px 12px;
 }
+.menu-layout-3 .form-control:hover {
+  border-color: #ddd;
+}
+.menu-layout-3 .form-control[readonly] {
+  background-color: transparent;
+}
+.menu-layout-3 .form-control[disabled] {
+  background-color: #fafafa !important;
+  border-color: #eee !important;
+  color: #ddd !important;
+}
 
 .menu-layout-3 .select2-container .select2-selection--single {
   height: 40px;
@@ -7078,6 +7185,9 @@ td:last-child {
   height: calc(100vh - 82px);
   overflow: auto;
 }
+.menu-layout-3 .main.admin-content .nav-tabs {
+  padding: 0;
+}
 .menu-layout-3 .main.admin-content #ribbon {
   background-color: transparent;
 }
@@ -7139,10 +7249,19 @@ td:last-child {
   clear: both;
 }
 .menu-layout-3 .main.admin-content #search_area .form-control {
-  flex: 1 0 auto;
+  float: none;
+  flex: 0 0 auto;
+  width: 100%;
   padding: 0 16px;
   min-height: 32px;
   font-size: 12px;
+  border-radius: 4px;
+}
+.menu-layout-3 .main.admin-content #search_area .form-control:hover {
+  border-color: #ddd;
+}
+.menu-layout-3 .main.admin-content #search_area .form-control:focus {
+  border-color: #97D8D4;
 }
 .menu-layout-3 .main.admin-content #search_area select.form-control {
   background: url(/res/img/ncsoft/ic_dropDown.svg) center right 12px/16px no-repeat;
@@ -7177,7 +7296,6 @@ td:last-child {
   display: flex;
   flex-direction: row;
   height: 57px;
-  gap: 10px;
   justify-content: flex-start;
   align-items: center;
   border-bottom: 1px solid #eee;
@@ -7207,6 +7325,7 @@ td:last-child {
   display: flex;
   justify-content: center;
   align-items: center;
+  pointer-events: none;
 }
 .search-panel .panel-body .col .col-sub {
   position: static;
@@ -7391,6 +7510,21 @@ td:last-child {
   margin-top: -1px;
 }
 
-.nav-tabs.vmDetailTab {
-  padding: 0 0 24px;
+#requestTable td {
+  border-bottom: 0;
+  padding: 0;
+}
+#requestTable td.tilt {
+  padding: 0 5px;
+}
+
+.col-sub:has(.calendar-btn) + .col-sub .tilt {
+  padding: 0 5px;
+  display: block;
+  margin-top: 5px;
+  width: auto;
+}
+
+#diskChangePopup_form #panel-body .col {
+  margin: 0;
 }/*# sourceMappingURL=common.css.map */
