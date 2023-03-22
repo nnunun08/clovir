@@ -5700,8 +5700,8 @@ v .center>div>.panel_value {
 }
 
 .ag-theme-fresh .ag-cell-focus {
-    border-right: none;
-    padding-top: 0 !important;
+    border: none;
+    // padding-top: 0 !important;
     font-size: 12px;
     color: #000000;
     letter-spacing: normal;
@@ -5793,6 +5793,7 @@ v .center>div>.panel_value {
     justify-content: center;
     margin-top: 34px;
     margin-top: 13px;
+    overflow: hidden;
 }
 
 .pageDiv {
@@ -7427,7 +7428,8 @@ v .center>div>.panel_value {
 
 .menu-layout-3 {
     background-color: white;
-    overflow-x: hidden;
+    // overflow-x: hidden;
+    min-width: 1440px;
 }
 
 .menu-layout-3 .btn {
