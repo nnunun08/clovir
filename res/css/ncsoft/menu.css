@@ -75,7 +75,7 @@
   left: 50%;
   top: 200%;
   transform: translateX(-50%);
-  width: 178px;
+  width: 184px;
   margin: 0 auto;
   box-sizing: border-box;
   padding: 12px 20px;
@@ -1582,9 +1582,18 @@ a.tree-toggle {
   font-weight: 900;
   cursor: pointer;
 }
+#left_menu2 .child.menuOpen {
+  color: #0B4D57;
+  font-weight: bold;
+}
+#left_menu2 .child.menuOpen:after {
+  background-image: url(/res/img/ncsoft/icon_16_dw_green.svg);
+  transform: rotate(0);
+}
 #left_menu2 .child:after {
   content: "";
   position: absolute;
+  top: 23px;
   left: 40px;
   width: 16px;
   height: 16px;
@@ -1596,6 +1605,31 @@ a.tree-toggle {
   border-bottom: 1px solid #ddd;
   border-top: 1px solid #ddd;
   margin-top: -1px;
+  position: relative;
+}
+#left_menu2 > .sub_menu:has(:not(.child))::after {
+  content: "";
+  width: 6px;
+  height: 2px;
+  border-radius: 2px;
+  background-color: #7E7E7E;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 45px;
+}
+#left_menu2 > .sub_menu > a {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22px;
+  color: #000000;
+}
+#left_menu2 > .sub_menu:has(:not(.child)).selected::after {
+  background-color: #009D93;
+}
+#left_menu2 > .sub_menu:has(:not(.child)).selected > a {
+  font-weight: bold;
+  color: #009D93;
 }
 #left_menu2 .sub_menu {
   list-style-type: none;
@@ -1605,8 +1639,8 @@ a.tree-toggle {
   padding-left: 60px;
   position: relative;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 15px;
+  line-height: 22px;
   color: #000000;
 }
 #left_menu2 #left_menu3 a {

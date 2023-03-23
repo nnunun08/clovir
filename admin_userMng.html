@@ -30773,7 +30773,25 @@ height: 8px;
       <div class="title">포탈 관리</div>
       <div class="left_hide" onclick="left_hide();"></div>
       <div id="left_menu2">
-        <li class="sub_menu menu_93 selected child" onclick="showChildMenu(this);">사용자 관리</li>
+
+        <!-- evoke : 2뎁스 페이지 링크 -->        
+        <li class="sub_menu menu_169 selected">
+          <a href="/clovirsm/resources/vm/index.jsp">서버목록</a>
+        </li>
+        <li class="sub_menu menu_177 noselected">
+          <a href="/clovirsm/workflow/expire/index.jsp">만료서버</a>
+        </li>
+        <li class="sub_menu menu_143 noselected">
+          <a href="/clovirsm/resources/vra/index.jsp">배포목록</a>
+        </li>
+        <li class="sub_menu menu_170 noselected">
+          <a href="/clovirsm/workflow/deployFail/index.jsp">배포실패</a>
+        </li>
+        <!-- evoke : 2뎁스 페이지 링크 -->
+
+
+        <!-- evoke : .menuOpen 은 showChildMenu 이벤트시 li.child 요소에 넣어주세요.  -->
+        <li class="sub_menu menu_93 selected child menuOpen" onclick="showChildMenu(this);">사용자 관리</li>
         <div id="left_menu3" class="left_menu3 showMenu">
           <li class="sub_menu menu_94 selected">
             <a href="/admin/userMng/index.jsp">사용자 조회</a>
@@ -31181,7 +31199,7 @@ height: 8px;
                   </select>
                 </div>
               </div>
-              <div class="col col-sm-12">
+              <div class="col col-sm-6">
                 <div class="fm-select">
                   <label for="S_USE_YN" title="사용여부" class="control-label grid-title value-title">사용여부</label>
                   <!-- evoke : 별도 width 필요시 인라인으로 설정 -->
@@ -31191,6 +31209,192 @@ height: 8px;
                   </select>
                 </div>
               </div>
+              <div class="col col-sm-6 top13">
+                <table class="hasTiltTbl">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="input-spinner hastitle">
+                          <label for="S_START_PER" class="control-label grid-title value-title">사용률(%)</label>
+                          <div class="input-group spinner hastitle">
+                            <input type="text" name="START_PER" id="S_START_PER" class=" form-control input hastitle">
+                            <div class="input-group-btn-vertical">
+                              <button type="button" class="btn btn-default">
+                                <i class="fa fa-caret-up"></i>
+                              </button>
+                              <button type="button" class="btn btn-default">
+                                <i class="fa fa-caret-down"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="tilt">~</td>
+                      <td>
+                        <div class="input-spinner">
+                          <!---->
+                          <div class="input-group spinner">
+                            <input type="text" name="END_PER" id="S_END_PER" class=" form-control input">
+                            <div class="input-group-btn-vertical">
+                              <button type="button" class="btn btn-default">
+                                <i class="fa fa-caret-up"></i>
+                              </button>
+                              <button type="button" class="btn btn-default">
+                                <i class="fa fa-caret-down"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="col col-sm-12 btnw13">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td class="control-label">제목 필요</td>
+                      <td>
+                        <div class="input-spinner yyyy">
+                          <!---->
+                          <div class="input-group spinner">
+                            <!-- evoke : 필요한 만큼 input에 width 개별 설정-->
+                            <input type="text" name="S_YYYY_FROM" id="S_YYYY_FROM" class=" form-control input" style="width:120px">
+                            <div class="input-group-btn-vertical">
+                              <button type="button" class="btn btn-default">
+                                <i class="fa fa-caret-up"></i>
+                              </button>
+                              <button type="button" class="btn btn-default">
+                                <i class="fa fa-caret-down"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <!-- evoke : .control-label 제거. 제목 아닌 요소에는 .control-label 제거 -->
+                        <label for="S_YYYY_FROM" class="grid-title">년</label>
+                      </td>
+                      <td>
+                        <div class="input-spinner mm">
+                          <!---->
+                          <div class="input-group spinner">
+                            <!-- evoke : 필요한 만큼 input에 width 개별 설정-->
+                            <input type="text" name="S_MM_FROM" id="S_MM_FROM" class=" form-control input" style="width:60px">
+                            <div class="input-group-btn-vertical">
+                              <button type="button" class="btn btn-default">
+                                <i class="fa fa-caret-up"></i>
+                              </button>
+                              <button type="button" class="btn btn-default">
+                                <i class="fa fa-caret-down"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <!-- evoke : .control-label 제거. 제목 아닌 요소에는 .control-label 제거 -->
+                        <label for="S_MM_FROM" class="grid-title">월</label>
+                      </td>
+                      <td class="tilt"> ~ </td>
+                      <td>
+                        <div class="input-spinner yyyy">
+                          <!---->
+                          <div class="input-group spinner">
+                            <input type="text" name="S_YYYY_TO" id="S_YYYY_TO" class=" form-control input">
+                            <div class="input-group-btn-vertical">
+                              <button type="button" class="btn btn-default">
+                                <i class="fa fa-caret-up"></i>
+                              </button>
+                              <button type="button" class="btn btn-default">
+                                <i class="fa fa-caret-down"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <!-- evoke : .control-label 제거. 제목 아닌 요소에는 .control-label 제거 -->
+                        <label for="S_YYYY_TO" class="grid-title">년</label>
+                      </td>
+                      <td>
+                        <div class="input-spinner mm">
+                          <!---->
+                          <div class="input-group spinner">
+                            <input type="text" name="S_MM_TO" id="S_MM_TO" class=" form-control input">
+                            <div class="input-group-btn-vertical">
+                              <button type="button" class="btn btn-default">
+                                <i class="fa fa-caret-up"></i>
+                              </button>
+                              <button type="button" class="btn btn-default">
+                                <i class="fa fa-caret-down"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <!-- evoke : .control-label 제거. 제목 아닌 요소에는 .control-label 제거 -->
+                        <label for="S_MM_TO" class="grid-title">월</label>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="col col-sm-6 top13 btnw13">
+                <table>
+                  <tbody>
+                    <tr>
+                      <!-- evoke : .control-label 은 회색바탕의 제목으로 쓰일 요소에 넣어주세요. absolute 절대위치라 행의 좌측에 겹치므로 한 행에 제목은 하나만 허용 됩니다. -->
+                      <td class="control-label">조회 기간</td>
+                      <td>
+                        <div class="input-spinner">
+                          <!---->
+                          <div class="input-group spinner">
+                            <input type="text" name="YYYY" id="YYYY" class=" form-control input">
+                            <div class="input-group-btn-vertical">
+                              <button type="button" class="btn btn-default">
+                                <i class="fa fa-caret-up"></i>
+                              </button>
+                              <button type="button" class="btn btn-default">
+                                <i class="fa fa-caret-down"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <!-- evoke : .control-label 제거. 제목 아닌 요소에는 .control-label 제거 -->
+                        <label for="YYYY" class=" grid-title">년</label>
+                      </td>
+                      <td>
+                        <div class="input-spinner">
+                          <!---->
+                          <div class="input-group spinner">
+                            <input type="text" name="MM" id="MM" class=" form-control input">
+                            <div class="input-group-btn-vertical">
+                              <button type="button" class="btn btn-default">
+                                <i class="fa fa-caret-up"></i>
+                              </button>
+                              <button type="button" class="btn btn-default">
+                                <i class="fa fa-caret-down"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <!-- evoke : .control-label 제거. 제목 아닌 요소에는 .control-label 제거 -->
+                      <td>
+                        <label for="MM" class="grid-title">월</label>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
               <div class="col btn_group nomargin">
                 <button type="button" onclick="userSearch()" class="btn btn-primary searchBtn">검색</button>
               </div>
@@ -31708,6 +31912,391 @@ height: 8px;
                 </div>
               </div>
               <div>** 초기화시, 신규생성시 비밀번호는 ID와 동일합니다.</div>
+            </div>
+
+
+            <!-- evoke : 관리자페이지 > 서버관리 > 서버목록 > 이력 부분 참고 -->
+            <ul class="nav nav-tabs vmDetailTab">
+              <li class="">
+                <a href="#tab1" data-toggle="tab" onclick="chgTab(1)" aria-expanded="false">상세</a>
+              </li>
+              <li class="">
+                <a href="#tab4" data-toggle="tab" onclick="chgTab(4)" aria-expanded="false">복원이력</a>
+              </li>
+              <li class="active">
+                <a href="#tab5" data-toggle="tab" onclick="chgTab(6)" aria-expanded="true">이력</a>
+              </li>
+            </ul>
+
+            <div id="tab1" class="form-panel detail-panel tab-pane active">
+              <div class="tab-buttons"></div>
+              <div class="form-panel panel panel-default detail-panel">
+                <div class="panel-body">
+                  <input id="D_VM_ID" name="VM_ID" type="hidden" value="S461974778079300">
+                  <div class="col col-sm-6 colTop">
+                    <div class="fm-output">
+                      <label for="VM_NM" class="control-label grid-title value-title">서버명</label>
+                      <div id="VM_NM" name="VM_NM" class="output  hastitle">SYSapliv04</div>
+                    </div>
+                  </div>
+                  <div class="col col-sm-6 colTop">
+                    <div class="fm-output">
+                      <label for="RUN_CD_NM" class="control-label grid-title value-title">서버 상태</label>
+                      <div id="RUN_CD_NM" name="RUN_CD_NM" title="시작" class="output  hastitle">시작</div>
+                    </div>
+                  </div>
+                  <div class="col col-sm-6">
+                    <div class="fm-output">
+                      <label for="PRIVATE_IP" class="control-label grid-title value-title">IP</label>
+                      <div id="PRIVATE_IP" name="PRIVATE_IP" class="output  hastitle">10.50.245.56</div>
+                    </div>
+                  </div>
+                  <div class="col col-sm-6">
+                    <div class="fm-output" emptystr=" ">
+                      <label for="P_KUBUN" class="control-label grid-title value-title">업무</label>
+                      <div id="P_KUBUN" name="P_KUBUN_NM" title=" > 라이브 ap" class="output  hastitle"> &gt; 라이브 ap</div>
+                    </div>
+                  </div>
+                  <div class="col col-sm-6">
+                    <div class="fm-output">
+                      <label for="GUEST_NM" class="control-label grid-title value-title">OS명</label>
+                      <div id="GUEST_NM" name="GUEST_NM" class="output  hastitle">Ubuntu Linux (64-bit)</div>
+                    </div>
+                  </div>
+                  <div class="col col-sm-6">
+                    <div class="fm-output">
+                      <label for="USE_MM" class="control-label grid-title value-title">사용기간(개월)</label>
+                      <div id="USE_MM" name="USE_MM" title="3개월 / 만료일:2023-06-23 10:57:43" class="output  hastitle">3개월 / 만료일:2023-06-23 10:57:43</div>
+                    </div>
+                  </div>
+                  <!---->
+                  <div class="col col-sm-6">
+                    <div class="fm-output">
+                      <label for="SPEC_INFO" class="control-label grid-title value-title">사양</label>
+                      <div id="SPEC_INFO" name="OLD_SPEC_INFO" class="output  hastitle" title="2vCore, 4GB RAM, 51GBDisk">2vCore, 4GB RAM, 51GBDisk</div>
+                    </div>
+                  </div>
+                  <div class="col col-sm-6">
+                    <div class="fm-output">
+                      <label for="INS_TMS" class="control-label grid-title value-title">생성일시</label>
+                      <div id="INS_TMS" name="INS_TMS" title="2023-03-23 19:57:43" class="output  hastitle">2023-03-23 19:57:43</div>
+                    </div>
+                  </div>
+                  <div class="col col-sm-6">
+                    <div class="fm-output">
+                      <label for="TEAM_NM" class="control-label grid-title value-title">팀(조직)</label>
+                      <div id="TEAM_NM" name="TEAM_NM" class="output  hastitle">시스템운영팀</div>
+                    </div>
+                  </div>
+                  <div class="col col-sm-6">
+                    <div class="fm-output">
+                      <label for="INS_ID_NM" class="control-label grid-title value-title">담당자</label>
+                      <div id="INS_ID_NM" name="INS_ID_NM" class="output  hastitle">포탈관리자</div>
+                    </div>
+                  </div>
+                  <div class="col col-sm-12">
+
+                    <!-- evoke : .col 자식 div에 .fm-output 이 필요합니다. (동 컴포넌트 공통 통일) -->
+                    <div style="height: 200px;" class="fm-output">
+                      <label for="CMT" class="control-label grid-title value-title">설명</label>
+                      <div class="output hastitle textLeft" style="min-height: 200px; overflow-y: auto; word-break: break-word; padding: 2%;">1.서버 용도 <br>
+                        <br>2.서비스 목적 <br>
+                        <br>3.관련업무 <br>
+                        <br>4.기타 <br>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="tab5" class="form-panel detail-panel tab-pane active">
+              <div id="input_area" class="fullGrid" style="height: 240px;">
+                <!-- evoke : 관리자페이지 > 서버관리 > 서버목록 > 이력 부분 참고. 동일한 레이아웃을 위해서, btn_group은 .table_title로 감싸주세요.-->
+                <div class="table_title">
+                  <div class="btn_group">
+                    <button type="button" title="엑셀다운로드" onclick="exportExcelHistory()" class="icon excelBtn"></button>
+                  </div>
+                </div>
+                <div id="historyTable" class="ag-theme-fresh" style="height: 200px;">
+                  <div class="ag-bl ag-bl-full-height ag-layout-normal ag-scrolls ag-ltr" id="borderLayout_eRootPanel">
+                    <div class="ag-bl-center ag-bl-full-height-center" ref="center" style="margin-left: 0px; width: 1311px;">
+                      <div class="ag-bl ag-bl-full-height" id="borderLayout_eGridPanel">
+                        <div class="ag-bl-center ag-bl-full-height-center" ref="center" style="margin-left: 0px; width: 1311px;">
+                          <div class="ag-root ag-font-style ag-hacked-scroll" role="grid">
+                            <div class="ag-header ag-pivot-off" role="row" style="height: 40px;">
+                              <div class="ag-pinned-left-header" role="presentation" style="display: none; width: 0px;">
+                                <div class="ag-header-row" role="presentation" style="top: 0px; height: 40px; width: 0px;"></div>
+                              </div>
+                              <div class="ag-pinned-right-header" role="presentation" style="display: none; width: 0px;">
+                                <div class="ag-header-row" role="presentation" style="top: 0px; height: 40px; width: 0px;"></div>
+                              </div>
+                              <div class="ag-header-viewport" role="presentation" style="margin-left: 0px; margin-right: 0px;">
+                                <div class="ag-header-container" role="presentation">
+                                  <div class="ag-header-row" role="presentation" style="top: 0px; height: 40px; width: 1311px;">
+                                    <div class="ag-header-cell" role="presentation" col-id="ROWNUM" style="width: 60px; left: 0px;">
+                                      <div ref="eResize" class="ag-header-cell-resize" role="presentation"></div>
+                                      <!--AG-CHECKBOX-->
+                                      <span class="ag-header-select-all ag-hidden" role="presentation" ref="cbSelectAll">
+                                        <span class="ag-checkbox-checked ag-hidden" role="presentation">
+                                          <span class="ag-icon ag-icon-checkbox-checked"></span>
+                                        </span>
+                                        <span class="ag-checkbox-unchecked" role="presentation">
+                                          <span class="ag-icon ag-icon-checkbox-unchecked"></span>
+                                        </span>
+                                        <span class="ag-checkbox-indeterminate ag-hidden" role="presentation">
+                                          <span class="ag-icon ag-icon-checkbox-indeterminate"></span>
+                                        </span>
+                                        <span class="ag-checkbox-label" role="presentation"></span>
+                                      </span>
+                                      <div class="ag-cell-label-container" role="presentation">
+                                        <div ref="eLabel" class="ag-header-cell-label" role="presentation">
+                                          <span ref="eText" class="ag-header-cell-text" role="columnheader">No</span>
+                                          <span ref="eFilter" class="ag-header-icon ag-filter-icon ag-hidden" aria-hidden="true">
+                                            <span class="ag-icon ag-icon-filter"></span>
+                                          </span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="ag-header-cell ag-header-cell-sortable" role="presentation" col-id="LOG_CD_NM" style="width: 215px; left: 60px;">
+                                      <div ref="eResize" class="ag-header-cell-resize" role="presentation"></div>
+                                      <!--AG-CHECKBOX-->
+                                      <span class="ag-header-select-all ag-hidden" role="presentation" ref="cbSelectAll">
+                                        <span class="ag-checkbox-checked ag-hidden" role="presentation">
+                                          <span class="ag-icon ag-icon-checkbox-checked"></span>
+                                        </span>
+                                        <span class="ag-checkbox-unchecked" role="presentation">
+                                          <span class="ag-icon ag-icon-checkbox-unchecked"></span>
+                                        </span>
+                                        <span class="ag-checkbox-indeterminate ag-hidden" role="presentation">
+                                          <span class="ag-icon ag-icon-checkbox-indeterminate"></span>
+                                        </span>
+                                        <span class="ag-checkbox-label" role="presentation"></span>
+                                      </span>
+                                      <div class="ag-cell-label-container ag-header-cell-sorted-none" role="presentation">
+                                        <div ref="eLabel" class="ag-header-cell-label" role="presentation">
+                                          <span ref="eText" class="ag-header-cell-text" role="columnheader">이력</span>
+                                          <span ref="eFilter" class="ag-header-icon ag-filter-icon ag-hidden" aria-hidden="true">
+                                            <span class="ag-icon ag-icon-filter"></span>
+                                          </span>
+                                          <span ref="eSortOrder" class="ag-header-icon ag-sort-order ag-hidden" aria-hidden="true"></span>
+                                          <span ref="eSortAsc" class="ag-header-icon ag-sort-ascending-icon ag-hidden" aria-hidden="true">
+                                            <span class="ag-icon ag-icon-asc"></span>
+                                          </span>
+                                          <span ref="eSortDesc" class="ag-header-icon ag-sort-descending-icon ag-hidden" aria-hidden="true">
+                                            <span class="ag-icon ag-icon-desc"></span>
+                                          </span>
+                                          <span ref="eSortNone" class="ag-header-icon ag-sort-none-icon ag-hidden" aria-hidden="true">
+                                            <span class="ag-icon ag-icon-none"></span>
+                                          </span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="ag-header-cell ag-header-cell-sortable" role="presentation" col-id="APPR_STATUS_CD_NM" style="width: 215px; left: 275px;">
+                                      <div ref="eResize" class="ag-header-cell-resize" role="presentation"></div>
+                                      <!--AG-CHECKBOX-->
+                                      <span class="ag-header-select-all ag-hidden" role="presentation" ref="cbSelectAll">
+                                        <span class="ag-checkbox-checked ag-hidden" role="presentation">
+                                          <span class="ag-icon ag-icon-checkbox-checked"></span>
+                                        </span>
+                                        <span class="ag-checkbox-unchecked" role="presentation">
+                                          <span class="ag-icon ag-icon-checkbox-unchecked"></span>
+                                        </span>
+                                        <span class="ag-checkbox-indeterminate ag-hidden" role="presentation">
+                                          <span class="ag-icon ag-icon-checkbox-indeterminate"></span>
+                                        </span>
+                                        <span class="ag-checkbox-label" role="presentation"></span>
+                                      </span>
+                                      <div class="ag-cell-label-container ag-header-cell-sorted-none" role="presentation">
+                                        <div ref="eLabel" class="ag-header-cell-label" role="presentation">
+                                          <span ref="eText" class="ag-header-cell-text" role="columnheader">결재상태</span>
+                                          <span ref="eFilter" class="ag-header-icon ag-filter-icon ag-hidden" aria-hidden="true">
+                                            <span class="ag-icon ag-icon-filter"></span>
+                                          </span>
+                                          <span ref="eSortOrder" class="ag-header-icon ag-sort-order ag-hidden" aria-hidden="true"></span>
+                                          <span ref="eSortAsc" class="ag-header-icon ag-sort-ascending-icon ag-hidden" aria-hidden="true">
+                                            <span class="ag-icon ag-icon-asc"></span>
+                                          </span>
+                                          <span ref="eSortDesc" class="ag-header-icon ag-sort-descending-icon ag-hidden" aria-hidden="true">
+                                            <span class="ag-icon ag-icon-desc"></span>
+                                          </span>
+                                          <span ref="eSortNone" class="ag-header-icon ag-sort-none-icon ag-hidden" aria-hidden="true">
+                                            <span class="ag-icon ag-icon-none"></span>
+                                          </span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="ag-header-cell ag-header-cell-sortable" role="presentation" col-id="USER_NAME" style="width: 215px; left: 490px;">
+                                      <div ref="eResize" class="ag-header-cell-resize" role="presentation"></div>
+                                      <!--AG-CHECKBOX-->
+                                      <span class="ag-header-select-all ag-hidden" role="presentation" ref="cbSelectAll">
+                                        <span class="ag-checkbox-checked ag-hidden" role="presentation">
+                                          <span class="ag-icon ag-icon-checkbox-checked"></span>
+                                        </span>
+                                        <span class="ag-checkbox-unchecked" role="presentation">
+                                          <span class="ag-icon ag-icon-checkbox-unchecked"></span>
+                                        </span>
+                                        <span class="ag-checkbox-indeterminate ag-hidden" role="presentation">
+                                          <span class="ag-icon ag-icon-checkbox-indeterminate"></span>
+                                        </span>
+                                        <span class="ag-checkbox-label" role="presentation"></span>
+                                      </span>
+                                      <div class="ag-cell-label-container ag-header-cell-sorted-none" role="presentation">
+                                        <div ref="eLabel" class="ag-header-cell-label" role="presentation">
+                                          <span ref="eText" class="ag-header-cell-text" role="columnheader">요청자</span>
+                                          <span ref="eFilter" class="ag-header-icon ag-filter-icon ag-hidden" aria-hidden="true">
+                                            <span class="ag-icon ag-icon-filter"></span>
+                                          </span>
+                                          <span ref="eSortOrder" class="ag-header-icon ag-sort-order ag-hidden" aria-hidden="true"></span>
+                                          <span ref="eSortAsc" class="ag-header-icon ag-sort-ascending-icon ag-hidden" aria-hidden="true">
+                                            <span class="ag-icon ag-icon-asc"></span>
+                                          </span>
+                                          <span ref="eSortDesc" class="ag-header-icon ag-sort-descending-icon ag-hidden" aria-hidden="true">
+                                            <span class="ag-icon ag-icon-desc"></span>
+                                          </span>
+                                          <span ref="eSortNone" class="ag-header-icon ag-sort-none-icon ag-hidden" aria-hidden="true">
+                                            <span class="ag-icon ag-icon-none"></span>
+                                          </span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="ag-header-cell ag-header-cell-sortable" role="presentation" col-id="LOG_CONTENT" style="width: 391px; left: 705px;">
+                                      <div ref="eResize" class="ag-header-cell-resize" role="presentation"></div>
+                                      <!--AG-CHECKBOX-->
+                                      <span class="ag-header-select-all ag-hidden" role="presentation" ref="cbSelectAll">
+                                        <span class="ag-checkbox-checked ag-hidden" role="presentation">
+                                          <span class="ag-icon ag-icon-checkbox-checked"></span>
+                                        </span>
+                                        <span class="ag-checkbox-unchecked" role="presentation">
+                                          <span class="ag-icon ag-icon-checkbox-unchecked"></span>
+                                        </span>
+                                        <span class="ag-checkbox-indeterminate ag-hidden" role="presentation">
+                                          <span class="ag-icon ag-icon-checkbox-indeterminate"></span>
+                                        </span>
+                                        <span class="ag-checkbox-label" role="presentation"></span>
+                                      </span>
+                                      <div class="ag-cell-label-container ag-header-cell-sorted-none" role="presentation">
+                                        <div ref="eLabel" class="ag-header-cell-label" role="presentation">
+                                          <span ref="eText" class="ag-header-cell-text" role="columnheader">내용 </span>
+                                          <span ref="eFilter" class="ag-header-icon ag-filter-icon ag-hidden" aria-hidden="true">
+                                            <span class="ag-icon ag-icon-filter"></span>
+                                          </span>
+                                          <span ref="eSortOrder" class="ag-header-icon ag-sort-order ag-hidden" aria-hidden="true"></span>
+                                          <span ref="eSortAsc" class="ag-header-icon ag-sort-ascending-icon ag-hidden" aria-hidden="true">
+                                            <span class="ag-icon ag-icon-asc"></span>
+                                          </span>
+                                          <span ref="eSortDesc" class="ag-header-icon ag-sort-descending-icon ag-hidden" aria-hidden="true">
+                                            <span class="ag-icon ag-icon-desc"></span>
+                                          </span>
+                                          <span ref="eSortNone" class="ag-header-icon ag-sort-none-icon ag-hidden" aria-hidden="true">
+                                            <span class="ag-icon ag-icon-none"></span>
+                                          </span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="ag-header-cell ag-header-cell-sortable" role="presentation" col-id="INS_DT" style="width: 215px; left: 1096px;">
+                                      <div ref="eResize" class="ag-header-cell-resize" role="presentation"></div>
+                                      <!--AG-CHECKBOX-->
+                                      <span class="ag-header-select-all ag-hidden" role="presentation" ref="cbSelectAll">
+                                        <span class="ag-checkbox-checked ag-hidden" role="presentation">
+                                          <span class="ag-icon ag-icon-checkbox-checked"></span>
+                                        </span>
+                                        <span class="ag-checkbox-unchecked" role="presentation">
+                                          <span class="ag-icon ag-icon-checkbox-unchecked"></span>
+                                        </span>
+                                        <span class="ag-checkbox-indeterminate ag-hidden" role="presentation">
+                                          <span class="ag-icon ag-icon-checkbox-indeterminate"></span>
+                                        </span>
+                                        <span class="ag-checkbox-label" role="presentation"></span>
+                                      </span>
+                                      <div class="ag-cell-label-container ag-header-cell-sorted-none" role="presentation">
+                                        <div ref="eLabel" class="ag-header-cell-label" role="presentation">
+                                          <span ref="eText" class="ag-header-cell-text" role="columnheader">신청일시</span>
+                                          <span ref="eFilter" class="ag-header-icon ag-filter-icon ag-hidden" aria-hidden="true">
+                                            <span class="ag-icon ag-icon-filter"></span>
+                                          </span>
+                                          <span ref="eSortOrder" class="ag-header-icon ag-sort-order ag-hidden" aria-hidden="true"></span>
+                                          <span ref="eSortAsc" class="ag-header-icon ag-sort-ascending-icon ag-hidden" aria-hidden="true">
+                                            <span class="ag-icon ag-icon-asc"></span>
+                                          </span>
+                                          <span ref="eSortDesc" class="ag-header-icon ag-sort-descending-icon ag-hidden" aria-hidden="true">
+                                            <span class="ag-icon ag-icon-desc"></span>
+                                          </span>
+                                          <span ref="eSortNone" class="ag-header-icon ag-sort-none-icon ag-hidden" aria-hidden="true">
+                                            <span class="ag-icon ag-icon-none"></span>
+                                          </span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="ag-header-overlay" role="presentation" style="height: 40px; top: 0px;"></div>
+                            </div>
+                            <div class="ag-floating-top" role="presentation" style="top: 40px; height: 0px;">
+                              <div class="ag-pinned-left-floating-top" role="presentation" style="width: 0px;"></div>
+                              <div class="ag-pinned-right-floating-top" role="presentation" style="width: 0px;"></div>
+                              <div class="ag-floating-top-viewport" role="presentation">
+                                <div class="ag-floating-top-container" role="presentation" style="width: 1311px;"></div>
+                              </div>
+                              <div class="ag-floating-top-full-width-container ag-hidden" role="presentation"></div>
+                            </div>
+                            <div class="ag-floating-bottom" role="presentation" style="height: 0px; top: 200px;">
+                              <div class="ag-pinned-left-floating-bottom" role="presentation" style="width: 0px;"></div>
+                              <div class="ag-pinned-right-floating-bottom" role="presentation" style="width: 0px;"></div>
+                              <div class="ag-floating-bottom-viewport" role="presentation">
+                                <div class="ag-floating-bottom-container" role="presentation" style="width: 1311px;"></div>
+                              </div>
+                              <div class="ag-floating-bottom-full-width-container ag-hidden" role="presentation"></div>
+                            </div>
+                            <div class="ag-body ag-row-no-animation" role="presentation" style="top: 40px; height: 160px;">
+                              <div class="ag-pinned-left-cols-viewport" role="presentation" style="display: none; width: 0px; height: 160px;">
+                                <div class="ag-pinned-left-cols-container" role="presentation" style="height: 80px; top: 0px; width: 0px;">
+                                  <div role="row" row-index="0" row-id="0" comp-id="219" class="ag-row ag-row-no-focus ag-row-even ag-row-level-0" style="height: 40px; transform: translateY(0px);  "></div>
+                                  <div role="row" row-index="1" row-id="1" comp-id="221" class="ag-row ag-row-no-focus ag-row-odd ag-row-level-0" style="height: 40px; transform: translateY(40px);  "></div>
+                                </div>
+                              </div>
+                              <div class="ag-pinned-right-cols-viewport" role="presentation" style="display: none; width: 0px; height: 160px;">
+                                <div class="ag-pinned-right-cols-container" role="presentation" style="height: 80px; width: 0px;">
+                                  <div role="row" row-index="0" row-id="0" comp-id="219" class="ag-row ag-row-no-focus ag-row-even ag-row-level-0" style="height: 40px; transform: translateY(0px);  "></div>
+                                  <div role="row" row-index="1" row-id="1" comp-id="221" class="ag-row ag-row-no-focus ag-row-odd ag-row-level-0" style="height: 40px; transform: translateY(40px);  "></div>
+                                </div>
+                              </div>
+                              <div class="ag-body-viewport-wrapper" role="presentation" style="margin-left: 0px; margin-right: 0px;">
+                                <div class="ag-body-viewport" role="presentation" style="overflow-y: auto;">
+                                  <div class="ag-body-container" role="presentation" style="height: 80px; top: 0px; width: 1311px;">
+                                    <div role="row" row-index="0" row-id="0" comp-id="219" class="ag-row ag-row-no-focus ag-row-even ag-row-level-0" style="height: 40px; transform: translateY(0px);  ">
+                                      <div tabindex="-1" role="gridcell" comp-id="256" col-id="LOG_CD_NM" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 215px; left: 60px; ">전원</div>
+                                      <div tabindex="-1" role="gridcell" comp-id="257" col-id="APPR_STATUS_CD_NM" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 215px; left: 275px; "></div>
+                                      <div tabindex="-1" role="gridcell" comp-id="258" col-id="USER_NAME" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 215px; left: 490px; ">포탈관리자</div>
+                                      <div tabindex="-1" role="gridcell" comp-id="259" col-id="LOG_CONTENT" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 391px; left: 705px; ">전원켜기(Power-on)</div>
+                                      <div tabindex="-1" role="gridcell" comp-id="260" col-id="INS_DT" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 215px; left: 1096px; ">2023-03-23</div>
+                                      <div tabindex="-1" role="gridcell" comp-id="220" col-id="ROWNUM" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 60px; left: 0px; ">1</div>
+                                    </div>
+                                    <div role="row" row-index="1" row-id="1" comp-id="221" class="ag-row ag-row-no-focus ag-row-odd ag-row-level-0" style="height: 40px; transform: translateY(40px);  ">
+                                      <div tabindex="-1" role="gridcell" comp-id="261" col-id="LOG_CD_NM" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 215px; left: 60px; ">생성</div>
+                                      <div tabindex="-1" role="gridcell" comp-id="262" col-id="APPR_STATUS_CD_NM" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 215px; left: 275px; ">승인</div>
+                                      <div tabindex="-1" role="gridcell" comp-id="263" col-id="USER_NAME" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 215px; left: 490px; ">포탈관리자</div>
+                                      <div tabindex="-1" role="gridcell" comp-id="264" col-id="LOG_CONTENT" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 391px; left: 705px; ">2vCore, 4GB RAM, 51GBDisk</div>
+                                      <div tabindex="-1" role="gridcell" comp-id="265" col-id="INS_DT" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 215px; left: 1096px; ">2023-03-23</div>
+                                      <div tabindex="-1" role="gridcell" comp-id="222" col-id="ROWNUM" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 60px; left: 0px; ">2</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="ag-full-width-viewport ag-hidden" role="presentation">
+                                <div class="ag-full-width-container" role="presentation" style="height: 80px; top: 0px;"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="ag-bl-overlay" ref="overlay" style="display: none;"></div>
+                      </div>
+                    </div>
+                    <div class="ag-bl-overlay" ref="overlay" style="display: none;"></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <script>

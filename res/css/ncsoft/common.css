@@ -31,6 +31,9 @@ Select::-ms-expand {
 .main .ag-theme-fresh .ag-row-selected {
   background-color: #F9FDFD !important;
 }
+.main .ag-theme-fresh .ag-cell {
+  border: 0;
+}
 
 .btn.active,
 .btn:active {
@@ -38,6 +41,10 @@ Select::-ms-expand {
   outline: 0;
   -webkit-box-shadow: none;
   box-shadow: none;
+}
+
+.control-label td {
+  border-bottom: 0;
 }
 
 .detail-panel {
@@ -267,8 +274,37 @@ body {
   text-align: center;
 }
 
+#log_connectiontime_box > table,
+#logPrgm_tableBox > table,
+.btnw13 > table,
+.hasTiltTbl {
+  display: flex;
+  flex-direction: row;
+  height: 57px;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  border-top: 0;
+  align-items: center;
+  padding: 15px 20px;
+  position: relative;
+  padding-left: 140px;
+}
+#log_connectiontime_box > table td,
+#logPrgm_tableBox > table td,
+.btnw13 > table td,
 .hasTiltTbl td {
-  vertical-align: top;
+  padding: 0;
+  border-bottom: 0;
+}
+
+.btnw13 label {
+  margin-bottom: 0;
+  padding: 5px;
+}
+.btnw13 .form-control {
+  min-width: unset !important;
 }
 
 .iframe100 {
@@ -544,7 +580,7 @@ select {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 .table_title.termArea dl {
   display: flex;
@@ -2256,6 +2292,9 @@ marquee {
 select {
   min-height: 24px;
 }
+select.form-control {
+  background-image: url(/res/img/ncsoft/icon_16_dw.svg);
+}
 
 .help {
   color: black;
@@ -2799,6 +2838,22 @@ v .center > div > .panel_value {
   display: block !important;
   position: relative;
   width: auto !important;
+}
+
+.spinner .input-group-btn-vertical {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+}
+.spinner .input-group-btn-vertical .btn {
+  border: 0;
+  padding: 0;
+}
+.spinner .input-group-btn-vertical .btn i {
+  left: 0;
+  line-height: 1;
 }
 
 .input-group .search_inline {
@@ -3701,10 +3756,11 @@ v .center > div > .panel_value {
   letter-spacing: normal;
   text-align: left;
   color: rgb(42, 55, 51);
-  padding: 25px 0px 0px 7px;
+  padding: 0;
   background-color: #f5f6fa;
   height: 48px;
   border-bottom: none;
+  margin-top: -12px;
 }
 
 .table_box-shadow {
@@ -3887,6 +3943,7 @@ v .center > div > .panel_value {
   padding-right: 0px;
   padding-top: 12px;
   margin-bottom: 0;
+  margin-top: -12px;
 }
 
 #vmChartArea dt {
@@ -7187,6 +7244,7 @@ td:last-child {
 }
 .menu-layout-3 .main.admin-content .nav-tabs {
   padding: 0;
+  margin-bottom: 24px;
 }
 .menu-layout-3 .main.admin-content #ribbon {
   background-color: transparent;
@@ -7325,7 +7383,6 @@ td:last-child {
   display: flex;
   justify-content: center;
   align-items: center;
-  pointer-events: none;
 }
 .search-panel .panel-body .col .col-sub {
   position: static;
@@ -7527,4 +7584,29 @@ td:last-child {
 
 #diskChangePopup_form #panel-body .col {
   margin: 0;
+}
+
+#search_area:has(.requestItemsHistory_box) {
+  padding: 40px 40px 0;
+  border-bottom: 0;
+  box-shadow: none;
+}
+#search_area:has(.requestItemsHistory_box) .requestItemsHistory_box {
+  border: 0;
+  border-top: 1px solid #eee;
+  padding-top: 0;
+}
+#search_area:has(.requestItemsHistory_box) .col > div {
+  height: 72px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+#search_area:has(.requestItemsHistory_box) #requestTable {
+  height: 72px !important;
+}
+#search_area:has(.requestItemsHistory_box) .input-group:has(.calendar-btn) {
+  height: 40px !important;
+}
+#search_area:has(.requestItemsHistory_box) .form-control {
+  height: 40px;
 }/*# sourceMappingURL=common.css.map */
