@@ -7,9 +7,9 @@
             .checkbox-inline + .checkbox-inline {
                 margin-left: 15px !important;
             }
-            .checkbox-inline:has(input:checked)::after {
-                background-image: url(/res/img/ncsoft/ic_range_dis.svg) !important;
-            }
+            // .checkbox-inline:has(input:checked)::after {
+            //     background-image: url(/res/img/ncsoft/ic_range_dis.svg) !important;
+            // }
         }
     }
     .quarterNum {
@@ -316,8 +316,8 @@ $leftSize : 216px;
             top: 1px;
         }
         &:has(input:checked)::after {
-            background: url(/res/img/ncsoft/radio_selected.svg) center/cover no-repeat;
-            border: 0;
+            // background: url(/res/img/ncsoft/radio_selected.svg) center/cover no-repeat;
+            // border: 0;
         }
         & + .checkbox-inline {
             margin-left: 45px !important;

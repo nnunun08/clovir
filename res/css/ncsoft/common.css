@@ -6759,9 +6759,6 @@ v .center > div > .panel_value {
   flex: 1 0 auto;
   text-align: right;
 }
-.popup_dialog .topInfo .checkbox-inline:has(input:checked)::after {
-  background-image: url(/res/img/ncsoft/ic_range_dis.svg) !important;
-}
 .popup_dialog .modal-content {
   min-height: unset;
 }
@@ -6895,11 +6892,6 @@ v .center > div > .panel_value {
   position: absolute;
   left: 0;
   top: 1px;
-}
-.checkRight .checkbox-inline:has(input:checked)::after {
-  background: url(/res/img/ncsoft/radio_selected.svg) center/cover no-repeat;
-  background-image: url(/res/img/ncsoft/ic_range_dis.svg) !important;
-  border: 0;
 }
 .checkRight .checkbox-inline + .checkbox-inline {
   margin-left: 45px !important;

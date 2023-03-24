@@ -7287,9 +7287,9 @@ v .center>div>.panel_value {
             // margin-bottom: 3px;
         }
 
-        .checkbox-inline:has(input:checked)::after {
-            background-image: url(/res/img/ncsoft/ic_range_dis.svg) !important;
-        }
+        // .checkbox-inline:has(input:checked)::after {
+        //     background-image: url(/res/img/ncsoft/ic_range_dis.svg) !important;
+        // }
     }
 
     .modal-content {
@@ -7425,9 +7425,9 @@ v .center>div>.panel_value {
         }
 
         &:has(input:checked)::after {
-            background: url(/res/img/ncsoft/radio_selected.svg) center/cover no-repeat;
-            background-image: url(/res/img/ncsoft/ic_range_dis.svg) !important;
-            border: 0;
+            // background: url(/res/img/ncsoft/radio_selected.svg) center/cover no-repeat;
+            // background-image: url(/res/img/ncsoft/ic_range_dis.svg) !important;
+            // border: 0;
         }
 
         &+.checkbox-inline {

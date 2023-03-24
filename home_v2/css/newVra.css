@@ -282,6 +282,10 @@
   left: 0;
   top: 1px;
 }
+#newVra_popup .checkbox-inline:has(input:checked)::after {
+  background: url(/res/img/ncsoft/radio_selected.svg) center/cover no-repeat;
+  border: 0;
+}
 #newVra_popup .checkbox-inline + .checkbox-inline {
   margin-left: 45px !important;
 }
