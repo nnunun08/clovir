@@ -1,0 +1,115 @@
+// fullcalendar
+
+:root {
+    --fc-button-bg-color : red;
+}
+
+.fullCanlendar {
+    max-width: 1120px;
+    
+    .modal-header {
+        border-bottom: 0;
+    }
+    .modal-body {
+        padding-top: 9px;
+        padding-bottom: 39px;
+    }
+    .fc {
+        .fc-daygrid-day-top {
+            flex-direction: row;
+            a {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 20px;
+                color: #000000;
+            }
+        }
+    }
+    .fc-header-toolbar {
+        .fc-toolbar-chunk {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .fc-toolbar-title {
+                margin: 0 10px;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 29px;
+                color: #000000;
+                letter-spacing: normal;
+                font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+            }
+            button {
+                margin: 0;
+            }
+            .fc-prev-button,
+            .fc-next-button {
+                outline: none;
+                box-shadow: none !important;
+                padding: 0;
+                border: 0;
+                width: 26px;
+                height: 26px;
+                background: url(/res/img/ncsoft/icon_16_arrow_right.svg) center/16px no-repeat;
+                .fc-icon {
+                    display: none;
+                }
+            }
+            .fc-prev-button {
+                background-image: url(/res/img/ncsoft/icon_16_arrow_left.svg);
+            }
+        }
+    }
+    .fc-view-harness {
+        width: calc(100% + 12px);
+        margin-left: -6px;
+        margin-right: -6px;
+    }
+    .fc-theme-standard {
+        td, th {
+            border-color: transparent;
+            background: transparent;
+        }
+        .fc-scrollgrid {
+            border: 0;
+        }
+        .fc-col-header  {
+            th {
+                padding: 0 6px 26px;
+                text-align: left;
+                .fc-scrollgrid-sync-inner {
+                    box-sizing: border-box;
+                    padding-top: 14px;
+                    border-top: 1px solid #97D8D4;
+                    box-shadow:inset 0 5px 0 #EEF9F7;
+                }
+                &:nth-child(1) {
+                    .fc-scrollgrid-sync-inner {
+                        border-top: 1px solid #EB7A95;
+                        box-shadow:inset 0 5px 0 #FFF7F7;
+                        a {
+                            color: #EB7A95;
+                        }
+                    }   
+                }
+                a {
+                    font-weight: 700;
+                    font-size: 14px;
+                    line-height: 20px;
+                    color: #4A4A4A;
+                }
+            }
+        }
+        .fc-scrollgrid-sync-table {
+            td {
+                padding: 8px 6px;
+                &:nth-child(1) {
+                    a {
+                        color: #EB7A95;
+                    }
+                }
+            }
+        }
+    }
+}
+

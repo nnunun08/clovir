@@ -388,14 +388,6 @@
 /*
 car_dept_stat_area css end
 */
-.stat_charts .chart {
-  margin: 5px;
-  border: 1px solid #ddd;
-  padding: 10px;
-  background: white;
-  height: 425px;
-}
-
 .chart_title {
   font-size: 18px !important;
   text-align: left;
@@ -455,4 +447,180 @@ car_dept_stat_area css end
   background-color: #00AC4F;
   border: 1px solid #00AC4F;
   height: 100%;
+}
+
+.stat_summary {
+  float: left;
+  width: 100%;
+}
+.stat_summary .summaryItem {
+  margin: 14px;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.stat_summary .tit {
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+}
+.stat_summary .selMonth {
+  position: absolute;
+  top: 14px;
+  right: 60px;
+}
+.stat_summary .selMonth select {
+  margin: 0;
+  box-sizing: border-box;
+  padding-left: 12px;
+  padding-right: 27px;
+  height: 32px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #ccc;
+  background: url(/res/img/ncsoft/icon_16_down.svg) right 12px center no-repeat;
+}
+.stat_summary .scale {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+.stat_summary .scale .btn {
+  width: 20px;
+  height: 20px;
+  border: 0;
+}
+.stat_summary .scale .scaleDown {
+  background: url(/res/img/ncsoft/icon_20_scaledown.svg);
+}
+.stat_summary .scale .scaleFull {
+  background: url(/res/img/ncsoft/icon_20_fullscale.svg);
+}
+.stat_summary .date {
+  font-size: 12px;
+  color: #4A4A4A;
+}
+.stat_summary .itemWrap {
+  display: flex;
+  gap: 8px;
+}
+.stat_summary .itemWrap .item {
+  flex: 1 0 30%;
+  padding: 12px;
+  border-radius: 16px;
+  height: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 400;
+  text-align: left;
+  background-color: #fafafa;
+  color: #3c3c3c;
+}
+.stat_summary .itemWrap .item .item-tit {
+  position: relative;
+}
+.stat_summary .itemWrap .item .item-value {
+  font-size: 20px;
+  line-height: 29px;
+  height: 29px;
+  font-weight: bold;
+  text-align: right;
+}
+.stat_summary .itemWrap .item .item-detail {
+  text-align: right;
+  line-height: 17px;
+  height: 17px;
+}
+.stat_summary .newBadge .item-tit::after {
+  content: "";
+  display: inline-block;
+  margin-bottom: 9px;
+  margin-left: 3px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #C5003E;
+}
+.stat_summary .dateView .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 69px;
+  height: 28px;
+  background: #FAFAFA;
+  border: 1px solid #EEEEEE;
+  border-radius: 4px;
+  font-weight: 400;
+  font-size: 12px;
+  color: #2C2C2C;
+}
+.stat_summary .greenTone .item {
+  background-color: #EEF9F7;
+  color: #006979;
+}
+.stat_summary .greenTone .item .item-tit {
+  color: #009D93;
+}
+.stat_summary .puppleTone .item:nth-child(1) {
+  background-color: #E5E6FF;
+  color: #312F9B;
+}
+.stat_summary .puppleTone .item:nth-child(2) {
+  background-color: #C9CBFF;
+  color: #312F9B;
+}
+.stat_summary .puppleTone .item:nth-child(3) {
+  background-color: #DDDDDD;
+}
+.stat_summary .redTone .item:nth-child(1) {
+  background-color: #EEEEEE;
+}
+.stat_summary .redTone .item:nth-child(2) {
+  background-color: #F8D0D0;
+  color: #7B0000;
+}
+.stat_summary .redTone .item:nth-child(3) {
+  background-color: #F69A9A;
+  color: #7B0000;
+}
+
+.stat_charts div[data-type=grid],
+.stat_charts div[data-type=chart] {
+  border: 0;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 14px;
+  padding: 20px;
+}
+.stat_charts div[data-type=grid] .highcharts-container,
+.stat_charts div[data-type=chart] .highcharts-container {
+  margin-top: 0;
+}
+.stat_charts div[data-type=grid] .chart_title,
+.stat_charts div[data-type=chart] .chart_title {
+  padding: 0;
+  font-weight: bold;
+  font-size: 14px !important;
+  line-height: 20px;
+  color: #000000 !important;
+  margin-bottom: 12px;
+  margin-right: 10px;
+}
+.stat_charts div[data-type=grid] .ag-theme-fresh,
+.stat_charts div[data-type=chart] .ag-theme-fresh {
+  padding: 20px;
+}
+.stat_charts div[data-type=grid] .highcharts-title,
+.stat_charts div[data-type=chart] .highcharts-title {
+  position: absolute;
+  top: 20px;
+  left: 20px;
 }/*# sourceMappingURL=dashboard.css.map */
