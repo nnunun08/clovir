@@ -127,7 +127,23 @@
                     <div class="fm-output">
                       <label for="connectBtn" class="control-label grid-title value-title">연결</label>
                       <div id="connectBtn" title="연결" class="output hastitle">
-                        <div class="consoleDiv" onclick="smAction.openConsole(&quot;S1601256415555700&quot;)">Console</div>
+                        <div class="consoleDiv" onclick="smAction.openConsole(&quot;S461974778079300&quot;)">Console</div>
+                        <div class="consoleDiv" onclick="smAction.openRemote(&quot;Y&quot;,&quot;10.50.245.56&quot;)">SSH</div>
+                        <!-- evoke : #popover 내부에 popover-body가 있어야합니다. popover 클릭(토글) 시 .popover-body style="display:block/none"으로 제어해주세요" -->
+
+                        <a href="#" id="popover" title="Popover Header" data-content="Some content inside the popover">Toggle popover
+                          <div class="popover-body">
+                            <div class="mesg">연결 시 프로그램 설치가 필요합니다.</div>
+                            <div class="consoleDiv" onclick="alert('download')">다운로드</div>
+                          </div>
+                        </a>
+                        <script>
+                          const popover = document.querySelector('#popover')
+                          const popoverBody = document.querySelector('.popover-body')
+                          popover.addEventListener('click', (e) => {
+                            e.target === popover ? popoverBody.classList.toggle('on') : null;
+                          })
+                        </script>
                       </div>
                     </div>
                   </div>

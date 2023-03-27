@@ -153,6 +153,22 @@ $GNBheight : 82px;
             line-height: 20px;
             text-align: right;
             top: unset;
+            font-size: 12px;
+            font-weight: 400;
+            color: #4A4A4A;
+            .team {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 20px;
+                text-align: right;
+                color: #4A4A4A;
+            }
+            .user_name {
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 20px;
+                color: #000000;
+            }
         }
 
         // .userNameInfo::after {

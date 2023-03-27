@@ -111,6 +111,9 @@ Select::-ms-expand {
   align-items: center;
   border-bottom: 1px solid #ddd;
 }
+.detail-panel .panel-body:has(#D_VM_ID) .fm-output .output:has(.consoleDiv) {
+  overflow: visible;
+}
 .detail-panel .panel-body:has(#D_VM_ID) .fm-output .control-label {
   width: 100px;
 }
@@ -5304,6 +5307,57 @@ v .center > div > .panel_value {
 .popup_layer.tabHide {
   left: 100%;
 }
+.popup_layer #popover {
+  text-indent: -9999px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: url(/res/img/ncsoft/icon_20_info.svg) center/cover no-repeat;
+  position: relative;
+  z-index: 2;
+}
+.popup_layer #popover .popover-body {
+  position: absolute;
+  top: 33px;
+  right: -22px;
+  padding: 16px;
+  font-weight: 400;
+  background: #FFFFFF;
+  border: 1px solid #EEEEEE;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  display: none;
+}
+.popup_layer #popover .popover-body.on {
+  display: flex;
+}
+.popup_layer #popover .popover-body .mesg {
+  text-indent: 0;
+  font-size: 12px;
+  line-height: 17px;
+  color: #000000;
+}
+.popup_layer #popover .popover-body .consoleDiv {
+  color: #fff;
+  text-indent: 0;
+}
+.popup_layer #popover .popover-body::before {
+  content: "";
+  position: absolute;
+  width: 12.3px;
+  height: 12.3px;
+  border: 1px solid #EEEEEE;
+  border-bottom: 0;
+  border-right: 0;
+  top: -7px;
+  right: 25px;
+  background-color: #fff;
+  transform: rotate(45deg);
+}
 
 .popup_layer_top {
   position: relative;
@@ -6313,6 +6367,80 @@ v .center > div > .panel_value {
   border-radius: 3px;
 }
 
+.ag-row:has(.ag-column-hover, .ag-cell:hover) {
+  z-index: 1;
+}
+
+.ag-cell:has(.optimizeBtn, .shareBtn) {
+  overflow: visible;
+}
+.ag-cell:has(.optimizeBtn, .shareBtn):hover .optimizeContents,
+.ag-cell:has(.optimizeBtn, .shareBtn):hover .shareContents, .ag-cell:has(.optimizeBtn, .shareBtn).ag-column-hover .optimizeContents,
+.ag-cell:has(.optimizeBtn, .shareBtn).ag-column-hover .shareContents {
+  display: block;
+}
+
+.optimizeContents,
+.shareContents {
+  z-index: 1;
+  display: none;
+  position: absolute;
+  text-align: left;
+  top: calc(50% + 19px);
+  left: 50%;
+  transform: translate(-50%);
+  padding: 15px;
+  box-sizing: border-box;
+  background: #FFFFFF;
+  border: 1px solid #EEEEEE;
+  border-radius: 12px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  color: #000000;
+  min-width: 167px;
+}
+.optimizeContents::before,
+.shareContents::before {
+  content: "";
+  position: absolute;
+  width: 12.3px;
+  height: 12.3px;
+  border: 1px solid #EEEEEE;
+  border-bottom: 0;
+  border-right: 0;
+  top: -7px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: #fff;
+  transform: rotate(45deg);
+}
+.optimizeContents .value,
+.shareContents .value {
+  padding-left: 16px;
+  margin: 2px 0;
+  position: relative;
+}
+.optimizeContents .value::before,
+.shareContents .value::before {
+  content: "";
+  left: 4px;
+  top: 7px;
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+}
+
+.optimizeContents .value::before {
+  background-color: #64BCEA;
+}
+
+.shareContents .value::before {
+  background-color: #FF6A13;
+}
+
 .tooltip {
   visibility: visible;
   opacity: 1;
@@ -6565,6 +6693,9 @@ v .center > div > .panel_value {
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid #ddd;
+}
+#input_area .detail-panel .panel-body:has(#D_VM_ID) .fm-output .output:has(.consoleDiv) {
+  overflow: visible;
 }
 #input_area .detail-panel .panel-body:has(#D_VM_ID) .fm-output .control-label {
   width: 100px;
