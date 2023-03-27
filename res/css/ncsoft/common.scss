@@ -7045,13 +7045,13 @@ v .center>div>.panel_value {
         text-align: center;
         color: #2C2C2C;
         box-sizing: border-box;
-        border-bottom: 1px solid #ddd;
         display: flex;
         justify-content: center;
         align-items: center;
         width: $thWidth;
         min-width: unset;
         min-height: 48px;
+        border-bottom: 1px solid #ddd;
         height: 100%;
     }
 
