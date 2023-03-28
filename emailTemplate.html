@@ -33,6 +33,9 @@
                 color: #000000;
                 padding-bottom: 20px;
             }
+            .emailTableWrap {
+                border-top: 1px solid #EEEEEE;
+            }
             .emailTable .emailTh {
                 background-color: #FAFAFA;
                 text-align: center;
@@ -50,6 +53,14 @@
                 line-height: 17px;
                 color: #2C2C2C;
             }
+            .disk {
+                width: 6px;
+                height: 6px;
+                border-radius: 3px;
+                display: inline-block;
+                background: #d9d9d9;
+                margin: 0px 9px 1px 0px;
+            }
         </style>
 
 
@@ -66,7 +77,7 @@
                 <tr><td width="100%" height="2" bgcolor="#009D93"></td></tr>
                 <tr>
                     <td style="padding: 21px 40px 26px 40px; border-bottom:1px solid #EDEDED;">
-                        <img src="/res/img/ncsoft/logo_ncspace.svg" width="145" height="26" alt="Logo">
+                        <img src="/res/img/ncsoft/logo_ncspace.svg" width="145" height="26" alt="Logo"/>
                     </td>
                 </tr>
                 <tr>
@@ -77,26 +88,124 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="emailTable">
+                                    <!-- evoke : tableWrap : 하나의 테이블 랩핑. 필수 -->
+                                    <!-- evoke : 이메일 클라이언트 호환성을 위해 보수적인 테이블코드로 마크업해야합니다. colspan은 깨질 우려가 있으므로 아래와 같이 레이아웃 구성필요합니다. 2열/4열 별도로 .emailTable로 마크업 -->
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="emailTableWrap">
                                         <tr>
-                                            <td class="emailTh">결제요청 제목</td>
-                                            <td>서버 공유자 추가</td>
+                                            <td>
+                                                <!-- evoke : 2열 table 인 경우 tr에 td는 2개 까지만 -->
+                                                <table border="0" cellpadding="0" cellspacing="0" width="100%" class="emailTable">
+                                                    <tr>
+                                                        <td class="emailTh">결제요청 제목</td>
+                                                        <td>서버 공유자 추가</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="emailTh">결재 상태</td>
+                                                        <td>2차 결재반려</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
                                         </tr>
                                         <tr>
-                                            <td class="emailTh">결재 상태</td>
-                                            <td>2차 결재반려</td>
+                                            <td>
+                                                <!-- evoke : 4열 table 인 경우 tr에 td는 4개 까지만 -->
+                                                <table border="0" cellpadding="0" cellspacing="0" width="100%" class="emailTable">
+                                                    <tr>
+                                                        <td class="emailTh">결재 요청자</td>
+                                                        <td>홍길동</td>
+                                                        <td class="emailTh">결재 요청일</td>
+                                                        <td>2023.03.10</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="emailTh">1차 결재</td>
+                                                        <td>안유진/ 결재완료</td>
+                                                        <td class="emailTh">1차 완료 /반려일</td>
+                                                        <td>2023.03.10</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <!-- evoke : 2열 table 인 경우 tr에 td는 2개 까지만 -->
+                                                <table border="0" cellpadding="0" cellspacing="0" width="100%" class="emailTable">
+                                                    <tr>
+                                                        <td class="emailTh">반려사유</td>
+                                                        <td>1차 반려사유 (없을경우 히든, 반려시에만 노출)</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <!-- evoke : 4열 table 인 경우 tr에 td는 4개 까지만 -->
+                                                <table border="0" cellpadding="0" cellspacing="0" width="100%" class="emailTable">
+                                                    <tr>
+                                                        <td class="emailTh">2차 결재</td>
+                                                        <td>안유진/ 결재완료</td>
+                                                        <td class="emailTh">2차 완료 /반려일</td>
+                                                        <td>2023.03.10</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <!-- evoke : 2열 table 인 경우 tr에 td는 2개 까지만 -->
+                                                <table border="0" cellpadding="0" cellspacing="0" width="100%" class="emailTable">
+                                                    <tr>
+                                                        <td class="emailTh">반려사유</td>
+                                                        <td>1차 반려사유 (없을경우 히든, 반려시에만 노출)</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
                                         </tr>
                                     </table>
                                 </td>
                             </tr>
                             <tr>
+                                <!-- evoke : 여백처리 padding 으로. margin 사용 X -->
+                                <td style="padding:40px 0 0 0"></td>
+                            </tr>
+                            <tr class="emailTitle">
+                                <td>결재 요청 사항</td>
+                            </tr>
+                            <tr>
                                 <td>
-                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="emailTable">
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="emailTableWrap">
                                         <tr>
-                                            <td class="emailTh">결재 요청자</td>
-                                            <td>홍길동</td>
-                                            <td class="emailTh">결재 요청일</td>
-                                            <td>2023.03.10</td>
+                                            <td>
+                                                <!-- evoke : 2열 table 인 경우 tr에 td는 2개 까지만 -->
+                                                <table border="0" cellpadding="0" cellspacing="0" width="100%" class="emailTable">
+                                                    <tr>
+                                                        <td class="emailTh">서버명</td>
+                                                        <td>제목</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="emailTh">데이터 센터</td>
+                                                        <td>제목</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="emailTh">사양</td>
+                                                        <td>제목</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="emailTh">기타1</td>
+                                                        <td>제목</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="emailTh">대상 서버</td>
+                                                        <td>
+                                                            <font><span class="disk"></span>NCS_USR_003</font><br/>
+                                                            <font><span class="disk"></span>NCS_USR_003</font><br/>
+                                                            <font><span class="disk"></span>NCS_USR_003</font><br/>
+                                                            <font><span class="disk"></span>NCS_USR_003</font><br/>
+                                                            <font><span class="disk"></span>NCS_USR_003</font><br/>
+                                                            <font><span class="disk"></span>NCS_USR_003</font><br/>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
                                         </tr>
                                     </table>
                                 </td>

@@ -1,0 +1,155 @@
+#vmChartArea .termArea {
+  float: right;
+  padding-right: 18px;
+}
+
+.chart_50 {
+  width: 50%;
+  float: left;
+  padding: 0;
+}
+.chart_50 .ui-panel {
+  border: 0;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 14px;
+  padding: 20px;
+}
+.chart_50 .ui-panel .ui-widget-content {
+  border: 0;
+}
+
+.noBorder {
+  border: none;
+  background-color: none;
+}
+
+#vmChartArea .termArea dl {
+  margin: 0;
+}
+
+#vmChartArea .termArea dt {
+  display: inline;
+  padding-right: 10px;
+  background: url(../img/icon_timeArrow.png) no-repeat right 6px;
+}
+
+#vmChartArea {
+  width: 100%;
+}
+
+#vmChartArea > table {
+  margin-top: 10px;
+  width: 100%;
+}
+
+#vmChartArea > table td {
+  width: 33%;
+}
+
+#vmChartArea .arrow-down {
+  width: 0;
+  height: 0;
+  margin-top: -2px;
+  margin-left: 30px;
+  display: none;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #4e5159;
+}
+
+#vmChartArea .content30 {
+  background-color: white;
+  height: 340px;
+  margin: 5px;
+  border: 1px solid #cecece;
+  border-radius: 3px;
+}
+
+#vmChartArea .content30 .title {
+  background-color: #4e5159;
+  font-size: 17px;
+  color: white;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  line-height: 40px;
+  height: 40px;
+  padding-left: 20px;
+}
+
+#vmChartArea dd {
+  list-style: none;
+  display: inline;
+  margin-left: 6px;
+  font-size: 14px;
+  color: #8b8b8b;
+  font-weight: bold;
+  padding: 0 7px 0 0px;
+  cursor: pointer;
+}
+
+#vmChartArea dd:not(:last-child) {
+  background: url(../img/icon_line.png) no-repeat right 3px;
+}
+
+#vmChartArea dd.selected {
+  color: #6a5ee3;
+  text-decoration: underline;
+}
+
+#vmChartArea .chartHeader {
+  padding-top: 20px;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+#vmChartArea .chartHeader .per {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+#vmChartArea .chartHeader .info {
+  font-size: 16px;
+  color: #666666;
+}
+
+#vmChartArea .cpu {
+  color: #6ba0d6;
+}
+
+#vmChartArea .mem {
+  color: #f19b67;
+}
+
+#vmChartArea .disk {
+  color: #729c87;
+}
+
+#vmChartArea .chart {
+  height: 200px;
+  margin: 0 auto;
+}
+
+.cpu-chart .title {
+  background-color: #86d2eb !important;
+}
+
+.mem-chart .title {
+  background-color: #86b8eb !important;
+}
+
+.disk-chart .title {
+  background-color: #6489c2 !important;
+}
+
+#hideArea table {
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.addHomeBtn {
+  float: right;
+  width: 24px;
+  padding: 0px !important;
+}/*# sourceMappingURL=vm_chart.css.map */

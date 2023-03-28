@@ -710,7 +710,7 @@ select {
             background-position: center right;
         }
         .reload {
-            display: flex;
+            display: flex !important;
             width: 145px;
             height: 36px;
             justify-content: center;
@@ -722,13 +722,21 @@ select {
             font-size: 12px;
             line-height: 17px;
             color: #2C2C2C;
-            
-            img {
-                margin-left: 8px;
+            &::after {
+                content: '';
                 width: 16px;
                 height: 16px;
-                &[src*="start_icon.png"] {background: url(/res/img/ncsoft/ic_vmPlay.svg) center/cover no-repeat;}
-                &[src*="stop_icon.png"] {background: url(/res/img/ncsoft/ic_vmStop.svg) center/cover no-repeat;}
+                display: block;
+                margin-left: 8px;
+            }
+            &:has(img[src*="start_icon.png"])::after {
+                background: url(/res/img/ncsoft/ic_vmPlay.svg) center/cover no-repeat;
+            }
+            &:has(img[src*="stop_icon.png"])::after {
+                background: url(/res/img/ncsoft/ic_vmStop.svg) center/cover no-repeat;
+            }
+            img {
+                display: none;
             }
         }
     }
@@ -6854,40 +6862,52 @@ v .center>div>.panel_value {
     color: #009D93 !important;
 }
 
-.optimizeBtn {
-    width: 6px;
-    height: 6px;
-    background: #64BCEA;
-    border-radius: 3px;
-}
-
 .shareBtn {
     width: 6px;
     height: 6px;
     background: #FF6A13;
     border-radius: 3px;
 }
-.ag-row:has(.ag-column-hover, .ag-cell:hover) {
-    z-index: 1;
-}
-.ag-cell:has(.optimizeBtn) {
-    // position: relative;
-    overflow: visible;
-    &:hover,
-    &.ag-column-hover {
-        .optimizeContents {
-            display: block;
-        }
+
+// 최적화 컬럼 셀
+#borderLayout_eRootPanel {
+    // 셀에 hover 하면 row z-index up
+    .ag-row:has([col-id="OPTIMIZE_STATUS"]:hover) {
+        z-index: 1;
     }
-}
+
+    // 셀 커스텀
+    [col-id="OPTIMIZE_STATUS"] {
+        overflow: visible;
+        > span {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .optimizeBtn {
+            width: 6px;
+            height: 6px;
+            background: #64BCEA;
+            border-radius: 3px;
+        }
+        &:has(.optimizeBtn) > span {
+            cursor: pointer;
+            &:hover .optimizeContents {
+                display: block;
+            }
+        }
+    } 
+} 
+
 .optimizeContents {
     z-index: 1;
     display: none;
     position: absolute;
     text-align: left;
     top: calc(50% + 19px);
-    left: 50%;
-    transform: translate(-50%);
+    right: 0;
     padding: 15px;
     box-sizing: border-box;
     background: #FFFFFF;
@@ -6925,12 +6945,6 @@ v .center>div>.panel_value {
             width: 4px;
             height: 4px;
             border-radius: 50%;
-        }
-    }
-}
-.optimizeContents {
-    .value {
-        &::before {
             background-color: #64BCEA;
         }
     }

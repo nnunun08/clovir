@@ -28,7 +28,8 @@
   border: none;
 }
 
-#team_area, .dc_area.hover {
+#team_area,
+.dc_area.hover {
   position: absolute;
   z-index: 99;
   left: 15px;
@@ -40,7 +41,8 @@
   margin-bottom: 10px;
 }
 
-#dashboardArea select, #dashboardArea option {
+#dashboardArea select,
+#dashboardArea option {
   background: white;
   font-size: 15px;
   color: #908f8f !important;
@@ -215,7 +217,9 @@
   overflow: hidden;
 }
 
-.panel-heading, .panel-heading > a, .dashboard_title {
+.panel-heading,
+.panel-heading > a,
+.dashboard_title {
   font-size: 22px !important;
   text-align: left;
   padding-left: 10px;
@@ -287,6 +291,10 @@
 }
 
 .delay {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 
