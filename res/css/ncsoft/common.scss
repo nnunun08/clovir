@@ -6870,19 +6870,17 @@ v .center>div>.panel_value {
 .ag-row:has(.ag-column-hover, .ag-cell:hover) {
     z-index: 1;
 }
-.ag-cell:has(.optimizeBtn, .shareBtn) {
+.ag-cell:has(.optimizeBtn) {
     // position: relative;
     overflow: visible;
     &:hover,
     &.ag-column-hover {
-        .optimizeContents,
-        .shareContents {
+        .optimizeContents {
             display: block;
         }
     }
 }
-.optimizeContents,
-.shareContents {
+.optimizeContents {
     z-index: 1;
     display: none;
     position: absolute;
@@ -6934,13 +6932,6 @@ v .center>div>.panel_value {
     .value {
         &::before {
             background-color: #64BCEA;
-        }
-    }
-}
-.shareContents {
-    .value {
-        &::before {
-            background-color: #FF6A13;
         }
     }
 }
@@ -7189,7 +7180,7 @@ v .center>div>.panel_value {
     // width: 516px !important;
     // height: 282px !important;
     margin: 0 auto;
-    margin-top: 36px;
+    // margin-top: 36px;
 
     svg {
         .highcharts-point:nth-child(1) {

@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>HTML Email Template</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <style type="text/css">
+            /* CLIENT-SPECIFIC RESETS */
+            /* Outlook.com(Hotmail)의 전체 너비 및 적절한 줄 높이를 허용 */
+            .ReadMsgBody{ width: 100%; }
+            .ExternalClass{ width: 100%; }
+            .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div { line-height: 100%; }
+            /* Outlook 2007 이상에서 Outlook이 추가하는 테이블 주위의 간격을 제거 */
+            table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+            /* Internet Explorer에서 크기가 조정된 이미지를 렌더링하는 방식을 수정 */
+            img { -ms-interpolation-mode: bicubic; }
+            /* Webkit 및 Windows 기반 클라이언트가 텍스트 크기를 자동으로 조정하지 않도록 수정 */
+            body, table, td, p, a, li, blockquote { -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
+        </style>
+
+        <style type="text/css">
+            /* GENERAL STYLE RESETS */
+            body, #bodyTable { width:100% !important; height:100% !important; margin:0; padding:0; }
+            #bodyTable { padding: 20px 0 30px 0; background-color: #ffffff; }
+            img, a img { border:0; outline:none; text-decoration:none; }
+            .imageFix { display:block; }
+            table, td { border-collapse:collapse; }
+            .emailTitle td {
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 23px;
+                color: #000000;
+                padding-bottom: 20px;
+            }
+            .emailTable .emailTh {
+                background-color: #FAFAFA;
+                text-align: center;
+                padding-left: 4px;
+                padding-right: 4px;
+                width: 120px;
+                box-sizing: border-box;
+            }
+            .emailTable td {
+                padding: 19px 20px 19px 20px;
+                /* border-top: 1px solid #EEEEEE; */
+                border-bottom: 1px solid #EEEEEE;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 17px;
+                color: #2C2C2C;
+            }
+        </style>
+
+
+    </head>
+
+    <body>
+    <!-- OUTERMOST CONTAINER TABLE -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" id="bodyTable">
+        <tr>
+        <td>
+            <!-- 600px - 800px CONTENTS CONTAINER TABLE -->
+            <table border="0" cellpadding="0" cellspacing="0" width="800">
+                <tr><td width="100%" height="8" bgcolor="#00BFB3"></td></tr>
+                <tr><td width="100%" height="2" bgcolor="#009D93"></td></tr>
+                <tr>
+                    <td style="padding: 21px 40px 26px 40px; border-bottom:1px solid #EDEDED;">
+                        <img src="/res/img/ncsoft/logo_ncspace.svg" width="145" height="26" alt="Logo">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 40px 40px 100px 40px;">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr class="emailTitle">
+                                <td>결재 상태</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="emailTable">
+                                        <tr>
+                                            <td class="emailTh">결제요청 제목</td>
+                                            <td>서버 공유자 추가</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="emailTh">결재 상태</td>
+                                            <td>2차 결재반려</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="emailTable">
+                                        <tr>
+                                            <td class="emailTh">결재 요청자</td>
+                                            <td>홍길동</td>
+                                            <td class="emailTh">결재 요청일</td>
+                                            <td>2023.03.10</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+    
+        </td>
+        </tr>
+    </table>
+    </body>
+</html>
