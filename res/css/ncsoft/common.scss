@@ -6739,6 +6739,13 @@ v .center>div>.panel_value {
         }
     }
 }
+#newVra_popup,
+#filter_popup {
+    transition: none;
+    .modal-dialog {
+        transition: none !important;
+    }
+}
 .filter_popup {
     .modal-footer {
         position: relative;
@@ -7149,7 +7156,7 @@ v .center>div>.panel_value {
 
     .btn_group {
         position: absolute;
-        top: -44px;
+        top: -48px;
         right: 0;
         float: none;
         display: flex;
