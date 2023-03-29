@@ -35,6 +35,14 @@ Select::-ms-expand {
     .ag-theme-fresh .ag-cell {
         border: 0;
     }
+    .ag-layout-normal .ag-body-container {
+        margin-bottom: 0;
+    }
+    .ag-body,
+    .ag-body-viewport,
+    .ag-body-viewport-wrapper {
+        height: auto !important;
+    }
 }
 .btn.active,
 .btn:active {
@@ -5973,6 +5981,9 @@ v .center>div>.panel_value {
 #filter {
     border-radius: 4px;
     margin-right: 0px;
+    &.contentsBtn {
+        background-color: #fafafa !important;
+    }
 }
 
 #mainTable {
@@ -6914,7 +6925,7 @@ v .center>div>.panel_value {
     position: absolute;
     text-align: left;
     top: calc(50% + 19px);
-    right: 0;
+    right: calc(50% - 34px);
     padding: 15px;
     box-sizing: border-box;
     background: #FFFFFF;
@@ -6934,9 +6945,7 @@ v .center>div>.panel_value {
         border-bottom: 0;
         border-right: 0;
         top: -7px;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
+        right: 27px;
         background-color: #fff;
         transform: rotate(45deg);
     }
@@ -7607,18 +7616,18 @@ v .center>div>.panel_value {
     img {
         display: none;
     }
-    padding-left: 14px;
-    position: relative;
-    &::before {
-        content: '';
-        position: absolute;
-        top: 5px;
-        left: 0;
-        width: 6px;
-        height: 6px;
-        background-color: #7E7E7E;
-        border-radius: 10px;
-    }
+    // padding-left: 14px;
+    // position: relative;
+    // &::before {
+    //     content: '';
+    //     position: absolute;
+    //     top: 5px;
+    //     left: 0;
+    //     width: 6px;
+    //     height: 6px;
+    //     background-color: #7E7E7E;
+    //     border-radius: 10px;
+    // }
 }
 
 
@@ -7699,10 +7708,13 @@ v .center>div>.panel_value {
     margin-top: 130px;
     width: 100%;
     height: auto;
+    // height: calc(100vh - 80px);
     // min-height: 805px;
     margin: 0;
     // overflow: hidden;
+    overflow: auto;
     min-width: unset;
+    padding-top: 80px;
     &::after {
         content: '';
         display: block;
@@ -7735,11 +7747,16 @@ v .center>div>.panel_value {
         background: url(/res/img/ncsoft/ic_20_add.svg) center/cover no-repeat;
     }
 }
-
+*::-webkit-scrollbar {
+    display: none;
+}
 .menu-layout-3 {
     background-color: white;
     // overflow-x: hidden;
     min-width: 1440px;
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 .menu-layout-3 .btn {
@@ -7848,7 +7865,7 @@ v .center>div>.panel_value {
                 }
                 .value .unitValue,
                 .title {
-                    color: #64BCEA;
+                    color: #00A3E0;
                 }
             }
         } 
@@ -7975,7 +7992,7 @@ v .center>div>.panel_value {
     width: calc(100% - 252px);
     float: right;
     box-sizing: border-box;
-    height: calc(100vh - $GNBHeight);
+    // height: calc(100vh - $GNBHeight);
     overflow: auto;
     // border-left: 1px solid #ddd;
 
@@ -8456,6 +8473,4 @@ v .center>div>.panel_value {
         height: 40px;
     }
 }
-
-
 
