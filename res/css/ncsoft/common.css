@@ -7790,4 +7790,29 @@ td:last-child {
 }
 #search_area:has(.requestItemsHistory_box) .form-control {
   height: 40px;
+}
+
+.menu-layout-3.gridAnchor #input_area {
+  padding-top: 100px;
+}
+.menu-layout-3.gridAnchor #search_area {
+  position: fixed;
+  top: 80px;
+  background: white;
+  z-index: 3;
+}
+.menu-layout-3.gridAnchor .ag-root {
+  padding-top: 48px;
+}
+.menu-layout-3.gridAnchor .ag-header {
+  position: fixed;
+  top: 180px;
+  left: 40px;
+  right: 40px;
+  width: calc(100% - 40px - 40px);
+  margin: 0 auto;
+  z-index: 3;
+  border-top: 1px solid #000;
+  box-sizing: border-box;
+  height: 49px !important;
 }/*# sourceMappingURL=common.css.map */

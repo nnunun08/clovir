@@ -8505,3 +8505,37 @@ v .center>div>.panel_value {
     }
 }
 
+
+
+// 메인 그리드 앵커
+.menu-layout-3.gridAnchor {
+    $GNBHeight : 80px;
+    $searchAreaHeight : 100px;
+    $sectionPadding : 40px;
+    #input_area {
+        padding-top: $searchAreaHeight;
+    }
+    #search_area {
+        position: fixed;
+        top: $GNBHeight;
+        background: white;
+        z-index: 3;
+    }
+    .ag-root {
+        // 그리드 헤더 높이
+        padding-top: 48px;
+    }
+    .ag-header {
+        position: fixed;
+        top: $GNBHeight + $searchAreaHeight;
+        left: $sectionPadding;
+        right: $sectionPadding;
+        width: calc(100% - $sectionPadding - $sectionPadding);
+        margin: 0 auto;
+        z-index: 3;
+        border-top: 1px solid #000;
+        box-sizing: border-box;
+        // 그리드 헤더 높이 + ag-root 상단 보더 1px
+        height: 49px !important;
+    }
+}
