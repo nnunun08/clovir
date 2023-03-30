@@ -5953,6 +5953,7 @@ v .center > div > .panel_value {
 
 .popup_gridTable {
   height: 200px;
+  height: auto;
   padding-top: 10px;
 }
 
@@ -6393,7 +6394,7 @@ v .center > div > .panel_value {
 
 #borderLayout_eRootPanel .ag-row:has([col-id=TAGS]:hover),
 #borderLayout_eRootPanel .ag-row:has([col-id=OPTIMIZE_STATUS]:hover) {
-  z-index: 1;
+  z-index: 2;
 }
 #borderLayout_eRootPanel [col-id=TAGS],
 #borderLayout_eRootPanel [col-id=OPTIMIZE_STATUS] {
