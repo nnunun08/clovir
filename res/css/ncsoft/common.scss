@@ -8517,7 +8517,9 @@ v .center>div>.panel_value {
     }
     #search_area {
         position: fixed;
+        // position: sticky;
         top: $GNBHeight;
+        // top: 0;
         background: white;
         z-index: 3;
     }

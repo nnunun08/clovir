@@ -37223,7 +37223,7 @@ height: 8px;
       const searchArea = document.querySelector('#search_area');
       contentBody.addEventListener("scroll", () => {
         console.log(contentBody.scrollTop)
-        if(contentBody.scrollTop > 104) {
+        if(contentBody.scrollTop >= 104) {
           body.classList.add('gridAnchor')
         } else {
           body.classList.remove('gridAnchor')
