@@ -36367,7 +36367,8 @@ height: 8px;
                         <div class="ag-bl-overlay" ref="overlay" style="display: none;"></div>
                       </div>
                     </div>
-                    <div id="mainTablePagination" class="paginationFrame">
+                    <!-- evoke0331 : pagination 삭제 -->
+                    <!-- <div id="mainTablePagination" class="paginationFrame">
                       <div class="pagination-moveFrame prevMove">
                         <div class="pagination-move2" onclick="goToFirstPage(&quot;mainTablePagination&quot;)" title="처음" style="pointer-events: auto;">&lt;&lt;</div>
                         <div class="pagination-move1" onclick="goToPrevTensPage(&quot;mainTablePagination&quot;)" title="이전" style="pointer-events: auto;">&lt;</div>
@@ -36380,7 +36381,7 @@ height: 8px;
                         <div class="pagination-move2" onclick="goToNextTensPage(&quot;mainTablePagination&quot;)" title="다음" style="pointer-events: none;">&gt;</div>
                         <div class="pagination-move1" onclick="goToLastPage(&quot;mainTablePagination&quot;)" title="끝" style="pointer-events: auto;">&gt;&gt;</div>
                       </div>
-                    </div>
+                    </div> -->
                   </div>
                   <div class="popup_layer tabHide">
                     <div class="popup_layer_top">
@@ -37212,7 +37213,10 @@ height: 8px;
       </div>
       <div id="loading_dialog" class="loading_dialog" style="display: none;">
         <div id="loading_dialog_bg" class="loading_dialog_bg">
-          <img src="/res/img/ncsoft/loading.gif">
+          <!-- evoke0331 : loading_dialog GIF => mp4 교체 -->
+          <video autoplay loop muted>
+            <source src="/res/img/ncsoft/mov_loading.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
     </div>

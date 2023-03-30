@@ -588,8 +588,17 @@ $leftSize : 216px;
         margin-top: 28px;
         width: 128px;
         height: 128px;
-        background: url(/res/img/ncsoft/ic_128_done.svg) center/cover no-repeat;
-        filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.08));
+        // background: url(/res/img/ncsoft/ic_128_done.svg) center/cover no-repeat;
+        // filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.08));
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        video {
+            width: 500px;
+            height: 500px;
+            object-fit: cover;
+        }
     }
     .done-msg {
         margin: 0 auto;

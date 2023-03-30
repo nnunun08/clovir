@@ -51,6 +51,7 @@ Select::-ms-expand {
 .btn:active {
   background-image: none;
   outline: 0;
+  -webkit-box-shadow: none;
   box-shadow: none;
 }
 
@@ -747,7 +748,9 @@ marquee {
 .noSelection {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
+  -khtml-user-select: none;
   -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
 }
 
@@ -786,6 +789,8 @@ marquee {
   border-radius: 4px;*/
   /*-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);*/
   /* 	box-shadow: inset 0 1px 1px rgba(0,0,0,.075); */
+  -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   display: inline-block;
   float: none;
@@ -973,29 +978,34 @@ marquee {
 }
 
 #loading_dialog {
+  position: fixed;
   width: 100%;
   height: 100%;
-  line-height: 100%;
-  position: fixed;
   left: 0;
   top: 0;
   background-color: rgba(200, 200, 200, 0.5);
   z-index: 999999;
   text-align: center;
   vertical-align: middle;
-  float: left;
   display: none;
 }
-
 #loading_dialog .loading_dialog_bg {
-  background-color: white;
-  float: left;
-  text-align: center;
-  vertical-align: middle;
-  position: relative;
-  top: calc(50% - 69px);
-  left: calc(50% - 107px);
+  width: 200px;
+  height: 200px;
+  padding: 20px;
   border-radius: 14px;
+  box-sizing: border-box;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+#loading_dialog .loading_dialog_bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .disabledTab {
@@ -1046,10 +1056,6 @@ marquee {
   vertical-align: middle;
   display: inline-block;
   margin: 0;
-}
-
-.popup_area .input::-moz-placeholder {
-  color: #ccc;
 }
 
 .popup_area .input::placeholder {
@@ -2321,8 +2327,7 @@ select.form-control {
 }
 
 .fileAttachViewArea ol {
-  -webkit-padding-start: 10px;
-          padding-inline-start: 10px;
+  padding-inline-start: 10px;
 }
 
 .modal-open .modal {
@@ -5603,10 +5608,6 @@ v .center > div > .panel_value {
   appearance: none;
 }
 
-#paging_select::-moz-selection {
-  border: none;
-}
-
 #paging_select::selection {
   border: none;
 }
@@ -5779,7 +5780,7 @@ v .center > div > .panel_value {
 }
 
 [data-id=SELF].selected {
-  background-color: #00A3E0;
+  background-color: #0099FF;
 }
 [data-id=SELF].selected .value .unitValue,
 [data-id=SELF].selected > div {
@@ -5917,6 +5918,7 @@ v .center > div > .panel_value {
   opacity: 0.6;
   box-shadow: none;
   border-color: #6cc0e5;
+  -webkit-transition: all 0.12s, border-color 0.08s;
   transition: all 0.12s, border-color 0.08s;
 }
 
@@ -5932,6 +5934,8 @@ v .center > div > .panel_value {
   border-color: transparent #6cc0e5 #6cc0e5 transparent;
   border-top-color: transparent;
   border-left-color: transparent;
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
   transform: rotate(0deg);
 }
 
@@ -6189,9 +6193,6 @@ v .center > div > .panel_value {
   line-height: 19px;
   color: #4A4A4A;
 }
-.modal-body .select2-container--default .select2-search--inline .select2-search__field::-moz-placeholder {
-  color: #CCCCCC;
-}
 .modal-body .select2-container--default .select2-search--inline .select2-search__field::placeholder {
   color: #CCCCCC;
 }
@@ -6436,6 +6437,7 @@ v .center > div > .panel_value {
   white-space: normal;
   right: 50%;
   transform: translateX(50%);
+  text-align: center;
 }
 #borderLayout_eRootPanel [col-id=TAGS] .tagsContents::before,
 #borderLayout_eRootPanel [col-id=OPTIMIZE_STATUS] .tagsContents::before {
@@ -7311,7 +7313,11 @@ td:last-child {
   border-color: #64BCEA;
 }
 #topIcon .floatRight.SELF .table_inner_icon.selected {
-  background-color: #F3FAFD;
+  background-color: #0099FF;
+}
+#topIcon .floatRight.SELF .table_inner_icon.selected .value .unitValue,
+#topIcon .floatRight.SELF .table_inner_icon.selected .title {
+  color: #fff;
 }
 #topIcon .floatRight.SELF .table_inner_icon .value .unitValue,
 #topIcon .floatRight.SELF .table_inner_icon .title {
@@ -7324,7 +7330,11 @@ td:last-child {
   border-color: #004C98;
 }
 #topIcon .floatRight.LEGACY .table_inner_icon.selected {
-  background-color: #F3F9FF;
+  background-color: #004C98;
+}
+#topIcon .floatRight.LEGACY .table_inner_icon.selected .value .unitValue,
+#topIcon .floatRight.LEGACY .table_inner_icon.selected .title {
+  color: #fff;
 }
 #topIcon .floatRight.LEGACY .table_inner_icon .value .unitValue,
 #topIcon .floatRight.LEGACY .table_inner_icon .title {
