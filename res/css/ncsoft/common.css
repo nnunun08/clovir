@@ -49,6 +49,13 @@ Select::-ms-expand {
 #borderLayout_eRootPanel .ag-body-viewport-wrapper {
   overflow: visible !important;
 }
+#borderLayout_eRootPanel .ag-header {
+  position: sticky;
+  top: 180px;
+  z-index: 3;
+  margin-top: -1px;
+  border-top: 1px solid #4A4A4A;
+}
 
 .btn.active,
 .btn:active {
@@ -7183,9 +7190,7 @@ td:last-child {
   width: 100%;
   height: auto;
   margin: 0;
-  overflow: auto;
   min-width: unset;
-  padding-top: 80px;
 }
 .content-body::after {
   content: "";
@@ -7225,6 +7230,9 @@ td:last-child {
 }
 .menu-layout-3::-webkit-scrollbar {
   display: none;
+}
+.menu-layout-3:has(#borderLayout_eRootPanel) {
+  height: auto;
 }
 
 .menu-layout-3 .btn {

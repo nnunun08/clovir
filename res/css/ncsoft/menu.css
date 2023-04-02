@@ -13,8 +13,6 @@
 }
 
 .topArea {
-  position: relative;
-  position: fixed;
   background-color: #fff;
   height: auto;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.08);
@@ -34,6 +32,7 @@
   height: 72px;
   padding: 0 40px;
   box-sizing: border-box;
+  z-index: 1;
 }
 #topArea .topLogo {
   position: relative;
@@ -1252,6 +1251,8 @@ a.tree-toggle {
 #topArea {
   margin: 0 auto;
   position: relative;
+  position: sticky;
+  top: 0;
 }
 
 .showMenu {
@@ -1358,11 +1359,15 @@ a.tree-toggle {
 }
 #mainForm #header_detail .panel-body {
   padding: 0;
+  height: auto;
 }
 #mainForm #header_detail #search_area {
   padding: 40px 40px 20px;
   width: 100%;
   background-color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 #mainForm #header_detail #search_area::after {
   content: "";

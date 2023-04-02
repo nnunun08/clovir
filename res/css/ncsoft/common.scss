@@ -57,6 +57,13 @@ Select::-ms-expand {
         // height: 100% !important;
         overflow: visible !important;
     }
+    .ag-header {    
+        position: sticky;
+        top: 180px;
+        z-index: 3;
+        margin-top: -1px;
+        border-top: 1px solid #4A4A4A;
+    }
 }
 .btn.active,
 .btn:active {
@@ -7760,9 +7767,9 @@ v .center>div>.panel_value {
     // min-height: 805px;
     margin: 0;
     // overflow: hidden;
-    overflow: auto;
+    // overflow: auto;
     min-width: unset;
-    padding-top: 80px;
+    // padding-top: 80px;
     &::after {
         content: '';
         display: block;
@@ -7801,6 +7808,9 @@ v .center>div>.panel_value {
     min-width: 1440px;
     &::-webkit-scrollbar {
         display: none;
+    }
+    &:has(#borderLayout_eRootPanel) {
+        height: auto;
     }
 }
 
