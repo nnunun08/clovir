@@ -40,10 +40,13 @@ Select::-ms-expand {
 .main .ag-root {
   overflow: visible !important;
 }
-.main .ag-body,
-.main .ag-body-viewport,
-.main .ag-body-viewport-wrapper {
-  height: 100% !important;
+.content-body:has(#borderLayout_eRootPanel)::-webkit-scrollbar {
+  display: none;
+}
+
+#borderLayout_eRootPanel .ag-body,
+#borderLayout_eRootPanel .ag-body-viewport,
+#borderLayout_eRootPanel .ag-body-viewport-wrapper {
   overflow: visible !important;
 }
 
@@ -7214,10 +7217,6 @@ td:last-child {
   width: 20px;
   height: 20px;
   background: url(/res/img/ncsoft/ic_20_add.svg) center/cover no-repeat;
-}
-
-*::-webkit-scrollbar {
-  display: none;
 }
 
 .menu-layout-3 {

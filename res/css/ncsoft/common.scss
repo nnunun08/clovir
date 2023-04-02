@@ -41,10 +41,20 @@ Select::-ms-expand {
     .ag-root {
         overflow: visible !important;
     }
+    .ag-body{
+        // height:calc(100% - 48px) !important;
+        // overflow: auto !important;
+        // border-bottom: 1px solid #ddd;
+    }
+}
+.content-body:has(#borderLayout_eRootPanel)::-webkit-scrollbar {
+   display: none;
+}
+#borderLayout_eRootPanel {
     .ag-body,
     .ag-body-viewport,
     .ag-body-viewport-wrapper {
-        height: 100% !important;
+        // height: 100% !important;
         overflow: visible !important;
     }
 }
@@ -7784,9 +7794,6 @@ v .center>div>.panel_value {
         height:20px;
         background: url(/res/img/ncsoft/ic_20_add.svg) center/cover no-repeat;
     }
-}
-*::-webkit-scrollbar {
-    display: none;
 }
 .menu-layout-3 {
     background-color: white;

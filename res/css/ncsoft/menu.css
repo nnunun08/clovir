@@ -164,8 +164,7 @@
   width: 40px;
   height: 40px;
   overflow: hidden;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 #openDashboardEdit {
@@ -279,6 +278,10 @@
 }
 
 #menu-button.menu-button-rotate i {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
@@ -1546,9 +1549,6 @@ a.tree-toggle {
   line-height: 19px;
   outline: none;
   background-color: transparent;
-}
-.search-box-btn .keyword input::-moz-placeholder {
-  color: #ccc;
 }
 .search-box-btn .keyword input::placeholder {
   color: #ccc;
