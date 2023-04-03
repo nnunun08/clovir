@@ -7840,4 +7840,53 @@ td:last-child {
 
 #vmDelCheckList_popupTable {
   overflow-x: hidden;
+}
+
+.small-new-btn,
+.small-del-btn {
+  text-indent: -9999px;
+  border: 0;
+  width: 20px;
+  height: 20px;
+  background: url(/res/img/ncsoft/icon_20_cirlce_plus.svg) center/cover no-repeat;
+}
+
+.small-del-btn {
+  background-image: url(/res/img/ncsoft/icon_20_cirlce.minus.svg);
+}
+
+/*부서별 서버 개수*/
+#vmCntByTeam .highcharts-container svg .highcharts-point:nth-child(1) {
+  fill: #f8c506;
+}
+
+#vmCntByTeam .highcharts-container svg .highcharts-point:nth-child(2) {
+  fill: #ffe9b0;
+}
+
+/*clusterCPU*/
+#clusterCPU .highcharts-container svg .highcharts-point:nth-child(1) {
+  fill: #82D2FF;
+}
+
+#clusterCPU .highcharts-container svg .highcharts-point:nth-child(2) {
+  fill: #C5EAFF;
+}
+
+/*clusterMEM*/
+#clusterMEM .highcharts-container svg .highcharts-point:nth-child(1) {
+  fill: #C9CBFF;
+}
+
+#clusterMEM .highcharts-container svg .highcharts-point:nth-child(2) {
+  fill: #E5E6FF;
+}
+
+/*clusterDISK*/
+#clusterDISK .highcharts-container svg .highcharts-point:nth-child(1) {
+  fill: #54B552;
+}
+
+#clusterDISK .highcharts-container svg .highcharts-point:nth-child(2) {
+  fill: #AEE5BE;
 }/*# sourceMappingURL=common.css.map */

@@ -1,9 +1,124 @@
 :root {
   --fc-button-bg-color: red;
+  --fc-small-font-size: 12px;
+}
+
+.fullcalendar-container .fc-daygrid-event-dot {
+  display: none;
+}
+.fullcalendar-container .fc-event-title {
+  color: #FF6A13;
+  font-size: 14px;
+}
+.fullcalendar-container #vmCntQuota_popup .modal-dialog {
+  width: 800px;
+}
+.fullcalendar-container .fullcalendar {
+  height: 500px;
+}
+.fullcalendar-container .calendar.title {
+  text-align: center;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 29px;
+  color: #000000;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.fullcalendar-container .calendar.title .btn {
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
+  text-indent: -9999px;
+}
+.fullcalendar-container .calendar.title .prev {
+  background: url(/res/img/ncsoft/icon_16_arrow_left.svg) center no-repeat;
+}
+.fullcalendar-container .calendar.title .next {
+  background: url(/res/img/ncsoft/icon_16_arrow_right.svg) center no-repeat;
+}
+.fullcalendar-container .fc-h-event {
+  background-color: transparent;
+  border: 0;
+  color: #2c2c2c;
+}
+.fullcalendar-container .fc-h-event .fc-event-main {
+  color: #2c2c2c;
+  padding-left: 12px;
+}
+.fullcalendar-container .reason_D,
+.fullcalendar-container .reason_U,
+.fullcalendar-container .reason_C {
+  position: relative;
+}
+.fullcalendar-container .reason_D::before,
+.fullcalendar-container .reason_U::before,
+.fullcalendar-container .reason_C::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 10px;
+  background-color: #3DBAFF;
+}
+.fullcalendar-container .reason_U::before {
+  background-color: #7B61FF;
+}
+.fullcalendar-container .reason_D::before {
+  background-color: #C5003E;
+}
+.fullcalendar-container .colTop_accessCount {
+  height: 49px;
+  border-top: 1px solid #4A4A4A;
+  border-bottom: 1px solid #ddd;
+  background-color: #FAFAFA;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  line-height: 17px;
+  text-align: center;
+  color: #2C2C2C;
+}
+.fullcalendar-container .borderLeft_none {
+  border-right: 1px solid #FAFAFA !important;
+}
+.fullcalendar-container .borderLeft_line {
+  border-right: 1px solid #ddd !important;
+}
+.fullcalendar-container .tableIcon {
+  width: 8px;
+  height: 8px;
+  background: #C5003E;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  display: inline-block;
+  border-radius: 100%;
+  margin-right: 5px;
+}
+.fullcalendar-container .createIcon {
+  background: #3DBAFF;
+}
+.fullcalendar-container .changeIcon {
+  background: #7B61FF;
+}
+.fullcalendar-container .deleteIcon {
+  background: #C5003E;
+}
+.fullcalendar-container #filter {
+  margin-bottom: 10px;
 }
 
 .fullCanlendar {
   max-width: 1120px;
+}
+.fullCanlendar .fc-day {
+  text-align: left;
 }
 .fullCanlendar .modal-header {
   border-bottom: 0;
@@ -60,7 +175,8 @@
   margin-left: -6px;
   margin-right: -6px;
 }
-.fullCanlendar .fc-theme-standard td, .fullCanlendar .fc-theme-standard th {
+.fullCanlendar .fc-theme-standard td,
+.fullCanlendar .fc-theme-standard th {
   border-color: transparent;
   background: transparent;
 }

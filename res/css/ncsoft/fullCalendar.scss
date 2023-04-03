@@ -1,22 +1,155 @@
 // fullcalendar
 
 :root {
-    --fc-button-bg-color : red;
+    --fc-button-bg-color: red;
+    --fc-small-font-size: 12px;
+}
+
+
+.fullcalendar-container {
+    .fc-daygrid-event-dot {
+        display: none;
+    }
+
+    .fc-event-title {
+        color: #FF6A13;
+        font-size: 14px;
+    }
+
+    #vmCntQuota_popup .modal-dialog {
+        width: 800px;
+    }
+
+    .fullcalendar {
+        height: 500px;
+    }
+
+    .calendar.title {
+        text-align: center;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 29px;
+        color: #000000;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+
+        .btn {
+            width: 16px;
+            height: 16px;
+            overflow: hidden;
+            text-indent: -9999px;
+        }
+
+        .prev {
+            background: url(/res/img/ncsoft/icon_16_arrow_left.svg) center no-repeat;
+        }
+
+        .next {
+            background: url(/res/img/ncsoft/icon_16_arrow_right.svg) center no-repeat;
+        }
+    }
+
+    .fc-h-event {
+        background-color: transparent;
+        border: 0;
+        color: #2c2c2c;
+
+        .fc-event-main {
+            color: #2c2c2c;
+            padding-left: 12px;
+        }
+    }
+    .reason_D,
+    .reason_U,
+    .reason_C {
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 0;
+            width: 8px;
+            height: 8px;
+            border-radius: 10px;
+            background-color: #3DBAFF;
+        }
+    }
+    .reason_U::before {background-color: #7B61FF;}
+    .reason_D::before {background-color: #C5003E;}
+
+    .colTop_accessCount {
+        height: 49px;
+        border-top: 1px solid #4A4A4A;
+        border-bottom: 1px solid #ddd;
+        background-color: #FAFAFA;
+        justify-content: center;
+        align-items: center;
+        font-size: 12px;
+        line-height: 17px;
+        text-align: center;
+        color: #2C2C2C;
+    }
+
+    .borderLeft_none {
+        border-right: 1px solid #FAFAFA !important;
+    }
+
+    .borderLeft_line {
+        border-right: 1px solid #ddd !important;
+    }
+
+    .tableIcon {
+        width: 8px;
+        height: 8px;
+        background: #C5003E;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+        display: inline-block;
+        border-radius: 100%;
+        margin-right: 5px;
+    }
+
+    .createIcon {
+        background: #3DBAFF;
+    }
+
+    .changeIcon {
+        background: #7B61FF;
+    }
+
+    .deleteIcon {
+        background: #C5003E;
+    }
+
+    #filter {
+        margin-bottom: 10px;
+    }
 }
 
 .fullCanlendar {
     max-width: 1120px;
-    
+
+    .fc-day {
+        text-align: left;
+    }
+
     .modal-header {
         border-bottom: 0;
     }
+
     .modal-body {
         padding-top: 9px;
         padding-bottom: 39px;
     }
+
     .fc {
         .fc-daygrid-day-top {
             flex-direction: row;
+
             a {
                 font-weight: 400;
                 font-size: 14px;
@@ -25,11 +158,13 @@
             }
         }
     }
+
     .fc-header-toolbar {
         .fc-toolbar-chunk {
             display: flex;
             align-items: center;
             justify-content: center;
+
             .fc-toolbar-title {
                 margin: 0 10px;
                 font-weight: 400;
@@ -39,9 +174,11 @@
                 letter-spacing: normal;
                 font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
             }
+
             button {
                 margin: 0;
             }
+
             .fc-prev-button,
             .fc-next-button {
                 outline: none;
@@ -51,48 +188,59 @@
                 width: 26px;
                 height: 26px;
                 background: url(/res/img/ncsoft/icon_16_arrow_right.svg) center/16px no-repeat;
+
                 .fc-icon {
                     display: none;
                 }
             }
+
             .fc-prev-button {
                 background-image: url(/res/img/ncsoft/icon_16_arrow_left.svg);
             }
         }
     }
+
     .fc-view-harness {
         width: calc(100% + 12px);
         margin-left: -6px;
         margin-right: -6px;
     }
-    
+
     .fc-theme-standard {
-        td, th {
+
+        td,
+        th {
             border-color: transparent;
             background: transparent;
         }
+
         .fc-scrollgrid {
             border: 0;
         }
-        .fc-col-header  {
+
+        .fc-col-header {
             th {
                 padding: 0 6px 26px;
                 text-align: left;
+
                 .fc-scrollgrid-sync-inner {
                     box-sizing: border-box;
                     padding-top: 14px;
                     border-top: 1px solid #97D8D4;
-                    box-shadow:inset 0 5px 0 #EEF9F7;
+                    box-shadow: inset 0 5px 0 #EEF9F7;
                 }
+
                 &:nth-child(1) {
                     .fc-scrollgrid-sync-inner {
                         border-top: 1px solid #EB7A95;
-                        box-shadow:inset 0 5px 0 #FFF7F7;
+                        box-shadow: inset 0 5px 0 #FFF7F7;
+
                         a {
                             color: #EB7A95;
                         }
-                    }   
+                    }
                 }
+
                 a {
                     font-weight: 700;
                     font-size: 14px;
@@ -101,9 +249,11 @@
                 }
             }
         }
+
         .fc-scrollgrid-sync-table {
             td {
                 padding: 8px 6px;
+
                 &:nth-child(1) {
                     a {
                         color: #EB7A95;
@@ -113,4 +263,3 @@
         }
     }
 }
-
