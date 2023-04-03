@@ -42,15 +42,15 @@ Select::-ms-expand {
         overflow: visible !important;
     }
     .ag-body{
+        overflow: auto !important;
         // height:calc(100% - 48px) !important;
-        // overflow: auto !important;
         // border-bottom: 1px solid #ddd;
     }
 }
 .content-body:has(#borderLayout_eRootPanel)::-webkit-scrollbar {
    display: none;
 }
-#borderLayout_eRootPanel {
+#mainTable #borderLayout_eRootPanel {
     .ag-body,
     .ag-body-viewport,
     .ag-body-viewport-wrapper {
@@ -8572,4 +8572,8 @@ v .center>div>.panel_value {
         // 그리드 헤더 높이 + ag-root 상단 보더 1px
         height: 49px !important;
     }
+}
+// agGrid 동적 생성 시 초기에 테이블 벗어나는것 임시 hidden
+#vmDelCheckList_popupTable {
+    overflow-x: hidden;
 }

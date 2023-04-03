@@ -40,16 +40,20 @@ Select::-ms-expand {
 .main .ag-root {
   overflow: visible !important;
 }
+.main .ag-body {
+  overflow: auto !important;
+}
+
 .content-body:has(#borderLayout_eRootPanel)::-webkit-scrollbar {
   display: none;
 }
 
-#borderLayout_eRootPanel .ag-body,
-#borderLayout_eRootPanel .ag-body-viewport,
-#borderLayout_eRootPanel .ag-body-viewport-wrapper {
+#mainTable #borderLayout_eRootPanel .ag-body,
+#mainTable #borderLayout_eRootPanel .ag-body-viewport,
+#mainTable #borderLayout_eRootPanel .ag-body-viewport-wrapper {
   overflow: visible !important;
 }
-#borderLayout_eRootPanel .ag-header {
+#mainTable #borderLayout_eRootPanel .ag-header {
   position: sticky;
   top: 180px;
   z-index: 3;
@@ -7832,4 +7836,8 @@ td:last-child {
   border-top: 1px solid #000;
   box-sizing: border-box;
   height: 49px !important;
+}
+
+#vmDelCheckList_popupTable {
+  overflow-x: hidden;
 }/*# sourceMappingURL=common.css.map */
