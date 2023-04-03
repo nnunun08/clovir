@@ -1,22 +1,3 @@
-.selectDashboard > ul {
-  padding-top: 20px;
-}
-
-.selectDashboard {
-  display: inline-block;
-  position: fixed;
-  background: white;
-  width: 300px;
-  z-index: 999;
-  border: 1px solid;
-  right: 30px;
-  text-align: left;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  word-wrap: normal;
-  overflow: hidden;
-}
-
 .dashboardBtnArea > img {
   width: 30px;
   vertical-align: bottom;
@@ -472,6 +453,9 @@ car_dept_stat_area css end
   font-size: 14px;
   font-weight: bold;
   color: #000;
+  border-bottom: 0;
+  padding: 0;
+  height: auto;
 }
 .stat_summary .selMonth {
   position: absolute;
@@ -482,12 +466,16 @@ car_dept_stat_area css end
   margin: 0;
   box-sizing: border-box;
   padding-left: 12px;
-  padding-right: 27px;
+  padding-right: 32px;
   height: 32px;
   border: 1px solid #ddd;
   border-radius: 4px;
   color: #ccc;
   background: url(/res/img/ncsoft/icon_16_down.svg) right 12px center no-repeat;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #CCCCCC;
 }
 .stat_summary .scale {
   position: absolute;
@@ -508,6 +496,7 @@ car_dept_stat_area css end
 .stat_summary .date {
   font-size: 12px;
   color: #4A4A4A;
+  margin-bottom: 17px;
 }
 .stat_summary .itemWrap {
   display: flex;
@@ -553,6 +542,7 @@ car_dept_stat_area css end
   background-color: #C5003E;
 }
 .stat_summary .dateView .btn {
+  margin-top: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -627,4 +617,137 @@ car_dept_stat_area css end
   position: absolute;
   top: 20px;
   left: 20px;
+}
+
+.content-body:has(.dashboardArea) {
+  width: 100% !important;
+  max-width: 1600px;
+  margin: 0 auto;
+  float: none;
+}
+.content-body:has(.dashboardArea) .admin-content {
+  width: 100% !important;
+  padding: 0 25px;
+}
+.content-body:has(.dashboardArea) .dashboardBtnArea {
+  margin-top: 36px;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+}
+.content-body:has(.dashboardArea) .dashboardBtnArea::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.content-body:has(.dashboardArea) .dashboardBtnArea .pageTitle {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 29px;
+  color: #000;
+}
+.content-body:has(.dashboardArea) .dashboardBtnArea > div {
+  margin: 0 !important;
+}
+.content-body:has(.dashboardArea) .dashboardBtnArea .selectDashboard {
+  position: absolute;
+  padding: 16px;
+  top: 40px;
+  left: 117px;
+  background: white;
+  width: auto;
+  z-index: 1;
+  text-align: left;
+  border: 1px solid #DDDDDD;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+.content-body:has(.dashboardArea) .dashboardBtnArea .selectDashboard::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.content-body:has(.dashboardArea) .dashboardBtnArea .selectDashboard input[type=button] {
+  margin: 0 4px;
+  width: auto;
+  min-width: 69px;
+  height: 28px;
+  background: #FAFAFA;
+  border: 1px solid #EEEEEE;
+  border-radius: 4px;
+  font-weight: 400;
+  font-size: 12px;
+  color: #2C2C2C;
+}
+.content-body:has(.dashboardArea) .dashboardBtnArea .selectDashboard ul {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 10px;
+  list-style: none;
+}
+.content-body:has(.dashboardArea) .dashboardBtnArea .selectDashboard ul li input {
+  margin: 0;
+  display: none;
+}
+.content-body:has(.dashboardArea) .dashboardBtnArea .selectDashboard ul li label {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+.content-body:has(.dashboardArea) .dashboardBtnArea .selectDashboard ul li label::before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: #FFFFFF;
+  border: 1px solid #DDDDDD;
+  border-radius: 2px;
+}
+.content-body:has(.dashboardArea) .dashboardBtnArea .selectDashboard ul li input:checked + label::before {
+  background: #25B5AC;
+  border: 3px solid #97D8D4;
+  border-radius: 2px;
+}
+.content-body:has(.dashboardArea) .dashboardBtnArea .Rounded-Rectangle-3 {
+  float: left;
+  background-color: transparent;
+  margin: 0 !important;
+  border: 0;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+}
+.content-body:has(.dashboardArea) .dashboardBtnArea .Rounded-Rectangle-3:has(#openDashboardEdit) {
+  background: url(/res/img/ncsoft/icon_16_setting.svg) center/cover no-repeat;
+}
+.content-body:has(.dashboardArea) .dashboardBtnArea .Rounded-Rectangle-3:has(#openDashboardEdit) > img {
+  display: none;
+}
+.content-body:has(.dashboardArea) .dashboardBtnArea .Rounded-Rectangle-3:has(#dashboardRefresh) {
+  background-color: #fafafa;
+}
+.content-body:has(.dashboardArea) .stat_summary .summaryItem {
+  margin: 0;
+  margin-bottom: 28px;
+  gap: 19px;
+  min-height: 257px;
+}
+.content-body:has(.dashboardArea) .stat_summary .summaryItem .panel-body {
+  padding: 0;
+}
+
+.dashboardItem .chart_area {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  margin-bottom: 28px;
+  overflow: hidden;
+}
+.dashboardItem .chart_area .panel-heading {
+  border: 0;
+  padding: 20px 20px 17px;
+  height: auto;
 }/*# sourceMappingURL=dashboard.css.map */

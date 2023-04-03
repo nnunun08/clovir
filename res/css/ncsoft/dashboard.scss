@@ -1,23 +1,4 @@
-.selectDashboard>ul {
-    padding-top: 20px;
-}
-
-.selectDashboard {
-    display: inline-block;
-    position: fixed;
-    background: white;
-    width: 300px;
-    z-index: 999;
-    border: 1px solid;
-    right: 30px;
-    text-align: left;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    word-wrap: normal;
-    overflow: hidden;
-}
-
-.dashboardBtnArea>img {
+.dashboardBtnArea > img {
     width: 30px;
     vertical-align: bottom;
 }
@@ -486,6 +467,9 @@ car_dept_stat_area css end
         font-size: 14px;
         font-weight: bold;
         color: #000;
+        border-bottom: 0;
+        padding: 0;
+        height: auto;
     }
 
     .selMonth {
@@ -497,12 +481,16 @@ car_dept_stat_area css end
             margin: 0;
             box-sizing: border-box;
             padding-left: 12px;
-            padding-right: 27px;
+            padding-right: 32px;
             height: 32px;
             border: 1px solid #ddd;
             border-radius: 4px;
             color: #ccc;
             background: url(/res/img/ncsoft/icon_16_down.svg) right 12px center no-repeat;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 16px;
+            color: #CCCCCC;
         }
     }
 
@@ -529,6 +517,7 @@ car_dept_stat_area css end
     .date {
         font-size: 12px;
         color: #4A4A4A;
+        margin-bottom: 17px;
     }
 
     .itemWrap {
@@ -585,6 +574,7 @@ car_dept_stat_area css end
 
     .dateView {
         .btn {
+            margin-top: 16px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -685,6 +675,151 @@ car_dept_stat_area css end
             position: absolute;
             top: 20px;
             left: 20px;
+        }
+    }
+}
+
+
+.content-body:has(.dashboardArea) {
+    width: 100% !important;
+    max-width: 1600px;
+    margin: 0 auto;
+    float: none;
+    .admin-content {
+        width: 100% !important;
+        padding: 0 25px;
+    }
+    .dashboardBtnArea {
+        margin-top: 36px;
+        margin-bottom: 50px;
+        display: flex;     
+        align-items: center;
+        gap: 4px;
+        position: relative;
+        &::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .pageTitle {
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 29px;
+            color: #000;
+        }   
+        > div {
+            margin: 0 !important;
+        }    
+        .selectDashboard {
+            // display: block !important;
+            position: absolute;
+            padding: 16px;
+            top: 40px;
+            left: 117px;
+            background: white;
+            width: auto;
+            z-index: 1;
+            text-align: left;
+            border: 1px solid #DDDDDD;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            &::after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+            input[type="button"] {
+                // float: left !important;
+                margin: 0 4px;
+                width: auto;
+                min-width: 69px;
+                height: 28px;
+                background: #FAFAFA;
+                border: 1px solid #EEEEEE;
+                border-radius: 4px;
+                font-weight: 400;
+                font-size: 12px;
+                color: #2C2C2C;
+            }
+            ul {
+                padding: 0;
+                margin: 0;
+                margin-bottom: 10px;
+                list-style: none;
+                li {
+                    input {
+                        margin: 0;
+                        display: none;
+                    }
+                    label {
+                        // padding-left: 25px;
+                        cursor: pointer;
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 9px;
+                        &::before {
+                            content: '';
+                            display: block;
+                            width: 16px;
+                            height: 16px;
+                            background: #FFFFFF;
+                            border: 1px solid #DDDDDD;
+                            border-radius: 2px;
+                        }
+                    }
+                    input:checked + label {
+                        &::before {
+                            background: #25B5AC;
+                            border: 3px solid #97D8D4;
+                            border-radius: 2px;
+                        }
+                    }
+                }
+            }
+        }
+        .Rounded-Rectangle-3 {
+            float: left;
+            background-color: transparent;
+            margin: 0 !important;
+            border: 0;
+            padding: 0;
+            width: 20px;
+            height: 20px;
+            &:has(#openDashboardEdit) {
+                background: url(/res/img/ncsoft/icon_16_setting.svg) center/cover no-repeat;
+                > img {
+                    display: none;
+                }
+            }
+            &:has(#dashboardRefresh) {
+                background-color: #fafafa;
+            }
+        }
+    }
+    .stat_summary .summaryItem {
+        margin: 0;
+        margin-bottom: 28px;
+        gap: 19px;
+        min-height: 257px;
+        .panel-body {
+            padding: 0;
+        }
+    }
+}
+.dashboardItem {
+    .chart_area {
+        background: #FFFFFF;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        margin-bottom: 28px;
+        overflow: hidden;
+        .panel-heading {
+            border:0;
+            padding: 20px 20px 17px;
+            height: auto;
+        }
+        .tit {
         }
     }
 }

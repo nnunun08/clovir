@@ -47,10 +47,10 @@ Select::-ms-expand {
         // border-bottom: 1px solid #ddd;
     }
 }
-.content-body:has(#borderLayout_eRootPanel)::-webkit-scrollbar {
+#header_detail .content-body:has(#borderLayout_eRootPanel)::-webkit-scrollbar {
    display: none;
 }
-#mainTable #borderLayout_eRootPanel {
+#header_detail #mainTable #borderLayout_eRootPanel {
     .ag-body,
     .ag-body-viewport,
     .ag-body-viewport-wrapper {
@@ -1563,14 +1563,7 @@ marquee {
 
 }
 
-.appProgressBar {
-    background-color: #fff;
-    height: 144px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
 
-}
 
 .bar_progress {
     margin: auto;
@@ -2502,7 +2495,10 @@ marquee {
     overflow: hidden;
     background-color: #ddd;
 }
-
+.stat_charts {
+    margin-left: -14px;
+    margin-right: -14px;
+}
 .stat_charts #filter_area .pic .del {
     margin-right: 2px;
     color: red;
@@ -3558,17 +3554,6 @@ v .center>div>.panel_value {
     cursor: pointer;
 }
 
-.appProgressBar {
-    background-color: #fff;
-    height: 40px;
-    border: none;
-    border-radius: 4px;
-    width: 98%;
-    margin-left: 1%;
-    box-shadow: none;
-    position: relative;
-    top: 15px;
-}
 
 #newVRAPopup_form .approvalName-detail.in {
     position: absolute;
@@ -8620,3 +8605,25 @@ fill: #54B552;
 fill: #AEE5BE;
 }
    
+// 결재 요청서
+#approval_req_form_popup {
+    .appProgressBar {
+        background-color: #fff;
+        height: 40px;
+        border: none;
+        border-radius: 4px;
+        width: 98%;
+        margin-left: 1%;
+        box-shadow: none;
+        position: relative;
+        top: 15px;
+    }
+    .appProgressBar {
+        background-color: #fff;
+        height: 144px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    
+    }
+}

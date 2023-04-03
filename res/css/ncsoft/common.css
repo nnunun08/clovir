@@ -44,16 +44,16 @@ Select::-ms-expand {
   overflow: auto !important;
 }
 
-.content-body:has(#borderLayout_eRootPanel)::-webkit-scrollbar {
+#header_detail .content-body:has(#borderLayout_eRootPanel)::-webkit-scrollbar {
   display: none;
 }
 
-#mainTable #borderLayout_eRootPanel .ag-body,
-#mainTable #borderLayout_eRootPanel .ag-body-viewport,
-#mainTable #borderLayout_eRootPanel .ag-body-viewport-wrapper {
+#header_detail #mainTable #borderLayout_eRootPanel .ag-body,
+#header_detail #mainTable #borderLayout_eRootPanel .ag-body-viewport,
+#header_detail #mainTable #borderLayout_eRootPanel .ag-body-viewport-wrapper {
   overflow: visible !important;
 }
-#mainTable #borderLayout_eRootPanel .ag-header {
+#header_detail #mainTable #borderLayout_eRootPanel .ag-header {
   position: sticky;
   top: 180px;
   z-index: 3;
@@ -1368,14 +1368,6 @@ marquee {
   line-height: 30px;
 }
 
-.appProgressBar {
-  background-color: #fff;
-  height: 144px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-}
-
 .bar_progress {
   margin: auto;
   position: relative;
@@ -2279,6 +2271,11 @@ marquee {
   margin-top: -1;
   overflow: hidden;
   background-color: #ddd;
+}
+
+.stat_charts {
+  margin-left: -14px;
+  margin-right: -14px;
 }
 
 .stat_charts #filter_area .pic .del {
@@ -3285,18 +3282,6 @@ v .center > div > .panel_value {
   font-style: normal;
   color: none;
   cursor: pointer;
-}
-
-.appProgressBar {
-  background-color: #fff;
-  height: 40px;
-  border: none;
-  border-radius: 4px;
-  width: 98%;
-  margin-left: 1%;
-  box-shadow: none;
-  position: relative;
-  top: 15px;
 }
 
 #newVRAPopup_form .approvalName-detail.in {
@@ -7889,4 +7874,23 @@ td:last-child {
 
 #clusterDISK .highcharts-container svg .highcharts-point:nth-child(2) {
   fill: #AEE5BE;
+}
+
+#approval_req_form_popup .appProgressBar {
+  background-color: #fff;
+  height: 40px;
+  border: none;
+  border-radius: 4px;
+  width: 98%;
+  margin-left: 1%;
+  box-shadow: none;
+  position: relative;
+  top: 15px;
+}
+#approval_req_form_popup .appProgressBar {
+  background-color: #fff;
+  height: 144px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }/*# sourceMappingURL=common.css.map */
