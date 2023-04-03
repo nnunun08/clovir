@@ -16,7 +16,8 @@ $GNBheight : 82px;
 
 .topArea {
     // position: relative;
-    // position: fixed;
+    position: sticky;
+    top: 0;
     background-color: #fff;
     height: auto;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.08);
@@ -1445,7 +1446,7 @@ a.tree-toggle {
             width: 100%;
             background-color: #fff;
             position: sticky;
-            top: 0;
+            top: 80px;
             z-index: 1;
 
             &::after {
