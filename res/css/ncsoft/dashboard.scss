@@ -793,7 +793,10 @@ car_dept_stat_area css end
                 }
             }
             &:has(#dashboardRefresh) {
-                background-color: #fafafa;
+                background: url(/res/img/ncsoft/icon_16_refresh.svg) center/cover no-repeat;
+                > img {
+                    display: none;
+                }
             }
         }
     }
