@@ -65,6 +65,7 @@ Select::-ms-expand {
 .btn:active {
   background-image: none;
   outline: 0;
+  -webkit-box-shadow: none;
   box-shadow: none;
 }
 
@@ -761,7 +762,9 @@ marquee {
 .noSelection {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
+  -khtml-user-select: none;
   -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
 }
 
@@ -800,6 +803,8 @@ marquee {
   border-radius: 4px;*/
   /*-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);*/
   /* 	box-shadow: inset 0 1px 1px rgba(0,0,0,.075); */
+  -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   display: inline-block;
   float: none;
@@ -1014,8 +1019,7 @@ marquee {
 #loading_dialog .loading_dialog_bg video {
   width: 100%;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 .disabledTab {
@@ -1066,10 +1070,6 @@ marquee {
   vertical-align: middle;
   display: inline-block;
   margin: 0;
-}
-
-.popup_area .input::-moz-placeholder {
-  color: #ccc;
 }
 
 .popup_area .input::placeholder {
@@ -2338,8 +2338,7 @@ select.form-control {
 }
 
 .fileAttachViewArea ol {
-  -webkit-padding-start: 10px;
-          padding-inline-start: 10px;
+  padding-inline-start: 10px;
 }
 
 .modal-open .modal {
@@ -5608,10 +5607,6 @@ v .center > div > .panel_value {
   appearance: none;
 }
 
-#paging_select::-moz-selection {
-  border: none;
-}
-
 #paging_select::selection {
   border: none;
 }
@@ -5922,6 +5917,7 @@ v .center > div > .panel_value {
   opacity: 0.6;
   box-shadow: none;
   border-color: #6cc0e5;
+  -webkit-transition: all 0.12s, border-color 0.08s;
   transition: all 0.12s, border-color 0.08s;
 }
 
@@ -5937,6 +5933,8 @@ v .center > div > .panel_value {
   border-color: transparent #6cc0e5 #6cc0e5 transparent;
   border-top-color: transparent;
   border-left-color: transparent;
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
   transform: rotate(0deg);
 }
 
@@ -6194,9 +6192,6 @@ v .center > div > .panel_value {
   line-height: 19px;
   color: #4A4A4A;
 }
-.modal-body .select2-container--default .select2-search--inline .select2-search__field::-moz-placeholder {
-  color: #CCCCCC;
-}
 .modal-body .select2-container--default .select2-search--inline .select2-search__field::placeholder {
   color: #CCCCCC;
 }
@@ -6404,6 +6399,8 @@ v .center > div > .panel_value {
 #borderLayout_eRootPanel [col-id=TAGS],
 #borderLayout_eRootPanel [col-id=OPTIMIZE_STATUS] {
   overflow: visible;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 #borderLayout_eRootPanel [col-id=TAGS]:not([col-id=TAGS]) > span,
 #borderLayout_eRootPanel [col-id=OPTIMIZE_STATUS]:not([col-id=TAGS]) > span {
@@ -7898,4 +7895,19 @@ td:last-child {
   border: 1px solid #ddd;
   border-radius: 4px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.panel-body:has(#monitor_ds, #monitor_fee) {
+  padding: 0;
+}
+.panel-body:has(#monitor_ds, #monitor_fee) .chart_area {
+  padding: 15px;
+  background: transparent;
+  box-shadow: none;
+}
+.panel-body:has(#monitor_ds, #monitor_fee) .chart_area .highcharts-container {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 20px;
 }/*# sourceMappingURL=common.css.map */

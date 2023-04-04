@@ -165,8 +165,7 @@
   width: 40px;
   height: 40px;
   overflow: hidden;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 #openDashboardEdit {
@@ -280,6 +279,10 @@
 }
 
 #menu-button.menu-button-rotate i {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
@@ -1554,9 +1557,6 @@ a.tree-toggle {
   outline: none;
   background-color: transparent;
 }
-.search-box-btn .keyword input::-moz-placeholder {
-  color: #ccc;
-}
 .search-box-btn .keyword input::placeholder {
   color: #ccc;
 }
@@ -1582,7 +1582,8 @@ a.tree-toggle {
   height: calc(100vh - 82px);
   display: inline-block;
   position: relative;
-  position: fixed;
+  position: sticky;
+  top: 80px;
   background-color: #fff;
   border-right: 1px solid #ddd;
   margin-right: -1px;
@@ -1711,9 +1712,10 @@ a.tree-toggle {
   height: 40px;
   background-image: url(/res/img/ncsoft/ic_leftMenu_toggle.svg);
   cursor: pointer;
-  position: absolute;
-  top: 93px;
-  right: -24px;
+  position: fixed;
+  top: 173px;
+  left: 252px;
+  z-index: 1;
 }
 
 .left_show {
@@ -1721,11 +1723,11 @@ a.tree-toggle {
   height: 40px;
   background-image: url(/res/img/ncsoft/ic_leftMenu_toggle.svg);
   cursor: pointer;
-  position: absolute;
+  position: fixed;
   top: 173px;
   left: 0;
   transform: rotate(180deg);
-  z-index: 500;
+  z-index: 1;
 }
 
 .menu-layout-3 .main {

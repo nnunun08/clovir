@@ -522,7 +522,10 @@ car_dept_stat_area css end
 
     .itemWrap {
         display: flex;
-        gap: 8px;
+        gap: 8px;    
+        position: absolute;
+        width: calc(100% - 40px);
+        top: 104px;
 
         .item {
             flex: 1 0 30%;
@@ -573,6 +576,9 @@ car_dept_stat_area css end
     }
 
     .dateView {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
         .btn {
             margin-top: 16px;
             display: flex;
@@ -682,7 +688,7 @@ car_dept_stat_area css end
 
 .content-body:has(.dashboardArea) {
     width: 100% !important;
-    max-width: 1600px;
+    // max-width: 1600px;
     margin: 0 auto;
     float: none;
     .admin-content {
@@ -718,7 +724,7 @@ car_dept_stat_area css end
             top: 40px;
             left: 117px;
             background: white;
-            width: auto;
+            width: 260px;
             z-index: 1;
             text-align: left;
             border: 1px solid #DDDDDD;
@@ -789,22 +795,24 @@ car_dept_stat_area css end
             &:has(#openDashboardEdit) {
                 background: url(/res/img/ncsoft/icon_16_setting.svg) center/cover no-repeat;
                 > img {
-                    display: none;
+                    // display: none;
+                    opacity: 0;
                 }
             }
             &:has(#dashboardRefresh) {
                 background: url(/res/img/ncsoft/icon_16_refresh.svg) center/cover no-repeat;
                 > img {
-                    display: none;
+                    // display: none;
+                    opacity: 0;
                 }
             }
         }
     }
     .stat_summary .summaryItem {
         margin: 0;
-        margin-bottom: 28px;
+        margin-bottom: 30px;
         gap: 19px;
-        min-height: 257px;
+        height: 260px;
         .panel-body {
             padding: 0;
         }
@@ -817,6 +825,7 @@ car_dept_stat_area css end
         border-radius: 20px;
         margin-bottom: 28px;
         overflow: hidden;
+        border: 0;
         .panel-heading {
             border:0;
             padding: 20px 20px 17px;
@@ -826,3 +835,4 @@ car_dept_stat_area css end
         }
     }
 }
+

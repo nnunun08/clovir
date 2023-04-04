@@ -272,6 +272,10 @@
 }
 
 .delay {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 
@@ -497,6 +501,9 @@ car_dept_stat_area css end
 .stat_summary .itemWrap {
   display: flex;
   gap: 8px;
+  position: absolute;
+  width: calc(100% - 40px);
+  top: 104px;
 }
 .stat_summary .itemWrap .item {
   flex: 1 0 30%;
@@ -536,6 +543,11 @@ car_dept_stat_area css end
   height: 5px;
   border-radius: 50%;
   background-color: #C5003E;
+}
+.stat_summary .dateView {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
 }
 .stat_summary .dateView .btn {
   margin-top: 16px;
@@ -617,7 +629,6 @@ car_dept_stat_area css end
 
 .content-body:has(.dashboardArea) {
   width: 100% !important;
-  max-width: 1600px;
   margin: 0 auto;
   float: none;
 }
@@ -653,7 +664,7 @@ car_dept_stat_area css end
   top: 40px;
   left: 117px;
   background: white;
-  width: auto;
+  width: 260px;
   z-index: 1;
   text-align: left;
   border: 1px solid #DDDDDD;
@@ -720,19 +731,19 @@ car_dept_stat_area css end
   background: url(/res/img/ncsoft/icon_16_setting.svg) center/cover no-repeat;
 }
 .content-body:has(.dashboardArea) .dashboardBtnArea .Rounded-Rectangle-3:has(#openDashboardEdit) > img {
-  display: none;
+  opacity: 0;
 }
 .content-body:has(.dashboardArea) .dashboardBtnArea .Rounded-Rectangle-3:has(#dashboardRefresh) {
   background: url(/res/img/ncsoft/icon_16_refresh.svg) center/cover no-repeat;
 }
 .content-body:has(.dashboardArea) .dashboardBtnArea .Rounded-Rectangle-3:has(#dashboardRefresh) > img {
-  display: none;
+  opacity: 0;
 }
 .content-body:has(.dashboardArea) .stat_summary .summaryItem {
   margin: 0;
-  margin-bottom: 28px;
+  margin-bottom: 30px;
   gap: 19px;
-  min-height: 257px;
+  height: 260px;
 }
 .content-body:has(.dashboardArea) .stat_summary .summaryItem .panel-body {
   padding: 0;
@@ -744,6 +755,7 @@ car_dept_stat_area css end
   border-radius: 20px;
   margin-bottom: 28px;
   overflow: hidden;
+  border: 0;
 }
 .dashboardItem .chart_area .panel-heading {
   border: 0;

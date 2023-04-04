@@ -1702,12 +1702,12 @@ a.tree-toggle {
 
 
 #left_menu {
-
     width: 253px;
     height: calc(100vh - $GNBheight);
     display: inline-block;
     position: relative;
-    position: fixed;
+    position: sticky;
+    top: 80px;
     background-color: #fff;
     border-right: 1px solid #ddd;
     margin-right: -1px;
@@ -1873,18 +1873,19 @@ a.tree-toggle {
 
 .left_hide {
     @include leftMenuToggle();
-    position: absolute;
-    top: 93px;
-    right: -24px;
+    position: fixed;
+    top: 173px;
+    left: 252px;
+    z-index: 1;
 }
 
 .left_show {
     @include leftMenuToggle();
-    position: absolute;
+    position: fixed;
     top: 173px;
     left: 0;
     transform: rotate(180deg);
-    z-index: 500;
+    z-index: 1;
 }
 
 

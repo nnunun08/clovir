@@ -133,6 +133,15 @@
 .fullCanlendar {
     max-width: 1120px;
 
+    .fc-daygrid-event-harness .fc-event {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 20px;
+        color: #FF6A13;
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+
     .fc-day {
         text-align: left;
     }
