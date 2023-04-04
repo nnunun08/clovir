@@ -382,7 +382,6 @@ label[dir=rtl] .range-slider {
   height: 50px;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
@@ -403,7 +402,6 @@ label[dir=rtl] .range-slider {
   flex: 1;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   cursor: pointer;
 }
@@ -415,7 +413,6 @@ label[dir=rtl] .range-slider {
   height: 100%;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
@@ -444,7 +441,6 @@ label[dir=rtl] .range-slider {
   pointer-events: none;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   z-index: 1;
   cursor: pointer;
@@ -917,7 +913,6 @@ label[dir=rtl] .range-slider {
   height: 50px;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
@@ -938,7 +933,6 @@ label[dir=rtl] .range-slider {
   flex: 1;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   cursor: pointer;
 }
@@ -950,7 +944,6 @@ label[dir=rtl] .range-slider {
   height: 100%;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
@@ -978,7 +971,6 @@ label[dir=rtl] .range-slider {
   pointer-events: none;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   z-index: 1;
   cursor: pointer;
