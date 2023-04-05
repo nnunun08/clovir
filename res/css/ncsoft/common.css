@@ -1444,22 +1444,6 @@ marquee {
   background: #d4cece;
 }
 
-.progress-coming-normal {
-  width: 33px;
-  position: absolute;
-  height: 33px;
-  background: white;
-  border-radius: 50%;
-  top: 7%;
-  left: 7.5%;
-  text-align: center;
-  padding: 1px;
-  font-size: 20px;
-  color: #d4cece;
-  border: 2px solid white;
-  font-weight: bold;
-}
-
 .progress-coming-i-normal {
   width: 33px;
   position: absolute;
@@ -1477,19 +1461,7 @@ marquee {
 }
 
 .progress-coming-pre {
-  width: 33px;
-  position: absolute;
-  height: 33px;
-  background: #DEDEDE;
-  border-radius: 50%;
-  top: 7%;
-  left: 7.5%;
   text-align: center;
-  padding: 1px;
-  font-size: 20px;
-  color: #cacaca;
-  border: 2px solid #DEDEDE;
-  font-weight: bold;
 }
 
 .progress-coming-i-pre {
@@ -1557,10 +1529,7 @@ marquee {
 }
 
 .approvalName-detail.in {
-  position: absolute;
-  bottom: -145px;
-  color: #468e10;
-  font-weight: bold;
+  color: #4A4A4A;
 }
 
 .approvalName-detail.red {
@@ -1586,9 +1555,11 @@ marquee {
 
 .approvalName-detail {
   position: absolute;
-  bottom: -145px;
-  color: #bbbbbb;
+  bottom: unset;
+  color: #006979;
+  color: #009D93;
   font-weight: bold;
+  top: 100px;
 }
 
 .approvalName {
@@ -1610,7 +1581,9 @@ marquee {
 }
 
 .approvalName-detail.first {
-  left: 5px;
+  left: 19px;
+  transform: translateX(-50%);
+  color: #006979;
 }
 
 .approvalName-detail-i.first {
@@ -1628,13 +1601,6 @@ marquee {
 .zindex {
   z-index: 1;
   cursor: pointer;
-}
-
-.Rounded-Rectangle-Full {
-  width: 100%;
-  position: relative;
-  top: -15px;
-  border: 1px solid #eee;
 }
 
 .Rounded-Rectangle {
@@ -3298,22 +3264,6 @@ v .center > div > .panel_value {
   font-weight: 900;
 }
 
-#approval_req_form_popup .approvalName-detail,
-#CC_popup .approvalName-detail {
-  position: absolute;
-  top: 2px;
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: 900;
-  z-index: 80;
-  height: 15px;
-}
-
-#approval_req_form_popup .approvalName-detail.first,
-#CC_popup .approvalName-detail.first {
-  left: 47px;
-}
-
 #newVRAPopup_form .approvalName-detail {
   position: absolute;
   top: 6px;
@@ -3332,19 +3282,6 @@ v .center > div > .panel_value {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-image: none;
-  z-index: 30;
-  padding: 8px;
-  padding-top: 10px;
-}
-
-#approval_req_form_popup .progress-coming-back,
-#CC_popup .progress-coming-back {
-  position: absolute;
-  top: -9px;
-  width: 132px;
-  height: 40px;
-  border-radius: 20px;
   background-image: none;
   z-index: 30;
   padding: 8px;
@@ -3413,12 +3350,6 @@ v .center > div > .panel_value {
 
 #newVRAPopup_form .vraProgress-coming-back {
   background-color: white !important;
-  color: #00AC4F !important;
-}
-
-#approval_req_form_popup .vraProgress-coming-back,
-#CC_popup .vraProgress-coming-back {
-  background-color: #d4cece !important;
   color: #00AC4F !important;
 }
 
@@ -3491,29 +3422,17 @@ v .center > div > .panel_value {
 
 .progress-done {
   position: absolute;
-  top: 75px;
-  right: -10px;
+  top: 52px;
+  right: 0;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-image: none;
+  background: #FAFAFA;
+  border: 1px solid #EEEEEE;
   z-index: 30;
-  padding: 8px;
-  padding-top: 10px;
 }
-
-#approval_req_form_popup .progress-done,
-#CC_popup .progress-done {
-  position: absolute;
-  top: -9px;
-  right: -10px;
-  width: 132px;
-  height: 40px;
-  border-radius: 20px;
-  background-image: none;
-  z-index: 30;
-  padding: 8px;
-  padding-top: 10px;
+.progress-done .progress-coming-normal {
+  color: #4A4A4A;
 }
 
 .progress-coming-in {
@@ -3534,119 +3453,24 @@ v .center > div > .panel_value {
 
 .progress-coming-normal {
   width: 100%;
-  position: absolute;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: none;
-  border-radius: 50%;
-  top: 6px;
-  left: 0;
   color: white;
   border: none;
-  font-weight: bold;
-  text-align: center;
-  font-size: 14px;
-}
-
-#approval_req_form_popup .progress-coming-in .progress-coming-normal,
-#CC_popup .progress-coming-in .progress-coming-normal {
-  width: 32px;
-  position: absolute;
-  height: 32px;
-  background: none;
-  border-radius: 20px;
-  top: 4px;
-  left: 4px;
-  color: black !important;
-  border: none;
-  font-weight: bold;
-  text-align: center;
-  font-size: 14px;
-  background-color: white;
-  padding-top: 7px;
-}
-
-#approval_req_form_popup .progress-coming-normal,
-#CC_popup .progress-coming-normal {
-  width: 32px;
-  position: absolute;
-  height: 32px;
-  background: none;
-  border-radius: 20px;
-  top: 4px;
-  left: 4px;
-  color: #d4cece !important;
-  border: none;
-  font-weight: bold;
-  text-align: center;
-  background-color: #ffffff !important;
-  font-size: 14px;
-  padding-top: 7px;
-  padding-left: 0px;
+  font-weight: 400;
 }
 
 .progress-coming-pre {
   width: 100%;
-  position: absolute;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: none;
-  border-radius: 50%;
-  top: 6px;
-  left: 0;
-  color: white;
   border: none;
-  font-weight: bold;
-  text-align: center;
-  font-size: 14px;
-}
-
-#approval_req_form_popup .progress-done-in,
-#CC_popup .progress-done-in {
-  width: 132px;
-  position: absolute;
-  height: 40px;
-  background: none;
-  background-color: #00AC4F;
-  border-radius: 20px;
-  text-align: center;
-  font-size: 20px;
-  color: white;
-  font-weight: bold;
-  top: -9px;
-  padding: 4px;
-  right: -10px;
-}
-
-#approval_req_form_popup .progress-coming-pre,
-#CC_popup .progress-coming-pre {
-  width: 32px;
-  position: absolute;
-  height: 32px;
-  background: none;
-  border-radius: 50%;
-  top: 4px;
-  left: 4px;
-  background-color: white;
-  border: none;
-  font-weight: bold;
-  text-align: center;
-  color: black;
-  font-size: 14px;
-  padding-top: 7px;
-}
-
-#approval_req_form_popup .progress-coming-in.zindex.red div,
-#CC_popup .progress-coming-in.zindex.red div {
-  color: red;
-}
-
-#approval_req_form_popup .progress-coming-in.zindex.out div,
-#CC_popup .progress-coming-in.zindex.out div {
-  color: #d4cece;
-}
-
-#approval_req_form_popup .progress-done-in div,
-#CC_popup .progress-done-in div {
-  color: black !important;
 }
 
 .detail_excelBtn {
@@ -3739,20 +3563,9 @@ v .center > div > .panel_value {
   text-align: left;
 }
 
-.Rounded-Rectangle-Full {
-  width: 100%;
-  position: relative;
-  top: -15px;
-  border: 1px solid #e7e7e7;
-}
-
 .approvalName-detail.last {
-  right: 92px;
-}
-
-#approval_req_form_popup .approvalName-detail.last,
-#CC_popup .approvalName-detail.last {
-  right: 52px;
+  right: 19px;
+  transform: translateX(50%);
 }
 
 #mainForm #input_area {
@@ -4080,20 +3893,18 @@ v .center > div > .panel_value {
 }
 
 .progress-done-in {
-  width: 40px;
-  position: absolute;
-  height: 40px;
-  background: none;
-  background-color: #ea4a88;
-  border-radius: 50%;
+  background-color: #006979;
   text-align: center;
-  padding: 5px;
-  font-size: 20px;
-  color: white;
-  font-weight: bold;
-  top: 75px;
-  z-index: 30;
-  right: -10px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 23px;
+  color: #E5F3F2;
+  width: 40px;
+  top: 52px;
+  height: 40px;
+  position: absolute;
+  right: 0;
+  border-radius: 50%;
 }
 
 .progress-coming-in {
@@ -4101,30 +3912,24 @@ v .center > div > .panel_value {
   position: absolute;
   height: 40px;
   background: none;
-  background-color: #ea4a88;
+  background-color: #006979;
   border-radius: 50%;
   text-align: center;
-  font-size: 20px;
-  color: white;
-  font-weight: bold;
-  top: 75px;
-  padding: 4px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 23px;
+  color: #E5F3F2;
+  top: 52px;
 }
-
-#approval_req_form_popup .progress-coming-in,
-#CC_popup .progress-coming-in {
-  width: 132px;
-  position: absolute;
-  height: 40px;
-  background: none;
-  background-color: #00AC4F;
-  border-radius: 20px;
-  text-align: center;
-  font-size: 20px;
-  color: white;
-  font-weight: bold;
-  top: -9px;
-  padding: 4px;
+.progress-coming-in:has(.progress-coming-normal) {
+  background-color: #25B5AC;
+  border: 2px solid #009D93;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+.progress-coming-in:has(.progress-coming-normal) + .approvalName-detail {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
 }
 
 .modal-header {
@@ -7879,22 +7684,23 @@ td:last-child {
 }
 
 #approval_req_form_popup .appProgressBar {
-  background-color: #fff;
-  height: 40px;
-  border: none;
-  border-radius: 4px;
-  width: 98%;
-  margin-left: 1%;
-  box-shadow: none;
-  position: relative;
-  top: 15px;
+  margin-bottom: 80px;
+  height: 169px;
+  border: 1px solid #EEEEEE !important;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
-#approval_req_form_popup .appProgressBar {
-  background-color: #fff;
-  height: 144px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+#approval_req_form_popup .appProgressBar .bar_progress {
+  height: 100%;
+  max-width: 580px;
+}
+#approval_req_form_popup .appProgressBar .Rounded-Rectangle-Full {
+  background-color: #E5F3F2;
+  height: 1px;
+  margin: 0 auto;
+  margin-top: 72px;
+  max-width: 95%;
 }
 
 .panel-body:has(#monitor_ds, #monitor_fee) {
@@ -7910,4 +7716,14 @@ td:last-child {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   padding: 20px;
+}
+
+.loadStay {
+  opacity: 0;
+}
+
+.loadFinish {
+  opacity: 1;
+  transition: 0.3s;
+  transition-delay: 1s;
 }/*# sourceMappingURL=common.css.map */

@@ -41,6 +41,9 @@
   top: unset;
   left: unset;
 }
+#topArea .topLogo img {
+  width: 170px;
+}
 #topArea #valueBox {
   display: flex;
   align-items: center;

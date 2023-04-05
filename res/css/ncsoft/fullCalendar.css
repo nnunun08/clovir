@@ -66,6 +66,12 @@
   border-radius: 10px;
   background-color: #3DBAFF;
 }
+.fullcalendar-container .reason_D::before .fc-event-main,
+.fullcalendar-container .reason_U::before .fc-event-main,
+.fullcalendar-container .reason_C::before .fc-event-main {
+  font-size: 12px;
+  font-weight: 400;
+}
 .fullcalendar-container .reason_U::before {
   background-color: #7B61FF;
 }
