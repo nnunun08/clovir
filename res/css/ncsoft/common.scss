@@ -7934,7 +7934,9 @@ v .center>div>.panel_value {
                 }
             }
         }
-        
+        .table_inner_icon {
+            cursor: pointer;
+        }
     }
 
     .table_inner_icon .value {
