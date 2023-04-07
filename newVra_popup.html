@@ -150,7 +150,8 @@
                                                     </div>
                                                   </div>
 
-                                                <div id="S_PURPOSE_DIV" class="col col-sm-12 select2-search">
+                                                <!-- evoke0407 : #S_PURPOSE_DIV 의 col-sm-12를 col-sm-6으로 변경 -->
+                                                <div id="S_PURPOSE_DIV" class="col col-sm-6 select2-search">
                                                     <div required="required"><label for="_purpose"
                                                             class="control-label grid-title value-title">용도</label>
                                                         <select name="S_PURPOSE" id="_purpose"
@@ -219,20 +220,14 @@
                                                                         aria-readonly="true"
                                                                         title="BATCH">BATCH</span></span></span><span
                                                                 class="dropdown-wrapper"
-                                                                aria-hidden="true"></span></span>
-                                                            
-                                                        <!-- evoke : 추가 컴포넌트 추가 -->
-                                                        <div class="insertCheck">
-                                                            <label for="checkBox1" class="checkBox">
-                                                                <input id="checkBox1" type="checkbox">
-                                                                <span class="checkIcon"></span>
-                                                                추가
-                                                            </label>
-                                                            <input class="form-control" style="width:153px;">
-                                                            <button type="button" class="btn">추가</button>
-                                                        </div>
-                                                            
-                                                            </div>
+                                                                aria-hidden="true"></span></span>  
+                                                    </div>
+                                                </div>
+                                                <div class="col col-sm-6"> 
+                                                    <div>
+                                                        <label class="control-label" for="name">서버네이밍</label>
+                                                        <input name="name" class="form-control input hastitle">
+                                                    </div>
                                                 </div>
 
                                                 <div class="col col-sm-12">

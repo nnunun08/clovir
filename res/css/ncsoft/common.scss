@@ -80,6 +80,20 @@ Select::-ms-expand {
         border-bottom: 0;
     }
 }
+
+@mixin blueRadio {
+    // 파란색 라디오 버튼 적용
+    .checkbox-inline:has(input:checked)::after {
+        background-color: #00A3E0 !important;
+        border: 2px solid #64BCEA !important;
+        outline: 3px solid #96D2F3;
+        width: 10px !important;
+        height: 10px !important;
+        top: 4px !important;
+        left: 3px !important;
+    }
+}
+
 @mixin detailPanel {
     .detail-panel {
         height: auto !important;
@@ -8477,6 +8491,9 @@ v .center>div>.panel_value {
             margin-top: -1px;
         }
     }
+    .topInfo {
+        @include blueRadio;
+    }
 }
 
 .nav-tabs.vmDetailTab {
@@ -8632,25 +8649,45 @@ fill: #AEE5BE;
     //     box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
     // }
 // }
-#approval_req_form_popup {
-    .appProgressBar {
-        margin-bottom: 80px;
-        height: 169px;
-        border: 1px solid #EEEEEE !important;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        .bar_progress {
-            height: 100%;
-            max-width: 580px;
-        }
-        .Rounded-Rectangle-Full {
-            background-color: #E5F3F2;
-            height: 1px;
-            margin: 0 auto;
-            margin-top: 72px;
-            max-width: 95%;
-        }
+
+// #approval_req_form_popup {
+//     .appProgressBar {
+//         margin-bottom: 80px;
+//         height: 169px;
+//         border: 1px solid #EEEEEE !important;
+//         display: flex;
+//         justify-content: center;
+//         align-items: flex-start;
+//         .bar_progress {
+//             height: 100%;
+//             max-width: 580px;
+//         }
+//         .Rounded-Rectangle-Full {
+//             background-color: #E5F3F2;
+//             height: 1px;
+//             margin: 0 auto;
+//             margin-top: 72px;
+//             max-width: 95%;
+//         }
+//     }
+// }
+.appProgressBar {
+    margin-bottom: 80px;
+    height: 169px;
+    border: 1px solid #EEEEEE !important;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    .bar_progress {
+        height: 100%;
+        max-width: 580px;
+    }
+    .Rounded-Rectangle-Full {
+        background-color: #E5F3F2;
+        height: 1px;
+        margin: 0 auto;
+        margin-top: 72px;
+        max-width: 95%;
     }
 }
 
@@ -8679,4 +8716,15 @@ fill: #AEE5BE;
     opacity: 1;
     transition: 0.3s;
     transition-delay: 1s;
+}
+
+// 파란색 라디오
+#vmExpire_popup_form .topInfo .checkbox-inline:has(input:checked)::after {
+    background-color: #00A3E0 !important;
+    border: 2px solid #64BCEA !important;
+    outline: 3px solid #96D2F3;
+    width: 10px !important;
+    height: 10px !important;
+    top: 4px !important;
+    left: 3px !important;
 }

@@ -554,7 +554,8 @@
 #newVra_popup_step_content_5 .done-icon video {
   width: 500px;
   height: 500px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 #newVra_popup_step_content_5 .done-msg {
   margin: 0 auto;

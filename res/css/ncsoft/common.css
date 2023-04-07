@@ -65,7 +65,6 @@ Select::-ms-expand {
 .btn:active {
   background-image: none;
   outline: 0;
-  -webkit-box-shadow: none;
   box-shadow: none;
 }
 
@@ -762,9 +761,7 @@ marquee {
 .noSelection {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
-  -khtml-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
@@ -803,8 +800,6 @@ marquee {
   border-radius: 4px;*/
   /*-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);*/
   /* 	box-shadow: inset 0 1px 1px rgba(0,0,0,.075); */
-  -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
-  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   display: inline-block;
   float: none;
@@ -1019,7 +1014,8 @@ marquee {
 #loading_dialog .loading_dialog_bg video {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .disabledTab {
@@ -1070,6 +1066,10 @@ marquee {
   vertical-align: middle;
   display: inline-block;
   margin: 0;
+}
+
+.popup_area .input::-moz-placeholder {
+  color: #ccc;
 }
 
 .popup_area .input::placeholder {
@@ -2304,7 +2304,8 @@ select.form-control {
 }
 
 .fileAttachViewArea ol {
-  padding-inline-start: 10px;
+  -webkit-padding-start: 10px;
+          padding-inline-start: 10px;
 }
 
 .modal-open .modal {
@@ -5412,6 +5413,10 @@ v .center > div > .panel_value {
   appearance: none;
 }
 
+#paging_select::-moz-selection {
+  border: none;
+}
+
 #paging_select::selection {
   border: none;
 }
@@ -5722,7 +5727,6 @@ v .center > div > .panel_value {
   opacity: 0.6;
   box-shadow: none;
   border-color: #6cc0e5;
-  -webkit-transition: all 0.12s, border-color 0.08s;
   transition: all 0.12s, border-color 0.08s;
 }
 
@@ -5738,8 +5742,6 @@ v .center > div > .panel_value {
   border-color: transparent #6cc0e5 #6cc0e5 transparent;
   border-top-color: transparent;
   border-left-color: transparent;
-  -ms-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
   transform: rotate(0deg);
 }
 
@@ -5996,6 +5998,9 @@ v .center > div > .panel_value {
   font-size: 14px;
   line-height: 19px;
   color: #4A4A4A;
+}
+.modal-body .select2-container--default .select2-search--inline .select2-search__field::-moz-placeholder {
+  color: #CCCCCC;
 }
 .modal-body .select2-container--default .select2-search--inline .select2-search__field::placeholder {
   color: #CCCCCC;
@@ -7563,6 +7568,15 @@ td:last-child {
   padding: 20px 0;
   margin-top: -1px;
 }
+#vmExpire_popup_form .topInfo .checkbox-inline:has(input:checked)::after {
+  background-color: #00A3E0 !important;
+  border: 2px solid #64BCEA !important;
+  outline: 3px solid #96D2F3;
+  width: 10px !important;
+  height: 10px !important;
+  top: 4px !important;
+  left: 3px !important;
+}
 
 #requestTable td {
   border-bottom: 0;
@@ -7686,7 +7700,7 @@ td:last-child {
   fill: #AEE5BE;
 }
 
-#approval_req_form_popup .appProgressBar {
+.appProgressBar {
   margin-bottom: 80px;
   height: 169px;
   border: 1px solid #EEEEEE !important;
@@ -7694,11 +7708,11 @@ td:last-child {
   justify-content: center;
   align-items: flex-start;
 }
-#approval_req_form_popup .appProgressBar .bar_progress {
+.appProgressBar .bar_progress {
   height: 100%;
   max-width: 580px;
 }
-#approval_req_form_popup .appProgressBar .Rounded-Rectangle-Full {
+.appProgressBar .Rounded-Rectangle-Full {
   background-color: #E5F3F2;
   height: 1px;
   margin: 0 auto;
@@ -7729,4 +7743,14 @@ td:last-child {
   opacity: 1;
   transition: 0.3s;
   transition-delay: 1s;
+}
+
+#vmExpire_popup_form .topInfo .checkbox-inline:has(input:checked)::after {
+  background-color: #00A3E0 !important;
+  border: 2px solid #64BCEA !important;
+  outline: 3px solid #96D2F3;
+  width: 10px !important;
+  height: 10px !important;
+  top: 4px !important;
+  left: 3px !important;
 }/*# sourceMappingURL=common.css.map */
