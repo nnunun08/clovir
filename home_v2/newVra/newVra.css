@@ -99,6 +99,10 @@
 #newVra_popup .wizard_step_contents .select2-container {
   width: calc(100% - 155px) !important;
 }
+#newVra_popup .wizard_step_contents #S_PURPOSE_DIV .select2-container,
+#newVra_popup .wizard_step_contents #tagBox .select2-container {
+  width: calc(100% - 20px) !important;
+}
 #newVra_popup .wizard_step_content .colTop {
   border-top: 1px solid #4A4A4A;
 }
@@ -554,8 +558,7 @@
 #newVra_popup_step_content_5 .done-icon video {
   width: 500px;
   height: 500px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 #newVra_popup_step_content_5 .done-msg {
   margin: 0 auto;

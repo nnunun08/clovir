@@ -944,8 +944,11 @@ label[dir=rtl] .range-slider {
     height: 10px;
     outline: 3px solid #96D2F3;
   }
+  .range-radio .range-list input.threshold:checked + label::after {
+    border-width: 0px;
+    outline: 3px solid #97d8d4;
+  }
   .range-radio .range-list input:checked + label::after {
-  
 	transform: translate(-50%, -50%);
 	background-color: #25B5AC;
 	border: 4px solid #97D8D4;

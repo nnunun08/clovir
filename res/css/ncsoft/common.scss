@@ -123,6 +123,11 @@ Select::-ms-expand {
                 border-bottom: 1px solid #ddd;
                 border-top: 0;
                 min-height: 48px;
+
+                // evoke0411 : table text left로 변경 요청 적용
+                .output {
+                    text-align: left;
+                }
     
                 // required
                 &[required] .control-label::after {
@@ -172,6 +177,7 @@ Select::-ms-expand {
                     min-height: 48px;
                     display: flex;
                     justify-content: center;
+                    justify-content: flex-start;
                     align-items: center;
                     border-bottom: 1px solid #ddd;
                     &:has(.consoleDiv) {
@@ -5745,6 +5751,11 @@ v .center>div>.panel_value {
     border-radius: 12px;
     z-index: 200;
     transition: 0.2s;
+    &:has(.vmDetailTab) {
+        top: 170px;
+        left:unset;
+        transform: none;
+    }
 
     &.tabHide {
         left: 100%;
@@ -7876,19 +7887,6 @@ v .center>div>.panel_value {
     padding: 24px 40px;
     justify-content: flex-start;
     justify-content: space-between;
-    // .table_inner_icon.selected {
-    //     >div {
-    //         display: flex;
-    //         justify-content: center;
-    //         align-items: center;
-    //     }
-
-    //     .userinfoName {
-    //         font-size: 16px;
-    //         margin: 0;
-    //         line-height: 24px;
-    //     }
-    // }
 
     .row_flex_left {
         flex: 0 0 auto;
@@ -7948,6 +7946,23 @@ v .center>div>.panel_value {
                 }
             }
         }
+        &.ALL {
+            .row_flex:first-child .table_inner_icon {border-left: 1px solid #006979;}
+            .table_inner_icon {
+                border-color: #006979;
+                &.selected {
+                    background-color: #006979;
+                    .value .unitValue,
+                    .title {
+                        color: #fff;
+                    }
+                }
+                .value .unitValue,
+                .title {
+                    color: #006979;
+                }
+            }
+        } 
         .table_inner_icon {
             cursor: pointer;
         }
@@ -8719,7 +8734,8 @@ fill: #AEE5BE;
 }
 
 // 파란색 라디오
-#vmExpire_popup_form .topInfo .checkbox-inline:has(input:checked)::after {
+// #vmExpire_popup_form .topInfo .checkbox-inline:has(input:checked)::after,
+.topInfo .checkbox-inline:has(input:checked)::after {
     background-color: #00A3E0 !important;
     border: 2px solid #64BCEA !important;
     outline: 3px solid #96D2F3;
@@ -8728,3 +8744,4 @@ fill: #AEE5BE;
     top: 4px !important;
     left: 3px !important;
 }
+

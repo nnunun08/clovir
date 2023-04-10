@@ -51,7 +51,7 @@
         "update": false,
         "delete": false
       };
-      var RSAModulus = "8245171374e7fe36e07767858c853f0ae540988484fa37b89f8111cc31f6540db13c40be3e43908758c94f6f2a80fb927d1b68861b74aad4634b88c19de33b18a5a977a02c827311bfd456fd2390f437cf44579a53a4dd0bae3547d2e3789498bf8b27e8e7419bc386d7b8a1159fda8a4d0c11bdbe2c801806eda0659212eb1b";
+      var RSAModulus = "8146b93db9ef454852d0023cfca30bba551bb3cb20a55c2d0d94237f80e85071d415299748205d2151d89f93898fbdb2ea295be383c2f692e1aa0c0f767eee851c0d321457848de601f167d3b6f4c566b67f8ff905bfe6132025a227f5de72375dccedf396dfc9393e93023e3245989165458b01ec1ee342136b177cf83e4dbf";
       var RSAExponent = "10001";
       var jsEncryptParam = ["password", "password1", "CONN_PWD"];
       var msg_search = "검색";
@@ -30081,10 +30081,10 @@ height: 8px;
     <script src="/res/js/site.js?v=2"></script>
     <script src="/res/js/sm_action.js?v=1"></script>
     <script src="/res/js/ncsoft/site.js"></script>
-    <link rel="stylesheet" href="/res/css/ncsoft/common.css?v=8.2">
-    <link rel="stylesheet" href="/res/css/ncsoft/menu.css?v=4">
-    <link rel="stylesheet" href="/res/css/ncsoft/dashboard.css">
-    <link rel="stylesheet" href="/res/css/ncsoft/aggrid_ncsoft.css">
+    <link rel="stylesheet" href="/res/css/ncsoft/common.css?v=8.3">
+    <link rel="stylesheet" href="/res/css/ncsoft/menu.css?v=4.1">
+    <link rel="stylesheet" href="/res/css/ncsoft/dashboard.css?v=1">
+    <link rel="stylesheet" href="/res/css/ncsoft/aggrid_ncsoft.css?v=1">
     <script type="text/x-template" id="fullcalendar-template"> <transition name="fullcalendar">
 																	<div class="fullcalendar-container">
 																		<div class="calendar title">
@@ -30194,22 +30194,22 @@ height: 8px;
       <div class="topLine"></div>
       <div id="topArea">
         <div onclick="topLogo()" class="topLogo">
-          <img src="/res/img/ncsoft/logo_ncspace.png" alt="logo" width="250">
+          <img src="/res/img/ncsoft/logo_ncspace.png" alt="logo">
         </div>
         <div id="valueBox" class="value">
           <div class="value quotaInfo">
             <span class="unit">사용한 쿼터 </span>
-            <span class="unitValue">134,160</span>
+            <span class="unitValue">320,200</span>
           </div>
           <div class="divider">|</div>
           <div class="value quotaInfo">
             <span class="unit">팀 쿼터 </span>
-            <span id="TEAM_QUOTA_COUNT" class="unitValue">1,800,200</span>
+            <span id="TEAM_QUOTA_COUNT" class="unitValue">1,986,240</span>
           </div>
           <div class="divider">|</div>
           <div data-placement="right" class="value quotaInfo">
             <span onclick="request_quota_click()" class="unit" style="cursor: pointer;">잔여 쿼터 </span>
-            <span id="USED_TEAM_QUOTA_COUNT" onclick="request_quota_click()" class="unitValue ">152,519</span>
+            <span id="USED_TEAM_QUOTA_COUNT" onclick="request_quota_click()" class="unitValue ">256,569</span>
             <button type="button" id="request_quota_popup_button" class="btn btn-primary fm-popup-button displayNone"></button>
             <!---->
           </div>
@@ -30346,6 +30346,11 @@ height: 8px;
             "title": "호스트",
             "desc": "호스트에 대한 정보를 제공합니다. "
           }, {
+            "path": "/clovirsm/monitor/ds/index.jsp",
+            "id": 133,
+            "title": "데이터스토어",
+            "desc": "데이터스토어에 대한 정보를 제공합니다."
+          }, {
             "path": "/clovirsm/monitor/admin_vm/index.jsp",
             "id": 110,
             "title": "서버 모니터링",
@@ -30355,11 +30360,6 @@ height: 8px;
             "id": 181,
             "title": "업무별 호스트 분포",
             "desc": "Host내 배치된 업무별 VM 개수 현황"
-          }, {
-            "path": "/clovirsm/monitor/ds/index.jsp",
-            "id": 133,
-            "title": "데이터스토어",
-            "desc": "데이터스토어에 대한 정보를 제공합니다."
           }, {
             "path": "/clovirsm/monitor/alarm/index.jsp",
             "id": 131,
@@ -30555,6 +30555,11 @@ height: 8px;
               LEGACY_MY_VM_CNT: 0,
               LEGACY_TEAM_VM_CNT: 0,
               LEGACY_WILL_EXPIRE_VM_CNT: 0,
+              ALL_MY_VM_CNT: 0,
+              ALL_TEAM_VM_CNT: 0,
+              ALL_WILL_EXPIRE_VM_CNT: 0,
+              ALL_EXPIRED_VM_CNT: 0,
+              ALL_SHARED_VM_CNT: 0,
               MY_FEE: 0,
               TEAM_FEE: 0
             }
@@ -30606,10 +30611,15 @@ height: 8px;
             <div id="header_detail">
               <div class="panel-body">
                 <div class="btn-group-100">
+                  <style>
+                    .grouping {
+                      cursor: pointer;
+                    }
+                  </style>
                   <div id="topIcon" class="layout_flex" style="background-color: rgb(250, 250, 250);">
                     <div class="row_flex_left">
                       <div class="row_flex">
-                        <div data-id="ALL" class="table_inner_icon grouping">
+                        <div data-id="ALL" class="table_inner_icon grouping selected">
                           <div class="title">All</div>
                           <div class="value">
                             <span class="unitValue">103</span>
@@ -30625,7 +30635,7 @@ height: 8px;
                         </div>
                       </div>
                       <div class="row_flex">
-                        <div data-id="LEGACY" class="table_inner_icon grouping selected">
+                        <div data-id="LEGACY" class="table_inner_icon grouping">
                           <div class="title">Legacy</div>
                           <div class="value">
                             <span class="unitValue">97</span>
@@ -30633,12 +30643,12 @@ height: 8px;
                         </div>
                       </div>
                     </div>
-                    <div class="floatRight LEGACY">
+                    <div class="floatRight ALL">
                       <div class="row_flex">
                         <div data-id="MY" class="table_inner_icon vmgrouping selected">
                           <div class="title">내 서버</div>
                           <div class="value">
-                            <span class="unitValue">0</span>
+                            <span class="unitValue">6</span>
                           </div>
                         </div>
                       </div>
@@ -30646,7 +30656,7 @@ height: 8px;
                         <div data-id="TEAM" class="table_inner_icon vmgrouping">
                           <div class="title">팀 서버</div>
                           <div class="value">
-                            <span id="USED_TEAM_QUOTA_COUNT" class="unitValue">95</span>
+                            <span id="USED_TEAM_QUOTA_COUNT" class="unitValue">101</span>
                             <br>
                           </div>
                         </div>
@@ -30655,7 +30665,7 @@ height: 8px;
                         <div data-id="WILL_EXPIRE" class="table_inner_icon vmgrouping">
                           <div class="title">만료예정</div>
                           <div class="value  ">
-                            <span class="unitValue">1</span>
+                            <span class="unitValue">2</span>
                           </div>
                         </div>
                       </div>
@@ -30705,11 +30715,7 @@ height: 8px;
                         $("#topIcon .floatRight").removeClass(searchvue.form_data.TOP_SELECTED_ID1);
                         $("#topIcon .floatRight").addClass($(this).attr("data-id"));
                         searchvue.form_data.TOP_SELECTED_ID1 = $(this).attr("data-id");
-                        if (searchvue.form_data.TOP_SELECTED_ID1 == 'ALL') {
-                          searchvue.form_data.TOP_SELECTED_ID = null;
-                        } else if (searchvue.form_data.TOP_SELECTED_ID == null) {
-                          $('.vmgrouping:first').click();
-                        }
+                        $('.vmgrouping:first').click();
                         vmSearch();
                       });
                     })
@@ -30729,84 +30735,10 @@ height: 8px;
                     </div>
                   </div>
                   <button type="button" id="newVra_popup_button" class="btn btn-primary fm-popup-button" style="display: none;"></button>
-                  <div class="btn-group">
-                    <button id="action_button" type="button" data-toggle="dropdown" class="btn contentsBtn etc dropdownBox"> ACTION <span class="caret"></span>
-                    </button>
-                    <ul role="menu" class="dropdown-menu execBtn">
-                      <li>
-                        <a onclick="click_shareVmUser();" class="input_request_button"> 서버공유</a>
-                        <button type="button" id="share_vm_user_popup_button" class="btn btn-primary fm-popup-button displayNone update"></button>
-                      </li>
-                      <li>
-                        <a onclick="serverRecovery();" class="input_request_button"> 서버복원</a>
-                        <button type="button" id="create_restore_form_popup_button" class="btn btn-primary fm-popup-button displayNone update"></button>
-                      </li>
-                      <li>
-                        <a onclick="changeVmName()" class="input_request_button"> 서버 이름 변경</a>
-                        <button type="button" id="changeVmName_popup_button" class="btn btn-primary fm-popup-button displayNone update" onclick=""></button>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="btn-group">
-                    <button id="vm_power_button" type="button" data-toggle="dropdown" class="btn contentsBtn etc dropdownBox"> 전원관리 <span class="caret"></span>
-                    </button>
-                    <ul role="menu" class="dropdown-menu execBtn">
-                      <li>
-                        <a href="#" onclick="powerAction('powerOn',this);return false">전원켜기(Power-on)</a>
-                      </li>
-                      <li>
-                        <a href="#" onclick="powerAction('powerOff',this);return false">강제 전원끄기(Force)</a>
-                      </li>
-                      <li>
-                        <a href="#" onclick="powerAction('shutdownGuest',this);return false">시스템종료(Shutdown)</a>
-                      </li>
-                      <li>
-                        <a href="#" onclick="powerAction('reboot',this);return false">재시작</a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="btn-group">
-                    <button id="vm_period_button" type="button" data-toggle="dropdown" class="btn contentsBtn etc dropdownBox"> 기간관리 <span class="caret"></span>
-                    </button>
-                    <ul role="menu" class="dropdown-menu execBtn">
-                      <li>
-                        <a type="button" onclick="click_reqExpire();" class="fm-popup-button_style"> 기간연장</a>
-                        <button type="button" id="vmExpire_popup_button" class="btn btn-primary fm-popup-button displayNone"></button>
-                      </li>
-                      <!---->
-                      <li>
-                        <a type="button" onclick="checkVmDel();" class="input_request_button"> 반납(삭제)</a>
-                        <button type="button" id="vmDelCheckList_popup_button" class="btn btn-primary fm-popup-button displayNone"></button>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="btn-group">
-                    <button id="vm_resource_button" type="button" data-toggle="dropdown" class="btn contentsBtn etc dropdownBox"> 자원관리 <span class="caret"></span>
-                    </button>
-                    <ul role="menu" class="dropdown-menu execBtn">
-                      <li style="display: none;">
-                        <a onclick="click_reqResourceChange()" class="input_request_button"> 리소스 변경</a>
-                        <button type="button" id="diskChangePopup_button" class="btn btn-primary fm-popup-button displayNone"></button>
-                        <button type="button" id="specMultiChangePopup_button" class="btn btn-primary fm-popup-button displayNone"></button>
-                      </li>
-                      <li>
-                        <a onclick="resourceOptimization();" class="input_request_button"> 리소스 최적화</a>
-                        <button type="button" id="resourceOptimization_popup_button" class="btn btn-primary fm-popup-button displayNone"></button>
-                      </li>
-                      <li>
-                        <a onclick="changeAdmin()" class="input_request_button"> 담당자 변경</a>
-                        <button type="button" id="changeVmAdmin_popup_button" class="btn btn-primary fm-popup-button displayNone update" onclick=""></button>
-                      </li>
-                      <li style="display: none;">
-                        <a onclick="changeManager()" class="input_request_button"> 관리자 추가</a>
-                        <button type="button" id="addManager_popup_button" class="btn btn-primary fm-popup-button displayNone update" onclick=""></button>
-                      </li>
-                      <li>
-                        <a onclick="changeTag()" class="input_request_button"> Tag 수정</a>
-                        <button type="button" id="tagPopupBtn" class="btn btn-primary fm-popup-button displayNone">Tag 수정</button>
-                      </li>
-                    </ul>
-                  </div>
+                  <!---->
+                  <!---->
+                  <!---->
+                  <!---->
                 </div>
                 <div class="rightBtn">
                   <div id="searchArea">
@@ -30842,11 +30774,11 @@ height: 8px;
               </div>
               <div id="input_area" class="fullGrid">
                 <div class="layout background mid">
-                  <div id="mainTable" class="ag-theme-fresh" style="height: 150px;">
+                  <div id="mainTable" class="ag-theme-fresh" style="height: 310px;">
                     <div class="ag-bl ag-bl-full-height ag-layout-normal ag-scrolls ag-ltr" id="borderLayout_eRootPanel">
-                      <div class="ag-bl-center ag-bl-full-height-center" ref="center" style="margin-left: 0px; width: 1497px;">
+                      <div class="ag-bl-center ag-bl-full-height-center" ref="center" style="margin-left: 0px; width: 1469px;">
                         <div class="ag-bl ag-bl-full-height" id="borderLayout_eGridPanel">
-                          <div class="ag-bl-center ag-bl-full-height-center" ref="center" style="margin-left: 0px; width: 1497px;">
+                          <div class="ag-bl-center ag-bl-full-height-center" ref="center" style="margin-left: 0px; width: 1469px;">
                             <div class="ag-root ag-font-style ag-hacked-scroll" role="grid">
                               <div class="ag-header ag-pivot-off" role="row" style="height: 40px;">
                                 <div class="ag-pinned-left-header" role="presentation" style="display: none; width: 0px;">
@@ -30857,8 +30789,8 @@ height: 8px;
                                 </div>
                                 <div class="ag-header-viewport" role="presentation" style="margin-left: 0px; margin-right: 0px;">
                                   <div class="ag-header-container" role="presentation">
-                                    <div class="ag-header-row" role="presentation" style="top: 0px; height: 40px; width: 1497px;">
-                                      <div class="ag-header-cell ag-header-cell-sortable" role="presentation" col-id="0" style="width: 87px; left: 0px;">
+                                    <div class="ag-header-row" role="presentation" style="top: 0px; height: 40px; width: 1469px;">
+                                      <div class="ag-header-cell ag-header-cell-sortable" role="presentation" col-id="0" style="width: 89px; left: 0px;">
                                         <div ref="eResize" class="ag-header-cell-resize" role="presentation"></div>
                                         <!--AG-CHECKBOX-->
                                         <span class="ag-header-select-all" role="presentation" ref="cbSelectAll">
@@ -30892,7 +30824,7 @@ height: 8px;
                                           </div>
                                         </div>
                                       </div>
-                                      <div class="ag-header-cell ag-header-cell-sortable" role="presentation" col-id="P_KUBUN_NM" style="width: 94px; left: 87px;">
+                                      <div class="ag-header-cell ag-header-cell-sortable" role="presentation" col-id="P_KUBUN_NM" style="width: 92px; left: 89px;">
                                         <div ref="eResize" class="ag-header-cell-resize" role="presentation"></div>
                                         <!--AG-CHECKBOX-->
                                         <span class="ag-header-select-all ag-hidden" role="presentation" ref="cbSelectAll">
@@ -30909,7 +30841,7 @@ height: 8px;
                                         </span>
                                         <div class="ag-cell-label-container ag-header-cell-sorted-none" role="presentation">
                                           <div ref="eLabel" class="ag-header-cell-label" role="presentation">
-                                            <span ref="eText" class="ag-header-cell-text" role="columnheader">구분</span>
+                                            <span ref="eText" class="ag-header-cell-text" role="columnheader">용도</span>
                                             <span ref="eFilter" class="ag-header-icon ag-filter-icon ag-hidden" aria-hidden="true">
                                               <span class="ag-icon ag-icon-filter"></span>
                                             </span>
@@ -30926,7 +30858,7 @@ height: 8px;
                                           </div>
                                         </div>
                                       </div>
-                                      <div class="ag-header-cell ag-header-cell-sortable" role="presentation" col-id="VM_NM" style="width: 94px; left: 181px;">
+                                      <div class="ag-header-cell ag-header-cell-sortable" role="presentation" col-id="VM_NM" style="width: 92px; left: 181px;">
                                         <div ref="eResize" class="ag-header-cell-resize" role="presentation"></div>
                                         <!--AG-CHECKBOX-->
                                         <span class="ag-header-select-all ag-hidden" role="presentation" ref="cbSelectAll">
@@ -30960,7 +30892,7 @@ height: 8px;
                                           </div>
                                         </div>
                                       </div>
-                                      <div class="ag-header-cell ag-header-cell-sortable" role="presentation" col-id="RUN_CD" style="width: 94px; left: 275px;">
+                                      <div class="ag-header-cell ag-header-cell-sortable" role="presentation" col-id="RUN_CD" style="width: 92px; left: 273px;">
                                         <div ref="eResize" class="ag-header-cell-resize" role="presentation"></div>
                                         <!--AG-CHECKBOX-->
                                         <span class="ag-header-select-all ag-hidden" role="presentation" ref="cbSelectAll">
@@ -30994,7 +30926,7 @@ height: 8px;
                                           </div>
                                         </div>
                                       </div>
-                                      <div class="ag-header-cell ag-header-cell-sortable" role="presentation" col-id="CPU_CNT" style="width: 94px; left: 369px;">
+                                      <div class="ag-header-cell ag-header-cell-sortable" role="presentation" col-id="CPU_CNT" style="width: 92px; left: 365px;">
                                         <div ref="eResize" class="ag-header-cell-resize" role="presentation"></div>
                                         <!--AG-CHECKBOX-->
                                         <span class="ag-header-select-all ag-hidden" role="presentation" ref="cbSelectAll">
@@ -31028,7 +30960,7 @@ height: 8px;
                                           </div>
                                         </div>
                                       </div>
-                                      <div class="ag-header-cell ag-header-cell-sortable" role="presentation" col-id="RAM_SIZE" style="width: 94px; left: 463px;">
+                                      <div class="ag-header-cell ag-header-cell-sortable" role="presentation" col-id="RAM_SIZE" style="width: 92px; left: 457px;">
                                         <div ref="eResize" class="ag-header-cell-resize" role="presentation"></div>
                                         <!--AG-CHECKBOX-->
                                         <span class="ag-header-select-all ag-hidden" role="presentation" ref="cbSelectAll">
@@ -31062,7 +30994,7 @@ height: 8px;
                                           </div>
                                         </div>
                                       </div>
-                                      <div class="ag-header-cell ag-header-cell-sortable" role="presentation" col-id="DISK_SIZE" style="width: 94px; left: 557px;">
+                                      <div class="ag-header-cell ag-header-cell-sortable" role="presentation" col-id="DISK_SIZE" style="width: 92px; left: 549px;">
                                         <div ref="eResize" class="ag-header-cell-resize" role="presentation"></div>
                                         <!--AG-CHECKBOX-->
                                         <span class="ag-header-select-all ag-hidden" role="presentation" ref="cbSelectAll">
@@ -31096,7 +31028,7 @@ height: 8px;
                                           </div>
                                         </div>
                                       </div>
-                                      <div class="ag-header-cell ag-header-cell-sortable" role="presentation" col-id="PRIVATE_IP" style="width: 94px; left: 651px;">
+                                      <div class="ag-header-cell ag-header-cell-sortable" role="presentation" col-id="PRIVATE_IP" style="width: 92px; left: 641px;">
                                         <div ref="eResize" class="ag-header-cell-resize" role="presentation"></div>
                                         <!--AG-CHECKBOX-->
                                         <span class="ag-header-select-all ag-hidden" role="presentation" ref="cbSelectAll">
@@ -31130,7 +31062,7 @@ height: 8px;
                                           </div>
                                         </div>
                                       </div>
-                                      <div class="ag-header-cell ag-header-cell-sortable" role="presentation" col-id="GUEST_NM" style="width: 94px; left: 745px;">
+                                      <div class="ag-header-cell ag-header-cell-sortable" role="presentation" col-id="GUEST_NM" style="width: 92px; left: 733px;">
                                         <div ref="eResize" class="ag-header-cell-resize" role="presentation"></div>
                                         <!--AG-CHECKBOX-->
                                         <span class="ag-header-select-all ag-hidden" role="presentation" ref="cbSelectAll">
@@ -31164,7 +31096,7 @@ height: 8px;
                                           </div>
                                         </div>
                                       </div>
-                                      <div class="ag-header-cell ag-header-cell-sortable" role="presentation" col-id="TAGS" style="width: 94px; left: 839px;">
+                                      <div class="ag-header-cell ag-header-cell-sortable" role="presentation" col-id="TAGS" style="width: 92px; left: 825px;">
                                         <div ref="eResize" class="ag-header-cell-resize" role="presentation"></div>
                                         <!--AG-CHECKBOX-->
                                         <span class="ag-header-select-all ag-hidden" role="presentation" ref="cbSelectAll">
@@ -31198,7 +31130,7 @@ height: 8px;
                                           </div>
                                         </div>
                                       </div>
-                                      <div class="ag-header-cell ag-header-cell-sortable" role="presentation" col-id="TEAM_NM" style="width: 94px; left: 933px;">
+                                      <div class="ag-header-cell ag-header-cell-sortable" role="presentation" col-id="TEAM_NM" style="width: 92px; left: 917px;">
                                         <div ref="eResize" class="ag-header-cell-resize" role="presentation"></div>
                                         <!--AG-CHECKBOX-->
                                         <span class="ag-header-select-all ag-hidden" role="presentation" ref="cbSelectAll">
@@ -31232,7 +31164,7 @@ height: 8px;
                                           </div>
                                         </div>
                                       </div>
-                                      <div class="ag-header-cell ag-header-cell-sortable" role="presentation" col-id="INS_ID_NM" style="width: 94px; left: 1027px;">
+                                      <div class="ag-header-cell ag-header-cell-sortable" role="presentation" col-id="INS_ID_NM" style="width: 92px; left: 1009px;">
                                         <div ref="eResize" class="ag-header-cell-resize" role="presentation"></div>
                                         <!--AG-CHECKBOX-->
                                         <span class="ag-header-select-all ag-hidden" role="presentation" ref="cbSelectAll">
@@ -31266,7 +31198,7 @@ height: 8px;
                                           </div>
                                         </div>
                                       </div>
-                                      <div class="ag-header-cell ag-header-cell-sortable" role="presentation" col-id="INS_TMS" style="width: 94px; left: 1121px;">
+                                      <div class="ag-header-cell ag-header-cell-sortable" role="presentation" col-id="INS_TMS" style="width: 92px; left: 1101px;">
                                         <div ref="eResize" class="ag-header-cell-resize" role="presentation"></div>
                                         <!--AG-CHECKBOX-->
                                         <span class="ag-header-select-all ag-hidden" role="presentation" ref="cbSelectAll">
@@ -31300,7 +31232,7 @@ height: 8px;
                                           </div>
                                         </div>
                                       </div>
-                                      <div class="ag-header-cell ag-header-cell-sortable" role="presentation" col-id="EXPIRE_DT" style="width: 94px; left: 1215px;">
+                                      <div class="ag-header-cell ag-header-cell-sortable" role="presentation" col-id="EXPIRE_DT" style="width: 92px; left: 1193px;">
                                         <div ref="eResize" class="ag-header-cell-resize" role="presentation"></div>
                                         <!--AG-CHECKBOX-->
                                         <span class="ag-header-select-all ag-hidden" role="presentation" ref="cbSelectAll">
@@ -31334,7 +31266,7 @@ height: 8px;
                                           </div>
                                         </div>
                                       </div>
-                                      <div class="ag-header-cell ag-header-cell-sortable" role="presentation" col-id="SHARE_STATUS" style="width: 94px; left: 1309px;">
+                                      <div class="ag-header-cell ag-header-cell-sortable" role="presentation" col-id="SHARE_STATUS" style="width: 92px; left: 1285px;">
                                         <div ref="eResize" class="ag-header-cell-resize" role="presentation"></div>
                                         <!--AG-CHECKBOX-->
                                         <span class="ag-header-select-all ag-hidden" role="presentation" ref="cbSelectAll">
@@ -31368,7 +31300,7 @@ height: 8px;
                                           </div>
                                         </div>
                                       </div>
-                                      <div class="ag-header-cell ag-header-cell-sortable" role="presentation" col-id="OPTIMIZE_STATUS" style="width: 94px; left: 1403px;">
+                                      <div class="ag-header-cell ag-header-cell-sortable" role="presentation" col-id="OPTIMIZE_STATUS" style="width: 92px; left: 1377px;">
                                         <div ref="eResize" class="ag-header-cell-resize" role="presentation"></div>
                                         <!--AG-CHECKBOX-->
                                         <span class="ag-header-select-all ag-hidden" role="presentation" ref="cbSelectAll">
@@ -31411,43 +31343,353 @@ height: 8px;
                                 <div class="ag-pinned-left-floating-top" role="presentation" style="width: 0px;"></div>
                                 <div class="ag-pinned-right-floating-top" role="presentation" style="width: 0px;"></div>
                                 <div class="ag-floating-top-viewport" role="presentation">
-                                  <div class="ag-floating-top-container" role="presentation" style="width: 1497px;"></div>
+                                  <div class="ag-floating-top-container" role="presentation" style="width: 1469px;"></div>
                                 </div>
                                 <div class="ag-floating-top-full-width-container ag-hidden" role="presentation"></div>
                               </div>
-                              <div class="ag-floating-bottom" role="presentation" style="height: 0px; top: 150px;">
+                              <div class="ag-floating-bottom" role="presentation" style="height: 0px; top: 310px;">
                                 <div class="ag-pinned-left-floating-bottom" role="presentation" style="width: 0px;"></div>
                                 <div class="ag-pinned-right-floating-bottom" role="presentation" style="width: 0px;"></div>
                                 <div class="ag-floating-bottom-viewport" role="presentation">
-                                  <div class="ag-floating-bottom-container" role="presentation" style="width: 1497px;"></div>
+                                  <div class="ag-floating-bottom-container" role="presentation" style="width: 1469px;"></div>
                                 </div>
                                 <div class="ag-floating-bottom-full-width-container ag-hidden" role="presentation"></div>
                               </div>
-                              <div class="ag-body ag-row-no-animation" role="presentation" style="top: 40px; height: 110px;">
-                                <div class="ag-pinned-left-cols-viewport" role="presentation" style="display: none; width: 0px; height: 110px;">
-                                  <div class="ag-pinned-left-cols-container" role="presentation" style="height: 1px; top: 0px; width: 0px;"></div>
+                              <div class="ag-body ag-row-no-animation" role="presentation" style="top: 40px; height: 270px;">
+                                <div class="ag-pinned-left-cols-viewport" role="presentation" style="display: none; width: 0px; height: 270px;">
+                                  <div class="ag-pinned-left-cols-container" role="presentation" style="height: 240px; top: 0px; width: 0px;">
+                                    <div role="row" row-index="0" row-id="0" comp-id="4250" class="ag-row ag-row-no-focus ag-row-even ag-row-level-0" style="height: 40px; transform: translateY(0px);  "></div>
+                                    <div role="row" row-index="1" row-id="1" comp-id="4267" class="ag-row ag-row-no-focus ag-row-odd ag-row-level-0" style="height: 40px; transform: translateY(40px);  "></div>
+                                    <div role="row" row-index="2" row-id="2" comp-id="4284" class="ag-row ag-row-no-focus ag-row-even ag-row-level-0" style="height: 40px; transform: translateY(80px);  "></div>
+                                    <div role="row" row-index="3" row-id="3" comp-id="4301" class="ag-row ag-row-no-focus ag-row-odd ag-row-level-0" style="height: 40px; transform: translateY(120px);  "></div>
+                                    <div role="row" row-index="4" row-id="4" comp-id="4318" class="ag-row ag-row-no-focus ag-row-even ag-row-level-0" style="height: 40px; transform: translateY(160px);  "></div>
+                                    <div role="row" row-index="5" row-id="5" comp-id="4335" class="ag-row ag-row-no-focus ag-row-odd ag-row-level-0" style="height: 40px; transform: translateY(200px);  "></div>
+                                  </div>
                                 </div>
-                                <div class="ag-pinned-right-cols-viewport" role="presentation" style="display: none; width: 0px; height: 110px;">
-                                  <div class="ag-pinned-right-cols-container" role="presentation" style="height: 1px; width: 0px;"></div>
+                                <div class="ag-pinned-right-cols-viewport" role="presentation" style="display: none; width: 0px; height: 270px;">
+                                  <div class="ag-pinned-right-cols-container" role="presentation" style="height: 240px; width: 0px;">
+                                    <div role="row" row-index="0" row-id="0" comp-id="4250" class="ag-row ag-row-no-focus ag-row-even ag-row-level-0" style="height: 40px; transform: translateY(0px);  "></div>
+                                    <div role="row" row-index="1" row-id="1" comp-id="4267" class="ag-row ag-row-no-focus ag-row-odd ag-row-level-0" style="height: 40px; transform: translateY(40px);  "></div>
+                                    <div role="row" row-index="2" row-id="2" comp-id="4284" class="ag-row ag-row-no-focus ag-row-even ag-row-level-0" style="height: 40px; transform: translateY(80px);  "></div>
+                                    <div role="row" row-index="3" row-id="3" comp-id="4301" class="ag-row ag-row-no-focus ag-row-odd ag-row-level-0" style="height: 40px; transform: translateY(120px);  "></div>
+                                    <div role="row" row-index="4" row-id="4" comp-id="4318" class="ag-row ag-row-no-focus ag-row-even ag-row-level-0" style="height: 40px; transform: translateY(160px);  "></div>
+                                    <div role="row" row-index="5" row-id="5" comp-id="4335" class="ag-row ag-row-no-focus ag-row-odd ag-row-level-0" style="height: 40px; transform: translateY(200px);  "></div>
+                                  </div>
                                 </div>
                                 <div class="ag-body-viewport-wrapper" role="presentation" style="margin-left: 0px; margin-right: 0px;">
                                   <div class="ag-body-viewport" role="presentation" style="overflow-y: auto;">
-                                    <div class="ag-body-container" role="presentation" style="height: 1px; top: 0px; width: 1497px;"></div>
+                                    <div class="ag-body-container" role="presentation" style="height: 240px; top: 0px; width: 1469px;">
+                                      <div role="row" row-index="0" row-id="0" comp-id="4250" class="ag-row ag-row-no-focus ag-row-even ag-row-level-0" style="height: 40px; transform: translateY(0px);  ">
+                                        <div tabindex="-1" role="gridcell" comp-id="4251" col-id="0" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus cell-wrap-text" style="width: 89px; left: 0px; ">
+                                          <span ref="eCellWrapper" class="ag-cell-wrapper">
+                                            <span class="ag-selection-checkbox">
+                                              <span class="ag-icon ag-icon-checkbox-checked ag-hidden"></span>
+                                              <span class="ag-icon ag-icon-checkbox-unchecked"></span>
+                                              <span class="ag-icon ag-icon-checkbox-indeterminate ag-hidden"></span>
+                                            </span>
+                                            <span ref="eCellValue" class="ag-cell-value"></span>
+                                          </span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4252" col-id="P_KUBUN_NM" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 89px; ">라이브</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4253" col-id="VM_NM" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" title="syslivapp99" style="width: 92px; left: 181px; ">
+                                          <span>
+                                            <a class="vmNameATag" style="cursor:pointer" onclick="openDetail('S461974778079300','0');return false">syslivapp99</a>
+                                          </span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4254" col-id="RUN_CD" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 273px; text-align: center;">
+                                          <span>
+                                            <div class="statusBtn onBtn">
+                                              <span>ON</span>
+                                            </div>
+                                          </span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4255" col-id="CPU_CNT" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 365px; ">12</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4256" col-id="RAM_SIZE" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 457px; ">32</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4257" col-id="DISK_SIZE" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 549px; ">51</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4258" col-id="PRIVATE_IP" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 641px; "></div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4259" col-id="GUEST_NM" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" title="Ubuntu Linux (64-bit)" style="width: 92px; left: 733px; ">
+                                          <span>Ubuntu Linux (64-bit)</span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4260" col-id="TAGS" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 825px; ">
+                                          <span></span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4261" col-id="TEAM_NM" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 917px; ">시스템운영팀</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4262" col-id="INS_ID_NM" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 1009px; ">포탈관리자</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4263" col-id="INS_TMS" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 1101px; ">2023-03-23</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4264" col-id="EXPIRE_DT" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 1193px; ">
+                                          <span>Unlimit</span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4265" col-id="SHARE_STATUS" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 1285px; ">
+                                          <span>
+                                            <div class="shareBtn"></div>
+                                          </span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4266" col-id="OPTIMIZE_STATUS" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 1377px; ">
+                                          <span></span>
+                                        </div>
+                                      </div>
+                                      <div role="row" row-index="1" row-id="1" comp-id="4267" class="ag-row ag-row-no-focus ag-row-odd ag-row-level-0" style="height: 40px; transform: translateY(40px);  ">
+                                        <div tabindex="-1" role="gridcell" comp-id="4268" col-id="0" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus cell-wrap-text" style="width: 89px; left: 0px; ">
+                                          <span ref="eCellWrapper" class="ag-cell-wrapper">
+                                            <span class="ag-selection-checkbox">
+                                              <span class="ag-icon ag-icon-checkbox-checked ag-hidden"></span>
+                                              <span class="ag-icon ag-icon-checkbox-unchecked"></span>
+                                              <span class="ag-icon ag-icon-checkbox-indeterminate ag-hidden"></span>
+                                            </span>
+                                            <span ref="eCellValue" class="ag-cell-value"></span>
+                                          </span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4269" col-id="P_KUBUN_NM" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 89px; ">라이브</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4270" col-id="VM_NM" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" title="SYSapliv07" style="width: 92px; left: 181px; ">
+                                          <span>
+                                            <a class="vmNameATag" style="cursor:pointer" onclick="openDetail('S462218041360700','1');return false">SYSapliv07</a>
+                                          </span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4271" col-id="RUN_CD" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 273px; text-align: center;">
+                                          <span>
+                                            <div class="statusBtn onBtn">
+                                              <span>ON</span>
+                                            </div>
+                                          </span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4272" col-id="CPU_CNT" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 365px; ">4</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4273" col-id="RAM_SIZE" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 457px; ">4</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4274" col-id="DISK_SIZE" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 549px; ">51</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4275" col-id="PRIVATE_IP" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 641px; ">10.50.245.58</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4276" col-id="GUEST_NM" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" title="Ubuntu Linux (64-bit)" style="width: 92px; left: 733px; ">
+                                          <span>Ubuntu Linux (64-bit)</span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4277" col-id="TAGS" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 825px; ">
+                                          <span> #리니지 <div class="tagsContents"> #리니지</div>
+                                          </span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4278" col-id="TEAM_NM" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 917px; ">시스템운영팀</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4279" col-id="INS_ID_NM" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 1009px; ">포탈관리자</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4280" col-id="INS_TMS" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 1101px; ">2023-03-23</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4281" col-id="EXPIRE_DT" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 1193px; ">
+                                          <span>2024-12-23</span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4282" col-id="SHARE_STATUS" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 1285px; ">
+                                          <span>
+                                            <div class="shareBtn"></div>
+                                          </span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4283" col-id="OPTIMIZE_STATUS" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 1377px; ">
+                                          <span></span>
+                                        </div>
+                                      </div>
+                                      <div role="row" row-index="2" row-id="2" comp-id="4284" class="ag-row ag-row-no-focus ag-row-even ag-row-level-0" style="height: 40px; transform: translateY(80px);  ">
+                                        <div tabindex="-1" role="gridcell" comp-id="4285" col-id="0" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus cell-wrap-text" style="width: 89px; left: 0px; ">
+                                          <span ref="eCellWrapper" class="ag-cell-wrapper">
+                                            <span class="ag-selection-checkbox">
+                                              <span class="ag-icon ag-icon-checkbox-checked ag-hidden"></span>
+                                              <span class="ag-icon ag-icon-checkbox-unchecked"></span>
+                                              <span class="ag-icon ag-icon-checkbox-indeterminate ag-hidden"></span>
+                                            </span>
+                                            <span ref="eCellValue" class="ag-cell-value"></span>
+                                          </span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4286" col-id="P_KUBUN_NM" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 89px; ">라이브</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4287" col-id="VM_NM" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" title="SYSadminliv01" style="width: 92px; left: 181px; ">
+                                          <span>
+                                            <a class="vmNameATag" style="cursor:pointer" onclick="openDetail('S391719611594800','2');return false">SYSadminliv01</a>
+                                          </span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4288" col-id="RUN_CD" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 273px; text-align: center;">
+                                          <span>
+                                            <div class="statusBtn onBtn">
+                                              <span>ON</span>
+                                            </div>
+                                          </span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4289" col-id="CPU_CNT" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 365px; ">2</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4290" col-id="RAM_SIZE" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 457px; ">4</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4291" col-id="DISK_SIZE" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 549px; ">150</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4292" col-id="PRIVATE_IP" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 641px; ">10.50.245.54</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4293" col-id="GUEST_NM" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" title="Ubuntu Linux (64-bit)" style="width: 92px; left: 733px; ">
+                                          <span>Ubuntu Linux (64-bit)</span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4294" col-id="TAGS" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 825px; ">
+                                          <span> #개발 <div class="tagsContents"> #개발</div>
+                                          </span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4295" col-id="TEAM_NM" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 917px; ">시스템운영팀</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4296" col-id="INS_ID_NM" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 1009px; ">포탈관리자</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4297" col-id="INS_TMS" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 1101px; ">2023-03-22</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4298" col-id="EXPIRE_DT" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 1193px; ">
+                                          <span>2024-12-22</span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4299" col-id="SHARE_STATUS" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 1285px; ">
+                                          <span>
+                                            <div class="shareBtn"></div>
+                                          </span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4300" col-id="OPTIMIZE_STATUS" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 1377px; ">
+                                          <span></span>
+                                        </div>
+                                      </div>
+                                      <div role="row" row-index="3" row-id="3" comp-id="4301" class="ag-row ag-row-no-focus ag-row-odd ag-row-level-0" style="height: 40px; transform: translateY(120px);  ">
+                                        <div tabindex="-1" role="gridcell" comp-id="4302" col-id="0" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus cell-wrap-text" style="width: 89px; left: 0px; ">
+                                          <span ref="eCellWrapper" class="ag-cell-wrapper">
+                                            <span class="ag-selection-checkbox">
+                                              <span class="ag-icon ag-icon-checkbox-checked ag-hidden"></span>
+                                              <span class="ag-icon ag-icon-checkbox-unchecked"></span>
+                                              <span class="ag-icon ag-icon-checkbox-indeterminate ag-hidden"></span>
+                                            </span>
+                                            <span ref="eCellValue" class="ag-cell-value"></span>
+                                          </span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4303" col-id="P_KUBUN_NM" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 89px; ">라이브</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4304" col-id="VM_NM" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" title="SYSapliv06" style="width: 92px; left: 181px; ">
+                                          <span>
+                                            <a class="vmNameATag" style="cursor:pointer" onclick="openDetail('S153473866320600','3');return false">SYSapliv06</a>
+                                          </span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4305" col-id="RUN_CD" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 273px; text-align: center;">
+                                          <span>
+                                            <div class="statusBtn onBtn">
+                                              <span>ON</span>
+                                            </div>
+                                          </span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4306" col-id="CPU_CNT" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 365px; ">2</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4307" col-id="RAM_SIZE" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 457px; ">4</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4308" col-id="DISK_SIZE" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 549px; ">51</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4309" col-id="PRIVATE_IP" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 641px; ">10.50.245.45</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4310" col-id="GUEST_NM" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" title="Ubuntu Linux (64-bit)" style="width: 92px; left: 733px; ">
+                                          <span>Ubuntu Linux (64-bit)</span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4311" col-id="TAGS" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 825px; ">
+                                          <span> #테스트 <div class="tagsContents"> #테스트</div>
+                                          </span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4312" col-id="TEAM_NM" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 917px; ">시스템운영팀</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4313" col-id="INS_ID_NM" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 1009px; ">포탈관리자</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4314" col-id="INS_TMS" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 1101px; ">2023-03-17</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4315" col-id="EXPIRE_DT" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 1193px; ">
+                                          <span>Unlimit</span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4316" col-id="SHARE_STATUS" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 1285px; ">
+                                          <span></span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4317" col-id="OPTIMIZE_STATUS" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 1377px; ">
+                                          <span></span>
+                                        </div>
+                                      </div>
+                                      <div role="row" row-index="4" row-id="4" comp-id="4318" class="ag-row ag-row-no-focus ag-row-even ag-row-level-0" style="height: 40px; transform: translateY(160px);  ">
+                                        <div tabindex="-1" role="gridcell" comp-id="4319" col-id="0" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus cell-wrap-text" style="width: 89px; left: 0px; ">
+                                          <span ref="eCellWrapper" class="ag-cell-wrapper">
+                                            <span class="ag-selection-checkbox">
+                                              <span class="ag-icon ag-icon-checkbox-checked ag-hidden"></span>
+                                              <span class="ag-icon ag-icon-checkbox-unchecked"></span>
+                                              <span class="ag-icon ag-icon-checkbox-indeterminate ag-hidden"></span>
+                                            </span>
+                                            <span ref="eCellValue" class="ag-cell-value"></span>
+                                          </span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4320" col-id="P_KUBUN_NM" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 89px; ">스테이징</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4321" col-id="VM_NM" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" title="SYSapstg01" style="width: 92px; left: 181px; ">
+                                          <span>
+                                            <a class="vmNameATag" style="cursor:pointer" onclick="openDetail('S249103555113100','4');return false">SYSapstg01</a>
+                                          </span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4322" col-id="RUN_CD" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 273px; text-align: center;">
+                                          <span>
+                                            <div class="statusBtn onBtn">
+                                              <span>ON</span>
+                                            </div>
+                                          </span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4323" col-id="CPU_CNT" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 365px; ">2</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4324" col-id="RAM_SIZE" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 457px; ">4</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4325" col-id="DISK_SIZE" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 549px; ">52</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4326" col-id="PRIVATE_IP" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 641px; ">10.50.245.41</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4327" col-id="GUEST_NM" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" title="Ubuntu Linux (64-bit)" style="width: 92px; left: 733px; ">
+                                          <span>Ubuntu Linux (64-bit)</span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4328" col-id="TAGS" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 825px; ">
+                                          <span></span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4329" col-id="TEAM_NM" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 917px; ">시스템운영팀</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4330" col-id="INS_ID_NM" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 1009px; ">포탈관리자</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4331" col-id="INS_TMS" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 1101px; ">2023-03-16</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4332" col-id="EXPIRE_DT" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 1193px; ">
+                                          <span>2024-11-16</span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4333" col-id="SHARE_STATUS" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 1285px; ">
+                                          <span>
+                                            <div class="shareBtn"></div>
+                                          </span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4334" col-id="OPTIMIZE_STATUS" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 1377px; ">
+                                          <span>
+                                            <div class="optimizeBtn"></div>
+                                            <div class="optimizeContents">
+                                              <div class="value">vCPU: 4 Down</div>
+                                              <div class="value">Memory: 8GB Down</div>
+                                            </div>
+                                          </span>
+                                        </div>
+                                      </div>
+                                      <div role="row" row-index="5" row-id="5" comp-id="4335" class="ag-row ag-row-no-focus ag-row-odd ag-row-level-0" style="height: 40px; transform: translateY(200px);  ">
+                                        <div tabindex="-1" role="gridcell" comp-id="4336" col-id="0" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus cell-wrap-text" style="width: 89px; left: 0px; ">
+                                          <span ref="eCellWrapper" class="ag-cell-wrapper">
+                                            <span class="ag-selection-checkbox">
+                                              <span class="ag-icon ag-icon-checkbox-checked ag-hidden"></span>
+                                              <span class="ag-icon ag-icon-checkbox-unchecked"></span>
+                                              <span class="ag-icon ag-icon-checkbox-indeterminate ag-hidden"></span>
+                                            </span>
+                                            <span ref="eCellValue" class="ag-cell-value"></span>
+                                          </span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4337" col-id="P_KUBUN_NM" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 89px; ">개발</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4338" col-id="VM_NM" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" title="nc-testlin001" style="width: 92px; left: 181px; ">
+                                          <span>
+                                            <a class="vmNameATag" style="cursor:pointer" onclick="openDetail('S1601256415555700','5');return false">nc-testlin001</a>
+                                          </span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4339" col-id="RUN_CD" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 273px; text-align: center;">
+                                          <span>
+                                            <div class="statusBtn onBtn">
+                                              <span>ON</span>
+                                            </div>
+                                          </span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4340" col-id="CPU_CNT" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 365px; ">2</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4341" col-id="RAM_SIZE" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 457px; ">4</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4342" col-id="DISK_SIZE" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 549px; ">52</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4343" col-id="PRIVATE_IP" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 641px; ">10.50.245.42</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4344" col-id="GUEST_NM" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" title="Ubuntu Linux (64-bit)" style="width: 92px; left: 733px; ">
+                                          <span>Ubuntu Linux (64-bit)</span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4345" col-id="TAGS" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 825px; ">
+                                          <span></span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4346" col-id="TEAM_NM" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 917px; ">시스템운영팀</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4347" col-id="INS_ID_NM" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 1009px; ">포탈관리자</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4348" col-id="INS_TMS" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 1101px; ">2023-03-06</div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4349" col-id="EXPIRE_DT" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 1193px; ">
+                                          <span>2023-11-06</span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4350" col-id="SHARE_STATUS" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 1285px; ">
+                                          <span>
+                                            <div class="shareBtn"></div>
+                                          </span>
+                                        </div>
+                                        <div tabindex="-1" role="gridcell" comp-id="4351" col-id="OPTIMIZE_STATUS" class="ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value" style="width: 92px; left: 1377px; ">
+                                          <span></span>
+                                        </div>
+                                      </div>
+                                    </div>
                                   </div>
                                 </div>
                                 <div class="ag-full-width-viewport ag-hidden" role="presentation">
-                                  <div class="ag-full-width-container" role="presentation" style="height: 1px; top: 0px;"></div>
+                                  <div class="ag-full-width-container" role="presentation" style="height: 240px; top: 0px;"></div>
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div class="ag-bl-overlay" ref="overlay" style="">
-                            <div class="ag-overlay-panel" role="presentation">
-                              <div class="ag-overlay-wrapper ag-overlay-no-rows-wrapper" ref="noRowsOverlayWrapper">
-                                <span class="ag-overlay-no-rows-center">표시할 데이터가 없습니다.</span>
-                              </div>
-                            </div>
-                          </div>
+                          <div class="ag-bl-overlay" ref="overlay" style="display: none;"></div>
                         </div>
                       </div>
                       <div class="ag-bl-overlay" ref="overlay" style="display: none;"></div>
@@ -31458,7 +31700,9 @@ height: 8px;
                       <div class="pagination-move2" onclick="pagination.goToFirstPage()" title="처음" style="pointer-events: none;">&lt;&lt;</div>
                       <div class="pagination-move1" onclick="pagination.goToPrevTensPage()" title="이전" style="pointer-events: none;">&lt;</div>
                     </div>
-                    <div class="pageDiv"></div>
+                    <div class="pageDiv">
+                      <div class="page active" onclick="pagination.pageClickEvent(this)">1</div>
+                    </div>
                     <div class="pagination-moveFrame nextMove">
                       <div class="pagination-move2" onclick="pagination.goToNextTensPage()" title="다음" style="pointer-events: none;">&gt;</div>
                       <div class="pagination-move1" onclick="pagination.goToLastPage()" title="끝" style="pointer-events: none;">&gt;&gt;</div>
@@ -31558,7 +31802,7 @@ height: 8px;
                             <div class="col col-sm-6">
                               <div class="fm-output">
                                 <label for="USE_MM" class="control-label grid-title value-title">사용기간(개월)</label>
-                                <div id="USE_MM" name="USE_MM" title=" / -" class="output  hastitle"> / -</div>
+                                <div id="USE_MM" name="USE_MM" title="Unlimit" class="output  hastitle">Unlimit</div>
                               </div>
                             </div>
                             <div class="col col-sm-6">
@@ -31900,7 +32144,7 @@ height: 8px;
                         headerCheckboxSelection: true,
                         checkboxSelection: true,
                       }, {
-                        headerName: '구분',
+                        headerName: '용도',
                         field: 'P_KUBUN_NM',
                         sort_field: 'P_KUBUN',
                       }, {
@@ -31984,6 +32228,9 @@ height: 8px;
                         field: 'EXPIRE_DT',
                         cellRenderer: function(params) {
                           if (params.data) {
+                            if (params.data.USE_MM >= '999') {
+                              return 'Unlimit';
+                            }
                             if (params.data.EXPIRED_TMS != null) {
                               return formatDate(params.data.EXPIRED_TMS, 'date')
                             } else {
@@ -32069,19 +32316,19 @@ height: 8px;
                       result += ' < div class = "optimizeContents" > ';
                       if (data.UNDER_CPU > 0) {
                         result += ' < div class = "value" > vCPU: ' + data.UNDER_CPU + '
-                        Down < /div>';
+                        Up < /div>';
                       }
                       if (data.OVER_CPU > 0) {
                         result += ' < div class = "value" > vCPU: ' + data.OVER_CPU + '
-                        Up < /div>';
+                        Down < /div>';
                       }
                       if (data.UNDER_MEM > 0) {
                         result += ' < div class = "value" > Memory: ' + data.UNDER_MEM + '
-                        GB Down < /div>';
+                        GB Up < /div>';
                       }
                       if (data.OVER_MEM > 0) {
                         result += ' < div class = "value" > Memory: ' + data.OVER_MEM + '
-                        GB Up < /div>';
+                        GB Down < /div>';
                       }
                       result += ' < /div>';
                       return result;

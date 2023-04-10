@@ -111,6 +111,12 @@ $leftSize : 216px;
         .select2-container {
             width: calc(100% - 155px) !important;
         }
+        #S_PURPOSE_DIV,
+        #tagBox {
+            .select2-container {
+                width: calc(100% - 20px) !important;
+            }
+        } 
     }
     .wizard_step_content {
         $thWidth : 120px;
