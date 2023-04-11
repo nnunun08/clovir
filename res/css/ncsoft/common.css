@@ -646,6 +646,10 @@ select {
   border: 0;
   background-position: center right;
 }
+.table_title.termArea dl .title,
+.table_title.termArea dl .reload {
+  background: none !important;
+}
 .table_title.termArea dl .reload {
   display: flex !important;
   width: 145px;
@@ -667,7 +671,7 @@ select {
   display: block;
   margin-left: 8px;
 }
-.table_title.termArea dl .reload:has(img[src*="start_icon.png"])::after {
+.table_title.termArea dl .reload:has(.reloadTime)::after, .table_title.termArea dl .reload:has(img[src*="start_icon.png"])::after {
   background: url(/res/img/ncsoft/ic_vmPlay.svg) center/cover no-repeat;
 }
 .table_title.termArea dl .reload:has(img[src*="stop_icon.png"])::after {
@@ -1019,6 +1023,7 @@ marquee {
   left: 0;
   right: 0;
   margin: 0 auto;
+  transform: translateY(-50%);
 }
 #loading_dialog .loading_dialog_bg video {
   width: 100%;
@@ -7770,6 +7775,7 @@ td:last-child {
   transition-delay: 1s;
 }
 
+.quarterWrap .checkbox-inline:has(input:checked)::after,
 .topInfo .checkbox-inline:has(input:checked)::after {
   background-color: #00A3E0 !important;
   border: 2px solid #64BCEA !important;

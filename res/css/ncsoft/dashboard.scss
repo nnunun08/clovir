@@ -792,6 +792,7 @@ car_dept_stat_area css end
             padding: 0;
             width: 20px;
             height: 20px;
+            cursor: pointer;
             &:has(#openDashboardEdit) {
                 background: url(/res/img/ncsoft/icon_16_setting.svg) center/cover no-repeat;
                 > img {
