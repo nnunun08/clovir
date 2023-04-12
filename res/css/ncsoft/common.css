@@ -55,7 +55,7 @@ Select::-ms-expand {
 }
 #header_detail #mainTable #borderLayout_eRootPanel .ag-header {
   position: sticky;
-  top: 180px;
+  top: 140px;
   z-index: 3;
   margin-top: -1px;
   border-top: 1px solid #4A4A4A;
@@ -670,15 +670,6 @@ select {
   height: 16px;
   display: block;
   margin-left: 8px;
-}
-.table_title.termArea dl .reload:has(.reloadTime)::after, .table_title.termArea dl .reload:has(img[src*="start_icon.png"])::after {
-  background: url(/res/img/ncsoft/ic_vmPlay.svg) center/cover no-repeat;
-}
-.table_title.termArea dl .reload:has(img[src*="stop_icon.png"])::after {
-  background: url(/res/img/ncsoft/ic_vmStop.svg) center/cover no-repeat;
-}
-.table_title.termArea dl .reload img {
-  display: none;
 }
 .table_title #mainTable_total {
   color: #00A3E0;
@@ -5134,7 +5125,7 @@ v .center > div > .panel_value {
   height: auto;
   width: 720px !important;
   background: #FFFFFF;
-  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
   border-radius: 12px;
   z-index: 200;
   transition: 0.2s;
@@ -5143,6 +5134,10 @@ v .center > div > .panel_value {
   top: 170px;
   left: unset;
   transform: none;
+  transition: none;
+}
+.popup_layer:has(.vmDetailTab) label.control-label {
+  font-weight: bold;
 }
 .popup_layer.tabHide {
   left: 100%;
@@ -5943,7 +5938,7 @@ v .center > div > .panel_value {
   position: relative;
   overflow-y: initial !important;
   background: #FFFFFF;
-  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
   border-radius: 12px;
   border: 0;
 }
@@ -6037,6 +6032,10 @@ v .center > div > .panel_value {
   position: absolute;
   top: 10px;
   right: 10px;
+}
+
+.select2-search__field {
+  width: 100% !important;
 }
 
 .modal-footer {

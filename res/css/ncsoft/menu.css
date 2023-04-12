@@ -26,6 +26,17 @@
   box-sizing: border-box;
 }
 
+.downLine {
+  height: 10px;
+  background-color: #00BFB3;
+  border-bottom: 2px solid #009D93;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
 #topArea {
   display: flex;
   align-items: center;
@@ -1367,7 +1378,7 @@ a.tree-toggle {
   height: auto;
 }
 #mainForm #header_detail #search_area {
-  padding: 40px 40px 20px;
+  padding: 10px 40px 10px;
   width: 100%;
   background-color: #fff;
   position: sticky;
@@ -1415,7 +1426,7 @@ a.tree-toggle {
   background: #F9FDFD;
   border: 1px solid #E5F3F2 !important;
   color: #053941 !important;
-  font-weight: 500;
+  font-weight: bold;
 }
 #mainForm #header_detail .leftBtn .btn-group button.dropdownBox .caret {
   background: url(/res/img/ncsoft/icon_16_dw_green.svg) center/cover no-repeat;

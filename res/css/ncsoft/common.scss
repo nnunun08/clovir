@@ -59,7 +59,7 @@ Select::-ms-expand {
     }
     .ag-header {    
         position: sticky;
-        top: 180px;
+        top: 140px;
         z-index: 3;
         margin-top: -1px;
         border-top: 1px solid #4A4A4A;
@@ -80,6 +80,9 @@ Select::-ms-expand {
         border-bottom: 0;
     }
 }
+
+$dropShadow : 4px 4px 12px rgba(0, 0, 0, 0.2);
+
 
 @mixin blueRadio {
     // 파란색 라디오 버튼 적용
@@ -782,16 +785,17 @@ select {
                 display: block;
                 margin-left: 8px;
             }
-            &:has(.reloadTime)::after,
-            &:has(img[src*="start_icon.png"])::after {
-                background: url(/res/img/ncsoft/ic_vmPlay.svg) center/cover no-repeat;
-            }
-            &:has(img[src*="stop_icon.png"])::after {
-                background: url(/res/img/ncsoft/ic_vmStop.svg) center/cover no-repeat;
-            }
-            img {
-                display: none;
-            }
+            // evoke0413 : 재생버튼 이미지 스크립트로 제어
+            // &:has(.reloadTime)::after,
+            // &:has(img[src*="start_icon.png"])::after {
+            //     background: url(/res/img/ncsoft/ic_vmPlay.svg) center/cover no-repeat;
+            // }
+            // &:has(img[src*="stop_icon.png"])::after {
+            //     background: url(/res/img/ncsoft/ic_vmStop.svg) center/cover no-repeat;
+            // }
+            // img {
+            //     display: none;
+            // }
         }
     }
     #mainTable_total {
@@ -5753,7 +5757,7 @@ v .center>div>.panel_value {
     height: auto;
     width: 720px !important;
     background: #FFFFFF;
-    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: $dropShadow;
     border-radius: 12px;
     z-index: 200;
     transition: 0.2s;
@@ -5761,6 +5765,10 @@ v .center>div>.panel_value {
         top: 170px;
         left:unset;
         transform: none;
+        transition: none;
+        label.control-label {
+            font-weight: bold;
+        }
     }
 
     &.tabHide {
@@ -6618,7 +6626,7 @@ v .center>div>.panel_value {
     position: relative;
     overflow-y: initial !important;
     background: #FFFFFF;
-    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: $dropShadow;
     border-radius: 12px;
     border: 0;
     // padding-bottom: 136px;
@@ -6734,6 +6742,10 @@ v .center>div>.panel_value {
         top: 10px;
         right: 10px;
     }
+}
+
+.select2-search__field {
+    width: 100% !important;
 }
 
 .modal-footer {
