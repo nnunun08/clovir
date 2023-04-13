@@ -5551,6 +5551,8 @@ v .center>div>.panel_value {
     width: calc(100% - 150px);
     min-width: 50px;
     height: 25px;
+    // evoke0413 : 신규요청에서 생성사유 길게 입력될 수 있어서 height auto로 적용. 전체 적용 css라 다른 영역에 영향갈 수 있음. 이슈 시 보완 필요
+    height: auto;
     line-height: 25px;
     padding-left: 7px;
 }
@@ -5767,7 +5769,8 @@ v .center>div>.panel_value {
         transform: none;
         transition: none;
         label.control-label {
-            font-weight: bold;
+            font-weight: bold !important;
+            font-size: 13px !important;
         }
     }
 
