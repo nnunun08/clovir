@@ -5142,6 +5142,9 @@ v .center > div > .panel_value {
   font-weight: bold !important;
   font-size: 13px !important;
 }
+.popup_layer:has(.vmDetailTab) .output {
+  font-size: 13px !important;
+}
 .popup_layer.tabHide {
   left: 100%;
 }
