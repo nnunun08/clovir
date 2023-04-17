@@ -4482,7 +4482,7 @@ v .center>div>.panel_value {
     top: 52px;
     &:has(.progress-coming-normal) {
         background-color: #25B5AC;
-        border: 2px solid #009D93;
+        // border: 2px solid #009D93;
         left: 50% !important;
         transform: translateX(-50%) !important;
         & + .approvalName-detail {

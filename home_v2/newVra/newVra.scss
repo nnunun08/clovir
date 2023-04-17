@@ -586,17 +586,17 @@ $leftSize : 216px;
     flex-wrap: wrap;
     border-top: 1px solid #4A4A4A;
 }
-#newVra_popup_step_content_2 {
-    .checkbox-inline:has(input:checked)::after {
-        background-color: #00A3E0 !important;
-        border: 2px solid #64BCEA !important;
-        outline: 3px solid #96D2F3;
-        width: 10px !important;
-        height: 10px !important;
-        top: 4px !important;
-        left: 3px !important;
-    }
-}
+// #newVra_popup_step_content_2 {
+//     .checkbox-inline:has(input:checked)::after {
+//         background-color: #00A3E0 !important;
+//         border: 2px solid #64BCEA !important;
+//         outline: 3px solid #96D2F3;
+//         width: 10px !important;
+//         height: 10px !important;
+//         top: 4px !important;
+//         left: 3px !important;
+//     }
+// }
 #newVra_popup_step_content_5 {
     // margin-left: $leftSize;
     text-align: center;
@@ -605,12 +605,9 @@ $leftSize : 216px;
         margin-top: 28px;
         width: 128px;
         height: 128px;
-        // background: url(/res/img/ncsoft/ic_128_done.svg) center/cover no-repeat;
-        // filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.08));
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
+        background: url(/res/img/ncsoft/ic_128_done.svg) center/cover no-repeat !important;
+        filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.08));
+        
         video {
             width: 500px;
             height: 500px;
@@ -641,3 +638,47 @@ $leftSize : 216px;
     padding-top: 10px;
 }
 
+// evoke0418 
+#newVra_popup_step_content_3 {
+    .application {
+        .tagWrap {
+            margin-top: 0;
+        }
+        .select2-container {
+            .select2-selection--multiple {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                height: auto;
+                border: 0;
+                padding: 0;
+                .select2-search {
+                    border: 1px solid #DDDDDD;
+                    border-radius: 4px;
+                }
+                .select2-selection__rendered {
+                    order: 2;
+                    margin: 0;
+                    gap: 4px;
+                    display: flex;
+                    .select2-selection__choice {
+                        min-width: auto;
+                        flex: 0 0 auto;
+                        margin: 0;
+                        padding: 0 23px 0 8px;
+                        height: 24px;
+                        line-height: 22px;
+                        .select2-selection__choice__remove {
+                            right: 8px;
+                            left: unset;
+                            border: 0;
+                            width: 16px;
+                            height: 16px;
+                            background: url(/res/img/ncsoft/icon_16_close.svg) center/cover no-repeat;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

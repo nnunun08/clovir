@@ -1540,7 +1540,7 @@ a.tree-toggle {
                         padding-left: 18px;
                         position: relative;
 
-                        &::before {
+                        &:not(.divider)::before {
                             content: '';
                             position: absolute;
                             left: 0;

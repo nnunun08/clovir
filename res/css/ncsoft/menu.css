@@ -1454,7 +1454,7 @@ a.tree-toggle {
   padding-left: 18px;
   position: relative;
 }
-#mainForm #header_detail .leftBtn .btn-group .dropdown-menu li::before {
+#mainForm #header_detail .leftBtn .btn-group .dropdown-menu li:not(.divider)::before {
   content: "";
   position: absolute;
   left: 0;

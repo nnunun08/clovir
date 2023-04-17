@@ -3916,7 +3916,6 @@ v .center > div > .panel_value {
 }
 .progress-coming-in:has(.progress-coming-normal) {
   background-color: #25B5AC;
-  border: 2px solid #009D93;
   left: 50% !important;
   transform: translateX(-50%) !important;
 }
