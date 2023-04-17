@@ -664,13 +664,6 @@ select {
   line-height: 17px;
   color: #2C2C2C;
 }
-.table_title.termArea dl .reload::after {
-  content: "";
-  width: 16px;
-  height: 16px;
-  display: block;
-  margin-left: 8px;
-}
 .table_title #mainTable_total {
   color: #00A3E0;
   font-weight: bold;

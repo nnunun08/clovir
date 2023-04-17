@@ -778,13 +778,13 @@ select {
             font-size: 12px;
             line-height: 17px;
             color: #2C2C2C;
-            &::after {
-                content: '';
-                width: 16px;
-                height: 16px;
-                display: block;
-                margin-left: 8px;
-            }
+            // &::after {
+            //     content: '';
+            //     width: 16px;
+            //     height: 16px;
+            //     display: block;
+            //     margin-left: 8px;
+            // }
             // evoke0413 : 재생버튼 이미지 스크립트로 제어
             // &:has(.reloadTime)::after,
             // &:has(img[src*="start_icon.png"])::after {
