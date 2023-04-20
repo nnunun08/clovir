@@ -7619,6 +7619,8 @@ v .center>div>.panel_value {
     }
     .range-radio {
         justify-content: space-between;
+        margin-left: -12px;
+        padding: 0;
         .rangeInput {
             margin: 0;
             margin-left: 20px;
@@ -7954,11 +7956,11 @@ v .center>div>.panel_value {
             }
         } 
         &.LEGACY {
-            .row_flex:first-child .table_inner_icon {border-left: 1px solid #004C98;}
+            .row_flex:first-child .table_inner_icon {border-left: 1px solid #005585;}
             .table_inner_icon {
-                border-color: #004C98;
+                border-color: #005585;
                 &.selected {
-                    background-color: #004C98;
+                    background-color: #005585;
                     .value .unitValue,
                     .title {
                         color: #fff;
@@ -7966,7 +7968,7 @@ v .center>div>.panel_value {
                 }
                 .value .unitValue,
                 .title {
-                    color: #004C98;
+                    color: #005585;
                 }
             }
         }
@@ -8770,3 +8772,14 @@ fill: #AEE5BE;
     left: 3px !important;
 }
 
+
+.diskChangePopup-disk-area-item {
+    padding-left: 180px !important;
+    .mountPathArea {
+        margin-left: 8px;
+    }
+}
+#diskChangePopup_CPU_CNT_input,
+#diskChangePopup_RAM_SIZE_input {
+    margin-left: 136px !important;
+}

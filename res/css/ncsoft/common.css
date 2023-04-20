@@ -6861,6 +6861,8 @@ v .center > div > .panel_value {
 }
 .popup_dialog .range-radio {
   justify-content: space-between;
+  margin-left: -12px;
+  padding: 0;
 }
 .popup_dialog .range-radio .rangeInput {
   margin: 0;
@@ -7141,13 +7143,13 @@ td:last-child {
   color: #00A3E0;
 }
 #topIcon .floatRight.LEGACY .row_flex:first-child .table_inner_icon {
-  border-left: 1px solid #004C98;
+  border-left: 1px solid #005585;
 }
 #topIcon .floatRight.LEGACY .table_inner_icon {
-  border-color: #004C98;
+  border-color: #005585;
 }
 #topIcon .floatRight.LEGACY .table_inner_icon.selected {
-  background-color: #004C98;
+  background-color: #005585;
 }
 #topIcon .floatRight.LEGACY .table_inner_icon.selected .value .unitValue,
 #topIcon .floatRight.LEGACY .table_inner_icon.selected .title {
@@ -7155,7 +7157,7 @@ td:last-child {
 }
 #topIcon .floatRight.LEGACY .table_inner_icon .value .unitValue,
 #topIcon .floatRight.LEGACY .table_inner_icon .title {
-  color: #004C98;
+  color: #005585;
 }
 #topIcon .floatRight.ALL .row_flex:first-child .table_inner_icon {
   border-left: 1px solid #006979;
@@ -7780,4 +7782,16 @@ td:last-child {
   height: 10px !important;
   top: 4px !important;
   left: 3px !important;
+}
+
+.diskChangePopup-disk-area-item {
+  padding-left: 180px !important;
+}
+.diskChangePopup-disk-area-item .mountPathArea {
+  margin-left: 8px;
+}
+
+#diskChangePopup_CPU_CNT_input,
+#diskChangePopup_RAM_SIZE_input {
+  margin-left: 136px !important;
 }/*# sourceMappingURL=common.css.map */
