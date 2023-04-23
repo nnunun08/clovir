@@ -1230,7 +1230,7 @@ marquee {
   border: solid 1px #dddddd;
   background-color: #f0f0f0;
   border-radius: 50%;
-  background-image: url(/res/img/ncsoft/icon_refresh.png) !important;
+  background-image: url(/res/img/ncsoft/icon_16_refresh.svg) !important;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 16px;
