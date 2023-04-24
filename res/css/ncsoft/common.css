@@ -65,7 +65,6 @@ Select::-ms-expand {
 .btn:active {
   background-image: none;
   outline: 0;
-  -webkit-box-shadow: none;
   box-shadow: none;
 }
 
@@ -253,6 +252,8 @@ Select::-ms-expand {
   align-self: flex-start;
   height: 36px;
   min-width: 220px;
+  width: auto;
+  padding-right: 34px;
   counter-increment: list-number;
   position: relative;
 }
@@ -754,9 +755,7 @@ marquee {
 .noSelection {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
-  -khtml-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
@@ -795,8 +794,6 @@ marquee {
   border-radius: 4px;*/
   /*-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);*/
   /* 	box-shadow: inset 0 1px 1px rgba(0,0,0,.075); */
-  -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
-  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   display: inline-block;
   float: none;
@@ -1012,7 +1009,8 @@ marquee {
 #loading_dialog .loading_dialog_bg video {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .disabledTab {
@@ -1063,6 +1061,10 @@ marquee {
   vertical-align: middle;
   display: inline-block;
   margin: 0;
+}
+
+.popup_area .input::-moz-placeholder {
+  color: #ccc;
 }
 
 .popup_area .input::placeholder {
@@ -2297,7 +2299,8 @@ select.form-control {
 }
 
 .fileAttachViewArea ol {
-  padding-inline-start: 10px;
+  -webkit-padding-start: 10px;
+          padding-inline-start: 10px;
 }
 
 .modal-open .modal {
@@ -5418,6 +5421,10 @@ v .center > div > .panel_value {
   appearance: none;
 }
 
+#paging_select::-moz-selection {
+  border: none;
+}
+
 #paging_select::selection {
   border: none;
 }
@@ -5728,7 +5735,6 @@ v .center > div > .panel_value {
   opacity: 0.6;
   box-shadow: none;
   border-color: #6cc0e5;
-  -webkit-transition: all 0.12s, border-color 0.08s;
   transition: all 0.12s, border-color 0.08s;
 }
 
@@ -5744,8 +5750,6 @@ v .center > div > .panel_value {
   border-color: transparent #6cc0e5 #6cc0e5 transparent;
   border-top-color: transparent;
   border-left-color: transparent;
-  -ms-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
   transform: rotate(0deg);
 }
 
@@ -6002,6 +6006,9 @@ v .center > div > .panel_value {
   font-size: 14px;
   line-height: 19px;
   color: #4A4A4A;
+}
+.modal-body .select2-container--default .select2-search--inline .select2-search__field::-moz-placeholder {
+  color: #CCCCCC;
 }
 .modal-body .select2-container--default .select2-search--inline .select2-search__field::placeholder {
   color: #CCCCCC;
@@ -7782,6 +7789,40 @@ td:last-child {
   height: 10px !important;
   top: 4px !important;
   left: 3px !important;
+}
+
+.checkbox-inline-green {
+  padding: 0;
+  padding-left: 22px;
+  position: relative;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  margin-left: 0 !important;
+  background-color: transparent;
+  color: #4A4A4A;
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.checkbox-inline-green input {
+  display: none !important;
+}
+.checkbox-inline-green::after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  position: absolute;
+  left: 0;
+  top: 1px;
+}
+.checkbox-inline-green:has(input:checked)::after {
+  border: 0;
+  background: #25B5AC !important;
+  border: 3px solid #97D8D4 !important;
 }
 
 .diskChangePopup-disk-area-item {

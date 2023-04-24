@@ -322,6 +322,8 @@ $dropShadow : 4px 4px 12px rgba(0, 0, 0, 0.2);
                 align-self: flex-start;
                 height: 36px;
                 min-width: 220px;
+                width:auto;
+                padding-right: 34px;
                 counter-increment: list-number;
                 position: relative;
 
@@ -8772,6 +8774,39 @@ fill: #AEE5BE;
     left: 3px !important;
 }
 
+.checkbox-inline-green {
+    padding: 0;
+    padding-left: 22px;
+    position: relative;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 17px;
+    margin-left: 0 !important;
+    background-color: transparent;
+    color: #4A4A4A;
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+    cursor: pointer;
+    input {
+        display: none !important;
+    }
+    &::after {
+        content: "";
+        width: 16px;
+        height: 16px;
+        border: 1px solid #ddd;
+        border-radius: 16px;
+        position: absolute;
+        left: 0;
+        top: 1px;
+    }
+    &:has(input:checked)::after {
+        border: 0;
+        background: #25B5AC !important;
+        border: 3px solid #97D8D4 !important;
+    }
+}
 
 .diskChangePopup-disk-area-item {
     padding-left: 180px !important;
