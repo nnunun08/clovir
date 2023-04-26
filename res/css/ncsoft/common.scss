@@ -7849,7 +7849,7 @@ v .center>div>.panel_value {
     // overflow-x: hidden;
     min-width: 1440px;
     &::-webkit-scrollbar {
-        display: none;
+        // display: none;
     }
     &:has(#borderLayout_eRootPanel) {
         height: auto;
