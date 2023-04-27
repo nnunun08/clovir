@@ -8149,7 +8149,7 @@ v .center>div>.panel_value {
     }
 
     #search_area {
-        margin-bottom: 55px;
+        margin-bottom: 35px;
         box-shadow: none;
         .panel-body {
             padding: 0;
@@ -8817,4 +8817,8 @@ fill: #AEE5BE;
 #diskChangePopup_CPU_CNT_input,
 #diskChangePopup_RAM_SIZE_input {
     margin-left: 136px !important;
+}
+
+.admin-content #mainTable{
+    margin-bottom: 50px;
 }
