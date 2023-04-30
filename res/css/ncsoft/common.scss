@@ -800,6 +800,8 @@ select {
             // }
         }
     }
+    #underTable_total,
+    #envTable_total,
     #mainTable_total {
         color: #00A3E0;
         font-weight: bold;
@@ -1124,7 +1126,9 @@ marquee {
 }
 
 #input_area .input-group.spinner .input {
-    width: calc(100% - 28px);
+    // width: calc(100% - 28px);
+    padding-right: 30px !important;
+    border-radius: 4px;
 }
 
 #input_area .input-group.spinner .input-group-btn-vertical {
@@ -3161,8 +3165,10 @@ v .center>div>.panel_value {
         .btn {
             border: 0;
             padding: 0;
-            i {
-                left: 0;
+            background-color: transparent;
+            i {            
+                left: 50%;
+                transform: translateX(-50%);
                 line-height: 1;
             }
         }
@@ -4020,6 +4026,8 @@ v .center>div>.panel_value {
 
 .search_info {
     float: left;
+    font-size: 15px;
+    font-weight: bold;
 }
 
 .search_count {
@@ -5746,6 +5754,9 @@ v .center>div>.panel_value {
 #tab2 {
     position: relative;
     left: -12px;
+}
+#mainForm #tab2 {
+    left: 0;
 }
 
 
@@ -8845,4 +8856,36 @@ fill: #AEE5BE;
 
 .admin-content #mainTable{
     margin-bottom: 50px;
+}
+
+
+#search_area .top13 tbody {
+    width: 100%;
+    tr {
+        display:flex;
+        align-items: center;
+        td:not(.tilt) {
+            width: 50%;
+        }
+    }
+}
+
+label[title="결재일자"] + [id="S_APPR"],
+label[title="요청일자"] + [id="S_INS"] {
+    padding-left: 0 !important;
+    margin-left: -4px !important;
+}
+
+#search_area .select2-selection--single {
+    min-height: 0 !important;
+    height: 32px !important;
+    padding-left: 7px;
+    .select2-selection__rendered {
+        font-size: 12px;
+    }
+    .select2-selection__arrow {
+        top: 7px;
+        right: 13px;
+    }
+
 }
