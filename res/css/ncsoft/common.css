@@ -2214,7 +2214,7 @@ marquee {
 @media (min-width: 768px) {
   .modal-dialog {
     width: 800px;
-    margin: 50px auto;
+    margin: 0 auto;
   }
 }
 .pageNoArea {
@@ -5136,17 +5136,17 @@ v .center > div > .panel_value {
   z-index: 200;
   transition: 0.2s;
 }
-.popup_layer:has(.vmDetailTab) {
+.popup_layer#serverDetail, .popup_layer:has(.vmDetailTab) {
   top: 170px;
   left: unset;
   transform: none;
   transition: none;
 }
-.popup_layer:has(.vmDetailTab) label.control-label {
+.popup_layer#serverDetail label.control-label, .popup_layer:has(.vmDetailTab) label.control-label {
   font-weight: bold !important;
   font-size: 13px !important;
 }
-.popup_layer:has(.vmDetailTab) .output {
+.popup_layer#serverDetail .output, .popup_layer:has(.vmDetailTab) .output {
   font-size: 13px !important;
 }
 .popup_layer.tabHide {
@@ -7888,4 +7888,27 @@ label[title=요청일자] + [id=S_INS] {
 #search_area .select2-selection--single .select2-selection__arrow {
   top: 7px;
   right: 13px;
+}
+
+#serverDetailModal,
+.loadFinish .popup_layer {
+  left: unset;
+}
+#serverDetailModal .vmDetailTab + .tab-content .fm-output,
+.loadFinish .popup_layer .vmDetailTab + .tab-content .fm-output {
+  padding-left: 100px;
+}
+#serverDetailModal .vmDetailTab + .tab-content .fm-output .value-title,
+.loadFinish .popup_layer .vmDetailTab + .tab-content .fm-output .value-title {
+  font-weight: bold !important;
+  font-size: 13px !important;
+}
+#serverDetailModal .vmDetailTab + .tab-content .fm-output .output,
+.loadFinish .popup_layer .vmDetailTab + .tab-content .fm-output .output {
+  min-height: 48px;
+  display: flex;
+  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
 }/*# sourceMappingURL=common.css.map */
