@@ -7890,21 +7890,20 @@ label[title=요청일자] + [id=S_INS] {
   right: 13px;
 }
 
-#serverDetailModal,
-.loadFinish .popup_layer {
+#serverDetailModal.popup_layer {
   left: unset;
 }
-#serverDetailModal .vmDetailTab + .tab-content .fm-output,
-.loadFinish .popup_layer .vmDetailTab + .tab-content .fm-output {
+#serverDetailModal.popup_layer.tabHide {
+  left: 100%;
+}
+#serverDetailModal.popup_layer .tab-content .fm-output {
   padding-left: 100px;
 }
-#serverDetailModal .vmDetailTab + .tab-content .fm-output .value-title,
-.loadFinish .popup_layer .vmDetailTab + .tab-content .fm-output .value-title {
+#serverDetailModal.popup_layer .tab-content .fm-output .value-title {
   font-weight: bold !important;
   font-size: 13px !important;
 }
-#serverDetailModal .vmDetailTab + .tab-content .fm-output .output,
-.loadFinish .popup_layer .vmDetailTab + .tab-content .fm-output .output {
+#serverDetailModal.popup_layer .tab-content .fm-output .output {
   min-height: 48px;
   display: flex;
   justify-content: center;

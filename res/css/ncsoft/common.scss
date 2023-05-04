@@ -8892,25 +8892,28 @@ label[title="요청일자"] + [id="S_INS"] {
 
 }
 
-// 서버 상세 정보 구버전 대응
-// serverDetailModal 적용 시 .loadFinish.popup_layer 케이스는 제거
-#serverDetailModal,
-.loadFinish .popup_layer {
-    left: unset;
-    .vmDetailTab + .tab-content {
-        .fm-output {
-            padding-left: 100px;
-            .value-title {
-                font-weight: bold !important;
-                font-size: 13px !important;
-            }
-            .output {
-                min-height: 48px;
-                display: flex;
-                justify-content: center;
-                justify-content: flex-start;
-                align-items: center;
-                border-bottom: 1px solid #ddd;
+// 서버 상세 정보 구버전 대응 - :has() 미지원 -
+#serverDetailModal{
+    &.popup_layer {
+        left: unset;
+        &.tabHide {
+            left: 100%;
+        }
+        .tab-content {
+            .fm-output {
+                padding-left: 100px;
+                .value-title {
+                    font-weight: bold !important;
+                    font-size: 13px !important;
+                }
+                .output {
+                    min-height: 48px;
+                    display: flex;
+                    justify-content: center;
+                    justify-content: flex-start;
+                    align-items: center;
+                    border-bottom: 1px solid #ddd;
+                }
             }
         }
     }
