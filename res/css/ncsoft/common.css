@@ -149,9 +149,6 @@ Select::-ms-expand {
 }
 
 #fileTree.jstree-default .jstree-node,
-#fileTree.jstree-default .jstree-icon {
-  background-image: none;
-}
 #fileTree.jstree-default .jstree-themeicon {
   background: url(/res/img/ncsoft/icon_20_folder.svg) center/20px no-repeat;
 }

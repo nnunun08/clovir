@@ -199,9 +199,9 @@ $dropShadow : 4px 4px 12px rgba(0, 0, 0, 0.2);
 @mixin fileTree {
     #fileTree.jstree-default {
         .jstree-node,
-        .jstree-icon {
-            background-image: none;
-        }
+        // .jstree-icon {
+        //     background-image: none;
+        // }
         .jstree-themeicon {
             background: url(/res/img/ncsoft/icon_20_folder.svg) center/20px no-repeat;
         }
